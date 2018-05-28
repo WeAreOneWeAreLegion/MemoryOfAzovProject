@@ -93,8 +93,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public GameObject yesButtonMenuConfirmationPanel;
     public GameObject yesButtonQuitConfirmationPanel;
     public GameObject controllerToggle;
-    //public GameObject finalRestartConfirmationPanel;
-    //public GameObject finalMenuConfirmationPanel;
     [Tooltip("Bool variable to know if a confirmation panel is visible or not")]
     public bool confirmationPanelOpen = false;
     [Tooltip("Bool variable to know if a the player is using a controller or a keyboard")]
@@ -102,9 +100,19 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public EventSystem myEventSystem;
 
-    [Header("\t--Pause Menu Variables--")]
+    [Header("\t--Game Over Variables--")]
+    [Tooltip("Game Over variables, seen when the player dies")]
     public GameObject gameOverPanel;
     public GameObject gameOverRestartButton;
+
+    [Header("\t--Victory Variables--")]
+    [Tooltip("Game Over variables, seen when the player dies")]
+    public GameObject victoryPanel;
+    public GameObject victoryOKButton;
+    public Text ghostHuntedText;
+    public Text eggsFoundText;
+    public Text healthLostText;
+    public Text timePlayedText;
 
     [Header("Tags List")]
     [Tooltip("0.Player, 1.Enemy, 2.Wall, 3.Door 4.DoorTrigger 5.Bell 6.HittableObjets 7.FakeWall")]
@@ -635,7 +643,6 @@ public class GameManager : MonoSingleton<GameManager> {
     #region Game State Methods
     public void CallPlayerDeath()
     {//Game Over
-
         gameOverPanel.SetActive(true);
         StartCoroutine(HighlightButton(gameOverRestartButton));
         /*Debug.Log("You have lost");
@@ -647,13 +654,18 @@ public class GameManager : MonoSingleton<GameManager> {
     }
 
     public void CallPlayerVictory()
-    {
-        //Victory
-        Debug.Log("A winner is you");
+    {//Victory
+        victoryPanel.SetActive(true);
+        StartCoroutine(HighlightButton(victoryOKButton));
+        ghostHuntedText.text = "Quantity of ghost hunted: " + currentNumOfGhosts;
+        eggsFoundText.text = "Quantity of diamond eggs found: " + currentNumOfGems;
+        healthLostText.text = "Quantity of health lost: " + currentHealthLost;
+        timePlayedText.text = "Time played: " + (Time.timeSinceLevelLoad - gameTimeStart).ToString();
+        /*Debug.Log("A winner is you");
         Debug.Log("Quantity of ghost hunted: "+currentNumOfGhosts);
         Debug.Log("Quantity of diamond eggs found: "+currentNumOfGems);
         Debug.Log("Quantity of health lost: "+currentHealthLost);
-        Debug.Log("Time played: "+(Time.timeSinceLevelLoad - gameTimeStart).ToString());
+        Debug.Log("Time played: "+(Time.timeSinceLevelLoad - gameTimeStart).ToString());*/
         Time.timeScale = 0;
     }
     #endregion
