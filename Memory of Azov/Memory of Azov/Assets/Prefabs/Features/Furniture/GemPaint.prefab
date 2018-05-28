@@ -142,6 +142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToSpawnObject: 3
   itemToDrop: 1
+  spawnGhost: 0
+  enemyData: {fileID: 0}
   particles: {fileID: 1028687757219208}
 --- !u!198 &198983676179610260
 ParticleSystem:

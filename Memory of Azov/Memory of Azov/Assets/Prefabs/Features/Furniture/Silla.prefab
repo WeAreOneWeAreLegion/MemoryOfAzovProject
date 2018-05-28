@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4247699212506780}
-  - component: {fileID: 114849954507005748}
   m_Layer: 0
   m_Name: Silla
   m_TagString: Untagged
@@ -169,27 +168,3 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &114849954507005748
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111520907765026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed86b80f009395479241b5b2c49fd55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnGhost: 0
-  spawnGem: 0
-  spawnAllGhosts: 0
-  enemyData: {fileID: 0}
-  isWall: 0
-  isDoor: 0
-  isStatic: 0
-  myRenderers:
-  - {fileID: 23195324829839562}
-  myAnimations:
-  - {fileID: 111762888265365510}
-  shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
-  openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
