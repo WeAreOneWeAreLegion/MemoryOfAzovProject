@@ -102,6 +102,10 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public EventSystem myEventSystem;
 
+    [Header("\t--Pause Menu Variables--")]
+    public GameObject gameOverPanel;
+    public GameObject gameOverRestartButton;
+
     [Header("Tags List")]
     [Tooltip("0.Player, 1.Enemy, 2.Wall, 3.Door 4.DoorTrigger 5.Bell 6.HittableObjets 7.FakeWall")]
     public List<string> tagList = new List<string>();
@@ -459,7 +463,7 @@ public class GameManager : MonoSingleton<GameManager> {
     #region Pause Methods
     private void PauseActions()
     {
-        if (InputsManager.Instance.GetBackButtonInputDown()) //Input.GetKeyDown("joystick button 1")
+        if (InputsManager.Instance.GetBackButtonInputDown() && !confirmationPanelOpen) //Input.GetKeyDown("joystick button 1")
             Resume();
 
         if (confirmationPanelOpen)
@@ -483,7 +487,6 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void PauseGame()
     {
-
         if (!confirmationPanelOpen)
         {
             if (isGamePaused)
@@ -495,8 +498,6 @@ public class GameManager : MonoSingleton<GameManager> {
             else
             {
                 StartCoroutine(HighlightButton(resumeButton));
-                //EventSystem.current.SetSelectedGameObject(resumeButton);
-
                 Time.timeScale = 0;
                 pausePanel.SetActive(true);
                 pauseMenuGO.SetActive(true);
@@ -525,7 +526,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public void ShowRestartConfirmationPanel()
     {
         StartCoroutine(HighlightButton(yesButtonRestartConfirmationPanel));
-        //EventSystem.current.SetSelectedGameObject(yesButtonRestartConfirmationPanel);
         confirmationPanelOpen = true;
         restartConfirmationPanel.SetActive(true);
         pauseMenuGO.SetActive(false);
@@ -534,7 +534,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public void HideRestartConfirmationPanel()
     {
         StartCoroutine(HighlightButton(restartButton));
-        //EventSystem.current.SetSelectedGameObject(restartButton);
         confirmationPanelOpen = false;
         restartConfirmationPanel.SetActive(false);
         pauseMenuGO.SetActive(true);
@@ -551,7 +550,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public void ShowMenuConfirmationPanel()
     {
         StartCoroutine(HighlightButton(yesButtonMenuConfirmationPanel));
-        //EventSystem.current.SetSelectedGameObject(yesButtonMenuConfirmationPanel);
         confirmationPanelOpen = true;
         menuConfirmationPanel.SetActive(true);
         pauseMenuGO.SetActive(false);
@@ -560,7 +558,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public void HideMenuConfirmationPanel()
     {
         StartCoroutine(HighlightButton(menuButton));
-        //EventSystem.current.SetSelectedGameObject(menuButton);
         confirmationPanelOpen = false;
         menuConfirmationPanel.SetActive(false);
         pauseMenuGO.SetActive(true);
@@ -612,7 +609,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public void ShowQuitConfirmationPanel()
     {
         StartCoroutine(HighlightButton(yesButtonQuitConfirmationPanel));
-        //EventSystem.current.SetSelectedGameObject(yesButtonQuitConfirmationPanel);
         confirmationPanelOpen = true;
         quitConfirmationPanel.SetActive(true);
         pauseMenuGO.SetActive(false);
@@ -621,7 +617,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public void HideQuitConfirmationPanel()
     {
         StartCoroutine(HighlightButton(quitButton));
-        //EventSystem.current.SetSelectedGameObject(quitButton);
         confirmationPanelOpen = false;
         quitConfirmationPanel.SetActive(false);
         pauseMenuGO.SetActive(true);
@@ -633,18 +628,21 @@ public class GameManager : MonoSingleton<GameManager> {
         myEventSystem.SetSelectedGameObject(null);
         yield return null;
         myEventSystem.SetSelectedGameObject(myButton);//myEventSystem.firstSelectedGameObject);
+        yield return null;
     }
     #endregion
 
     #region Game State Methods
     public void CallPlayerDeath()
-    {
-        //Game Over
-        Debug.Log("You have lost");
+    {//Game Over
+
+        gameOverPanel.SetActive(true);
+        StartCoroutine(HighlightButton(gameOverRestartButton));
+        /*Debug.Log("You have lost");
         Debug.Log("Quantity of ghost hunted: " + currentNumOfGhosts);
         Debug.Log("Quantity of diamond eggs found: " + currentNumOfGems);
         Debug.Log("Quantity of health lost: " + currentHealthLost);
-        Debug.Log("Time played: " + (Time.timeSinceLevelLoad - gameTimeStart).ToString());
+        Debug.Log("Time played: " + (Time.timeSinceLevelLoad - gameTimeStart).ToString());*/
         Time.timeScale = 0;
     }
 
