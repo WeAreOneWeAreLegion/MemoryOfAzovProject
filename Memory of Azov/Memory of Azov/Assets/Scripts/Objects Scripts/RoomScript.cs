@@ -32,51 +32,61 @@ public class RoomScript : MonoBehaviour
     #region Set-Up Methods
     private void SetStartingRoom()
     {
-        List<TransparentObject> temporalObjects = new List<TransparentObject>();
-
-        foreach (TransparentObject t in GetComponentsInChildren<TransparentObject>())
+        try
         {
-            t.spawnGhost = false;
-            t.spawnGem = false;
-            t.spawnAllGhosts = false;
-            allObjects.Add(t);
-            temporalObjects.Add(t);
-        }
+            List<TransparentObject> temporalObjects = new List<TransparentObject>();
 
-        objectsWithEnemies = new List<TransparentObject>();
-
-        int randomNum;
-
-        for (int i = 0; i < numOfDesiredGhosts; i++)
-        {
-            randomNum = Random.Range(0, temporalObjects.Count);
-
-            temporalObjects[randomNum].spawnGhost = true;
-            temporalObjects[randomNum].spawnAllGhosts = true;
-
-            if (ghostIndex < enemiesData.Count)
+            foreach (TransparentObject t in GetComponentsInChildren<TransparentObject>())
             {
-                temporalObjects[randomNum].enemyData = enemiesData[ghostIndex];
-                ghostIndex++;
-            }
-            else
-            {
-                int randomData = Random.Range(0, enemiesData.Count);
-                temporalObjects[randomNum].enemyData = enemiesData[randomData];
+                if (t.isStatic)
+                    continue;
+
+                t.spawnGhost = false;
+                t.spawnGem = false;
+                t.spawnAllGhosts = false;
+                allObjects.Add(t);
+                temporalObjects.Add(t);
             }
 
-            objectsWithEnemies.Add(temporalObjects[randomNum]);
-            temporalObjects.RemoveAt(randomNum);
+            objectsWithEnemies = new List<TransparentObject>();
+
+            int randomNum;
+
+            for (int i = 0; i < numOfDesiredGhosts; i++)
+            {
+                randomNum = Random.Range(0, temporalObjects.Count);
+
+                temporalObjects[randomNum].spawnGhost = true;
+                temporalObjects[randomNum].spawnAllGhosts = true;
+
+                if (ghostIndex < enemiesData.Count)
+                {
+                    temporalObjects[randomNum].enemyData = enemiesData[ghostIndex];
+                    ghostIndex++;
+                }
+                else
+                {
+                    int randomData = Random.Range(0, enemiesData.Count);
+                    temporalObjects[randomNum].enemyData = enemiesData[randomData];
+                }
+
+                objectsWithEnemies.Add(temporalObjects[randomNum]);
+                temporalObjects.RemoveAt(randomNum);
+            }
+
+            for (int i = 0; i < numOfDesiredGems; i++)
+            {
+                randomNum = Random.Range(0, temporalObjects.Count);
+
+                temporalObjects[randomNum].spawnGem = true;
+                temporalObjects.RemoveAt(randomNum);
+
+                objectsWithGems.Add(temporalObjects[randomNum]);
+            }
         }
-
-        for (int i = 0; i < numOfDesiredGems; i++)
+        catch
         {
-            randomNum = Random.Range(0, temporalObjects.Count);
-
-            temporalObjects[randomNum].spawnGem = true;
-            temporalObjects.RemoveAt(randomNum);
-
-            objectsWithGems.Add(temporalObjects[randomNum]);
+            Debug.Log("Room: "+ name +" is bugged");
         }
     }
     #endregion

@@ -83,8 +83,6 @@ public class PlayerController : MonoBehaviour {
     [Range(0, 1)] public float timeVibrating = 0.35f;
 
     [Header("\t    Own Script Variables")]
-    [Tooltip("Transform linterna")]
-    public Transform lantern;
     [Tooltip("Transform elbow")]
     public Transform elbowPoint;
     [Tooltip("Referencia al visual")]
@@ -97,6 +95,15 @@ public class PlayerController : MonoBehaviour {
     public Gradient lightsChargingGradientColor;
     [Tooltip("Luz gradiante de la linterna cargada")]
     public Gradient lightsChargedGradientColor;
+
+    [Header("Animator Component")]
+    public Animator myAnimator;
+    public float minWalkSpeed = 0.2f;
+    public float maxWalkSpeed = 1.6f;
+
+    [Header("Skeleton Mesh Component")]
+    public Transform lightBone;
+    public Transform lanternHandBone;
     #endregion
 
     #region Private Variables
@@ -179,6 +186,9 @@ public class PlayerController : MonoBehaviour {
         delayBetweenChargedShotTimer = 1;
         faceDirection = transform.forward;
 
+        lanternLight.transform.parent = lightBone;
+        lanternLight.transform.localRotation = Quaternion.Euler(180,90,-90);
+
         //Lights
         initialLightIntensity = lerpValueLightIntensity = lanternLight.intensity;
         initialLanternLightRange = lanternLight.range;
@@ -189,7 +199,7 @@ public class PlayerController : MonoBehaviour {
         GameManager.Instance.ModifyHp(currentHp);
     }
 
-    private void Update ()
+    private void Update () //Animations are set on update
     {
         if (Time.timeScale == 0)
             return;
@@ -199,7 +209,6 @@ public class PlayerController : MonoBehaviour {
             Inputs();
 
             Move();
-            RotateByJoystick();
             RotateByMove();
 
             CheckLight();
@@ -210,17 +219,18 @@ public class PlayerController : MonoBehaviour {
             ActionChecker();
         }
         else if (currentState == State.CrossDoor)
-        {
             CrossDoor();
-        }
         else if (currentState == State.FakeWall)
-        {
             CheckForWallTurned();
-        }
         else if (currentState == State.Cinematic)
         {
 
         }
+    }
+
+    private void LateUpdate() //Animations can be cracked in late update
+    {
+        RotateByJoystick();
     }
 
     //Private Methods
@@ -276,6 +286,13 @@ public class PlayerController : MonoBehaviour {
         if (/*!independentFacing &&*/ canMove)
         {
             //Face where you go
+
+            myAnimator.SetFloat("Speed", direction.magnitude);
+
+            if (speed > 0.01f)
+                myAnimator.speed = Mathf.Lerp(minWalkSpeed, maxWalkSpeed, direction.magnitude);
+            else
+                myAnimator.speed = 1;
 
             if (direction != Vector3.zero)
             {
@@ -343,7 +360,7 @@ public class PlayerController : MonoBehaviour {
         //    CameraBehaviour.Instance.ChangeCameraLookState(CameraBehaviour.CameraLookState.Normal);
         //}
 
-        lantern.localRotation = Quaternion.Euler(xLanternRotationValue, 0, 0);
+        lanternHandBone.transform.Rotate (transform.right, xLanternRotationValue, Space.World);
     }
 
     private void RotateByMove()
@@ -384,7 +401,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Mathf.Sign(transform.forward.z) != Mathf.Sign(Camera.main.transform.forward.z))
         {
-            if (Mathf.Abs(Vector3.Angle((Camera.main.transform.position - lantern.transform.position).normalized, lantern.forward)) < angleOfLightDecrease && !areLightsDecreased)
+            if (Mathf.Abs(Vector3.Angle((Camera.main.transform.position - lanternLight.transform.position).normalized, lanternLight.transform.forward)) < angleOfLightDecrease && !areLightsDecreased)
             {
                 lerpValueLightIntensity = initialLightIntensity / lightDecreaseFactor;
 
@@ -393,7 +410,7 @@ public class PlayerController : MonoBehaviour {
                 areLightsDecreased = true;
                 areLightsIncreased = false;
             }
-            else if (Mathf.Abs(Vector3.Angle((Camera.main.transform.position - lantern.transform.position).normalized, lantern.forward)) > angleOfLightDecrease && areLightsDecreased)
+            else if (Mathf.Abs(Vector3.Angle((Camera.main.transform.position - lanternLight.transform.position).normalized, lanternLight.transform.forward)) > angleOfLightDecrease && areLightsDecreased)
             {
                 lerpValueLightIntensity = initialLightIntensity;
 
@@ -466,11 +483,11 @@ public class PlayerController : MonoBehaviour {
 
             Vector3 ghostPositionWithRadius = GetGhostPositionWithRadius(gc.transform.position, gc.ghostSize / 2);
 
-            if (Mathf.Abs(Vector3.Angle((ghostPositionWithRadius - lantern.transform.position).normalized, lantern.forward)) < lanternDamageRadius && (!gc.IsInSight() || gc.IsStunned() != isMaxIntensity))
+            if (Mathf.Abs(Vector3.Angle((ghostPositionWithRadius - lanternLight.transform.position).normalized, lanternLight.transform.forward)) < lanternDamageRadius && (!gc.IsInSight() || gc.IsStunned() != isMaxIntensity))
             {
                 gc.InsideLanternRange(lanternDamage, isMaxIntensity);
             }
-            else if (Mathf.Abs(Vector3.Angle((ghostPositionWithRadius - lantern.transform.position).normalized, lantern.forward)) > lanternDamageRadius && gc.IsInSight())
+            else if (Mathf.Abs(Vector3.Angle((ghostPositionWithRadius - lanternLight.transform.position).normalized, lanternLight.transform.forward)) > lanternDamageRadius && gc.IsInSight())
             {
                 gc.OutsideLanternRange();
             }
@@ -480,11 +497,11 @@ public class PlayerController : MonoBehaviour {
         {
             LightenableObject wp = p.GetComponent<LightenableObject>();
 
-            if (Mathf.Abs(Vector3.Angle((wp.transform.position - lantern.transform.position).normalized, lantern.forward)) < lanternDamageRadius && !wp.IsInSight())
+            if (Mathf.Abs(Vector3.Angle((wp.transform.position - lanternLight.transform.position).normalized, lanternLight.transform.forward)) < lanternDamageRadius && !wp.IsInSight())
             {
                 wp.InsideLanternRange();
             }
-            else if (Mathf.Abs(Vector3.Angle((wp.transform.position - lantern.transform.position).normalized, lantern.forward)) > lanternDamageRadius && wp.IsInSight())
+            else if (Mathf.Abs(Vector3.Angle((wp.transform.position - lanternLight.transform.position).normalized, lanternLight.transform.forward)) > lanternDamageRadius && wp.IsInSight())
             {
                 wp.OutsideLanternRange();
             }
@@ -496,7 +513,7 @@ public class PlayerController : MonoBehaviour {
             {
                 LightenableObject co = l.GetComponent<LightenableObject>();
 
-                if (Mathf.Abs(Vector3.Angle((co.transform.position - lantern.transform.position).normalized, lantern.forward)) < lanternDamageRadius && !co.IsInSight())
+                if (Mathf.Abs(Vector3.Angle((co.transform.position - lanternLight.transform.position).normalized, lanternLight.transform.forward)) < lanternDamageRadius && !co.IsInSight())
                 {
                     co.InsideLanternRange();
                 }
@@ -1021,9 +1038,9 @@ public class PlayerController : MonoBehaviour {
 
     public Vector3 GetGhostPositionWithRadius(Vector3 pos, float radius)
     {
-        float magnitude = (pos - lantern.transform.position).magnitude;
+        float magnitude = (pos - lanternLight.transform.position).magnitude;
 
-        Vector3 positionInLine = lantern.transform.position + lanternLight.transform.forward * magnitude;
+        Vector3 positionInLine = lanternLight.transform.position + lanternLight.transform.forward * magnitude;
 
         Vector3 directionFromPointToGhost = (pos - positionInLine).normalized;
 
