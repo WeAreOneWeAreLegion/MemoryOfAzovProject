@@ -189,7 +189,7 @@ public class GameManager : MonoSingleton<GameManager> {
 
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.G))
-            AddGem();
+            IncreaseNumOfGems();
 
         if (Input.GetKeyDown(KeyCode.H))
             player.RecieveDamage(20);
@@ -444,6 +444,9 @@ public class GameManager : MonoSingleton<GameManager> {
     {
         currentNumOfGems++;
 
+        if (currentNumOfGems >= maxNumOfGems)
+            CallPlayerVictory();
+
         foreach (GameObject e in diamondEggMask)
         {
             if (e.activeInHierarchy)
@@ -503,11 +506,7 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void IncreaseNumOfGems()
     {
-        currentNumOfGems++;
         AddGem();
-
-        if (currentNumOfGems >= maxNumOfGems)
-            CallPlayerVictory();
     }
 
     public void IncreseNumOfGhostsCaptured()
@@ -775,7 +774,7 @@ public class GameManager : MonoSingleton<GameManager> {
         ghostHuntedText.text = "Quantity of ghost hunted: " + currentNumOfGhosts;
         eggsFoundText.text = "Quantity of diamond eggs found: " + currentNumOfGems;
         healthLostText.text = "Quantity of health lost: " + currentHealthLost;
-        timePlayedText.text = "Time played: " + (Time.timeSinceLevelLoad - gameTimeStart).ToString();
+        timePlayedText.text = "Time played: " + (Time.timeSinceLevelLoad - gameTimeStart).ToString("F2");
         /*Debug.Log("A winner is you");
         Debug.Log("Quantity of ghost hunted: "+currentNumOfGhosts);
         Debug.Log("Quantity of diamond eggs found: "+currentNumOfGems);
