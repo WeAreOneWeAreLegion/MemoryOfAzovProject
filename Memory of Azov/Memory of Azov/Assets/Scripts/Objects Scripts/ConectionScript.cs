@@ -140,8 +140,8 @@ public class ConectionScript : LightenableObject {
     {
         isDoorOpen = true;
 
-        leftPoint.transform.localPosition = -Vector3.right * checkerDistance;
-        rightPoint.transform.localPosition = Vector3.right * checkerDistance;
+        leftPoint.transform.position = visual.transform.position - transform.right * checkerDistance;
+        rightPoint.transform.position = visual.transform.position + transform.right * checkerDistance;
 
         Ray ray;
         RaycastHit hit;
@@ -291,10 +291,10 @@ public class ConectionScript : LightenableObject {
     public Vector3 GetDoorClosingPos(Vector3 targetPos)
     {
         if (Vector3.Distance(targetPos, leftPoint.position) < Vector3.Distance(targetPos, rightPoint.position))
-            //Left closer
+            //Right closer
             return new Vector3(rightPoint.position.x, targetPos.y, rightPoint.position.z);
         else
-            //Right closer
+            //Left closer
             return new Vector3(leftPoint.position.x, targetPos.y, leftPoint.position.z);
     }
 
@@ -416,9 +416,14 @@ public class ConectionScript : LightenableObject {
 
     private void OnDrawGizmosSelected()
     {
+        if (transform.rotation.eulerAngles.y == 0 || transform.rotation.eulerAngles.y == 180)
+        {
+            isSideDoor = true;
+        }
+
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + (isSideDoor ? transform.right : Vector3.zero) * checkerDistance);   
-        Gizmos.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + (isSideDoor ? -transform.right : Vector3.zero) * checkerDistance);
+        Gizmos.DrawLine(visual.transform.position + Vector3.up, visual.transform.position + Vector3.up + (isSideDoor ? transform.right : transform.right) * checkerDistance);   
+        Gizmos.DrawLine(visual.transform.position + Vector3.up, visual.transform.position + Vector3.up + (isSideDoor ? -transform.right : -transform.right) * checkerDistance);
     }
     #endregion
 }

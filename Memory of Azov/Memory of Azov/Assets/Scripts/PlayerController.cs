@@ -700,6 +700,7 @@ public class PlayerController : MonoBehaviour {
                     currentDoorCrossing = hit.transform.GetComponent<ConectionScript>();
 
                     transform.position = currentDoorCrossing.GetDoorOpeningPos(transform.position);
+                    
                     ChangePlayerState(State.CrossDoor);
                     SetPointToMoveCrossDoor(currentDoorCrossing.GetDoorClosingPos(transform.position));
 
@@ -892,7 +893,11 @@ public class PlayerController : MonoBehaviour {
     {
         if (isCrossingDoor)
         {
+            myAnimator.SetFloat("Speed", 1);
+            myAnimator.speed = maxWalkSpeed;
+
             myCharController.Move(directionToGoCrossDoor * speed * Time.deltaTime);
+
             if (Vector3.Distance(pointToGoCrossDoor, transform.position) < 0.5f)
             {
                 DoorCrossed();
