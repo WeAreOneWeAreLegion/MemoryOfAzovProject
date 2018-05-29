@@ -103,9 +103,6 @@ public class Enemy : LightenableObject {
         target = GameManager.Instance.GetPlayer();
 
         Invencible();
-
-        if (itemToDrop == ObjectsManager.ItemRequest.Gem)
-            GameManager.Instance.IncreaseMaxGemsQuantity(gameObject);
     }
 
     protected virtual void Update()

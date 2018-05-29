@@ -79,9 +79,11 @@ public class RoomScript : MonoBehaviour
                 randomNum = Random.Range(0, temporalObjects.Count);
 
                 temporalObjects[randomNum].spawnGem = true;
-                temporalObjects.RemoveAt(randomNum);
-
                 objectsWithGems.Add(temporalObjects[randomNum]);
+
+                GameManager.Instance.IncreaseMaxGems(temporalObjects[randomNum].transform.gameObject);
+
+                temporalObjects.RemoveAt(randomNum);
             }
         }
         catch

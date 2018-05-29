@@ -62,8 +62,6 @@ public class TransparentObject : MonoBehaviour {
 
         player = GameManager.Instance.GetPlayer();
 
-        if (spawnGem)
-            GameManager.Instance.IncreaseMaxGemsQuantity(gameObject);
     }
 
     private void Update()

@@ -136,6 +136,7 @@ public class GameManager : MonoSingleton<GameManager> {
     #endregion
 
     #region Private Variables
+    private int healthModifier;
     private bool combateMode;
     private float deltaTime;
     private float gemsPanelTimer;
@@ -144,15 +145,17 @@ public class GameManager : MonoSingleton<GameManager> {
     private bool showGemsPanel;
     private bool showHealthPanel;
     private bool addingGems;
+    private bool addingHealth;
     private bool hasKey;
 
     //Persistance variables
-    private int maxNumOfGems = 6;
+    private int maxNumOfGems = 0;
     private int currentNumOfGems = 0;
     private int currentNumOfGhosts = 0;
     private float gameTimeStart;
     private int currentHealthLost = 0;
 
+    private List<GameObject> allGems = new List<GameObject>();
     private List<EnemyHUD> enemyHUDList = new List<EnemyHUD>();
     private List<EnemyHUD> enemyHUDWaitingList = new List<EnemyHUD>();
 
@@ -184,23 +187,30 @@ public class GameManager : MonoSingleton<GameManager> {
         if (showFPS)
             ShowFPS();
 
-        if (InputsManager.Instance.GetStartButtonDown())
-            PauseGame();
-
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.G))
             AddGem();
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.H))
+            player.RecieveDamage(20);
+
+        if (Input.GetKeyDown(KeyCode.J))
+            player.IncreaseHealth(20);
+
+        if (Input.GetKeyDown(KeyCode.T))
             player.GetGreenLight();
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.Y))
             player.GetRedLight();
+#endif
 
         MovingPanels();
 
         if (isGamePaused)
             PauseActions();
-        
+        else if (InputsManager.Instance.GetStartButtonDown())
+            PauseGame();
+
     }
 
     #region Door Methods
@@ -296,10 +306,16 @@ public class GameManager : MonoSingleton<GameManager> {
     #endregion
 
     #region HUD Methods
+    public void SetInitialHp(int currentHp)
+    {
+        ModifyHealthPanel(currentHp);
+    }
+
     public void ModifyHp(int currentHp)
     {
-        hpText.text = currentHp.ToString();
-        hpTextShadow.text = hpText.text;
+        healthModifier = currentHp;
+        addingHealth = true;
+        ShowHealthPanel();
     }
 
     public void ActivePlayerHUD(ButtonRequest req)
@@ -351,28 +367,36 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void MovingPanels()
     {
-        GemsPanel();
         HealthPanel();
+        GemsPanel();
     }
 
     private void HealthPanel()
     {
         if (showHealthPanel)
         {
-            if (gemsPanelTimer >= 1)
-                gemsPanelTimer = 1;
+            if (healthPanelTimer >= 1)
+            {
+                if (addingHealth)
+                {
+                    StartCoroutine(ModifyHealthCoroutine(healthModifier));
+                    addingHealth = false;
+                }
+
+                healthPanelTimer = 1;
+            }
             else
-                gemsPanelTimer += Time.unscaledDeltaTime / gemsPanelTime;
+                healthPanelTimer += Time.unscaledDeltaTime / healthPanelTime;
         }
         else
         {
-            if (gemsPanelTimer <= 0)
-                gemsPanelTimer = 0;
+            if (healthPanelTimer <= 0)
+                healthPanelTimer = 0;
             else
-                gemsPanelTimer -= Time.unscaledDeltaTime / gemsPanelTime;
+                healthPanelTimer -= Time.unscaledDeltaTime / healthPanelTime;
         }
 
-        gemsPanel.anchoredPosition = Vector2.up * Mathf.Lerp(gemsPanelYHidden, gemsPanelYShown, gemsPanelTimer) + Vector2.right * gemsPanel.anchoredPosition.x;
+        healthPanel.anchoredPosition = Vector2.up * Mathf.Lerp(healthPanelYHidden, healthPanelYShown, healthPanelTimer) + Vector2.right * healthPanel.anchoredPosition.x;
     }
 
     private void GemsPanel()
@@ -410,6 +434,12 @@ public class GameManager : MonoSingleton<GameManager> {
         ShowGemsPanel();
     }
 
+    private void ModifyHealthPanel(int currentHp)
+    {
+        hpText.text = currentHp.ToString();
+        hpTextShadow.text = hpText.text;
+    }
+
     private void VisualGemAdd()
     {
         currentNumOfGems++;
@@ -424,6 +454,15 @@ public class GameManager : MonoSingleton<GameManager> {
         }
     }
 
+    IEnumerator ModifyHealthCoroutine(int currentHp)
+    {
+        yield return new WaitForSecondsRealtime(timeBeforeChangingHealth);
+        ModifyHealthPanel(currentHp);
+        yield return new WaitForSecondsRealtime(timeShowingHealthPanel);
+        HideHealthPanel();
+        yield return null;
+    }
+
     IEnumerator AddNewGemGathered()
     {
         yield return new WaitForSecondsRealtime(timeBeforeAddingGem);
@@ -431,6 +470,17 @@ public class GameManager : MonoSingleton<GameManager> {
         yield return new WaitForSecondsRealtime(timeShowingGemsPanel);
         HideGemsPanel();
         yield return null;
+    }
+
+    public void ShowHealthPanel()
+    {
+        showHealthPanel = true;
+    }
+
+    public void HideHealthPanel()
+    {
+        if (player.GetCurrentHp() == player.initialHp)
+            showHealthPanel = false;
     }
 
     public void ShowGemsPanel()
@@ -445,9 +495,9 @@ public class GameManager : MonoSingleton<GameManager> {
     #endregion
 
     #region Persistance Modify Methods
-    public void IncreaseMaxGemsQuantity(GameObject spawner)
+    public void IncreaseMaxGems(GameObject spawner)
     {
-        //allgems.Add(spawner);
+        allGems.Add(spawner);
         maxNumOfGems++;
     }
 
@@ -457,7 +507,7 @@ public class GameManager : MonoSingleton<GameManager> {
         AddGem();
 
         if (currentNumOfGems >= maxNumOfGems)
-            CallPlayerVictory(); // Aqui llamamos al metodo de victoria
+            CallPlayerVictory();
     }
 
     public void IncreseNumOfGhostsCaptured()
@@ -555,19 +605,17 @@ public class GameManager : MonoSingleton<GameManager> {
     {
         if (!confirmationPanelOpen)
         {
-            if (isGamePaused)
-            {
-                Time.timeScale = 1;
-                pausePanel.SetActive(false);
-                pauseMenuGO.SetActive(false);
-            }
-            else
-            {
-                StartCoroutine(HighlightButton(resumeButton));
-                Time.timeScale = 0;
-                pausePanel.SetActive(true);
-                pauseMenuGO.SetActive(true);
-            }
+            StartCoroutine(HighlightButton(resumeButton));
+
+            ShowGemsPanel();
+            ShowHealthPanel();
+
+            Time.timeScale = 0;
+
+            Debug.Log("Showing pause panel");
+            pausePanel.SetActive(true);
+            pauseMenuGO.SetActive(true);
+
             isGamePaused = !isGamePaused;
         }
 
@@ -575,6 +623,10 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void Resume()
     {
+        HideGemsPanel();
+        HideHealthPanel();
+
+        Debug.Log("Hide pause panel");
         isGamePaused = false;
         pausePanel.SetActive(false);
         pauseMenuGO.SetActive(false);

@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour {
         chargindParticles.gameObject.SetActive(false);
 
         //HUD initialization
-        GameManager.Instance.ModifyHp(currentHp);
+        GameManager.Instance.SetInitialHp(currentHp);
     }
 
     private void Update () //Animations are set on update
@@ -935,6 +935,11 @@ public class PlayerController : MonoBehaviour {
     public void ChangePlayerState(State newState)
     {
         currentState = newState;
+    }
+
+    public int GetCurrentHp()
+    {
+        return currentHp;
     }
 
     public void GetGreenLight()

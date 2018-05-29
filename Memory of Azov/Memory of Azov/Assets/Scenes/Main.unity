@@ -23400,7 +23400,7 @@ MonoBehaviour:
     changeColorButton: 101
     chargeTrigger: Fire1
     pauseButton: 27
-  isControllerPlaying: 1
+  isControllerPlaying: 0
   invertVerticalRotation: 1
   joystickRotationFactor: 3
   leftPlayer1Vibrator: 0
@@ -40419,13 +40419,13 @@ Light:
   m_SpotAngle: 123
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0
+    m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -42051,8 +42051,11 @@ MonoBehaviour:
   playerHUD: {fileID: 66422989}
   enemyHUDPrefab: {fileID: 1001317281090866, guid: 7ac1ab490625ad14b9197f197d55606f,
     type: 2}
-  gemsPanel: {fileID: 1132856621}
   pausePanel: {fileID: 1710354252}
+  hpText: {fileID: 838903577}
+  hpTextShadow: {fileID: 743037224}
+  fpsText: {fileID: 1820057237}
+  gemsPanel: {fileID: 1132856621}
   diamondEggMask:
   - {fileID: 2012563650}
   - {fileID: 348532020}
@@ -42063,14 +42066,17 @@ MonoBehaviour:
   - {fileID: 1081732772}
   - {fileID: 637656573}
   - {fileID: 1253596996}
-  hpText: {fileID: 838903577}
-  hpTextShadow: {fileID: 743037224}
-  fpsText: {fileID: 1820057237}
   gemsPanelYHidden: 100
   gemsPanelYShown: 0
   gemsPanelTime: 0.2
   timeBeforeAddingGem: 0.4
   timeShowingGemsPanel: 1
+  healthPanel: {fileID: 1837970760}
+  healthPanelYHidden: -200
+  healthPanelYShown: 0
+  healthPanelTime: 0.4
+  timeBeforeChangingHealth: 0.4
+  timeShowingHealthPanel: 1
   pauseMenuGO: {fileID: 1904989498}
   restartConfirmationPanel: {fileID: 135777744}
   settingsPanel: {fileID: 459307364}
@@ -52242,11 +52248,11 @@ RectTransform:
   m_Father: {fileID: 1054202682}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3.2000122, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -86, y: -9}
   m_SizeDelta: {x: 77.099976, y: 44.72}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1820057237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52279,7 +52285,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: FPS:00
+  m_Text: 'FPS:00
+
+'
 --- !u!222 &1820057238
 CanvasRenderer:
   m_ObjectHideFlags: 0

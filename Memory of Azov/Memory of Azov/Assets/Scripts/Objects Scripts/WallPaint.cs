@@ -36,7 +36,7 @@ public class WallPaint : LightenableObject
         particles.SetActive(false);
 
         if (itemToDrop == ObjectsManager.ItemRequest.Gem && !spawnGhost)
-            GameManager.Instance.IncreaseMaxGemsQuantity(this.gameObject);
+            GameManager.Instance.IncreaseMaxGems(this.gameObject);
     }
 	
 	private void Update ()
