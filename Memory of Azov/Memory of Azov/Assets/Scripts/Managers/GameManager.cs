@@ -51,12 +51,8 @@ public class GameManager : MonoSingleton<GameManager> {
     public PlayerHUD playerHUD;
     [Tooltip("Referencia al hud del enemigo")]
     public GameObject enemyHUDPrefab;
-    [Tooltip("Referencia to gems panel")]
-    public RectTransform gemsPanel;
     [Tooltip("Referencia al hud de pausa")]
     public GameObject pausePanel;
-    [Tooltip("Referencia a los huevos del hud")]
-    public List<GameObject> diamondEggMask = new List<GameObject>();
     //Componens
     [Tooltip("Referencia al texto de vida")]
     public Text hpText;
@@ -64,6 +60,12 @@ public class GameManager : MonoSingleton<GameManager> {
     public Text hpTextShadow;
     [Tooltip("Referencia al texto de fps")]
     public Text fpsText;
+
+    [Header("Gems Panel")]
+    [Tooltip("Referencia to gems panel")]
+    public RectTransform gemsPanel;
+    [Tooltip("Referencia a los huevos del hud")]
+    public List<GameObject> diamondEggMask = new List<GameObject>();
     [Tooltip("Posicion en el cual el panel de gemas esta escondido")]
     public float gemsPanelYHidden = 100;
     [Tooltip("Posicion en el cual el panel de gemas esta mostradose")]
@@ -74,6 +76,20 @@ public class GameManager : MonoSingleton<GameManager> {
     public float timeBeforeAddingGem = 0.4f;
     [Tooltip("Tiempo en el cual el panel de gemas tardara en desaparecer tras mostrar gema")]
     public float timeShowingGemsPanel = 1f;
+
+    [Header("Health Panel")]
+    [Tooltip("Referencia to health panel")]
+    public RectTransform healthPanel;
+    [Tooltip("Posicion en el cual el panel de vida esta escondido")]
+    public float healthPanelYHidden = 100;
+    [Tooltip("Posicion en el cual el panel de vida esta mostradose")]
+    public float healthPanelYShown = 0;
+    [Tooltip("Tiempo en el cual el panel de vida tardara en aparecer del todo")]
+    public float healthPanelTime = 1;
+    [Tooltip("Tiempo en el cual el panel de vida tardara en mostrar gema")]
+    public float timeBeforeChangingHealth = 0.4f;
+    [Tooltip("Tiempo en el cual el panel de vida tardara en desaparecer tras mostrar gema")]
+    public float timeShowingHealthPanel = 1f;
 
     [Header("\t--Pause Menu Variables--")]
     [Tooltip("Menu variables to know what to show depending on the menu I am currently at")]
@@ -123,8 +139,10 @@ public class GameManager : MonoSingleton<GameManager> {
     private bool combateMode;
     private float deltaTime;
     private float gemsPanelTimer;
+    private float healthPanelTimer;
     private bool isGamePaused;
     private bool showGemsPanel;
+    private bool showHealthPanel;
     private bool addingGems;
     private bool hasKey;
 
@@ -178,7 +196,7 @@ public class GameManager : MonoSingleton<GameManager> {
         if (Input.GetKeyDown(KeyCode.S))
             player.GetRedLight();
 
-        GemsPanel();
+        MovingPanels();
 
         if (isGamePaused)
             PauseActions();
@@ -329,6 +347,32 @@ public class GameManager : MonoSingleton<GameManager> {
     public void DisablePlayerHUD()
     {
         playerHUD.HideImage();
+    }
+
+    private void MovingPanels()
+    {
+        GemsPanel();
+        HealthPanel();
+    }
+
+    private void HealthPanel()
+    {
+        if (showHealthPanel)
+        {
+            if (gemsPanelTimer >= 1)
+                gemsPanelTimer = 1;
+            else
+                gemsPanelTimer += Time.unscaledDeltaTime / gemsPanelTime;
+        }
+        else
+        {
+            if (gemsPanelTimer <= 0)
+                gemsPanelTimer = 0;
+            else
+                gemsPanelTimer -= Time.unscaledDeltaTime / gemsPanelTime;
+        }
+
+        gemsPanel.anchoredPosition = Vector2.up * Mathf.Lerp(gemsPanelYHidden, gemsPanelYShown, gemsPanelTimer) + Vector2.right * gemsPanel.anchoredPosition.x;
     }
 
     private void GemsPanel()
