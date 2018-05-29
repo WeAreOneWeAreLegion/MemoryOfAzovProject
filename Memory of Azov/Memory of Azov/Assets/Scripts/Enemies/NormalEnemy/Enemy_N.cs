@@ -12,9 +12,9 @@ public class Enemy_N : Enemy
         ChangeState(new AwakeState_N());
     }
 
-    public override void SetUpEnemyVariables(EnemySO enemyData)
+    public override void SetUpEnemyVariables(EnemySO enemyData, ObjectsManager.ItemRequest dropItem)
     {
-        base.SetUpEnemyVariables(enemyData);
+        base.SetUpEnemyVariables(enemyData, dropItem);
 
 
         if (currentState != null)

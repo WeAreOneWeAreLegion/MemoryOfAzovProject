@@ -11,6 +11,8 @@ public class DoorBell : MonoBehaviour {
     [Tooltip("Posiciones donde apareceran los fantasmas, por transform habra un fantasma")]
     public List<Transform> ghostSpawns = new List<Transform>();
     public List<EnemySO> enemiesData = new List<EnemySO>();
+    [Tooltip("Cuantos fantasmas dejaran caer una vida")]
+    public int numOfGivenHearts;
     [Header("\t    Own Script Variables")]
     [Tooltip("Puerta que accionara este timbre")]
     public ConectionScript myDoor;
@@ -29,7 +31,12 @@ public class DoorBell : MonoBehaviour {
 
                 Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("FloorLayer"));
 
-                GameObject go = EnemyManager.Instance.GetEnemy(hit.transform != null ? hit.transform.parent : this.transform, enemiesData[i]);
+                ObjectsManager.ItemRequest ir = ObjectsManager.ItemRequest.None;
+
+                if (i < numOfGivenHearts)
+                    ir = ObjectsManager.ItemRequest.Health;
+
+                GameObject go = EnemyManager.Instance.GetEnemy(hit.transform != null ? hit.transform.parent : this.transform, enemiesData[i], ir);
 
                 go.transform.position = ghostSpawns[i].position;
                 go.transform.forward = GameManager.Instance.GetPlayer().position - transform.position;

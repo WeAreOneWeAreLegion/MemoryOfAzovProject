@@ -532,6 +532,11 @@ public class GameManager : MonoSingleton<GameManager> {
         return combateMode;
     }
 
+    public bool HasKey()
+    {
+        return hasKey;
+    }
+
     public bool IsDirectLightActivated()
     {
         return directionalLight.enabled;

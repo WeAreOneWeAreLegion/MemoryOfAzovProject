@@ -50,9 +50,9 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     private float xLeftWall;
     private float xRightWall;
     private float zBackWall;
-    private float currentRotation;
+    //private float currentRotation;
     private float backwardFirstDistance;
-    private float cameraRotationLerpTimer;
+    //private float cameraRotationLerpTimer;
     private bool wallsFound;
     private bool backwardDistanceSet;
     private bool dontFollow;
@@ -73,7 +73,7 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
             target = GameManager.Instance.GetPlayer();
         }
 
-        currentRotation = transform.eulerAngles.x;
+        //currentRotation = transform.eulerAngles.x;
         currentCameraLook = normalCamera;
     }
 
@@ -228,7 +228,7 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     public void ChangeCameraLookState(CameraLookState newLookState)
     {
         currentCameraLookState = newLookState;
-        cameraRotationLerpTimer = 0;
+        //cameraRotationLerpTimer = 0;
 
         switch (currentCameraLookState)
         {

@@ -46,6 +46,7 @@ public class ConectionScript : LightenableObject {
     private bool isDoorOpen;
     private bool insideRadius;
     private bool lightsSwitched;
+    private bool isSetUpDone;
     private float timer;
 
     private GameObject roomLeftBottom, roomRightTop;
@@ -72,11 +73,6 @@ public class ConectionScript : LightenableObject {
             isSideDoor = true;
         }
 
-        if (roomLeftBottom != null && roomRightTop != null)
-        {
-            DisableStartRooms();
-        }
-
         target = GameManager.Instance.GetPlayer();
 
         lighteningParticles.SetActive(false);
@@ -84,6 +80,12 @@ public class ConectionScript : LightenableObject {
 
     private void Update()
     {
+        if (!isSetUpDone && roomLeftBottom != null && roomRightTop != null)
+        {
+            DisableStartRooms();
+            isSetUpDone = true;
+        }
+
         if (currentDoorType == DoorType.Hidden)
         {
             CheckPlayerDistance();

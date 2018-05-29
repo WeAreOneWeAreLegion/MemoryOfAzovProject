@@ -41,7 +41,7 @@ public class EnemyManager : MonoSingleton<EnemyManager> {
     #endregion
 
     #region Enemy Managment Methods
-    public GameObject GetEnemy(Transform parent, EnemySO enemyData)
+    public GameObject GetEnemy(Transform parent, EnemySO enemyData, ObjectsManager.ItemRequest dropItem)
     {
         GameObject g;
 
@@ -65,7 +65,7 @@ public class EnemyManager : MonoSingleton<EnemyManager> {
             GameManager.Instance.BlockPlayerDoors();
         }
 
-        g.GetComponent<Enemy>().SetUpEnemyVariables(enemyData);
+        g.GetComponent<Enemy>().SetUpEnemyVariables(enemyData, dropItem);
         enemyGivenCounter++;
 
         return g;

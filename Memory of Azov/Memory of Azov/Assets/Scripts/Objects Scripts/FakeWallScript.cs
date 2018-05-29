@@ -29,12 +29,11 @@ public class FakeWallScript : MonoBehaviour {
     private bool isDoorOpen = true;
     private bool isTurning;
     private bool isLeftRoomActive = true;
+    private bool isSetUpDone;
     private float currentRotationBeforeTurn;
     private float timer;
 
     private GameObject roomLeftBottom, roomRightTop;
-
-    private Transform target;
     #endregion
 
     private void Awake()
@@ -42,18 +41,14 @@ public class FakeWallScript : MonoBehaviour {
         SetDoors();
     }
 
-    private void Start()
-    {
-        if (roomLeftBottom != null && roomRightTop != null)
-        {
-            DisableStartRooms();
-        }
-
-        target = GameManager.Instance.GetPlayer();
-    }
-
     private void Update()
     {
+        if (!isSetUpDone && roomLeftBottom != null && roomRightTop != null)
+        {
+            DisableStartRooms();
+            isSetUpDone = true;
+        }
+
         if (isTurning)
         {
             timer += Time.deltaTime * turnSpeed;

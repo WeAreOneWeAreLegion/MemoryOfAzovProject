@@ -25,4 +25,4 @@ MonoBehaviour:
   ghostDamage: 20
   attackRadius: 2
   attackDelay: 2
-  itemToDrop: 2
+  itemToDrop: 0

@@ -15,6 +15,8 @@ public class WallPaint : LightenableObject
     [Header("Enemy Variables")]
     [Tooltip("Spawneo Fantasma?")]
     public bool spawnGhost;
+    [Tooltip("El fantasma dejara caer una vida")]
+    public bool givenHealth;
     [Tooltip("Fantasma a instanciar")]
     public EnemySO enemyData;
 
@@ -81,7 +83,7 @@ public class WallPaint : LightenableObject
 
                     Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("FloorLayer"));
 
-                    GameObject go = EnemyManager.Instance.GetEnemy(hit.transform != null ? hit.transform.parent : this.transform, enemyData);
+                    GameObject go = EnemyManager.Instance.GetEnemy(hit.transform != null ? hit.transform.parent : this.transform, enemyData, givenHealth ? ObjectsManager.ItemRequest.Health : ObjectsManager.ItemRequest.None);
 
                     go.transform.position = new Vector3(transform.position.x, hit.point.y + EnemyManager.Instance.enemyFloorYOffset, transform.position.z);
                     go.transform.forward = -transform.forward;

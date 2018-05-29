@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour {
 
     //Input variables
     private float xMove, zMove;
-    private float xRotation, yRotation;
+    private float yRotation; //xRotation provisional removed
 
     //Light lerp values
     private bool hasGreenLight;
@@ -272,7 +272,7 @@ public class PlayerController : MonoBehaviour {
         xMove = InputsManager.Instance.GetMovementX();
         zMove = InputsManager.Instance.GetMovementY();
 
-        xRotation = InputsManager.Instance.GetRotationX();
+        //xRotation = InputsManager.Instance.GetRotationX();
         yRotation = InputsManager.Instance.GetRotationY();
     }
 
@@ -784,10 +784,8 @@ public class PlayerController : MonoBehaviour {
         aimTimer = timeBetweenAim / 2;
 
         isLightCharging = false;
-        if (lightChargingTimer > 0.05f)
-        {
-            isLightHighIntensity = true;
-        }
+        isLightHighIntensity = true;
+
         delayBetweenChargedShotTimer = 0;
 
         lightChargingTimer = 0;
@@ -871,6 +869,8 @@ public class PlayerController : MonoBehaviour {
         stopByAiming = true;
         canMove = false;
         aimTimer = 0;
+
+        myAnimator.SetFloat("Speed", 0);
     }
 
     private void StopMovementByHit()
@@ -882,6 +882,8 @@ public class PlayerController : MonoBehaviour {
         stopByHit = true;
         canMove = false;
         hitTimer = 0;
+
+        myAnimator.SetFloat("Speed", 0);
     }
     #endregion
 

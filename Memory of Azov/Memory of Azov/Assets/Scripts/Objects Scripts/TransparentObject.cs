@@ -12,6 +12,8 @@ public class TransparentObject : MonoBehaviour {
     public bool spawnGem;
     [Tooltip("Llamo a todos los fantasmas de la sala?")]
     public bool spawnAllGhosts;
+    [Tooltip("El fantasma dejara caer una vida")]
+    public bool givenHealth;
     [Tooltip("La referencia de como sera el fantasma a generar")]
     public EnemySO enemyData;
 
@@ -166,7 +168,7 @@ public class TransparentObject : MonoBehaviour {
 
             Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("FloorLayer"));
 
-            GameObject go = EnemyManager.Instance.GetEnemy(hit.transform != null ? hit.transform.parent : this.transform, enemyData);
+            GameObject go = EnemyManager.Instance.GetEnemy(hit.transform != null ? hit.transform.parent : this.transform, enemyData, givenHealth ? ObjectsManager.ItemRequest.Health : ObjectsManager.ItemRequest.None);
 
             go.transform.position = new Vector3(transform.position.x, hit.point.y + EnemyManager.Instance.enemyFloorYOffset, transform.position.z);
             go.transform.forward = GameManager.Instance.GetPlayer().position - transform.position;

@@ -128,7 +128,7 @@ public class InputsManager : MonoSingleton<InputsManager> {
 
     public bool GetIntensityButtonDown()
     {
-        return isControllerPlaying ? Input.GetButtonDown(xboxInputs.chargeTrigger1.ToString()) || Input.GetButtonDown(xboxInputs.chargeTrigger2.ToString()) : Input.GetButtonDown(pcInputs.chargeTrigger.ToString());
+        return isControllerPlaying ? Input.GetButton(xboxInputs.chargeTrigger1.ToString()) || Input.GetButton(xboxInputs.chargeTrigger2.ToString()) : Input.GetButtonDown(pcInputs.chargeTrigger.ToString());
     }
 
     public bool GetIntensityButtonUp()

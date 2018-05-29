@@ -42,10 +42,4 @@ public class EnemySO : ScriptableObject
     [Tooltip("Tiempo entre ataques")]
     [Range(1, 4)] public float attackDelay = 2f;
 
-    [Header("\t    Own Script Variables")]
-
-    [Header("Drop Variables")]
-    [Tooltip("Objeto que deja caer el personaje al morir")]
-    public ObjectsManager.ItemRequest itemToDrop = ObjectsManager.ItemRequest.Health;
-
 }

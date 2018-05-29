@@ -120,7 +120,7 @@ public class Enemy : LightenableObject {
     }
 
     #region Set-Up Method
-    public virtual void SetUpEnemyVariables(EnemySO enemyData)
+    public virtual void SetUpEnemyVariables(EnemySO enemyData, ObjectsManager.ItemRequest dropItem)
     {
         currentGhostColor = enemyData.ghostColor;
 
@@ -161,7 +161,7 @@ public class Enemy : LightenableObject {
         attackRadius = enemyData.attackRadius;
         attackDelay = enemyData.attackDelay;
 
-        itemToDrop = enemyData.itemToDrop;
+        itemToDrop = dropItem;
 
         //Start variables
         initialSpeed = speed;

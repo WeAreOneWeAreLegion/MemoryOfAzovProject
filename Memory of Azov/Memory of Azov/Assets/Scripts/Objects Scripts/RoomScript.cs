@@ -7,6 +7,7 @@ public class RoomScript : MonoBehaviour
     #region Public Variables
     [Header("\tGame Designers Variables")]
     public int numOfDesiredGhosts;
+    public int numOfGhostGivingHearts;
     public int numOfDesiredGems;
     public List<EnemySO> enemiesData = new List<EnemySO>();
 
@@ -18,6 +19,7 @@ public class RoomScript : MonoBehaviour
 
     #region Private Variables
     private int ghostIndex = 0;
+    private int heartsIndex = 0;
 
     private List<TransparentObject> objectsWithEnemies = new List<TransparentObject>();
     private List<TransparentObject> objectsWithGems = new List<TransparentObject>();
@@ -61,12 +63,25 @@ public class RoomScript : MonoBehaviour
 
                 if (ghostIndex < enemiesData.Count)
                 {
+                    if (heartsIndex < numOfGhostGivingHearts)
+                    {
+                        temporalObjects[randomNum].givenHealth = true;
+                        heartsIndex++;
+                    }
+
                     temporalObjects[randomNum].enemyData = enemiesData[ghostIndex];
                     ghostIndex++;
                 }
                 else
                 {
                     int randomData = Random.Range(0, enemiesData.Count);
+
+                    if (heartsIndex < numOfGhostGivingHearts)
+                    {
+                        temporalObjects[randomNum].givenHealth = true;
+                        heartsIndex++;
+                    }
+
                     temporalObjects[randomNum].enemyData = enemiesData[randomData];
                 }
 
