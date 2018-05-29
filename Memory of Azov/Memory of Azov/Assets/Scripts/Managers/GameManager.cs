@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoSingleton<GameManager> {
 
-    public enum TypeOfTag { Player, Enemy, Wall, Door, DoorTrigger, Bell, HittableObject, FakeWall }
+    public enum TypeOfTag { Player, Enemy, Wall, Door, DoorTrigger, Bell, HittableObject, FakeWall, CollectableObject }
     public enum ButtonRequest { A, B, X, Y, RB, LB, RT, LT }
 
     #region Public Variables
@@ -126,6 +126,7 @@ public class GameManager : MonoSingleton<GameManager> {
     private bool isGamePaused;
     private bool showGemsPanel;
     private bool addingGems;
+    private bool hasKey;
 
     //Persistance variables
     private int maxNumOfGems = 6;
@@ -170,6 +171,12 @@ public class GameManager : MonoSingleton<GameManager> {
 
         if (Input.GetKeyDown(KeyCode.G))
             AddGem();
+
+        if (Input.GetKeyDown(KeyCode.A))
+            player.GetGreenLight();
+
+        if (Input.GetKeyDown(KeyCode.S))
+            player.GetRedLight();
 
         GemsPanel();
 
@@ -456,6 +463,13 @@ public class GameManager : MonoSingleton<GameManager> {
     #endregion
 
     //Setters
+
+    #region Game Events Methods
+    public void GetKey()
+    {
+        hasKey = true;
+    }
+    #endregion
 
     #region FPS Method
     private void ShowFPS()

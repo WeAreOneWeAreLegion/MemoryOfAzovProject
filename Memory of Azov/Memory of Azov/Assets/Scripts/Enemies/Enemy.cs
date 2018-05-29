@@ -102,6 +102,8 @@ public class Enemy : LightenableObject {
         ghostSize = GetComponent<SphereCollider>().radius;
         target = GameManager.Instance.GetPlayer();
 
+        Invencible();
+
         if (itemToDrop == ObjectsManager.ItemRequest.Gem)
             GameManager.Instance.IncreaseMaxGemsQuantity(gameObject);
     }
@@ -169,6 +171,8 @@ public class Enemy : LightenableObject {
         currentHp = initialHp;
         oscilatorLifeTime = -0.75f;
         target = GameManager.Instance.GetPlayer();
+
+        Invencible();
 
         GameManager.Instance.CreateEnemyHUD(transform, (int)currentHp);
     }
@@ -251,7 +255,7 @@ public class Enemy : LightenableObject {
 
     public virtual void CalculateEscapePoint()
     {
-        scapePoint = GameManager.Instance.player.GetOutsideLightPoint(transform.position, 5);
+        scapePoint = GameManager.Instance.player.GetOutsideLightPoint(transform.position, 10);
         Debug.DrawLine(transform.position, scapePoint, Color.red, -1, false);
 
         surrogateTarget.position = scapePoint;
@@ -335,12 +339,19 @@ public class Enemy : LightenableObject {
     public void InsideLanternRange(int damageToRecieve, bool stun)
     {
         if (isInvincible || !GameManager.Instance.player.IsCurrentLightOfColor(currentGhostColor))
+        {
+            recievingDamage = false;
             return;
+        }
 
         if (stun)
             ChangeState(new StunState_N());
 
         recievingDamage = true;
+
+        if (!myAnimator.GetCurrentAnimatorStateInfo(0).IsName("EnemyIdle"))
+            myAnimator.SetTrigger("Alert");
+
         lanternDamage = damageToRecieve;
 
         myMat.SetColor("_RimColor", Color.magenta);

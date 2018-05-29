@@ -119,10 +119,6 @@ public class WallPaint : LightenableObject
 
     public override void InsideLanternRange()
     {
-        if (GameManager.Instance.GetIsInCombateMode())
-        {
-            return;
-        }
         insideRadius = true;
     }
 

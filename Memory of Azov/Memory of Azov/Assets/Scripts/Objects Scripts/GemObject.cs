@@ -53,7 +53,13 @@ public class GemObject : MonoBehaviour
     }
     #endregion
 
-    #region Discover Method
+    #region Public Methods
+    public void ResetGem()
+    {
+        myRGB.isKinematic = false;
+        GetComponent<Collider>().isTrigger = false;
+    }
+
     public void DiscoveredByFeature()
     {
         if (myRGB == null)

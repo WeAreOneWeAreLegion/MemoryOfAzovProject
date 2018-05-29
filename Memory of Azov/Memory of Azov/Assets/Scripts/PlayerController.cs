@@ -135,6 +135,9 @@ public class PlayerController : MonoBehaviour {
     private float xRotation, yRotation;
 
     //Light lerp values
+    private bool hasGreenLight;
+    private bool hasRedLight;
+
     private bool lightEnabled = true;
     private bool isLightHighIntensity = false;
     private bool isMaxIntensity = false;
@@ -270,7 +273,7 @@ public class PlayerController : MonoBehaviour {
         direction.x = xMove;
         direction.z = zMove;
 
-        if (!independentFacing && canMove)
+        if (/*!independentFacing &&*/ canMove)
         {
             //Face where you go
 
@@ -322,30 +325,30 @@ public class PlayerController : MonoBehaviour {
 
     private void RotateByJoystick()
     {
-        if (xMove == 0 && zMove == 0 || independentFacing)
-            transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
+        //if (xMove == 0 && zMove == 0 || independentFacing)
+        //    transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
 
         xLanternRotationValue = Mathf.Clamp(xLanternRotationValue + yRotation * lanternRotationSpeed * Time.deltaTime, -topLanternAngle, bottomLanternAngle);
 
-        if (xLanternRotationValue < -topLanternAngle + 10)
-        {
-            CameraBehaviour.Instance.ChangeCameraLookState(CameraBehaviour.CameraLookState.LookUp);
-        }
-        else if (xLanternRotationValue > bottomLanternAngle - 3)
-        {
-            CameraBehaviour.Instance.ChangeCameraLookState(CameraBehaviour.CameraLookState.LookDown);
-        }
-        else if (xLanternRotationValue > -topLanternAngle + 15 && xLanternRotationValue < bottomLanternAngle - 6)
-        {
-            CameraBehaviour.Instance.ChangeCameraLookState(CameraBehaviour.CameraLookState.Normal);
-        }
+        //if (xLanternRotationValue < -topLanternAngle + 10)
+        //{
+        //    CameraBehaviour.Instance.ChangeCameraLookState(CameraBehaviour.CameraLookState.LookUp);
+        //}
+        //else if (xLanternRotationValue > bottomLanternAngle - 3)
+        //{
+        //    CameraBehaviour.Instance.ChangeCameraLookState(CameraBehaviour.CameraLookState.LookDown);
+        //}
+        //else if (xLanternRotationValue > -topLanternAngle + 15 && xLanternRotationValue < bottomLanternAngle - 6)
+        //{
+        //    CameraBehaviour.Instance.ChangeCameraLookState(CameraBehaviour.CameraLookState.Normal);
+        //}
 
         lantern.localRotation = Quaternion.Euler(xLanternRotationValue, 0, 0);
     }
 
     private void RotateByMove()
     {
-        if ((!independentFacing && canMove && (xMove != 0 || zMove != 0)) || autoFace)
+        if ((/*!independentFacing &&*/ canMove && (xMove != 0 || zMove != 0)) || autoFace)
         {
             float extraSpeed = autoFace ? 3.5f : 3f;
 
@@ -710,11 +713,20 @@ public class PlayerController : MonoBehaviour {
             {
                 TransparentObject to = hit.transform.parent.GetComponent<TransparentObject>();
                 to.ShakeObjectAnimation();
+                StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
             }
             else if (hit.transform.GetComponent<TransparentObject>() != null)
             {
                 TransparentObject to = hit.transform.GetComponent<TransparentObject>();
                 to.ShakeObjectAnimation();
+                StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+            }
+
+            if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.CollectableObject))
+            {
+                CollectableObject co = hit.transform.GetComponent<CollectableObject>();
+                co.CollectObject();
+                StopPlusSoundRequired(SoundManager.SoundRequest.P_ButtonPush);
             }
 
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Bell) && 
@@ -724,8 +736,6 @@ public class PlayerController : MonoBehaviour {
                 StopPlusSoundRequired(SoundManager.SoundRequest.P_ButtonPush);
                 return;
             }
-
-            StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
         }
 
     }
@@ -757,7 +767,7 @@ public class PlayerController : MonoBehaviour {
         aimTimer = timeBetweenAim / 2;
 
         isLightCharging = false;
-        if (lightChargingTimer > 0.2f)
+        if (lightChargingTimer > 0.05f)
         {
             isLightHighIntensity = true;
         }
@@ -797,10 +807,19 @@ public class PlayerController : MonoBehaviour {
                 lanternLight.color = neutralColor;
                 break;
             case LightColor.Secondary:
-                lanternLight.color = secondColor;
+                if (!hasGreenLight)
+                    currentLightColor--;
+                else
+                    lanternLight.color = secondColor;
                 break;
             case LightColor.Third:
-                lanternLight.color = thirdColor;
+                if (!hasRedLight)
+                {
+                    currentLightColor = 0;
+                    lanternLight.color = neutralColor;
+                }
+                else
+                    lanternLight.color = thirdColor;
                 break;
         }
     }
@@ -899,6 +918,16 @@ public class PlayerController : MonoBehaviour {
     public void ChangePlayerState(State newState)
     {
         currentState = newState;
+    }
+
+    public void GetGreenLight()
+    {
+        hasGreenLight = true;
+    }
+
+    public void GetRedLight()
+    {
+        hasRedLight = true;
     }
 
     public void CombateMode()

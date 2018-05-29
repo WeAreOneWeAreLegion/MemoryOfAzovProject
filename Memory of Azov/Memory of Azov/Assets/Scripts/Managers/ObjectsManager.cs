@@ -91,6 +91,8 @@ public class ObjectsManager : MonoSingleton<ObjectsManager> {
             //Get the first and remove it
             g = gemsPoolList[0];
             gemsPoolList.Remove(g);
+
+            g.GetComponent<GemObject>().ResetGem();
         }
 
         g.transform.SetParent(parent);
