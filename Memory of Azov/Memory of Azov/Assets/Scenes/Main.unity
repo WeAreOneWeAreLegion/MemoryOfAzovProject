@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061416075, g: 0.10949504, b: 0.14531955, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.061420284, g: 0.10949621, b: 0.14532256, a: 0.3}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1452,12 +1452,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 92876183}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &97206808 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114025951380785482, guid: 8a41e9e8630cfc042a494a289f54cdfc,
-    type: 2}
-  m_PrefabInternal: {fileID: 529202016}
-  m_Script: {fileID: 11500000, guid: 5ed86b80f009395479241b5b2c49fd55, type: 3}
 --- !u!1 &99096521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1557,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 840956811}
-  m_LocalRotation: {x: -0, y: 0.99167556, z: -0, w: 0.12876162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1, y: 1.7, z: -7.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1573,7 +1567,7 @@ Transform:
   - {fileID: 1986723013}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 165.20401, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &106895199
 GameObject:
   m_ObjectHideFlags: 0
@@ -10843,12 +10837,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: cca0376d42b95214e8b0a28859770683, type: 3}
---- !u!114 &257556616 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114091223289068270, guid: 8a75a7fc78425634b8503134ae30b767,
-    type: 2}
-  m_PrefabInternal: {fileID: 763118235}
-  m_Script: {fileID: 11500000, guid: 5ed86b80f009395479241b5b2c49fd55, type: 3}
 --- !u!1 &264141547
 GameObject:
   m_ObjectHideFlags: 0
@@ -11745,10 +11733,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb91433989ce3d4e9af05a14a99d964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfDesiredGhosts: 0
+  numOfDesiredGems: 0
+  enemiesData: []
   blackWalls:
   - {fileID: 471605473}
   - {fileID: 1189739175}
-  objectsWithEnemies: []
 --- !u!4 &312472654
 Transform:
   m_ObjectHideFlags: 0
@@ -13411,12 +13401,6 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
---- !u!114 &386891735 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114025951380785482, guid: 8a41e9e8630cfc042a494a289f54cdfc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1776565525}
-  m_Script: {fileID: 11500000, guid: 5ed86b80f009395479241b5b2c49fd55, type: 3}
 --- !u!1 &387786120
 GameObject:
   m_ObjectHideFlags: 0
@@ -16083,15 +16067,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb91433989ce3d4e9af05a14a99d964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfDesiredGhosts: 0
+  numOfDesiredGems: 0
+  enemiesData: []
   blackWalls:
   - {fileID: 1453522386}
   - {fileID: 48812162}
-  objectsWithEnemies:
-  - {fileID: 1462333527}
-  - {fileID: 257556616}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1926751627}
 --- !u!4 &513385618
 Transform:
   m_ObjectHideFlags: 0
@@ -17106,12 +17087,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb91433989ce3d4e9af05a14a99d964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfDesiredGhosts: 3
+  numOfDesiredGems: 2
+  enemiesData:
+  - {fileID: 11400000, guid: 244176d160b253e468458d607673679b, type: 2}
+  - {fileID: 11400000, guid: b4b5cd2b83c1d164b9ac9a9ddc3ca25d, type: 2}
   blackWalls:
   - {fileID: 1698817617}
   - {fileID: 387786120}
-  objectsWithEnemies:
-  - {fileID: 1318643865}
-  - {fileID: 375983880}
 --- !u!4 &589530816
 Transform:
   m_ObjectHideFlags: 0
@@ -41017,15 +41000,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb91433989ce3d4e9af05a14a99d964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfDesiredGhosts: 0
+  numOfDesiredGems: 0
+  enemiesData: []
   blackWalls:
   - {fileID: 1383285092}
   - {fileID: 1784668512}
-  objectsWithEnemies:
-  - {fileID: 1269299639}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 97206808}
-  - {fileID: 386891735}
 --- !u!4 &1188076761
 Transform:
   m_ObjectHideFlags: 0
@@ -41950,12 +41930,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4090726910683860, guid: 3b468eabb938c07419be9a0d5041e48d,
     type: 2}
   m_PrefabInternal: {fileID: 747938483}
---- !u!114 &1269299639 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114260338064122192, guid: 3b468eabb938c07419be9a0d5041e48d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1052763292}
-  m_Script: {fileID: 11500000, guid: 5ed86b80f009395479241b5b2c49fd55, type: 3}
 --- !u!1 &1269864375
 GameObject:
   m_ObjectHideFlags: 0
@@ -42185,6 +42159,7 @@ MonoBehaviour:
   - Bell
   - HittableObject
   - FakeWall
+  - CollectableObject
 --- !u!4 &1272608383
 Transform:
   m_ObjectHideFlags: 0
@@ -45610,10 +45585,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb91433989ce3d4e9af05a14a99d964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfDesiredGhosts: 0
+  numOfDesiredGems: 0
+  enemiesData: []
   blackWalls:
   - {fileID: 1320197683}
   - {fileID: 917393868}
-  objectsWithEnemies: []
 --- !u!4 &1460373822
 Transform:
   m_ObjectHideFlags: 0
@@ -45636,12 +45613,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1462333527 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114260338064122192, guid: 3b468eabb938c07419be9a0d5041e48d,
-    type: 2}
-  m_PrefabInternal: {fileID: 747938483}
-  m_Script: {fileID: 11500000, guid: 5ed86b80f009395479241b5b2c49fd55, type: 3}
 --- !u!1 &1464010251
 GameObject:
   m_ObjectHideFlags: 0
@@ -57504,12 +57475,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919125499}
---- !u!114 &1926751627 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114260338064122192, guid: 3b468eabb938c07419be9a0d5041e48d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1830771363}
-  m_Script: {fileID: 11500000, guid: 5ed86b80f009395479241b5b2c49fd55, type: 3}
 --- !u!1 &1928167017
 GameObject:
   m_ObjectHideFlags: 0
@@ -59719,10 +59684,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb91433989ce3d4e9af05a14a99d964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfDesiredGhosts: 0
+  numOfDesiredGems: 0
+  enemiesData: []
   blackWalls:
   - {fileID: 834307056}
   - {fileID: 1730151093}
-  objectsWithEnemies: []
 --- !u!4 &2075624699
 Transform:
   m_ObjectHideFlags: 0
@@ -60617,10 +60584,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb91433989ce3d4e9af05a14a99d964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfDesiredGhosts: 1
+  numOfDesiredGems: 1
+  enemiesData:
+  - {fileID: 11400000, guid: 244176d160b253e468458d607673679b, type: 2}
   blackWalls:
   - {fileID: 603817982}
   - {fileID: 437758928}
-  objectsWithEnemies: []
 --- !u!1 &2126351330
 GameObject:
   m_ObjectHideFlags: 0
