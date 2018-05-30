@@ -41,7 +41,7 @@ public class Enemy : LightenableObject {
     public int ghostDamage = 20;
     [Tooltip("Radio de ataque del personaje")]
     [Range(0, 6)] public float attackRadius = 2f;
-    [Tooltip("Tiempo entre ataques")]
+    [Tooltip("Tiempo de ataque")]
     [Range(1, 4)] public float attackDelay = 2f;
 
     [Header("\t    Own Script Variables")]
@@ -111,6 +111,8 @@ public class Enemy : LightenableObject {
             return;
 
         currentState.Execute();
+
+        Debug.Log(currentState.GetType().ToString());
 
         CheckPlayerDistance();
 
@@ -439,7 +441,7 @@ public class Enemy : LightenableObject {
 
     public bool IsAttackAnimationPlaying()
     {
-        return myAnimator.GetCurrentAnimatorStateInfo(0).IsName("EnemyAttack");
+        return myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
     }
 
     public float GetStunTimer()

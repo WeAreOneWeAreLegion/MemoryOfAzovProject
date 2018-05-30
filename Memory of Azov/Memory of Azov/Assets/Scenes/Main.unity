@@ -4944,7 +4944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c262c6dc01c1364ebd7b8408d40ea25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  independentFacing: 0
   currentControl: 1
   speed: 8
   rotationSpeed: 130
@@ -21899,7 +21898,7 @@ Prefab:
     - target: {fileID: 198410653534185808, guid: 897524b8d3cc13d41bb94421640879e3,
         type: 2}
       propertyPath: moveWithTransform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198410653534185808, guid: 897524b8d3cc13d41bb94421640879e3,
         type: 2}
@@ -58076,15 +58075,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4089450853366530, guid: 985c14ef10cade6428c6e842a0fc689a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 18.1
+      value: 9.79
       objectReference: {fileID: 0}
     - target: {fileID: 4089450853366530, guid: 985c14ef10cade6428c6e842a0fc689a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.17
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4089450853366530, guid: 985c14ef10cade6428c6e842a0fc689a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 8.95
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 4089450853366530, guid: 985c14ef10cade6428c6e842a0fc689a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -69432,7 +69431,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
+  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
