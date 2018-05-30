@@ -111,7 +111,6 @@ public class Enemy : LightenableObject {
             return;
 
         currentState.Execute();
-        Debug.Log(currentState.GetType().ToString());
 
         CheckPlayerDistance();
 

@@ -5,7 +5,7 @@ public class ScapeState_N : IEnemyState
 {
     private Enemy enemy;
 
-    private float refreshTime = 0.4f;
+    private float refreshTime = 0.4f; //Para optimizar el calculo del punto de huida
     private float refreshTimer;
 
     public void Enter(Enemy e)
