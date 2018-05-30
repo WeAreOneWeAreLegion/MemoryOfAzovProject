@@ -18,6 +18,8 @@ public class ConectionScript : LightenableObject {
     [Range(1,5)] public float lightenedTimeToShow = 3f;
     [Tooltip("Este valor indica si la puerta se abrira solo por la derecha, en caso contrario por el izquierdo")]
     public bool isRightOpener;
+    [Tooltip("Marca si es la puerta de salida del juego")]
+    public bool isFinalDoor;
 
     [Header("\t    Own Script Variables")]
     [Range(1,15)] public float checkerDistance = 6f;
@@ -80,7 +82,7 @@ public class ConectionScript : LightenableObject {
 
     private void Update()
     {
-        if (!isSetUpDone && roomLeftBottom != null && roomRightTop != null)
+        if (!isSetUpDone && roomLeftBottom != null && roomRightTop != null && !isFinalDoor)
         {
             DisableStartRooms();
             isSetUpDone = true;
@@ -305,6 +307,12 @@ public class ConectionScript : LightenableObject {
 
     public void OpenDoorAnimation()
     {
+        if (isFinalDoor)
+        {
+            //Juego acabado
+            Debug.Log("A winner is you");
+        }
+
         if (isDoorOpen && (currentDoorType == DoorType.Normal || (currentDoorType == DoorType.OpenByOneSide && (isRightOpener ? IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position) : !IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position)))))
         {
 
@@ -337,7 +345,11 @@ public class ConectionScript : LightenableObject {
 
     public bool IsDoorOpen()
     {
-        return isDoorOpen && (currentDoorType == DoorType.Normal || (currentDoorType == DoorType.OpenByOneSide && (isRightOpener ? IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position) : !IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position))));
+        if (isFinalDoor && !GameManager.Instance.HasFinalKey())
+        {
+            Debug.Log("You need to get all eggs before exiting");
+        }
+        return (isDoorOpen && (currentDoorType == DoorType.Normal || (currentDoorType == DoorType.OpenByOneSide && (isRightOpener ? IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position) : !IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position))))) || (isFinalDoor && GameManager.Instance.HasFinalKey());
     }
 
     public void CloseDoorAnimation()

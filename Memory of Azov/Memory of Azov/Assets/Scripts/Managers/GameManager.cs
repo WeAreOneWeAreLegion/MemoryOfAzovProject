@@ -147,6 +147,7 @@ public class GameManager : MonoSingleton<GameManager> {
     private bool addingGems;
     private bool addingHealth;
     private bool hasKey;
+    private bool hasFinalKey;
 
     //Persistance variables
     private int maxNumOfGems = 0;
@@ -448,7 +449,7 @@ public class GameManager : MonoSingleton<GameManager> {
         currentNumOfGems++;
 
         if (currentNumOfGems >= maxNumOfGems)
-            CallPlayerVictory();
+            GetFinalKey();
 
         foreach (GameObject e in diamondEggMask)
         {
@@ -509,7 +510,8 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void IncreaseNumOfGems()
     {
-        AddGem();
+        if (currentNumOfGems < maxNumOfGems)
+           AddGem();
     }
 
     public void IncreseNumOfGhostsCaptured()
@@ -537,6 +539,11 @@ public class GameManager : MonoSingleton<GameManager> {
     public bool HasKey()
     {
         return hasKey;
+    }
+
+    public bool HasFinalKey()
+    {
+        return hasFinalKey;
     }
 
     public bool IsDirectLightActivated()
@@ -569,6 +576,11 @@ public class GameManager : MonoSingleton<GameManager> {
     public void GetKey()
     {
         hasKey = true;
+    }
+
+    public void GetFinalKey()
+    {
+        hasFinalKey = true;
     }
     #endregion
 
