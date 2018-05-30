@@ -438,6 +438,9 @@ public class GameManager : MonoSingleton<GameManager> {
     {
         hpText.text = currentHp.ToString();
         hpTextShadow.text = hpText.text;
+
+        if (currentHp <= 0)
+            CallPlayerDeath();
     }
 
     private void VisualGemAdd()
@@ -757,6 +760,7 @@ public class GameManager : MonoSingleton<GameManager> {
     #region Game State Methods
     public void CallPlayerDeath()
     {//Game Over
+        InputsManager.Instance.DeactiveVibration();
         gameOverPanel.SetActive(true);
         StartCoroutine(HighlightButton(gameOverRestartButton));
         /*Debug.Log("You have lost");

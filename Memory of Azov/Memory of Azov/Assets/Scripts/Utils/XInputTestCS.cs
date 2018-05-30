@@ -51,6 +51,10 @@ public class XInputTestCS : MonoSingleton<XInputTestCS>
         prevState1 = statePlayer1;
         statePlayer1 = GamePad.GetState(playerIndex1);
 
+        if (Time.timeScale == 0)
+        {
+            GamePad.SetVibration(playerIndex1, 0, 0);
+        }
         //if (timer >= 1)
         //{
         //    if (pack == statePlayer2.PacketNumber)
@@ -79,6 +83,11 @@ public class XInputTestCS : MonoSingleton<XInputTestCS>
 
         //// Make the current object turn
         //transform.localRotation *= Quaternion.Euler(0.0f, statePlayer2.ThumbSticks.Left.X * 25.0f * Time.deltaTime, 0.0f);
+    }
+
+    private void OnApplicationQuit()
+    {
+        GamePad.SetVibration(playerIndex1, 0, 0);
     }
 
     //void OnGUI()
