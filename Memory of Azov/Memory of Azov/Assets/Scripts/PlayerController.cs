@@ -1030,12 +1030,6 @@ public class PlayerController : MonoBehaviour {
         GameManager.Instance.IncreaseHealthLost(damage);
         StopMovementByHit();
 
-        if (currentHp < 0)
-        {
-            GameManager.Instance.CallPlayerDeath();
-            currentHp = 0;
-        }
-
         GameManager.Instance.ModifyHp(currentHp);
     }
 
