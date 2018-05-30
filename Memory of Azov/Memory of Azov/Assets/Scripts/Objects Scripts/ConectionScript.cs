@@ -311,6 +311,7 @@ public class ConectionScript : LightenableObject {
         {
             //Juego acabado
             Debug.Log("A winner is you");
+            GameManager.Instance.CallPlayerVictory();
         }
 
         if (isDoorOpen && (currentDoorType == DoorType.Normal || (currentDoorType == DoorType.OpenByOneSide && (isRightOpener ? IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position) : !IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position)))))
