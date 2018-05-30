@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4351769656401184}
   m_Layer: 0
   m_Name: Visual
-  m_TagString: Untagged
+  m_TagString: CollectableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 54247762545719316}
   m_Layer: 0
   m_Name: KeyThrone
-  m_TagString: Untagged
+  m_TagString: CollectableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 65464114119983450}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: HittableObject
+  m_TagString: CollectableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

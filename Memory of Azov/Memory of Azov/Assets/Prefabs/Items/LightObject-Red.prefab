@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 65721105663892500}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: HittableObject
+  m_TagString: CollectableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 54789782726705810}
   m_Layer: 0
   m_Name: LightObject-Red
-  m_TagString: Untagged
+  m_TagString: CollectableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4854291994192202}
   m_Layer: 0
   m_Name: Visual
-  m_TagString: Untagged
+  m_TagString: CollectableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

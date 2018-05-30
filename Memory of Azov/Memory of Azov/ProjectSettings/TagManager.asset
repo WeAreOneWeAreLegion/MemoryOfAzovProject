@@ -11,6 +11,7 @@ TagManager:
   - Bell
   - HittableObject
   - FakeWall
+  - CollectableObject
   layers:
   - Default
   - TransparentFX

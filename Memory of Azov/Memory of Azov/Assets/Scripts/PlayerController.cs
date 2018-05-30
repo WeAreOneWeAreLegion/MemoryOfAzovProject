@@ -911,7 +911,7 @@ public class PlayerController : MonoBehaviour {
         if (!isCrossingDoor)
         {
             myAnimator.SetFloat("Speed", 1);
-            myAnimator.speed = maxWalkSpeed;
+            myAnimator.speed = 1;
 
             startCrossingTimer += Time.deltaTime / crossDoorTime;
 
