@@ -324,7 +324,6 @@ public class ConectionScript : LightenableObject {
             ActiveBothRooms();
 
             HideDoors();
-            GameManager.Instance.player.StartCrossingDoor();
 
             //Perform the opening
             if (isSideDoor)

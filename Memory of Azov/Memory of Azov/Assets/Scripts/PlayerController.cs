@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour {
     [Tooltip("Velocidad de rotacion de la linterna (Hacia arriba i hacia abajo)")]
     [Range(0,90)] public float lanternRotationSpeed = 50;
     [Range(0,180)] public float angleToStartMoving = 10f;
+    [Tooltip("Tiempo que tarda en cruzar la puerta el personaje")]
+    [Range(0,1)] public float crossDoorTime = 0.5f;
 
     [Header("Lantern Variables")]
     [Tooltip("Daño que hace la linterna")]
@@ -159,6 +161,8 @@ public class PlayerController : MonoBehaviour {
 
     //CrossDoor variables
     private bool isCrossingDoor;
+    private float startCrossingTimer;
+    private Vector3 pointToStartCrossingDoor;
     private Vector3 pointToGoCrossDoor;
     private Vector3 directionToGoCrossDoor;
 
@@ -700,17 +704,13 @@ public class PlayerController : MonoBehaviour {
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.DoorTrigger))
             {
                 //Open door
-                transform.forward = -hit.normal;
                 if (hit.transform.GetComponent<ConectionScript>().IsDoorOpen())
                 {
-                    hit.transform.GetComponent<ConectionScript>().OpenDoorAnimation();
-
                     currentDoorCrossing = hit.transform.GetComponent<ConectionScript>();
 
-                    transform.position = currentDoorCrossing.GetDoorOpeningPos(transform.position);
-                    
                     ChangePlayerState(State.CrossDoor);
-                    SetPointToMoveCrossDoor(currentDoorCrossing.GetDoorClosingPos(transform.position));
+                    SetPointToMoveCrossDoor(currentDoorCrossing.GetDoorOpeningPos(transform.position), currentDoorCrossing.GetDoorClosingPos(transform.position));
+                    transform.forward = (pointToGoCrossDoor - pointToStartCrossingDoor).normalized;
 
                     myAudioSource.clip = SoundManager.Instance.GetSoundByRequest(SoundManager.SoundRequest.P_OpenDoor);
                     myAudioSource.Play();
@@ -720,14 +720,14 @@ public class PlayerController : MonoBehaviour {
             }
             else if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.FakeWall))
             {
-                transform.forward = -hit.normal;
                 if (hit.transform.parent.GetComponent<FakeWallScript>().OpenDoorAnimation())
                 {
                     currentFakeWall = hit.transform.parent.GetComponent<FakeWallScript>();
                     transform.parent = hit.transform;
 
-                    transform.position = currentFakeWall.GetFakeWallPoint(transform.position);
+                    pointToStartCrossingDoor = currentFakeWall.GetFakeWallPoint(transform.position);
                     ChangePlayerState(State.FakeWall);
+                    transform.forward = -hit.transform.forward;
 
                     myAudioSource.clip = SoundManager.Instance.GetSoundByRequest(SoundManager.SoundRequest.P_OpenDoor); //Deberia ser sonido libreria
                     myAudioSource.Play();
@@ -905,9 +905,25 @@ public class PlayerController : MonoBehaviour {
     #endregion
 
     #region Cross Door Methods
+
     public void CrossDoor()
     {
-        if (isCrossingDoor)
+        if (!isCrossingDoor)
+        {
+            myAnimator.SetFloat("Speed", 1);
+            myAnimator.speed = maxWalkSpeed;
+
+            startCrossingTimer += Time.deltaTime / crossDoorTime;
+
+            transform.position = Vector3.Lerp(transform.position, pointToStartCrossingDoor, startCrossingTimer);
+
+            if (startCrossingTimer >= 1)
+            {
+                isCrossingDoor = true;
+                currentDoorCrossing.OpenDoorAnimation();
+            }
+        }
+        else if (isCrossingDoor)
         {
             myAnimator.SetFloat("Speed", 1);
             myAnimator.speed = maxWalkSpeed;
@@ -934,10 +950,12 @@ public class PlayerController : MonoBehaviour {
         isCrossingDoor = true;
     }
 
-    public void SetPointToMoveCrossDoor(Vector3 otherSideDoor)
+    public void SetPointToMoveCrossDoor(Vector3 startSideDoor, Vector3 otherSideDoor)
     {
+        pointToStartCrossingDoor = startSideDoor;
+        startCrossingTimer = 0;
         pointToGoCrossDoor = otherSideDoor;
-        directionToGoCrossDoor = (otherSideDoor - transform.position).normalized;
+        directionToGoCrossDoor = (otherSideDoor - pointToStartCrossingDoor).normalized;
     }
     #endregion
 
