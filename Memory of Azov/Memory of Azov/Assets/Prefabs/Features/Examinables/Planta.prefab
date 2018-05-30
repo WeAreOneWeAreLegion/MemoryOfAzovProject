@@ -197,6 +197,7 @@ MonoBehaviour:
   spawnGhost: 0
   spawnGem: 0
   spawnAllGhosts: 0
+  givenHealth: 0
   enemyData: {fileID: 0}
   isWall: 0
   isDoor: 0
