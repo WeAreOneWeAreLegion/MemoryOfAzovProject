@@ -103,7 +103,7 @@ public class RoomScript : MonoBehaviour
         }
         catch
         {
-            Debug.Log("Room: "+ name +" is bugged");
+            Debug.LogWarning("La habitacion "+name+" no tiene suficientes objetos examinables respecto a los valores que se piden");
         }
     }
     #endregion
