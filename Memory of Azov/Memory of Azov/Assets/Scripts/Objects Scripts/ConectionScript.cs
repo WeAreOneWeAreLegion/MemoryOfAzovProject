@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class ConectionScript : LightenableObject {
 
@@ -18,6 +19,8 @@ public class ConectionScript : LightenableObject {
     [Range(1,5)] public float lightenedTimeToShow = 3f;
     [Tooltip("Este valor indica si la puerta se abrira solo por la derecha, en caso contrario por el izquierdo")]
     public bool isRightOpener;
+    [Tooltip("Marca si es la puerta del trono")]
+    public bool isThroneDoor;
     [Tooltip("Marca si es la puerta de salida del juego")]
     public bool isFinalDoor;
 
@@ -52,6 +55,8 @@ public class ConectionScript : LightenableObject {
     private float timer;
 
     private GameObject roomLeftBottom, roomRightTop;
+
+    private GameObject leftground, rightground;
 
     private Transform target;
     private Transform leftDownPoint, rightTopPoint;
@@ -114,7 +119,7 @@ public class ConectionScript : LightenableObject {
         RaycastHit hit;
 
         //Right Ray
-        ray = new Ray(transform.position + transform.right * checkerDistance + Vector3.up, Vector3.down);
+        ray = new Ray(visual.transform.position + transform.right * checkerDistance + Vector3.up, Vector3.down);
 
         if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("FloorLayer")))
         {
@@ -125,8 +130,10 @@ public class ConectionScript : LightenableObject {
             myCollider.isTrigger = false;
         }
 
+        Ray oldRay = ray;
+
         //Left Ray
-        ray = new Ray(transform.position - transform.right * checkerDistance + Vector3.up, Vector3.down);
+        ray = new Ray(visual.transform.position - transform.right * checkerDistance + Vector3.up, Vector3.down);
         if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("FloorLayer")))
         {
             roomLeftBottom = hit.transform.parent.gameObject;
@@ -313,10 +320,8 @@ public class ConectionScript : LightenableObject {
             Debug.Log("A winner is you");
             GameManager.Instance.CallPlayerVictory();
         }
-
-        if (isDoorOpen && (currentDoorType == DoorType.Normal || (currentDoorType == DoorType.OpenByOneSide && (isRightOpener ? IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position) : !IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position)))))
+        else
         {
-
             if (currentDoorType == DoorType.OpenByOneSide)
                 currentDoorType = DoorType.Normal;
 
@@ -346,11 +351,20 @@ public class ConectionScript : LightenableObject {
 
     public bool IsDoorOpen()
     {
+        if (isThroneDoor && !GameManager.Instance.HasThroneKey())
+        {
+            Debug.Log("Can't cross because you miss the key");
+        }
+        else if (isThroneDoor && GameManager.Instance.HasThroneKey())
+        {
+            Debug.Log("You have the key");
+        }
+
         if (isFinalDoor && !GameManager.Instance.HasFinalKey())
         {
             Debug.Log("You need to get all eggs before exiting");
         }
-        return (isDoorOpen && (currentDoorType == DoorType.Normal || (currentDoorType == DoorType.OpenByOneSide && (isRightOpener ? IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position) : !IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position))))) || (isFinalDoor && GameManager.Instance.HasFinalKey());
+        return (isDoorOpen && (currentDoorType == DoorType.Normal || (currentDoorType == DoorType.OpenByOneSide && (isRightOpener ? IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position) : !IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position))))) || (isThroneDoor && GameManager.Instance.HasThroneKey()) || (isFinalDoor && GameManager.Instance.HasFinalKey());
     }
 
     public void CloseDoorAnimation()

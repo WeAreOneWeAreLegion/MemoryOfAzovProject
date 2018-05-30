@@ -192,6 +192,9 @@ public class GameManager : MonoSingleton<GameManager> {
         if (Input.GetKeyDown(KeyCode.G))
             IncreaseNumOfGems();
 
+        if (Input.GetKeyDown(KeyCode.Z))
+            GetKey();
+
         if (Input.GetKeyDown(KeyCode.H))
             player.RecieveDamage(20);
 
@@ -536,7 +539,7 @@ public class GameManager : MonoSingleton<GameManager> {
         return combateMode;
     }
 
-    public bool HasKey()
+    public bool HasThroneKey()
     {
         return hasKey;
     }

@@ -6,7 +6,7 @@ public class FinalDoorScript : MonoBehaviour {
 
 	public void Action()
     {
-        if (GameManager.Instance.HasKey())
+        if (GameManager.Instance.HasThroneKey())
         {
             Debug.Log("Can end game");
         }
