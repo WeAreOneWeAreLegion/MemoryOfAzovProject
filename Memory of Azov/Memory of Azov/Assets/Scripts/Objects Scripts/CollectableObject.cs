@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectableObject : MonoBehaviour {
 
-    public enum CollectableType { Key, GreenLight, RedLight }
+    public enum CollectableType { Key, GreenLight, RedLight, MemoryOfAzov }
 
     public CollectableType currentCType;
 
@@ -20,6 +20,9 @@ public class CollectableObject : MonoBehaviour {
                 break;
             case CollectableType.RedLight:
                 GameManager.Instance.player.GetRedLight();
+                break;
+            case CollectableType.MemoryOfAzov:
+                GameManager.Instance.GetMemoryOfAzov();
                 break;
         }
         gameObject.SetActive(false);

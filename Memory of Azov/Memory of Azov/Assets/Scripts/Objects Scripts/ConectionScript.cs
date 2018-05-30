@@ -130,8 +130,6 @@ public class ConectionScript : LightenableObject {
             myCollider.isTrigger = false;
         }
 
-        Ray oldRay = ray;
-
         //Left Ray
         ray = new Ray(visual.transform.position - transform.right * checkerDistance + Vector3.up, Vector3.down);
         if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("FloorLayer")))
@@ -362,7 +360,7 @@ public class ConectionScript : LightenableObject {
 
         if (isFinalDoor && !GameManager.Instance.HasFinalKey())
         {
-            Debug.Log("You need to get all eggs before exiting");
+            Debug.Log("You need to get azov before exiting");
         }
         return (isDoorOpen && (currentDoorType == DoorType.Normal || (currentDoorType == DoorType.OpenByOneSide && (isRightOpener ? IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position) : !IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position))))) || (isThroneDoor && GameManager.Instance.HasThroneKey()) || (isFinalDoor && GameManager.Instance.HasFinalKey());
     }

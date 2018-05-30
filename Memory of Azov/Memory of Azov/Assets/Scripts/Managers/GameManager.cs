@@ -145,6 +145,7 @@ public class GameManager : MonoSingleton<GameManager> {
     private bool showGemsPanel;
     private bool showHealthPanel;
     private bool addingGems;
+    private bool addingAzov;
     private bool addingHealth;
     private bool hasKey;
     private bool hasFinalKey;
@@ -191,6 +192,9 @@ public class GameManager : MonoSingleton<GameManager> {
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.G))
             IncreaseNumOfGems();
+
+        if (Input.GetKeyDown(KeyCode.B))
+            GetMemoryOfAzov();
 
         if (Input.GetKeyDown(KeyCode.Z))
             GetKey();
@@ -412,7 +416,7 @@ public class GameManager : MonoSingleton<GameManager> {
                 //Call 
                 if (addingGems)
                 {
-                    StartCoroutine(AddNewGemGathered());
+                    StartCoroutine(AddNewGemGathered(addingAzov));
                     addingGems = false;
                 }
 
@@ -432,9 +436,13 @@ public class GameManager : MonoSingleton<GameManager> {
         gemsPanel.anchoredPosition = Vector2.up * Mathf.Lerp(gemsPanelYHidden, gemsPanelYShown, gemsPanelTimer) + Vector2.right * gemsPanel.anchoredPosition.x;
     }
 
-    private void AddGem()
+    private void AddGem(bool isAzovAdd)
     {
+        if (isAzovAdd)
+            addingAzov = true;
+
         addingGems = true;
+
         ShowGemsPanel();
     }
 
@@ -447,21 +455,29 @@ public class GameManager : MonoSingleton<GameManager> {
             CallPlayerDeath();
     }
 
-    private void VisualGemAdd()
+    private void VisualGemAdd(bool isAddingAzov)
     {
-        currentNumOfGems++;
-
-        if (currentNumOfGems >= maxNumOfGems)
-            GetFinalKey();
-
-        foreach (GameObject e in diamondEggMask)
+        if (isAddingAzov)
         {
-            if (e.activeInHierarchy)
+            GetFinalKey();
+            diamondEggMask[diamondEggMask.Count - 1].SetActive(false);
+
+            addingAzov = false;
+        }
+        else
+        {
+            currentNumOfGems++;
+
+            foreach (GameObject e in diamondEggMask)
             {
-                e.SetActive(false);
-                return;
+                if (e.activeInHierarchy)
+                {
+                    e.SetActive(false);
+                    return;
+                }
             }
         }
+
     }
 
     IEnumerator ModifyHealthCoroutine(int currentHp)
@@ -473,10 +489,10 @@ public class GameManager : MonoSingleton<GameManager> {
         yield return null;
     }
 
-    IEnumerator AddNewGemGathered()
+    IEnumerator AddNewGemGathered(bool isAddingAzov)
     {
         yield return new WaitForSecondsRealtime(timeBeforeAddingGem);
-        VisualGemAdd();
+        VisualGemAdd(isAddingAzov);
         yield return new WaitForSecondsRealtime(timeShowingGemsPanel);
         HideGemsPanel();
         yield return null;
@@ -513,8 +529,14 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void IncreaseNumOfGems()
     {
-        if (currentNumOfGems < maxNumOfGems)
-           AddGem();
+        if (currentNumOfGems < maxNumOfGems - 1)
+           AddGem(false);
+    }
+
+    public void GetMemoryOfAzov()
+    {
+        //Add azov
+        AddGem(true);
     }
 
     public void IncreseNumOfGhostsCaptured()
@@ -788,6 +810,13 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void CallPlayerVictory()
     {//Victory
+
+        //Add azov egg to current eggs
+        currentNumOfGems++;
+
+        ShowGemsPanel();
+        ShowHealthPanel();
+
         victoryPanel.SetActive(true);
         StartCoroutine(HighlightButton(victoryOKButton));
         ghostHuntedText.text = "Quantity of ghost hunted: " + currentNumOfGhosts;
