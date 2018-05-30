@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 65203501192581490}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: HittableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,6 +197,7 @@ MonoBehaviour:
   spawnGhost: 0
   spawnGem: 0
   spawnAllGhosts: 0
+  givenHealth: 0
   enemyData: {fileID: 0}
   isWall: 0
   isDoor: 0

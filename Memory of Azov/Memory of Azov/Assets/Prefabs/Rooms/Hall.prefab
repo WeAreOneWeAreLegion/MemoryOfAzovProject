@@ -712,7 +712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4469671135382428}
   m_Layer: 0
-  m_Name: RoofTop
+  m_Name: RoofTops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -959,6 +959,7 @@ GameObject:
   - component: {fileID: 4202582944660968}
   - component: {fileID: 33770129663271426}
   - component: {fileID: 23212492468526338}
+  - component: {fileID: 111459364094114598}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -1111,7 +1112,7 @@ GameObject:
   - component: {fileID: 33031858323489612}
   - component: {fileID: 23364181125651332}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Rooftop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1403,7 +1404,7 @@ GameObject:
   - component: {fileID: 65610611657156362}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: HittableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4871,6 +4872,20 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!111 &111459364094114598
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650968965754588}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!111 &111611266721682382
 Animation:
   m_ObjectHideFlags: 1
@@ -5177,8 +5192,10 @@ MonoBehaviour:
   isWall: 0
   isDoor: 0
   isStatic: 0
-  myRenderers: []
-  myAnimations: []
+  myRenderers:
+  - {fileID: 23212492468526338}
+  myAnimations:
+  - {fileID: 111459364094114598}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
 --- !u!114 &114856062165498512

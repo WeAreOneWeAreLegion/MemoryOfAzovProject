@@ -633,6 +633,14 @@ public class PlayerController : MonoBehaviour {
                     }
                 }
 
+                if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.HittableObject))
+                {
+                    if (hit.transform.parent.GetComponent<TransparentObject>().isStatic)
+                    {
+                        return;
+                    }
+                }
+
                 if (!GameManager.Instance.GetIsPlayerPanelActive())
                 {
                     GameManager.Instance.ActivePlayerHUD(GameManager.ButtonRequest.A);
@@ -730,14 +738,20 @@ public class PlayerController : MonoBehaviour {
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.HittableObject))
             {
                 TransparentObject to = hit.transform.parent.GetComponent<TransparentObject>();
-                to.ShakeObjectAnimation();
-                StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+                if (!to.isStatic)
+                {
+                    to.ShakeObjectAnimation();
+                    StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+                }
             }
             else if (hit.transform.GetComponent<TransparentObject>() != null)
             {
                 TransparentObject to = hit.transform.GetComponent<TransparentObject>();
-                to.ShakeObjectAnimation();
-                StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+                if (!to.isStatic)
+                {
+                    to.ShakeObjectAnimation();
+                    StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+                }
             }
 
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.CollectableObject))
@@ -861,6 +875,8 @@ public class PlayerController : MonoBehaviour {
         canMove = false;
         lightEnabled = true;
         SwitchLight();
+
+        myAnimator.SetFloat("Speed", 0);
     }
 
     private void StopMovementByAim()
