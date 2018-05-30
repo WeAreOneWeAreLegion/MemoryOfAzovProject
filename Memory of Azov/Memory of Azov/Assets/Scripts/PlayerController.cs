@@ -8,12 +8,13 @@ public class PlayerController : MonoBehaviour {
 
     public enum State { Playing, CrossDoor, FakeWall, Cinematic }
     public enum LightColor { Neutral, Secondary, Third }
+    public enum TypeOfControl { OneControl, TwoControls }
 
     #region Public Variables
     [Header("\tGame Designers Variables")]
 
     [Header("Character Behaviour")]
-    public bool independentFacing;
+    public TypeOfControl currentControl;
 
     [Header("Speed Variables")]
     [Tooltip("Velocidad a la que se mueve el personaje")]
@@ -106,12 +107,15 @@ public class PlayerController : MonoBehaviour {
     [Header("Skeleton Mesh Component")]
     public Transform lightBone;
     public Transform lanternHandBone;
+    public Transform eyeLeft;
+    public Transform eyeRight;
     #endregion
 
     #region Private Variables
     private int currentHp;
     private float xLanternRotationValue;
     private float yLanternRotationValue;
+    private bool independentFacing;
     private bool areLightsDecreased;
     private bool areLightsIncreased;
     private bool canMove;
@@ -141,7 +145,8 @@ public class PlayerController : MonoBehaviour {
 
     //Input variables
     private float xMove, zMove;
-    private float yRotation; //xRotation provisional removed
+    private float yRotation;
+    private float xRotation;
 
     //Light lerp values
     private bool hasGreenLight;
@@ -276,7 +281,7 @@ public class PlayerController : MonoBehaviour {
         xMove = InputsManager.Instance.GetMovementX();
         zMove = InputsManager.Instance.GetMovementY();
 
-        //xRotation = InputsManager.Instance.GetRotationX();
+        xRotation = InputsManager.Instance.GetRotationX();
         yRotation = InputsManager.Instance.GetRotationY();
     }
 
@@ -287,7 +292,7 @@ public class PlayerController : MonoBehaviour {
         direction.x = xMove;
         direction.z = zMove;
 
-        if (/*!independentFacing &&*/ canMove)
+        if (canMove && ((!independentFacing && currentControl == TypeOfControl.TwoControls) || (currentControl == TypeOfControl.OneControl)))
         {
             //Face where you go
 
@@ -332,7 +337,7 @@ public class PlayerController : MonoBehaviour {
             }
 
         }
-        else if (independentFacing && canMove)
+        else if (independentFacing && canMove && currentControl == TypeOfControl.TwoControls)
         {
             myCharController.Move(((direction * speed) + Physics.gravity) * Time.deltaTime);
         }
@@ -346,8 +351,9 @@ public class PlayerController : MonoBehaviour {
 
     private void RotateByJoystick()
     {
-        //if (xMove == 0 && zMove == 0 || independentFacing)
-        //    transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
+
+        if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
+            transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
 
         xLanternRotationValue = Mathf.Clamp(xLanternRotationValue + yRotation * lanternRotationSpeed * Time.deltaTime, -topLanternAngle, bottomLanternAngle);
 
@@ -369,7 +375,7 @@ public class PlayerController : MonoBehaviour {
 
     private void RotateByMove()
     {
-        if ((/*!independentFacing &&*/ canMove && (xMove != 0 || zMove != 0)) || autoFace)
+        if ((((!independentFacing && currentControl == TypeOfControl.TwoControls) || currentControl == TypeOfControl.OneControl) && canMove && (xMove != 0 || zMove != 0)) || autoFace)
         {
             float extraSpeed = autoFace ? 3.5f : 3f;
 

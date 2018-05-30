@@ -48,7 +48,7 @@ public class Enemy : LightenableObject {
 
     [Header("Component Variables")]
     [Tooltip("Meshes donde se aplicaran shaders i efectos")]
-    public List<MeshRenderer> myMeshRenderers;
+    public List<SkinnedMeshRenderer> myMeshRenderers;
 
     [Header("Drop Variables")]
     [Tooltip("Objeto que deja caer el personaje al morir")]
@@ -93,7 +93,7 @@ public class Enemy : LightenableObject {
         myRGB = GetComponent<Rigidbody>();
         myAnimator = GetComponentInChildren<Animator>();
         myAudioSource = GetComponent<AudioSource>();
-        myMat = GetComponentInChildren<MeshRenderer>().material;
+        myMat = GetComponentInChildren<SkinnedMeshRenderer>().material;
 
         //Variables initalization
         initialSpeed = speed;
@@ -141,7 +141,7 @@ public class Enemy : LightenableObject {
 
         if (myMat == null)
         {
-            myMat = GetComponentInChildren<MeshRenderer>().material;
+            myMat = GetComponentInChildren<SkinnedMeshRenderer>().material;
         }
         myMat.SetColor("_RimColor", ghostColor);
 
