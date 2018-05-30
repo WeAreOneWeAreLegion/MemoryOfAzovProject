@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 654f90f9e5000f14bbbf4c0e008529c8
-timeCreated: 1526403935
+guid: 9befea0ccf53ec644b450a92a845fdc3
+timeCreated: 1527696949
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -24,11 +24,10 @@ ModelImporter:
     400014: Character001
     400016: //RootNode
     2100000: Bomb Boo_body
-    2300000: body
-    3300000: body
     4300000: body
     7400000: Take 001
     9500000: //RootNode
+    13700000: body
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -59,7 +58,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.7
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
