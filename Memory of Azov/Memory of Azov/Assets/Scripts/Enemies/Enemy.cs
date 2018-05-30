@@ -65,7 +65,7 @@ public class Enemy : LightenableObject {
     protected float oscilatorLifeTime;
     protected float currentHp;
     protected float initialSpeed;
-    protected bool recievingDamage;
+    protected bool receivingDamage;
     protected bool isStunned;
     protected bool isInvincible;
     protected int lanternDamage = 0;
@@ -111,12 +111,11 @@ public class Enemy : LightenableObject {
             return;
 
         currentState.Execute();
-
         Debug.Log(currentState.GetType().ToString());
 
         CheckPlayerDistance();
 
-        if (recievingDamage)
+        if (receivingDamage)
             RecieveDamage();
 
     }
@@ -142,9 +141,8 @@ public class Enemy : LightenableObject {
         }
 
         if (myMat == null)
-        {
             myMat = GetComponentInChildren<SkinnedMeshRenderer>().material;
-        }
+
         myMat.SetColor("_RimColor", ghostColor);
 
         speed = enemyData.speed;
@@ -339,14 +337,14 @@ public class Enemy : LightenableObject {
     {
         if (isInvincible || !GameManager.Instance.player.IsCurrentLightOfColor(currentGhostColor))
         {
-            recievingDamage = false;
+            receivingDamage = false;
             return;
         }
 
         if (stun)
             ChangeState(new StunState_N());
 
-        recievingDamage = true;
+        receivingDamage = true;
 
         if (!myAnimator.GetCurrentAnimatorStateInfo(0).IsName("EnemyIdle"))
             myAnimator.SetTrigger("Alert");
@@ -362,7 +360,7 @@ public class Enemy : LightenableObject {
     {
         if (currentHp > 0)
         {
-            recievingDamage = false;
+            receivingDamage = false;
             lanternDamage = 0;
 
             Color ghostColor = Color.white;
@@ -414,6 +412,11 @@ public class Enemy : LightenableObject {
     #endregion
 
     #region Getter Methods
+    public bool IsCurrentState(IEnemyState state)
+    {
+        return currentState == state;
+    }
+
     public bool IsInAttackRadius()
     {
         return Vector3.Distance(target.position, transform.position) < attackRadius;
@@ -426,7 +429,7 @@ public class Enemy : LightenableObject {
 
     public override bool IsInSight()
     {
-        return recievingDamage;
+        return receivingDamage;
     }
 
     public bool IsStunned()
@@ -442,6 +445,11 @@ public class Enemy : LightenableObject {
     public bool IsAttackAnimationPlaying()
     {
         return myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
+    }
+
+    public bool IsReceivingDamage()
+    {
+        return receivingDamage;
     }
 
     public float GetStunTimer()

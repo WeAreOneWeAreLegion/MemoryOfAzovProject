@@ -19,7 +19,7 @@ public class ScapeState_N : IEnemyState
 
     public void Execute()
     {
-        if (!enemy.IsInSight() && enemy.IsCloseToScapePoint())
+        if (!enemy.IsInSight() && enemy.IsCloseToScapePoint() || !enemy.IsReceivingDamage())
             enemy.ChangeState(new ChaseState_N());
 
         refreshTimer += Time.deltaTime;

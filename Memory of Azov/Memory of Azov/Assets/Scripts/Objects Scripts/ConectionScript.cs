@@ -313,11 +313,8 @@ public class ConectionScript : LightenableObject {
     public void OpenDoorAnimation()
     {
         if (isFinalDoor)
-        {
             //Juego acabado
-            Debug.Log("A winner is you");
             GameManager.Instance.CallPlayerVictory();
-        }
         else
         {
             if (currentDoorType == DoorType.OpenByOneSide)
@@ -349,19 +346,6 @@ public class ConectionScript : LightenableObject {
 
     public bool IsDoorOpen()
     {
-        if (isThroneDoor && !GameManager.Instance.HasThroneKey())
-        {
-            Debug.Log("Can't cross because you miss the key");
-        }
-        else if (isThroneDoor && GameManager.Instance.HasThroneKey())
-        {
-            Debug.Log("You have the key");
-        }
-
-        if (isFinalDoor && !GameManager.Instance.HasFinalKey())
-        {
-            Debug.Log("You need to get azov before exiting");
-        }
         return (isDoorOpen && (currentDoorType == DoorType.Normal || (currentDoorType == DoorType.OpenByOneSide && (isRightOpener ? IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position) : !IsRightClosestPoint(GameManager.Instance.GetPlayer().transform.position))))) || (isThroneDoor && GameManager.Instance.HasThroneKey()) || (isFinalDoor && GameManager.Instance.HasFinalKey());
     }
 

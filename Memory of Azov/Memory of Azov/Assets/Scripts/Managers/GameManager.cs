@@ -656,7 +656,6 @@ public class GameManager : MonoSingleton<GameManager> {
 
             Time.timeScale = 0;
 
-            Debug.Log("Showing pause panel");
             pausePanel.SetActive(true);
             pauseMenuGO.SetActive(true);
 
@@ -670,7 +669,6 @@ public class GameManager : MonoSingleton<GameManager> {
         HideGemsPanel();
         HideHealthPanel();
 
-        Debug.Log("Hide pause panel");
         isGamePaused = false;
         pausePanel.SetActive(false);
         pauseMenuGO.SetActive(false);
