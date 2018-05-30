@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 
     [Header("Character Behaviour")]
     public TypeOfControl currentControl;
+    public bool joystickCompleteControl;
 
     [Header("Speed Variables")]
     [Tooltip("Velocidad a la que se mueve el personaje")]
@@ -355,7 +356,21 @@ public class PlayerController : MonoBehaviour {
         if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
             transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
 
-        xLanternRotationValue = Mathf.Clamp(xLanternRotationValue + yRotation * lanternRotationSpeed * Time.deltaTime, -topLanternAngle, bottomLanternAngle);
+
+        if (joystickCompleteControl)
+        {
+            if (yRotation > 0)
+                xLanternRotationValue = Mathf.Lerp(0, bottomLanternAngle, yRotation / InputsManager.Instance.joystickRotationFactor);
+            else if (yRotation < 0)
+                xLanternRotationValue = Mathf.Lerp(0, -topLanternAngle, -yRotation / InputsManager.Instance.joystickRotationFactor);
+            else
+                xLanternRotationValue = 0;
+        }
+        else
+        {
+            xLanternRotationValue = Mathf.Clamp(xLanternRotationValue + yRotation * lanternRotationSpeed * Time.deltaTime, -topLanternAngle, bottomLanternAngle);
+        }
+
 
         //if (xLanternRotationValue < -topLanternAngle + 10)
         //{

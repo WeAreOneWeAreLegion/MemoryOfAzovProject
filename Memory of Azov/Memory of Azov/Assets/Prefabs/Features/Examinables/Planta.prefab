@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 65338332165109494}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: HittableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,15 +127,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101105541705924}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.35729328, z: -0, w: 0.93399227}
+  m_LocalPosition: {x: 6.28, y: 0.52, z: 3.3235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4959394281405050}
   - {fileID: 4583450330760194}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 41.868004, z: 0}
 --- !u!4 &4959394281405050
 Transform:
   m_ObjectHideFlags: 1
@@ -332,7 +332,8 @@ MonoBehaviour:
   isWall: 0
   isDoor: 0
   isStatic: 0
-  myRenderers: []
+  myRenderers:
+  - {fileID: 23664862997626226}
   myAnimations:
   - {fileID: 111786584421707292}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}

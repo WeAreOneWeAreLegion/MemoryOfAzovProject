@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061622642, g: 0.10951624, b: 0.14596528, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.061420284, g: 0.10949621, b: 0.14532256, a: 0.3}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4950,6 +4950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentControl: 1
+  joystickCompleteControl: 0
   speed: 8
   rotationSpeed: 130
   autoFacingSpeed: 3.5
@@ -38566,7 +38567,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4315048924411714, guid: 5c3aebbc858f7b54e939b6b4bd3fc65b, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114805746163616330, guid: 5c3aebbc858f7b54e939b6b4bd3fc65b,
         type: 2}
@@ -61708,7 +61709,7 @@ Transform:
   - {fileID: 307835922}
   - {fileID: 1254125482}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1283152251
 GameObject:
@@ -68837,7 +68838,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
+  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -73716,11 +73717,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 472711133}
     m_Modifications:
-    - target: {fileID: 114395842859807222, guid: 2ddc077c7c1c5ff4e97785d998e997d3,
-        type: 2}
-      propertyPath: myAnimations.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4788238470859590, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 6.28
@@ -73753,17 +73749,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4788238470859590, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 41.868004
-      objectReference: {fileID: 0}
     - target: {fileID: 1101105541705924, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
       propertyPath: m_Name
       value: Planta (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1580990595170014, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
-      propertyPath: m_TagString
-      value: HittableObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
@@ -74094,11 +74082,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 472711133}
     m_Modifications:
-    - target: {fileID: 114395842859807222, guid: 2ddc077c7c1c5ff4e97785d998e997d3,
-        type: 2}
-      propertyPath: myAnimations.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4788238470859590, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
       propertyPath: m_LocalPosition.x
       value: -6.36
@@ -74130,22 +74113,6 @@ Prefab:
     - target: {fileID: 4788238470859590, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4788238470859590, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -37.746002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4788238470859590, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4788238470859590, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1580990595170014, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
-      propertyPath: m_TagString
-      value: HittableObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ddc077c7c1c5ff4e97785d998e997d3, type: 2}
