@@ -12,6 +12,7 @@ public class ObjectsManager : MonoSingleton<ObjectsManager> {
     public int initialAmountOfGems = 1;
     [Tooltip("Cantidad inicial de objetos de vida para tener una pool inicial de objetos")]
     public int initialAmountOfHealths = 1;
+    public GameObject redLightObject;
 
     [Header("\t    Own Script Variables")]
     [Tooltip("Prefab de la gema")]
@@ -28,6 +29,8 @@ public class ObjectsManager : MonoSingleton<ObjectsManager> {
     private void Start()
     {
         CreateStarterItems();
+
+        redLightObject.SetActive(false);
     }
 
     #region Creation Methods
@@ -61,6 +64,12 @@ public class ObjectsManager : MonoSingleton<ObjectsManager> {
     #endregion
 
     #region Item Managment Methods
+    public void ActiveRedLight()
+    {
+        if (!redLightObject.activeInHierarchy)
+            redLightObject.SetActive(true);
+    }
+
     public GameObject GetItem(Transform callTransform, ItemRequest rq)
     {
         if (rq == ItemRequest.None)

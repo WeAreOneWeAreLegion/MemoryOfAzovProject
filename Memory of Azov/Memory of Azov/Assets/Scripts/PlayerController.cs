@@ -95,6 +95,8 @@ public class PlayerController : MonoBehaviour {
     public Light lanternLight;
     [Tooltip("Particulas luz linterna")]
     public ParticleSystem chargindParticles;
+    [Tooltip("Particulas corazon")]
+    public ParticleSystem heartParticles;
     [Tooltip("Luz gradiante de la linterna cargando")]
     public Gradient lightsChargingGradientColor;
     [Tooltip("Luz gradiante de la linterna cargada")]
@@ -647,6 +649,8 @@ public class PlayerController : MonoBehaviour {
     {
         if (GameManager.Instance.GetIsInCombateMode())
         {
+            if (GameManager.Instance.GetIsPlayerPanelActive())
+                GameManager.Instance.DisablePlayerHUD();
             return;
         }
 
@@ -666,41 +670,23 @@ public class PlayerController : MonoBehaviour {
                 hitTag != "Untagged")
             {
                 if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.DoorTrigger))
-                {
                     if (hit.transform.GetComponent<ConectionScript>().GetIsHiddenDoor())
-                    {
                         return;
-                    }
-                }
 
                 if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.HittableObject))
-                {
                     if (hit.transform.parent.GetComponent<TransparentObject>().isStatic)
-                    {
                         return;
-                    }
-                }
 
                 if (!GameManager.Instance.GetIsPlayerPanelActive())
-                {
                     GameManager.Instance.ActivePlayerHUD(GameManager.ButtonRequest.A);
-                }
             }
             else
-            {
                 if (GameManager.Instance.GetIsPlayerPanelActive())
-                {
                     GameManager.Instance.DisablePlayerHUD();
-                }
-            }
         }
         else
-        {
             if (GameManager.Instance.GetIsPlayerPanelActive())
-            {
                 GameManager.Instance.DisablePlayerHUD();
-            }
-        }
     }
 
     private void Action()
@@ -1048,11 +1034,10 @@ public class PlayerController : MonoBehaviour {
     public void IncreaseHealth(int heal)
     {
         currentHp += heal;
+        heartParticles.gameObject.SetActive(true);
 
         if (currentHp > initialHp)
-        {
             currentHp = initialHp;
-        }
 
         GameManager.Instance.ModifyHp(currentHp);
     }

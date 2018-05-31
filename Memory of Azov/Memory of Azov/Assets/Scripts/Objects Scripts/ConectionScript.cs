@@ -19,6 +19,8 @@ public class ConectionScript : LightenableObject {
     [Range(1,5)] public float lightenedTimeToShow = 3f;
     [Tooltip("Este valor indica si la puerta se abrira solo por la derecha, en caso contrario por el izquierdo")]
     public bool isRightOpener;
+    [Tooltip("Hace aparecer la luz azul")]
+    public bool activeRedLight;
     [Tooltip("Marca si es la puerta del trono")]
     public bool isThroneDoor;
     [Tooltip("Marca si es la puerta de salida del juego")]
@@ -319,6 +321,9 @@ public class ConectionScript : LightenableObject {
         {
             if (currentDoorType == DoorType.OpenByOneSide)
                 currentDoorType = DoorType.Normal;
+
+            if (activeRedLight)
+                ObjectsManager.Instance.ActiveRedLight();
 
             GameManager.Instance.ShowAllDoors();
 
