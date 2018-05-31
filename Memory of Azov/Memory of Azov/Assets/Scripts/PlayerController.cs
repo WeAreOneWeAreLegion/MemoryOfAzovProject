@@ -674,8 +674,13 @@ public class PlayerController : MonoBehaviour {
                         return;
 
                 if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.HittableObject))
+                {
+                    if (hit.transform.parent.GetComponent<TransparentObject>() == null)
+                        return;
+
                     if (hit.transform.parent.GetComponent<TransparentObject>().isStatic)
                         return;
+                }
 
                 if (!GameManager.Instance.GetIsPlayerPanelActive())
                     GameManager.Instance.ActivePlayerHUD(GameManager.ButtonRequest.A);
