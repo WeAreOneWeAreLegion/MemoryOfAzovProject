@@ -733,7 +733,7 @@ public class PlayerController : MonoBehaviour {
                     SetPointToMoveCrossDoor(currentDoorCrossing.GetDoorOpeningPos(transform.position), currentDoorCrossing.GetDoorClosingPos(transform.position));
                     transform.forward = (pointToGoCrossDoor - pointToStartCrossingDoor).normalized;
 
-                    myAudioSource.clip = SoundManager.Instance.GetSoundByRequest(SoundManager.SoundRequest.P_OpenDoor);
+                    myAudioSource.clip = SoundRequest(SoundManager.SoundRequest.P_OpenDoor);
                     myAudioSource.Play();
 
                     return;
@@ -750,7 +750,7 @@ public class PlayerController : MonoBehaviour {
                     ChangePlayerState(State.FakeWall);
                     transform.forward = -hit.transform.forward;
 
-                    myAudioSource.clip = SoundManager.Instance.GetSoundByRequest(SoundManager.SoundRequest.P_OpenDoor); //Deberia ser sonido libreria
+                    myAudioSource.clip = SoundRequest(SoundManager.SoundRequest.P_OpenDoor); //Deberia ser sonido libreria
                     myAudioSource.Play();
                     return;
                 }
@@ -879,9 +879,14 @@ public class PlayerController : MonoBehaviour {
     {
         StopMovement();
 
-        myAudioSource.clip = SoundManager.Instance.GetSoundByRequest(sr);
+        myAudioSource.clip = SoundRequest(sr);
 
         myAudioSource.Play();
+    }
+
+    private AudioClip SoundRequest(SoundManager.SoundRequest sr)
+    {
+        return SoundManager.Instance.GetSoundByRequest(sr);
     }
 
     private void MoveAgain()
