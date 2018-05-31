@@ -13,6 +13,7 @@ public class ScapeState_N : IEnemyState
         enemy = e;
 
         enemy.SetTarget(enemy.surrogateTarget);
+        enemy.ChangeAnimation(Enemy.AnimationState.Scape);
 
         refreshTimer = refreshTime;
     }

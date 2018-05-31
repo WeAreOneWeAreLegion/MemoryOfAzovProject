@@ -293,16 +293,16 @@ public class PlayerController : MonoBehaviour {
         direction.x = xMove;
         direction.z = zMove;
 
+        myAnimator.SetFloat("Speed", direction.magnitude);
+
+        if (speed > 0.01f)
+            myAnimator.speed = Mathf.Lerp(minWalkSpeed, maxWalkSpeed, direction.magnitude);
+        else
+            myAnimator.speed = 1;
+
         if (canMove && ((!independentFacing && currentControl == TypeOfControl.TwoControls) || (currentControl == TypeOfControl.OneControl)))
         {
             //Face where you go
-
-            myAnimator.SetFloat("Speed", direction.magnitude);
-
-            if (speed > 0.01f)
-                myAnimator.speed = Mathf.Lerp(minWalkSpeed, maxWalkSpeed, direction.magnitude);
-            else
-                myAnimator.speed = 1;
 
             if (direction != Vector3.zero)
             {
@@ -453,7 +453,12 @@ public class PlayerController : MonoBehaviour {
 
             InstaLightIntensity();
             isLightHighIntensity = false;
-            isMaxIntensity = true;
+
+            if (lightChargingTimer >= 1)
+                isMaxIntensity = true;
+
+            lightChargingTimer = 0;
+
             return;
         }
         else if (!isLightHighIntensity && areLightsIncreased)
@@ -471,7 +476,8 @@ public class PlayerController : MonoBehaviour {
 
     private void LightDamaging()
     {
-        if (!lightEnabled || (ghostsInRadius.Count == 0 && lightenObjectInRadius.Count == 0 && lightenedPuzzlesInRadius.Count == 0) || isLightCharging)
+
+        if ((!lightEnabled || (ghostsInRadius.Count == 0 && lightenObjectInRadius.Count == 0 && lightenedPuzzlesInRadius.Count == 0) || isLightCharging) && !isMaxIntensity)
         {
             if (isLightCharging)
             {
@@ -489,7 +495,13 @@ public class PlayerController : MonoBehaviour {
                     wp.OutsideLanternRange();
                 }
             }
+
             return;
+        }
+
+        if (isMaxIntensity)
+        {
+            Debug.Log("Max intensity");
         }
 
         //Make sure that puzzle objects don't pop up when flashing other direction
@@ -508,7 +520,10 @@ public class PlayerController : MonoBehaviour {
 
             Vector3 ghostPositionWithRadius = GetGhostPositionWithRadius(gc.transform.position, gc.ghostSize / 2);
 
-            if (Mathf.Abs(Vector3.Angle((ghostPositionWithRadius - lanternLight.transform.position).normalized, lanternLight.transform.forward)) < lanternDamageRadius && (!gc.IsInSight() || gc.IsStunned() != isMaxIntensity))
+            if (isMaxIntensity)
+                Debug.Log(gc.name);
+
+            if (Mathf.Abs(Vector3.Angle((ghostPositionWithRadius - lanternLight.transform.position).normalized, lanternLight.transform.forward)) < lanternDamageLength && (!gc.IsInSight() || gc.IsStunned() != isMaxIntensity))
             {
                 gc.InsideLanternRange(lanternDamage, isMaxIntensity);
             }
@@ -544,9 +559,9 @@ public class PlayerController : MonoBehaviour {
                 }
             }
 
-            isMaxIntensity = false;
         }
 
+        isMaxIntensity = false;
     }
 
     private void Timers()
@@ -824,7 +839,6 @@ public class PlayerController : MonoBehaviour {
 
         delayBetweenChargedShotTimer = 0;
 
-        lightChargingTimer = 0;
         lightReducedChargingTimer = 0;
 
         chargindParticles.gameObject.SetActive(false);

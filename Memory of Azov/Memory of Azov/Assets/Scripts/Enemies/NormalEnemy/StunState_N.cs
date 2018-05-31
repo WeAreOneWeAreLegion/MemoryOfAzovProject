@@ -17,6 +17,8 @@ public class StunState_N : IEnemyState
         enemy.StopMovement();
 
         enemy.ChangeAnimation(Enemy.AnimationState.Stun);
+
+        Debug.Log("Enter stun");
     }
 
     public void Execute()

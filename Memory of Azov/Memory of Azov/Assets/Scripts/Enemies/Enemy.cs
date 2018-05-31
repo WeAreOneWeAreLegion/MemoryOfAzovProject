@@ -4,7 +4,7 @@ using UnityEditor;
 
 public class Enemy : LightenableObject {
 
-    public enum AnimationState { Move, Stun, Attack }
+    public enum AnimationState { Move, Stun, Attack, Scape }
     public enum TargetType { Player, Surrogate }
 
     #region Public Variables
@@ -65,6 +65,7 @@ public class Enemy : LightenableObject {
     protected float oscilatorLifeTime;
     protected float currentHp;
     protected float initialSpeed;
+    protected float attackTimer;
     protected bool receivingDamage;
     protected bool isStunned;
     protected bool isInvincible;
@@ -307,12 +308,16 @@ public class Enemy : LightenableObject {
         {
             case AnimationState.Move:
                 myAnimator.SetBool("IsStunned", false);
+                myAnimator.SetBool("IsScaping", false);
                 break;
             case AnimationState.Stun:
                 myAnimator.SetBool("IsStunned", true);
                 break;
             case AnimationState.Attack:
                 myAnimator.SetTrigger("Attack");
+                break;
+            case AnimationState.Scape:
+                myAnimator.SetBool("IsScaping", true);
                 break;
         }
     }
@@ -321,7 +326,7 @@ public class Enemy : LightenableObject {
     #region Lighten Methods
     protected void CheckPlayerDistance()
     {
-        if (Vector3.Distance(GameManager.Instance.GetPlayer().position, transform.position) < GameManager.Instance.player.lanternDamageLength)
+        if (Vector3.Distance(GameManager.Instance.GetPlayer().position, transform.position) < GameManager.Instance.player.GetInitialLanternLength())
         {
             GameManager.Instance.player.OnGhostEnter(this.gameObject);
         }
