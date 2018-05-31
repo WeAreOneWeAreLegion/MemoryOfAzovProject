@@ -529,7 +529,7 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void IncreaseNumOfGems()
     {
-        if (currentNumOfGems < maxNumOfGems - 1)
+        if (currentNumOfGems < maxNumOfGems)
            AddGem(false);
     }
 
