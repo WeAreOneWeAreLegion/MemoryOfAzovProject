@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4256452132834784}
   - component: {fileID: 33745845980316524}
   - component: {fileID: 23101134904892560}
-  - component: {fileID: 95083640117713556}
+  - component: {fileID: 111339812515367394}
   m_Layer: 0
   m_Name: Vitrina
   m_TagString: Untagged
@@ -155,23 +155,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.4738355, y: 4.7972813, z: 1.0314}
   m_Center: {x: 0, y: -0.08907223, z: -0.038274884}
---- !u!95 &95083640117713556
-Animator:
-  serializedVersion: 3
+--- !u!111 &111339812515367394
+Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1448415231175712}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6dad6e89d80c5e14bb7c72d5fe17a55a, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114643896052432170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +189,7 @@ MonoBehaviour:
   isDoor: 0
   isStatic: 0
   myRenderers: []
-  myAnimations: []
+  myAnimations:
+  - {fileID: 111339812515367394}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
