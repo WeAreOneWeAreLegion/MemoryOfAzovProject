@@ -802,16 +802,25 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void BoldenAndUnboldenButton()
     {
-        unboldenedTextButton = lastSelectedButton.GetComponentInChildren<Text>();
-        unboldenedTextButton.fontStyle = FontStyle.Normal;
+        if (lastSelectedButton != null)
+        {
+            unboldenedTextButton = lastSelectedButton.GetComponentInChildren<Text>();
+            unboldenedTextButton.fontStyle = FontStyle.Normal;
+        }
 
-        boldenedTextButton = currentSelectedButton.GetComponentInChildren<Text>();
-        boldenedTextButton.fontStyle = FontStyle.Bold;
+        if (currentSelectedButton != null)
+        {
+            boldenedTextButton = currentSelectedButton.GetComponentInChildren<Text>();
+            boldenedTextButton.fontStyle = FontStyle.Bold;
+        }
     }
     private void GetLastSelectedButton()
     {
-        boldenedTextButton = myEventSystem.currentSelectedGameObject.GetComponentInChildren<Text>();
-        boldenedTextButton.fontStyle = FontStyle.Bold;
+        if (lastSelectedButton != null)
+        {
+            boldenedTextButton = myEventSystem.currentSelectedGameObject.GetComponentInChildren<Text>();
+            boldenedTextButton.fontStyle = FontStyle.Bold;
+        }
 
         if (myEventSystem.currentSelectedGameObject != currentSelectedButton)
         {

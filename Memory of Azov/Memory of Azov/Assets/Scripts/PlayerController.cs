@@ -815,6 +815,8 @@ public class PlayerController : MonoBehaviour {
         CombateMode();
         aimTimer = timeBetweenAim / 2;
 
+        myAnimator.SetBool("Charging", true);
+
         isLightCharging = true;
         lightChargingTimer = 0;
         lightReducedChargingTimer = 0;
@@ -832,6 +834,7 @@ public class PlayerController : MonoBehaviour {
 
         aimTimer = timeBetweenAim / 2;
 
+        myAnimator.SetBool("Charging", false);
         isLightCharging = false;
         isLightHighIntensity = true;
 
