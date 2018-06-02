@@ -741,6 +741,7 @@ public class PlayerController : MonoBehaviour {
 
                     myAudioSource.clip = SoundRequest(SoundManager.SoundRequest.P_OpenDoor);
                     myAudioSource.Play();
+                    //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_DoorOpen);
 
                     return;
                 }
@@ -758,6 +759,7 @@ public class PlayerController : MonoBehaviour {
 
                     myAudioSource.clip = SoundRequest(SoundManager.SoundRequest.P_OpenDoor); //Deberia ser sonido libreria
                     myAudioSource.Play();
+                    //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Bookshelf);
                     return;
                 }
             }
@@ -769,6 +771,7 @@ public class PlayerController : MonoBehaviour {
                 {
                     to.ShakeObjectAnimation();
                     StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+                    //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ShakeFurniture);
                 }
             }
             else if (hit.transform.GetComponent<TransparentObject>() != null)
@@ -778,6 +781,7 @@ public class PlayerController : MonoBehaviour {
                 {
                     to.ShakeObjectAnimation();
                     StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+                    //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ShakeFurniture);
                 }
             }
 
@@ -786,6 +790,7 @@ public class PlayerController : MonoBehaviour {
                 CollectableObject co = hit.transform.GetComponent<CollectableObject>();
                 co.CollectObject();
                 StopPlusSoundRequired(SoundManager.SoundRequest.P_ButtonPush);
+                //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Button);
             }
 
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Bell) && 
@@ -793,6 +798,7 @@ public class PlayerController : MonoBehaviour {
             {
                 hit.transform.GetComponent<DoorBell>().OpenDoor();
                 StopPlusSoundRequired(SoundManager.SoundRequest.P_ButtonPush);
+                //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Button);
                 return;
             }
         }
@@ -816,6 +822,7 @@ public class PlayerController : MonoBehaviour {
         chargindParticles.gameObject.SetActive(true);
         var col = chargindParticles.colorOverLifetime;
         col.color = lightsChargingGradientColor;
+        SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargingFlash, this.gameObject.transform);
     }
 
     private void ReleaseLight()
@@ -833,6 +840,7 @@ public class PlayerController : MonoBehaviour {
         lightReducedChargingTimer = 0;
 
         chargindParticles.gameObject.SetActive(false);
+        //SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ReleaseFlash);
     }
 
     private void SwitchLight()
@@ -885,7 +893,7 @@ public class PlayerController : MonoBehaviour {
         StopMovement();
 
         myAudioSource.clip = SoundRequest(sr);
-
+        //SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_Damaged);
         myAudioSource.Play();
     }
 
@@ -1045,6 +1053,7 @@ public class PlayerController : MonoBehaviour {
             currentHp = initialHp;
 
         GameManager.Instance.ModifyHp(currentHp);
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_HealthItemFound, this.gameObject.transform);
     }
 
     public void RecieveDamage(int damage)
@@ -1061,6 +1070,7 @@ public class PlayerController : MonoBehaviour {
         StopMovementByHit();
 
         GameManager.Instance.ModifyHp(currentHp);
+        SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_Damaged);
     }
 
     public Vector3 GetOutsideLightPoint(Vector3 referencePoint, float distancePoint)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061622642, g: 0.10951624, b: 0.14596528, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.061416075, g: 0.10949504, b: 0.14531955, a: 0.3}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -34343,7 +34343,7 @@ MonoBehaviour:
     changeColorButton: 101
     chargeTrigger: Fire1
     pauseButton: 27
-  isControllerPlaying: 1
+  isControllerPlaying: 0
   invertVerticalRotation: 1
   joystickRotationFactor: 3
   leftPlayer1Vibrator: 0
@@ -63234,6 +63234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1304689142}
   - component: {fileID: 1304689143}
+  - component: {fileID: 1304689144}
   m_Layer: 0
   m_Name: SoundsManager
   m_TagString: Untagged
@@ -63273,6 +63274,51 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ebe8091e2e28a044aa52f0487d1506a, type: 3}
   enemyCrySound:
   - {fileID: 8300000, guid: dc4f7a519be027f4f9e41716b94de717, type: 3}
+  ambientRainSound: event:/Ambiente/FX_Rain
+  ambientThunderSound: event:/Ambiente/FX_Thunder
+  characterDamagedSound: event:/Character/Character_Damaged
+  characterDeathSound: event:/Character/Character_Death
+  characterScaredSound: event:/Character/Character_Scared
+  characterShakingHeadSound: event:/Character/Character_ShakingHead
+  characterStepsCarpetSound: event:/Character/Character_StepsCarpet
+  characterStepsMarbleSound: event:/Character/Character_StepsMarble
+  ghostAttackSound: event:/Ghost/Ghost_Attack
+  ghostBooSound: event:/Ghost/Ghost_Boo
+  ghostDamagedSound: event:/Ghost/Ghost_Damaged
+  ghostDeadSound: event:/Ghost/Ghost_Dead
+  ghostLaughSound: event:/Ghost/Ghost_Laught
+  ghostLaughALotSound: event:/Ghost/Ghost_LaughtALot
+  ghostStunnedSound: event:/Ghost/Ghost_Stunned
+  scenarioButtonSound: event:/Escenario/FX_Button
+  scenarioDoorCloseSound: event:/Escenario/FX_DoorClose
+  scenarioDoorKnobSound: event:/Escenario/FX_DoorKnob
+  scenarioDoorOpenSound: event:/Escenario/FX_DoorOpen
+  scenarioFireplaceSound: event:/Escenario/FX_Fireplace
+  scenarioHealItemDroppedSound: event:/Escenario/FX_HealthItemDropped
+  scenarioHealItemFoundSound: event:/Escenario/FX_HealthItemFound
+  scenarioItemFoundSound: event:/Escenario/FX_ItemFound
+  scenarioItemLightParticlesSound: event:/Escenario/FX_ItemLightParticles
+  scenarioLockedDoorSound: event:/Escenario/FX_LoockedDoor
+  scenarioSpecialItemFoundSound: event:/Escenario/FX_SpecialItemFound
+  scenarioUnlockDoorSound: event:/Escenario/FX_UnlockDoor
+  flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
+  flashlightNoiseSound: event:/Linterna/Flashlight_Noise
+  flashlightOffSound: event:/Linterna/Flashlight_Off
+  flashlightOnSound: event:/Linterna/Flashlight_On
+  menuHUDMovementSound: "event:/Men\xFA/HUD_Movement"
+  menuHUDSelectSound: "event:/Men\xFA/HUD_Select"
+--- !u!114 &1304689144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1304689141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &1307698517
 GameObject:
   m_ObjectHideFlags: 0
@@ -70247,7 +70293,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
+  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
