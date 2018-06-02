@@ -109,6 +109,11 @@ public class GameManager : MonoSingleton<GameManager> {
     public GameObject yesButtonMenuConfirmationPanel;
     public GameObject yesButtonQuitConfirmationPanel;
     public GameObject controllerToggle;
+
+    private Text boldenedTextButton;
+    private Text unboldenedTextButton;
+    private GameObject lastSelectedButton;
+    private GameObject currentSelectedButton;
     [Tooltip("Bool variable to know if a confirmation panel is visible or not")]
     public bool confirmationPanelOpen = false;
     [Tooltip("Bool variable to know if a the player is using a controller or a keyboard")]
@@ -623,6 +628,9 @@ public class GameManager : MonoSingleton<GameManager> {
     #region Pause Methods
     private void PauseActions()
     {
+        GetLastSelectedButton();
+        BoldenAndUnboldenButton();
+
         if (InputsManager.Instance.GetBackButtonInputDown() && !confirmationPanelOpen) //Input.GetKeyDown("joystick button 1")
             Resume();
 
@@ -788,7 +796,47 @@ public class GameManager : MonoSingleton<GameManager> {
         myEventSystem.SetSelectedGameObject(null);
         yield return null;
         myEventSystem.SetSelectedGameObject(myButton);//myEventSystem.firstSelectedGameObject);
+        GetLastSelectedButton(); //so the first button it is always boldened
         yield return null;
+    }
+
+    private void BoldenAndUnboldenButton()
+    {
+        unboldenedTextButton = lastSelectedButton.GetComponentInChildren<Text>();
+        unboldenedTextButton.fontStyle = FontStyle.Normal;
+
+        boldenedTextButton = currentSelectedButton.GetComponentInChildren<Text>();
+        boldenedTextButton.fontStyle = FontStyle.Bold;
+    }
+    private void GetLastSelectedButton()
+    {
+        boldenedTextButton = myEventSystem.currentSelectedGameObject.GetComponentInChildren<Text>();
+        boldenedTextButton.fontStyle = FontStyle.Bold;
+
+        if (myEventSystem.currentSelectedGameObject != currentSelectedButton)
+        {
+            lastSelectedButton = currentSelectedButton;
+
+            currentSelectedButton = myEventSystem.currentSelectedGameObject;
+        }
+    }
+
+    void OnMouseOver()
+    {
+        unboldenedTextButton = lastSelectedButton.GetComponentInChildren<Text>();
+        unboldenedTextButton.fontStyle = FontStyle.Normal;
+    }
+
+    void OnMouseEnter()
+    {
+        unboldenedTextButton = lastSelectedButton.GetComponentInChildren<Text>();
+        unboldenedTextButton.fontStyle = FontStyle.Normal;
+    }
+
+    void OnMouseExit()
+    {
+        boldenedTextButton = currentSelectedButton.GetComponentInChildren<Text>();
+        boldenedTextButton.fontStyle = FontStyle.Bold;
     }
     #endregion
 

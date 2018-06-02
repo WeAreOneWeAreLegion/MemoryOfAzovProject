@@ -21871,6 +21871,41 @@ Prefab:
       propertyPath: m_Color.a
       value: 0.39215687
       objectReference: {fileID: 0}
+    - target: {fileID: 114742216210857868, guid: 6943450eeef8fca4d80da847bc1b2b9e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114260015378072596, guid: 6943450eeef8fca4d80da847bc1b2b9e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114501936199871878, guid: 6943450eeef8fca4d80da847bc1b2b9e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114056872204703532, guid: 6943450eeef8fca4d80da847bc1b2b9e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114854017292668688, guid: 6943450eeef8fca4d80da847bc1b2b9e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114616563572578210, guid: 6943450eeef8fca4d80da847bc1b2b9e,
+        type: 2}
+      propertyPath: m_Text
+      value: RESUME
+      objectReference: {fileID: 0}
+    - target: {fileID: 114594649045789924, guid: 6943450eeef8fca4d80da847bc1b2b9e,
+        type: 2}
+      propertyPath: m_Text
+      value: RESTART
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6943450eeef8fca4d80da847bc1b2b9e, type: 2}
   m_IsPrefabParent: 0
@@ -50546,7 +50581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1054202679
 MonoBehaviour:
   m_ObjectHideFlags: 0
