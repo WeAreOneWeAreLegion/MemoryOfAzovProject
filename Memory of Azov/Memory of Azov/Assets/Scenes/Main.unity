@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061622642, g: 0.10951624, b: 0.14596528, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.061416075, g: 0.10949504, b: 0.14531955, a: 0.3}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -36791,7 +36791,7 @@ MonoBehaviour:
     changeColorButton: 101
     chargeTrigger: Fire1
     pauseButton: 27
-  isControllerPlaying: 1
+  isControllerPlaying: 0
   invertVerticalRotation: 1
   joystickRotationFactor: 3
   leftPlayer1Vibrator: 0
