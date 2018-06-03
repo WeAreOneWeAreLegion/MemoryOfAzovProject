@@ -5486,6 +5486,7 @@ MonoBehaviour:
   lanternHandBone: {fileID: 1777386298}
   eyeLeft: {fileID: 940913305}
   eyeRight: {fileID: 18753594}
+  leverAnimation: {fileID: 1926971907}
 --- !u!1001 &75429669
 Prefab:
   m_ObjectHideFlags: 0
@@ -26375,24 +26376,21 @@ Transform:
   m_Father: {fileID: 1287718794}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &590021843
-Animator:
-  serializedVersion: 3
+--- !u!111 &590021843
+Animation:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 95386750769495764, guid: 5c3aebbc858f7b54e939b6b4bd3fc65b,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 590021841}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e0654fa251d6c0144b8bc2aeb0b1aaa0, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a9910b41166317d4588e6c9d498bb12b, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a9910b41166317d4588e6c9d498bb12b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &593409959
 GameObject:
   m_ObjectHideFlags: 0
@@ -53653,24 +53651,21 @@ Transform:
   m_Father: {fileID: 1959277758}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1052479069
-Animator:
-  serializedVersion: 3
+--- !u!111 &1052479069
+Animation:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 95849899161548946, guid: 5c3aebbc858f7b54e939b6b4bd3fc65b,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1052479067}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e0654fa251d6c0144b8bc2aeb0b1aaa0, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a9910b41166317d4588e6c9d498bb12b, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a9910b41166317d4588e6c9d498bb12b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1054202678
 GameObject:
   m_ObjectHideFlags: 0
@@ -82036,24 +82031,21 @@ Transform:
   m_Father: {fileID: 323740991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1926971907
-Animator:
-  serializedVersion: 3
+--- !u!111 &1926971907
+Animation:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 95450544445782044, guid: 5c3aebbc858f7b54e939b6b4bd3fc65b,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1926971905}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e0654fa251d6c0144b8bc2aeb0b1aaa0, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a9910b41166317d4588e6c9d498bb12b, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a9910b41166317d4588e6c9d498bb12b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1928167017
 GameObject:
   m_ObjectHideFlags: 0
