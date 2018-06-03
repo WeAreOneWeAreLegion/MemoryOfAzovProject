@@ -16,6 +16,7 @@ public class DoorBell : MonoBehaviour {
     [Header("\t    Own Script Variables")]
     [Tooltip("Puerta que accionara este timbre")]
     public ConectionScript myDoor;
+    public Animation myAnimation;
     #endregion
 
     #region Open Door Method
@@ -48,6 +49,7 @@ public class DoorBell : MonoBehaviour {
         }
 
         enabled = false;
+        myAnimation.Play();
         tag = GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Wall);
     }
     #endregion

@@ -22,6 +22,8 @@ public class TransparentObject : MonoBehaviour {
     public bool isWall;
     [Tooltip("Soy una puerta? (Esta variable impide que haga shake el objeto tambien)")]
     public bool isDoor;
+    [Tooltip("Soy de caracter transparente")]
+    public bool isHorizontalDoor;
     [Tooltip("Soy estatico? (No shake)")]
     public bool isStatic;
     public List<Renderer> myRenderers = new List<Renderer>();
@@ -36,7 +38,6 @@ public class TransparentObject : MonoBehaviour {
     private bool isMaterialHidden = false;
     private float transparencyValue;
 
-    private bool isHorizontalDoor;
 
     private List<Material> myMats = new List<Material>();
     #endregion
@@ -52,11 +53,6 @@ public class TransparentObject : MonoBehaviour {
                 a.AddClip(shakeAnimation, "Shake");
                 a.AddClip(openAnimation, "Open");
             }
-        }
-
-        if (isDoor)
-        {
-            isHorizontalDoor = transform.parent.eulerAngles.y != 0 && transform.parent.eulerAngles.y != 180;
         }
 
         foreach (Renderer r in myRenderers)

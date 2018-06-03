@@ -325,7 +325,7 @@ public class ConectionScript : LightenableObject {
             if (activeRedLight)
                 ObjectsManager.Instance.ActiveRedLight();
 
-            GameManager.Instance.ShowAllDoors();
+            GameManager.Instance.ShowAllDoors(roomRightTop, roomLeftBottom);
 
             lightsSwitched = false;
 

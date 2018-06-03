@@ -757,6 +757,8 @@ public class PlayerController : MonoBehaviour {
                     ChangePlayerState(State.FakeWall);
                     transform.forward = -hit.transform.forward;
 
+                    myAnimator.SetFloat("Speed", 0);
+
                     myAudioSource.clip = SoundRequest(SoundManager.SoundRequest.P_OpenDoor); //Deberia ser sonido libreria
                     myAudioSource.Play();
                     //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Bookshelf);

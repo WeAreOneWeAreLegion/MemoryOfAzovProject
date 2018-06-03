@@ -277,12 +277,11 @@ public class GameManager : MonoSingleton<GameManager> {
         }
     }
 
-    public void ShowAllDoors()
+    public void ShowAllDoors(GameObject room1, GameObject room2)
     {
         foreach (ConectionScript d in doorsList)
-        {
-            d.ShowVisualDoor();
-        }
+            if (d.IsDoorFromRoom(room1) || d.IsDoorFromRoom(room2))
+                d.ShowVisualDoor();
     }
 
     public void BlockPlayerDoors()

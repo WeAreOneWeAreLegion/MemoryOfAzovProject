@@ -408,6 +408,8 @@ public class Enemy : LightenableObject {
 
             myRGB.velocity = Vector3.zero;
 
+            isInvincible = true;
+
             GameManager.Instance.DestroyEnemyHUD(transform);
             GameManager.Instance.IncreseNumOfGhostsCaptured();
             EnemyManager.Instance.ReturnEnemy(gameObject);
