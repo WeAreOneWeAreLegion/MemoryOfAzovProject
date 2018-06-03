@@ -554,13 +554,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9b7d9e923488646adc45ad96993d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 84
+  speed: 120
   rotationSpeed: 120
   oscilationSpeed: 42
   speedFactorWhenLightened: 1.7
   oscilationsPerSecond: 2
   oscilationAmplitude: 2
-  immediateFacing: 0
+  immediateFacing: 1
   oscillationMovement: 1
   initialHp: 100
   timeStuned: 2
