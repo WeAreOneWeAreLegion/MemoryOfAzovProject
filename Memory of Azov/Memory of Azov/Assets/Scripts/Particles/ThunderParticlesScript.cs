@@ -28,7 +28,6 @@ public class ThunderParticlesScript : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log("thunderRenderPrefab rotation: " + thunderRenderPrefab.transform.localRotation);
         if (!randomTimerSet)
         {
             spawnTime = Random.Range(firstNumber, secondNumber);//(10, 31);
