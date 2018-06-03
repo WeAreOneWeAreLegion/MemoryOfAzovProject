@@ -74,41 +74,41 @@ public class TransparentObject : MonoBehaviour {
         }
         if (isMaterialHidden)
         {
-            if (isWall)
+            if (isWall || isDoor)
             {
                 if (Mathf.Abs((Camera.main.transform.position - transform.position).z) > Mathf.Abs((Camera.main.transform.position - player.position).z))
                 {
                     ShowMaterial();
                 }
             }
-            else
-            {
-                if (Mathf.Abs((Camera.main.transform.position - transform.position).z) + GameManager.Instance.transparencyOffsetForward > Mathf.Abs((Camera.main.transform.position - player.position).z) ||
-                    (Mathf.Abs((transform.position - player.position).x) > GameManager.Instance.transparencyOffsetLateral && !isDoor))
-                {
-                    ShowMaterial();
-                }
-            }
+            //else
+            //{
+            //    if (Mathf.Abs((Camera.main.transform.position - transform.position).z) + GameManager.Instance.transparencyOffsetForward > Mathf.Abs((Camera.main.transform.position - player.position).z) ||
+            //        (Mathf.Abs((transform.position - player.position).x) > GameManager.Instance.transparencyOffsetLateral && !isDoor))
+            //    {
+            //        ShowMaterial();
+            //    }
+            //}
         }
         else
         {
             try
             {
-                if (isWall)
+                if (isWall || isDoor)
                 {
                     if (Mathf.Abs((Camera.main.transform.position - transform.position).z) < Mathf.Abs((Camera.main.transform.position - player.position).z))
                     {
                         HideMaterial();
                     }
                 }
-                else
-                {
-                    if (Mathf.Abs((Camera.main.transform.position - transform.position).z) + GameManager.Instance.transparencyOffsetForward < Mathf.Abs((Camera.main.transform.position - player.position).z) &&
-                    Mathf.Abs((transform.position - player.position).x) < GameManager.Instance.transparencyOffsetLateral)
-                    {
-                        HideMaterial();
-                    }
-                }
+                //else
+                //{
+                //    if (Mathf.Abs((Camera.main.transform.position - transform.position).z) + GameManager.Instance.transparencyOffsetForward < Mathf.Abs((Camera.main.transform.position - player.position).z) &&
+                //    Mathf.Abs((transform.position - player.position).x) < GameManager.Instance.transparencyOffsetLateral)
+                //    {
+                //        HideMaterial();
+                //    }
+                //}
             }
 
             catch

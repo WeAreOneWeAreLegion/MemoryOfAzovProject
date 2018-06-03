@@ -6604,6 +6604,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 129517912}
+--- !u!114 &130067582 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114924391646425064, guid: 5c3aebbc858f7b54e939b6b4bd3fc65b,
+    type: 2}
+  m_PrefabInternal: {fileID: 828333778}
+  m_Script: {fileID: 11500000, guid: 218b071a6277dcc42a3e870f052ce7e1, type: 3}
 --- !u!1 &135777744 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1672403487328498, guid: 6943450eeef8fca4d80da847bc1b2b9e,
@@ -38703,6 +38709,12 @@ Transform:
   m_Father: {fileID: 261945277}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 19.446001, y: -12.187, z: -1.7490001}
+--- !u!114 &806326776 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114266535381753338, guid: 5c3aebbc858f7b54e939b6b4bd3fc65b,
+    type: 2}
+  m_PrefabInternal: {fileID: 828333778}
+  m_Script: {fileID: 11500000, guid: 218b071a6277dcc42a3e870f052ce7e1, type: 3}
 --- !u!1 &806617031
 GameObject:
   m_ObjectHideFlags: 0
@@ -41937,6 +41949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 962234787}
   - component: {fileID: 962234786}
+  - component: {fileID: 962234788}
   m_Layer: 0
   m_Name: ObjectsManager
   m_TagString: Untagged
@@ -41974,6 +41987,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &962234788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 962234785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2991525783d5da4c915a5061005c5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crankPuzzles:
+  - {fileID: 806326776}
+  - {fileID: 130067582}
+  - {fileID: 2084320661}
 --- !u!1 &967643452
 GameObject:
   m_ObjectHideFlags: 0
@@ -46329,13 +46357,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a366ee19be7a304db8d1d85f5152e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDoorType: 2
+  currentDoorType: 0
   isLightSwitcher: 0
   lightenedTimeToShow: 3
   isRightOpener: 0
   activeRedLight: 0
-  isThroneDoor: 1
-  isFinalDoor: 0
+  isThroneDoor: 0
+  isFinalDoor: 1
   checkerDistance: 2
   myCollider: {fileID: 800319065}
   rightPoint: {fileID: 6026268}
@@ -82840,6 +82868,12 @@ Transform:
   m_Father: {fileID: 791164742}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2084320661 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114882987322592540, guid: 5c3aebbc858f7b54e939b6b4bd3fc65b,
+    type: 2}
+  m_PrefabInternal: {fileID: 828333778}
+  m_Script: {fileID: 11500000, guid: 218b071a6277dcc42a3e870f052ce7e1, type: 3}
 --- !u!1 &2085174462
 GameObject:
   m_ObjectHideFlags: 0
