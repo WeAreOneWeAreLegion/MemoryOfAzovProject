@@ -124,12 +124,16 @@ public class PlayerController : MonoBehaviour {
     private bool canMove;
     private bool stopByAiming;
     private bool stopByHit;
+    private bool stopByAnimation;
     private bool isLightCharging;
     private bool isMoving;
     private bool autoFace;
     private bool isVibrating;
     private Vector3 direction;
     private Vector3 faceDirection;
+
+    private TransparentObject to;
+    private CollectableObject co;
 
     private State currentState = State.Playing;
     private CharacterController myCharController;
@@ -297,10 +301,15 @@ public class PlayerController : MonoBehaviour {
 
         myAnimator.SetFloat("Speed", direction.magnitude);
 
-        if (speed > 0.01f)
-            myAnimator.speed = Mathf.Lerp(minWalkSpeed, maxWalkSpeed, direction.magnitude);
+        if (canMove && direction != Vector3.zero)
+        {
+            if (speed > 0.01f)
+                myAnimator.speed = Mathf.Lerp(minWalkSpeed, maxWalkSpeed, direction.magnitude);
+            else
+                myAnimator.speed = 1;
+        }
         else
-            myAnimator.speed = 1;
+                myAnimator.speed = 1;
 
         if (canMove && ((!independentFacing && currentControl == TypeOfControl.TwoControls) || (currentControl == TypeOfControl.OneControl)))
         {
@@ -633,7 +642,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (!canMove)
         {
-            if (!myAudioSource.isPlaying && !stopByAiming && !stopByHit)
+            if (!stopByAiming && !stopByHit && !stopByAnimation)
             {
                 MoveAgain();
             }
@@ -745,6 +754,10 @@ public class PlayerController : MonoBehaviour {
 
                     return;
                 }
+                else
+                {
+                    //Puerta cerrada por lo que sea, negar con la cabeza
+                }
             }
             else if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.FakeWall))
             {
@@ -768,36 +781,34 @@ public class PlayerController : MonoBehaviour {
 
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.HittableObject))
             {
-                TransparentObject to = hit.transform.parent.GetComponent<TransparentObject>();
+                to = hit.transform.parent.GetComponent<TransparentObject>();
                 if (!to.isStatic)
                 {
-                    to.ShakeObjectAnimation();
-                    StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+                    Examine();
                     //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ShakeFurniture);
                 }
             }
             else if (hit.transform.GetComponent<TransparentObject>() != null)
             {
-                TransparentObject to = hit.transform.GetComponent<TransparentObject>();
+                to = hit.transform.GetComponent<TransparentObject>();
                 if (!to.isStatic)
                 {
-                    to.ShakeObjectAnimation();
-                    StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+                    Examine();
                     //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ShakeFurniture);
                 }
             }
 
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.CollectableObject))
             {
-                CollectableObject co = hit.transform.GetComponent<CollectableObject>();
-                co.CollectObject();
-                StopPlusSoundRequired(SoundManager.SoundRequest.P_ButtonPush);
+                Examine();
+                co = hit.transform.GetComponent<CollectableObject>();
                 //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Button);
             }
 
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Bell) && 
                 hit.transform.GetComponent<DoorBell>().enabled)
             {
+                Examine();
                 hit.transform.GetComponent<DoorBell>().OpenDoor();
                 StopPlusSoundRequired(SoundManager.SoundRequest.P_ButtonPush);
                 //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Button);
@@ -907,11 +918,24 @@ public class PlayerController : MonoBehaviour {
         return SoundManager.Instance.GetSoundByRequest(sr);
     }
 
+    private void Examine()
+    {
+        myAnimator.speed = 1;
+        myAnimator.SetTrigger("Examine");
+        StopByAnimation();
+    }
+
     private void MoveAgain()
     {
         canMove = true;
         lightEnabled = false;
         SwitchLight();
+    }
+
+    private void StopByAnimation()
+    {
+        canMove = false;
+        stopByAnimation = true;
     }
 
     private void StopMovement()
@@ -1049,6 +1073,29 @@ public class PlayerController : MonoBehaviour {
         StopMovementByAim();
     }
 
+    public void DoAction()
+    {
+        if (to != null)
+        {
+            to.ShakeObjectAnimation();
+            StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+
+            to = null;
+        }
+        if (co != null)
+        {
+            co.CollectObject();
+            StopPlusSoundRequired(SoundManager.SoundRequest.P_ButtonPush);
+            co = null;
+        }
+    }
+
+    public void MoveByAnimation()
+    {
+        MoveAgain();
+        stopByAnimation = false;
+    }
+
     public void IncreaseHealth(int heal)
     {
         currentHp += heal;
@@ -1068,13 +1115,22 @@ public class PlayerController : MonoBehaviour {
 
         isVibrating = true;
         InputsManager.Instance.ActiveVibration();
+        
 
         currentHp -= damage;
 
+        //Persistance
         GameManager.Instance.IncreaseHealthLost(damage);
         StopMovementByHit();
 
         GameManager.Instance.ModifyHp(currentHp);
+
+        myAnimator.speed = 1;
+        if (currentHp > 0)
+            myAnimator.SetTrigger("Damaged");
+        else
+            myAnimator.SetTrigger("Dead");
+
         SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_Damaged);
     }
 
@@ -1140,6 +1196,11 @@ public class PlayerController : MonoBehaviour {
     public bool IsHighLigthening()
     {
         return isMaxIntensity;
+    }
+
+    public bool IsPlayerAlive()
+    {
+        return currentHp > 0;
     }
 
     public float GetInitialLanternLength()

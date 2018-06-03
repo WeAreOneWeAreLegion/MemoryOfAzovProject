@@ -454,16 +454,13 @@ public class GameManager : MonoSingleton<GameManager> {
     {
         hpText.text = currentHp.ToString();
         hpTextShadow.text = hpText.text;
-
-        if (currentHp <= 0)
-            CallPlayerDeath();
     }
 
     private void VisualGemAdd(bool isAddingAzov)
     {
         if (isAddingAzov)
         {
-            GetFinalKey();
+            currentNumOfGems++;
             diamondEggMask[diamondEggMask.Count - 1].SetActive(false);
 
             addingAzov = false;
@@ -481,6 +478,9 @@ public class GameManager : MonoSingleton<GameManager> {
                 }
             }
         }
+
+        if (currentNumOfGems >= maxNumOfGems)
+            GetFinalKey();
 
     }
 
@@ -864,9 +864,6 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void CallPlayerVictory()
     {//Victory
-
-        //Add azov egg to current eggs
-        currentNumOfGems++;
 
         ShowGemsPanel();
         ShowHealthPanel();

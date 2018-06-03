@@ -15,6 +15,12 @@ public class Enemy_N : Enemy
     protected override void Update()
     {
         base.Update();
+
+        if (!GameManager.Instance.player.IsPlayerAlive())
+        {
+            ChangeState(new IdleState_N());
+            enabled = false;
+        }
     }
 
     public override void SetUpEnemyVariables(EnemySO enemyData, ObjectsManager.ItemRequest dropItem)
