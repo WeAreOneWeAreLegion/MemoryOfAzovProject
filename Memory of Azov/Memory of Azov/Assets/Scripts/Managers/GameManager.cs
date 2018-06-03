@@ -816,7 +816,7 @@ public class GameManager : MonoSingleton<GameManager> {
     }
     private void GetLastSelectedButton()
     {
-        if (lastSelectedButton != null)
+        if (myEventSystem.currentSelectedGameObject != null)
         {
             boldenedTextButton = myEventSystem.currentSelectedGameObject.GetComponentInChildren<Text>();
             boldenedTextButton.fontStyle = FontStyle.Bold;

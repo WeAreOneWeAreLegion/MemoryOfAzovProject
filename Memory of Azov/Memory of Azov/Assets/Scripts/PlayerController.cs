@@ -824,7 +824,7 @@ public class PlayerController : MonoBehaviour {
         chargindParticles.gameObject.SetActive(true);
         var col = chargindParticles.colorOverLifetime;
         col.color = lightsChargingGradientColor;
-        SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargingFlash, this.gameObject.transform);
+        //SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargingFlash, this.gameObject.transform);
     }
 
     private void ReleaseLight()
