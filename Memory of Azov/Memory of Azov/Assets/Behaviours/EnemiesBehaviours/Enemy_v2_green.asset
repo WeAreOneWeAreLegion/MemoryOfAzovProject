@@ -24,5 +24,4 @@ MonoBehaviour:
   timeStuned: 2
   ghostDamage: 20
   attackRadius: 2
-  attackDelay: 2
-  itemToDrop: 0
+  attackDelay: 1

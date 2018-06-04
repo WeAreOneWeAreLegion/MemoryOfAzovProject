@@ -541,6 +541,7 @@ MonoBehaviour:
   attackDelay: 2
   myMeshRenderers:
   - {fileID: 137994004653715494}
+  visual: {fileID: 4831633286202732}
   itemToDrop: 2
   debugInRuntime: 1
   surrogateTarget: {fileID: 4854929716857976}

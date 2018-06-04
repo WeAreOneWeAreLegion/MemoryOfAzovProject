@@ -42,6 +42,7 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     [Header("CrossDoor Variables")]
     [Tooltip("Cuantos segundos tardara la camara en moverse de donde esta a la posicion cinematica")]
     [Range(0, 2)] public float cinematicCameraSpeed = 0.2f;
+    [Range(0, 2)] public float cinematicShowingTime = 0.4f;
 
     [Header("\t    Own Script Variables")]
     [Tooltip("Target a seguir")]
@@ -50,7 +51,7 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     [Range(50,150)] public float raySidesDistance = 100f;
 
     public Transform provisionalTarget;
-    public Transform provisionalSurrogate;
+    public Transform currentSurrogate;
     #endregion
 
     #region Private Variables
@@ -60,11 +61,13 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     //private float currentRotation;
     private float backwardFirstDistance;
     private float cinematicTimer;
+    private float cinematicFinishedTimer;
     //private float cameraRotationLerpTimer;
     private bool wallsFound;
     private bool backwardDistanceSet;
     private bool dontFollow;
     private bool goingCinematic;
+    private bool isCinematicFinished;
 
     private Vector3 moveAtPoint;
 
@@ -90,20 +93,6 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
 
     private void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (currentState == CameraState.Cinematic)
-            {
-                goingCinematic = false;
-                TargetCinematic(provisionalSurrogate);
-            }
-            else
-            {
-                TargetCinematic(provisionalTarget);
-                ChangeCameraBehaviourState(CameraState.Cinematic);
-            }
-        }
-
         if (Time.timeScale == 0)
             return;
         if (currentState == CameraState.Following)
@@ -204,7 +193,8 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
             transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, yPosition, zBackWall - (transform.forward * currentCameraLook.cameraDistance).z + backwardsDistance), cameraFollowSpeed * Time.deltaTime);
         }
 
-        provisionalSurrogate = transform;
+        currentSurrogate.position = transform.position;
+        currentSurrogate.rotation = transform.rotation;
     }
     #endregion
 
@@ -229,13 +219,33 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     #region Cinematic Methods
     public void CinematicMovement()
     {
-        if (goingCinematic)
-            cinematicTimer += Time.deltaTime / cinematicCameraSpeed;
-        else
-            cinematicTimer -= Time.deltaTime / cinematicCameraSpeed;
+        if (isCinematicFinished)
+            if (Time.time >= cinematicShowingTime + cinematicFinishedTimer)
+                goingCinematic = false;
 
-        transform.position = Vector3.Lerp(transform.position, cinematicTarget.position, cinematicTimer);
-        transform.rotation = Quaternion.Lerp(transform.rotation, cinematicTarget.rotation, cinematicTimer);
+        if (goingCinematic)
+        {
+            cinematicTimer += Time.deltaTime / cinematicCameraSpeed;
+            if (cinematicTimer > 1 && !isCinematicFinished)
+            {
+                cinematicTimer = 1;
+                cinematicFinishedTimer = Time.time;
+                isCinematicFinished = true;
+            }
+        }
+        else
+        {
+            cinematicTimer -= Time.deltaTime / cinematicCameraSpeed;
+            if (cinematicTimer < 0)
+            {
+                cinematicTimer = 0;
+                isCinematicFinished = false;
+                ChangeCameraBehaviourState(CameraState.Following);
+            }
+        }
+
+        transform.position = Vector3.Lerp(currentSurrogate.position, cinematicTarget.position, cinematicTimer);
+        transform.rotation = Quaternion.Lerp(currentSurrogate.rotation, cinematicTarget.rotation, cinematicTimer);
     }
 
     public void TargetCinematic(Transform t)
@@ -262,6 +272,7 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
         if (newState == CameraState.Cinematic)
         {
             cinematicTimer = 0;
+            isCinematicFinished = false;
             goingCinematic = true;
         }
     }

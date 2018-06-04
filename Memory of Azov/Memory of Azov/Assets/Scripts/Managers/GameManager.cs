@@ -41,6 +41,7 @@ public class GameManager : MonoSingleton<GameManager> {
     public List<ConectionScript> doorsList = new List<ConectionScript>();
     [Tooltip("Referencia a todas las puertas")]
     public List<FakeWallScript> fakeWallsList = new List<FakeWallScript>();
+    public GameObject chandelierCameraPos;
 
     [Header("HUD Variables")]
     //Main Canvas

@@ -529,10 +529,9 @@ public class PlayerController : MonoBehaviour {
         {
             Enemy gc = g.GetComponent<Enemy>();
 
-            Vector3 ghostPositionWithRadius = GetGhostPositionWithRadius(gc.transform.position, gc.ghostSize / 2);
+            Vector3 ghostPositionWithRadius = GetGhostPositionWithRadius(gc.GetVisualPosition(), gc.ghostSize / 2);
 
-            if (isMaxIntensity)
-                Debug.Log(gc.name);
+            Debug.DrawLine(lanternLight.transform.position, ghostPositionWithRadius, Color.black, -1, false);
 
             if (Mathf.Abs(Vector3.Angle((ghostPositionWithRadius - lanternLight.transform.position).normalized, lanternLight.transform.forward)) < lanternDamageLength && (!gc.IsInSight() || gc.IsStunned() != isMaxIntensity))
             {

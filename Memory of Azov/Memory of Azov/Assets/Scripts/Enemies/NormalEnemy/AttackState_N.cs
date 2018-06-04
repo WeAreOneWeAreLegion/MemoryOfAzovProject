@@ -19,7 +19,6 @@ public class AttackState_N : IEnemyState
         enemy.StopMovement();
 
         enemy.SetTarget(GameManager.Instance.GetPlayer());
-        enemy.ChangeAnimation(Enemy.AnimationState.Attack);
     }
 
     public void Execute()

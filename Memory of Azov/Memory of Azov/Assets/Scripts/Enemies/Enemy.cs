@@ -49,6 +49,7 @@ public class Enemy : LightenableObject {
     [Header("Component Variables")]
     [Tooltip("Meshes donde se aplicaran shaders i efectos")]
     public List<SkinnedMeshRenderer> myMeshRenderers;
+    public Transform visual;
 
     [Header("Drop Variables")]
     [Tooltip("Objeto que deja caer el personaje al morir")]
@@ -467,6 +468,11 @@ public class Enemy : LightenableObject {
     public float GetAttackDelay()
     {
         return attackDelay;
+    }
+
+    public Vector3 GetVisualPosition()
+    {
+        return visual.position;
     }
     #endregion
 

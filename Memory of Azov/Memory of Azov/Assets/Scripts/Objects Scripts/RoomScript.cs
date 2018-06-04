@@ -11,6 +11,8 @@ public class RoomScript : MonoBehaviour
     public int numOfDesiredGems;
     public List<EnemySO> enemiesData = new List<EnemySO>();
 
+    public Transform cameraCinematic;
+
     [Header("\t    Own Script Variables")]
     [Tooltip("Lista de muros oscuros")]
     public List<GameObject> blackWalls = new List<GameObject>();
@@ -111,6 +113,9 @@ public class RoomScript : MonoBehaviour
     #region Enemy Spawner Method
     public void ShowAllEnemiesFromRoom()
     {
+        CameraBehaviour.Instance.TargetCinematic(cameraCinematic);
+        CameraBehaviour.Instance.ChangeCameraBehaviourState(CameraBehaviour.CameraState.Cinematic);
+
         foreach (TransparentObject t in objectsWithEnemies)
         {
             if (t.spawnGhost)

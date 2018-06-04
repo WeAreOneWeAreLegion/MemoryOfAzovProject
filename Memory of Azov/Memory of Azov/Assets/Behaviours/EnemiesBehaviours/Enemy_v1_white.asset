@@ -24,4 +24,4 @@ MonoBehaviour:
   timeStuned: 2
   ghostDamage: 60
   attackRadius: 2
-  attackDelay: 2
+  attackDelay: 1

@@ -48,6 +48,9 @@ public class GhostSpawnEvent : MonoBehaviour {
 
         go.transform.forward = spawnPosition.forward;
 
+        CameraBehaviour.Instance.TargetCinematic(hit.transform.parent.GetComponent<RoomScript>().cameraCinematic);
+        CameraBehaviour.Instance.ChangeCameraBehaviourState(CameraBehaviour.CameraState.Cinematic);
+
         ghostSpawned = true;
         theOtherEvents.ForEach(x => x.gameObject.SetActive(false));
         gameObject.SetActive(false);
