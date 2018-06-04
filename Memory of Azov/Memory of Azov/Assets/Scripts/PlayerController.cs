@@ -750,7 +750,7 @@ public class PlayerController : MonoBehaviour {
 
                     myAudioSource.clip = SoundRequest(SoundManager.SoundRequest.P_OpenDoor);
                     myAudioSource.Play();
-                    //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_DoorOpen);
+                    SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_DoorOpen, this.gameObject.transform);
 
                     return;
                 }
@@ -837,7 +837,7 @@ public class PlayerController : MonoBehaviour {
         chargindParticles.gameObject.SetActive(true);
         var col = chargindParticles.colorOverLifetime;
         col.color = lightsChargingGradientColor;
-        //SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargingFlash, this.gameObject.transform);
+        SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargingFlash, this.gameObject.transform);
     }
 
     private void ReleaseLight()

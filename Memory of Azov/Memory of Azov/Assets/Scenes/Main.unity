@@ -63331,8 +63331,8 @@ MonoBehaviour:
   ghostAttackSound: event:/Ghost/Ghost_Attack
   ghostBooSound: event:/Ghost/Ghost_Boo
   ghostDamagedSound: event:/Ghost/Ghost_Damaged
-  ghostDeadSound: event:/Ghost/Ghost_Dead
-  ghostLaughSound: event:/Ghost/Ghost_Laught
+  ghostDeadSound: event:/Ghost/Ghost_Death
+  ghostLaughSound: event:/Ghost/Ghost_Laugh
   ghostLaughALotSound: event:/Ghost/Ghost_LaughtALot
   ghostStunnedSound: event:/Ghost/Ghost_Stunned
   scenarioButtonSound: event:/Escenario/FX_Button
@@ -68043,7 +68043,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
+  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
