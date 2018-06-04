@@ -1119,6 +1119,8 @@ public class PlayerController : MonoBehaviour {
 
         currentHp -= damage;
 
+        if (currentHp < 0) currentHp = 0;
+
         //Persistance
         GameManager.Instance.IncreaseHealthLost(damage);
         StopMovementByHit();
