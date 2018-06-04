@@ -17,20 +17,16 @@ public class ThunderParticlesScript : MonoBehaviour {
     public float secondNumber = 11;
 
     //Las dejo públicas para que se vea que cambian y se puedan modificar para testear
-    public float spawnTime = 20; // one instance every interval seconds
-    public float elapsedTime = 0f; // time elapsed since last generation
+    private float spawnTime = 10; // one instance every interval seconds
+    private float elapsedTime = 0f; // time elapsed since last generation
 
-    public bool randomTimerSet = false;
-
-    void Start()
-    {
-    }
+    private bool randomTimerSet = false;
 
     void Update()
     {
         if (!randomTimerSet)
         {
-            spawnTime = Random.Range(firstNumber, secondNumber);//(10, 31);
+            spawnTime = Random.Range(firstNumber, secondNumber);//(5, 11);
             randomTimerSet = true;
         }
 
@@ -55,16 +51,14 @@ public class ThunderParticlesScript : MonoBehaviour {
 
     void SpawnThunder()
     {
-        thunderRenderLighting = (GameObject)Instantiate(thunderRenderPrefab, this.gameObject.transform.position, thunderRenderPrefab.transform.rotation); //thunderRenderPrefab.transform.rotation);
-        //Destroy(thunderRenderLighting, thunderRenderLighting.GetComponent<ParticleSystem>().startLifetime);
-
-        thunderLightLighting = (GameObject)Instantiate(thunderLightPrefab, this.gameObject.transform.position, thunderLightPrefab.transform.rotation); //thunderLightPrefab.transform
-        //Destroy(thunderLightLighting);
+        thunderRenderLighting = (GameObject)Instantiate(thunderRenderPrefab, this.gameObject.transform.position, thunderRenderPrefab.transform.rotation);
+        
+        thunderLightLighting = (GameObject)Instantiate(thunderLightPrefab, this.gameObject.transform.position, thunderLightPrefab.transform.rotation);
     }
 
     void DestroyThunder()
     {
-        //Destroy(thunderRenderLighting, thunderRenderLighting.GetComponent<ParticleSystem>().startLifetime);
-        //Destroy(thunderLightLighting, thunderLightLighting.GetComponent<ParticleSystem>().startLifetime);
+        Destroy(thunderRenderLighting, thunderRenderPrefab.GetComponent<ParticleSystem>().startLifetime);
+        Destroy(thunderLightLighting, thunderLightPrefab.GetComponent<ParticleSystem>().startLifetime);
     }
 }
