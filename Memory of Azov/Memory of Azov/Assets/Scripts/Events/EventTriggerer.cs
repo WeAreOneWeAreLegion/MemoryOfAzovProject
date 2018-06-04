@@ -57,4 +57,13 @@ public class EventTriggerer : MonoBehaviour {
 
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player))
+            if (myType == EventType.Multiple)
+                if (allowTrigger)
+                    ActiveEvent();
+    }
+
 }

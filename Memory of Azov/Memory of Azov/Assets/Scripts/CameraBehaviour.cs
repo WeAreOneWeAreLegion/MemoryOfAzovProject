@@ -39,11 +39,18 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     [Tooltip("Cuantos segundos tardara la camara en moverse de la entrada de la puerta a la salida de la puerta")]
     [Range(0, 40)] public float crossDoorCameraSpeed = 0.2f;
 
+    [Header("CrossDoor Variables")]
+    [Tooltip("Cuantos segundos tardara la camara en moverse de donde esta a la posicion cinematica")]
+    [Range(0, 2)] public float cinematicCameraSpeed = 0.2f;
+
     [Header("\t    Own Script Variables")]
     [Tooltip("Target a seguir")]
     public Transform target;
     [Tooltip("Ray lateral para detectar paredes y por tanto clampear la camara")]
     [Range(50,150)] public float raySidesDistance = 100f;
+
+    public Transform provisionalTarget;
+    public Transform provisionalSurrogate;
     #endregion
 
     #region Private Variables
@@ -52,10 +59,12 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     private float zBackWall;
     //private float currentRotation;
     private float backwardFirstDistance;
+    private float cinematicTimer;
     //private float cameraRotationLerpTimer;
     private bool wallsFound;
     private bool backwardDistanceSet;
     private bool dontFollow;
+    private bool goingCinematic;
 
     private Vector3 moveAtPoint;
 
@@ -64,6 +73,8 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     private Vector3 backwards = Vector3.zero;
 
     private TransparentObject currentWall;
+
+    private Transform cinematicTarget;
     #endregion
 
     private void Start()
@@ -79,12 +90,19 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
 
     private void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-            ChangeCameraLookState(CameraLookState.Normal);
-        if (Input.GetKeyDown(KeyCode.X))
-            ChangeCameraLookState(CameraLookState.LookUp);
-        if (Input.GetKeyDown(KeyCode.C))
-            ChangeCameraLookState(CameraLookState.LookDown);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (currentState == CameraState.Cinematic)
+            {
+                goingCinematic = false;
+                TargetCinematic(provisionalSurrogate);
+            }
+            else
+            {
+                TargetCinematic(provisionalTarget);
+                ChangeCameraBehaviourState(CameraState.Cinematic);
+            }
+        }
 
         if (Time.timeScale == 0)
             return;
@@ -93,9 +111,7 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
         else if (currentState == CameraState.CrossDoor)
             CrossDoorMovement();
         else if (currentState == CameraState.Cinematic)
-        {   
-            //Cinematic
-        }
+            CinematicMovement();
         else if (currentState == CameraState.FakeWall)
             FakeWallMovement();
     }
@@ -188,6 +204,7 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
             transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, yPosition, zBackWall - (transform.forward * currentCameraLook.cameraDistance).z + backwardsDistance), cameraFollowSpeed * Time.deltaTime);
         }
 
+        provisionalSurrogate = transform;
     }
     #endregion
 
@@ -209,6 +226,24 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     }
     #endregion
 
+    #region Cinematic Methods
+    public void CinematicMovement()
+    {
+        if (goingCinematic)
+            cinematicTimer += Time.deltaTime / cinematicCameraSpeed;
+        else
+            cinematicTimer -= Time.deltaTime / cinematicCameraSpeed;
+
+        transform.position = Vector3.Lerp(transform.position, cinematicTarget.position, cinematicTimer);
+        transform.rotation = Quaternion.Lerp(transform.rotation, cinematicTarget.rotation, cinematicTimer);
+    }
+
+    public void TargetCinematic(Transform t)
+    {
+        cinematicTarget = t;
+    }
+    #endregion
+
     #region Fake Wall Methods
     private void FakeWallMovement()
     {
@@ -223,6 +258,12 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
 
         if (newState == CameraState.FakeWall)
             dontFollow = !dontFollow;
+
+        if (newState == CameraState.Cinematic)
+        {
+            cinematicTimer = 0;
+            goingCinematic = true;
+        }
     }
 
     public void ChangeCameraLookState(CameraLookState newLookState)
