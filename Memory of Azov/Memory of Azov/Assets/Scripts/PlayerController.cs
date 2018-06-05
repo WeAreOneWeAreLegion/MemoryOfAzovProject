@@ -129,6 +129,7 @@ public class PlayerController : MonoBehaviour {
     private bool isMoving;
     private bool autoFace;
     private bool isVibrating;
+    private bool megaStop;
     private Vector3 direction;
     private Vector3 faceDirection;
 
@@ -582,6 +583,8 @@ public class PlayerController : MonoBehaviour {
 
             if (aimTimer >= timeBetweenAim)
             {
+                Debug.Log("move again by aim");
+
                 canMove = true;
                 stopByAiming = false;
 
@@ -601,6 +604,8 @@ public class PlayerController : MonoBehaviour {
 
             if (hitTimer >= timeInvulnerable)
             {
+                Debug.Log("move again by hit");
+
                 canMove = true;
 
                 stopByHit = false;
@@ -641,7 +646,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (!canMove)
         {
-            if (!stopByAiming && !stopByHit && !stopByAnimation)
+            if (!stopByAiming && !stopByHit && !stopByAnimation && !megaStop)
             {
                 MoveAgain();
             }
@@ -926,6 +931,7 @@ public class PlayerController : MonoBehaviour {
 
     private void MoveAgain()
     {
+        Debug.Log("Move again");
         canMove = true;
         lightEnabled = false;
         SwitchLight();
@@ -953,6 +959,16 @@ public class PlayerController : MonoBehaviour {
         stopByAiming = true;
         canMove = false;
         aimTimer = 0;
+
+        myAnimator.SetFloat("Speed", 0);
+    }
+
+    public void StopByMegaStop()
+    {
+        faceDirection = transform.forward;
+
+        megaStop = true;
+        canMove = false;
 
         myAnimator.SetFloat("Speed", 0);
     }
@@ -1060,14 +1076,24 @@ public class PlayerController : MonoBehaviour {
         hasRedLight = true;
     }
 
-    public void CombateMode()
+    public void CombateMode(bool permaStop = false)
     {
         independentFacing = true;
-        StopMovementByAim();
+
+        if (!permaStop)
+            StopMovementByAim();
+        else
+            StopByMegaStop();
+    }
+
+    public void MoveAgainAfterMegaStop()
+    {
+        megaStop = false;
     }
 
     public void CalmMode()
     {
+        megaStop = false;
         independentFacing = false;
         StopMovementByAim();
     }
@@ -1091,7 +1117,10 @@ public class PlayerController : MonoBehaviour {
 
     public void MoveByAnimation()
     {
-        MoveAgain();
+        if (!megaStop)
+        {
+            MoveAgain();
+        }
         stopByAnimation = false;
     }
 

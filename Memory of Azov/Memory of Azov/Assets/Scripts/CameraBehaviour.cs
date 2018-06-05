@@ -240,6 +240,7 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
             {
                 cinematicTimer = 0;
                 isCinematicFinished = false;
+                GameManager.Instance.player.MoveAgainAfterMegaStop();
                 ChangeCameraBehaviourState(CameraState.Following);
             }
         }

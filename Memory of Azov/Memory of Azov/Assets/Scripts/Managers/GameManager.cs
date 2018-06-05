@@ -17,13 +17,13 @@ public class GameManager : MonoSingleton<GameManager> {
 
     [Header("Materials Variables")]
     [Tooltip("Distancia extra para no hacer invisible los objetos cuando estan a la misma distancia frontal que el personaje principal")]
-    [Range(0,20)] public float transparencyOffsetForward = 1f;
+    [Range(0, 20)] public float transparencyOffsetForward = 1f;
     [Tooltip("Distancia extra para no hacer invisible los objetos cuando estan a la misma distancia lateral que el personaje principal")]
-    [Range(0,20)] public float transparencyOffsetLateral = 1f;
+    [Range(0, 20)] public float transparencyOffsetLateral = 1f;
     [Tooltip("La cantidad de transparencia a tener los objetos que la camara esconde")]
-    [Range(0,1)] public float objectsHidenByCameraTransparency = 0.2f;
+    [Range(0, 1)] public float objectsHidenByCameraTransparency = 0.2f;
     [Tooltip("La cantidad de transparencia a tener los muros que la camara esconde")]
-    [Range(0,1)] public float wallsHidenByCameraTransparency = 0f;
+    [Range(0, 1)] public float wallsHidenByCameraTransparency = 0f;
 
     [Header("\t    --Own Script Variables--")]
     [Header("Player Variables")]
@@ -41,7 +41,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public List<ConectionScript> doorsList = new List<ConectionScript>();
     [Tooltip("Referencia a todas las puertas")]
     public List<FakeWallScript> fakeWallsList = new List<FakeWallScript>();
-    public GameObject chandelierCameraPos;
 
     [Header("HUD Variables")]
     //Main Canvas
@@ -63,20 +62,20 @@ public class GameManager : MonoSingleton<GameManager> {
     public Text fpsText;
 
     [Header("Gems Panel")]
+    public GameObject gemsCamera;
+    public GameObject gemsRoom;
     [Tooltip("Referencia to gems panel")]
     public RectTransform gemsPanel;
     [Tooltip("Referencia a los huevos del hud")]
     public List<GameObject> diamondEggMask = new List<GameObject>();
-    [Tooltip("Posicion en el cual el panel de gemas esta escondido")]
-    public float gemsPanelYHidden = 100;
-    [Tooltip("Posicion en el cual el panel de gemas esta mostradose")]
-    public float gemsPanelYShown = 0;
     [Tooltip("Tiempo en el cual el panel de gemas tardara en aparecer del todo")]
     public float gemsPanelTime = 1;
     [Tooltip("Tiempo en el cual el panel de gemas tardara en mostrar gema")]
     public float timeBeforeAddingGem = 0.4f;
     [Tooltip("Tiempo en el cual el panel de gemas tardara en desaparecer tras mostrar gema")]
     public float timeShowingGemsPanel = 1f;
+    [Tooltip("Fade Images references")]
+    public List<Image> fadeImages;
 
     [Header("Health Panel")]
     [Tooltip("Referencia to health panel")]
@@ -155,6 +154,7 @@ public class GameManager : MonoSingleton<GameManager> {
     private bool addingHealth;
     private bool hasKey;
     private bool hasFinalKey;
+    private bool roomActivedByGem;
 
     //Persistance variables
     private int maxNumOfGems = 0;
@@ -289,7 +289,7 @@ public class GameManager : MonoSingleton<GameManager> {
     {
         combateMode = true;
 
-        player.CombateMode();
+        player.CombateMode(true);
 
         Ray ray;
         RaycastHit hit;
@@ -414,6 +414,8 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void GemsPanel()
     {
+        fadeImages.ForEach(x => x.color = new Color(x.color.r, x.color.g, x.color.b, gemsPanelTimer));
+
         if (showGemsPanel)
         {
             if (gemsPanelTimer >= 1)
@@ -423,12 +425,18 @@ public class GameManager : MonoSingleton<GameManager> {
                 {
                     StartCoroutine(AddNewGemGathered(addingAzov));
                     addingGems = false;
+                    showGemsPanel = false;
+                }
+                else 
+                {
+                    DeactiveGemsZone();
                 }
 
                 gemsPanelTimer = 1;
             }
             else
                 gemsPanelTimer += Time.unscaledDeltaTime / gemsPanelTime;
+
         }
         else
         {
@@ -437,8 +445,6 @@ public class GameManager : MonoSingleton<GameManager> {
             else
                 gemsPanelTimer -= Time.unscaledDeltaTime / gemsPanelTime;
         }
-
-        gemsPanel.anchoredPosition = Vector2.up * Mathf.Lerp(gemsPanelYHidden, gemsPanelYShown, gemsPanelTimer) + Vector2.right * gemsPanel.anchoredPosition.x;
     }
 
     private void AddGem(bool isAzovAdd)
@@ -447,8 +453,39 @@ public class GameManager : MonoSingleton<GameManager> {
             addingAzov = true;
 
         addingGems = true;
+        showGemsPanel = true;
 
-        ShowGemsPanel();
+        ActiveGemsZone();
+    }
+
+    private void ActiveGemsZone()
+    {
+        player.StopByMegaStop();
+
+        CameraBehaviour.Instance.gameObject.SetActive(false);
+        gemsCamera.SetActive(true);
+
+        if (!gemsRoom.activeInHierarchy)
+        {
+            roomActivedByGem = true;
+            gemsRoom.SetActive(true);
+        }
+    }
+
+    private void DeactiveGemsZone()
+    {
+        player.MoveAgainAfterMegaStop();
+
+        showGemsPanel = false;
+
+        CameraBehaviour.Instance.gameObject.SetActive(true);
+        gemsCamera.SetActive(false);
+
+        if (roomActivedByGem)
+        {
+            gemsRoom.SetActive(false);
+            roomActivedByGem = false;
+        }
     }
 
     private void ModifyHealthPanel(int currentHp)
@@ -462,7 +499,7 @@ public class GameManager : MonoSingleton<GameManager> {
         if (isAddingAzov)
         {
             currentNumOfGems++;
-            diamondEggMask[diamondEggMask.Count - 1].SetActive(false);
+            diamondEggMask[diamondEggMask.Count - 1].SetActive(true);
 
             addingAzov = false;
         }
@@ -472,9 +509,9 @@ public class GameManager : MonoSingleton<GameManager> {
 
             foreach (GameObject e in diamondEggMask)
             {
-                if (e.activeInHierarchy)
+                if (!e.activeInHierarchy)
                 {
-                    e.SetActive(false);
+                    e.SetActive(true);
                     return;
                 }
             }
@@ -499,7 +536,7 @@ public class GameManager : MonoSingleton<GameManager> {
         yield return new WaitForSecondsRealtime(timeBeforeAddingGem);
         VisualGemAdd(isAddingAzov);
         yield return new WaitForSecondsRealtime(timeShowingGemsPanel);
-        HideGemsPanel();
+        showGemsPanel = true;
         yield return null;
     }
 
@@ -512,16 +549,6 @@ public class GameManager : MonoSingleton<GameManager> {
     {
         if (player.GetCurrentHp() == player.initialHp)
             showHealthPanel = false;
-    }
-
-    public void ShowGemsPanel()
-    {
-        showGemsPanel = true;
-    }
-
-    public void HideGemsPanel()
-    {
-        showGemsPanel = false;
     }
     #endregion
 
@@ -659,7 +686,6 @@ public class GameManager : MonoSingleton<GameManager> {
         {
             StartCoroutine(HighlightButton(resumeButton));
 
-            ShowGemsPanel();
             ShowHealthPanel();
 
             Time.timeScale = 0;
@@ -674,7 +700,6 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void Resume()
     {
-        HideGemsPanel();
         HideHealthPanel();
 
         isGamePaused = false;
@@ -866,7 +891,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public void CallPlayerVictory()
     {//Victory
 
-        ShowGemsPanel();
         ShowHealthPanel();
 
         victoryPanel.SetActive(true);
