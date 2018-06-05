@@ -5493,7 +5493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentControl: 1
-  joystickCompleteControl: 0
+  joystickCompleteControl: 1
   speed: 8
   rotationSpeed: 130
   autoFacingSpeed: 3.5
@@ -5503,7 +5503,7 @@ MonoBehaviour:
   lanternDamage: 25
   lanternDamageRadius: 19.2
   lanternDamageLength: 6.5
-  lanternChargingLength: 3.03
+  lanternChargingLength: 1
   topLanternAngle: 45
   bottomLanternAngle: 5
   angleOfLightDecrease: 18
@@ -30611,6 +30611,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4341553180186300, guid: 102f40012e51a5746a2a838f907ef55c,
     type: 2}
   m_PrefabInternal: {fileID: 701584808}
+--- !u!20 &701584814 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20532352486085316, guid: 102f40012e51a5746a2a838f907ef55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 701584808}
 --- !u!1 &705464922
 GameObject:
   m_ObjectHideFlags: 0
@@ -44166,8 +44171,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 274010659}
-  m_PlaneDistance: 1
+  m_Camera: {fileID: 701584814}
+  m_PlaneDistance: 14
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -59055,7 +59060,7 @@ MonoBehaviour:
   - {fileID: 1119614646}
   - {fileID: 437481451}
   - {fileID: 627162249}
-  gemsPanelTime: 0.2
+  gemsPanelTime: 1
   timeBeforeAddingGem: 0.4
   timeShowingGemsPanel: 2
   fadeImages:
