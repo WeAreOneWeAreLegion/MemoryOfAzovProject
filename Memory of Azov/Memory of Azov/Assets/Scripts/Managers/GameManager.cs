@@ -436,7 +436,7 @@ public class GameManager : MonoSingleton<GameManager> {
                 gemsPanelTimer = 1;
             }
             else
-                gemsPanelTimer += Time.unscaledDeltaTime / gemsPanelTime;
+                gemsPanelTimer += Time.deltaTime / gemsPanelTime;
 
         }
         else
@@ -444,7 +444,7 @@ public class GameManager : MonoSingleton<GameManager> {
             if (gemsPanelTimer <= 0)
                 gemsPanelTimer = 0;
             else
-                gemsPanelTimer -= Time.unscaledDeltaTime / gemsPanelTime;
+                gemsPanelTimer -= Time.deltaTime / gemsPanelTime;
         }
     }
 

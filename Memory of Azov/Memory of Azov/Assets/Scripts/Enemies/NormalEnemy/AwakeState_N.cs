@@ -6,6 +6,9 @@ public class AwakeState_N : IEnemyState
 {
     private Enemy enemy;
 
+    private float timer;
+    private float timeWaiting = 2.5f;
+
     public void Enter(Enemy e)
     {   
         enemy = e;
@@ -14,12 +17,14 @@ public class AwakeState_N : IEnemyState
         enemy.Invencible();
 
         enemy.StopMovement();
+
+        timer = Time.time;
     }
 
     public void Execute()
     {
 
-        if (!enemy.IsSoundPlaying())
+        if (Time.time >= timer + timeWaiting)
             enemy.ChangeState(new ChaseState_N());
 
     }

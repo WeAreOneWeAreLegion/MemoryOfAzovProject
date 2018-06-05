@@ -17,6 +17,8 @@ public class Enemy : LightenableObject {
     [Range(0, 360)] public float rotationSpeed = 120f;
     [Tooltip("Velocidad a la que oscila el personaje")]
     [Range(0, 200)] public float oscilationSpeed = 40;
+    [Tooltip("Cantidad de oscilacion respecto al movimiento hacia adelante")]
+    [Range(0, 1)] public float oscilationWeight = 0.4f;
     [Tooltip("Cuantas veces ira mas rapido mientras lo enfocan")]
     [Range(1, 5)] public float speedFactorWhenLightened = 2;
     [Tooltip("Cantidad de veces que se mueve de lado a lado por segundo")]
@@ -197,7 +199,7 @@ public class Enemy : LightenableObject {
         if (oscillationMovement)
         {
             float sinValue = Mathf.Sin((Time.time - oscilatorLifeTime) * oscilationsPerSecond);
-            direction = transform.forward * speed + (transform.right * oscilationAmplitude * sinValue * oscilationSpeed);
+            direction = transform.forward * speed * (1 - oscilationWeight) + (transform.right * oscilationAmplitude * sinValue * oscilationSpeed).normalized * oscilationWeight;
         }
         else
         {

@@ -1083,7 +1083,10 @@ public class PlayerController : MonoBehaviour {
         if (!permaStop)
             StopMovementByAim();
         else
+        {
+            myAnimator.SetTrigger("Afraid");
             StopByMegaStop();
+        }
     }
 
     public void MoveAgainAfterMegaStop()
