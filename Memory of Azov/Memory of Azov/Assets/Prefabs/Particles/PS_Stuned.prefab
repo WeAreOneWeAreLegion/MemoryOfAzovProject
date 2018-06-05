@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198451026072845548}
   - component: {fileID: 199116764314731946}
   m_Layer: 9
-  m_Name: ElectrocutionPS
+  m_Name: PS_Stuned
   m_TagString: PS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
