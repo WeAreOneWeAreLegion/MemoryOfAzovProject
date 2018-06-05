@@ -423,6 +423,7 @@ public class GameManager : MonoSingleton<GameManager> {
                 //Call 
                 if (addingGems)
                 {
+                    ActiveGemsZone();
                     StartCoroutine(AddNewGemGathered(addingAzov));
                     addingGems = false;
                     showGemsPanel = false;
@@ -454,8 +455,6 @@ public class GameManager : MonoSingleton<GameManager> {
 
         addingGems = true;
         showGemsPanel = true;
-
-        ActiveGemsZone();
     }
 
     private void ActiveGemsZone()
