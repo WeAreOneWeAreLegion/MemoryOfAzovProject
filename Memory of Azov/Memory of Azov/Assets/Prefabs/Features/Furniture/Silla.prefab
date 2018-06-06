@@ -187,6 +187,7 @@ MonoBehaviour:
   enemyData: {fileID: 0}
   isWall: 0
   isDoor: 0
+  isHorizontalDoor: 0
   isStatic: 1
   myRenderers: []
   myAnimations: []
