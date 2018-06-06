@@ -528,6 +528,7 @@ MonoBehaviour:
   speed: 120
   rotationSpeed: 120
   oscilationSpeed: 42
+  oscilationWeight: 0.4
   speedFactorWhenLightened: 1.7
   oscilationsPerSecond: 2
   oscilationAmplitude: 2

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 2c5a10a94e53aa54da015a1dd3ee9cf0
+timeCreated: 1528249340
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kremlin Georgian I 3D
+  fontNames:
+  - Kremlin Georgian I 3D
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
