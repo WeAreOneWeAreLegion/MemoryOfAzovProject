@@ -142,7 +142,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682139092270014}
-  m_Mesh: {fileID: 4300000, guid: 8255192b7eaf52447823f687b570b58e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: dd198cfe6cf7835488aff963cfcf8fdf, type: 3}
 --- !u!65 &65851235959351362
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -187,6 +187,7 @@ MonoBehaviour:
   enemyData: {fileID: 0}
   isWall: 0
   isDoor: 0
+  isHorizontalDoor: 0
   isStatic: 0
   myRenderers: []
   myAnimations:
