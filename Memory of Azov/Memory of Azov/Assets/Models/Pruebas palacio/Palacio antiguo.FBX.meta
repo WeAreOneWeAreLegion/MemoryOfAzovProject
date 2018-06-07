@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 48ae340357ac88b468a71c820dd0ca37
-timeCreated: 1528412798
+guid: 1fe83851908cfca4f8261e431d141158
+timeCreated: 1528334564
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -147,40 +147,12 @@ ModelImporter:
     400136: Ventanal 2
     400138: Ventanal 3
     400140: Ventanales Cortinas y Columnas
-    2100000: 'Material #29'
-    2100002: 'Material #28'
-    2100004: 'Material #52'
-    2100006: 'Material #51'
-    2100008: ColumnaMat
-    2100010: CortinasMat
-    2100012: obj_texture003
-    2100014: 'Material #64'
-    2100016: 'Material #36'
-    2100018: 'Material #37'
-    2100020: 'Material #40'
-    2100022: 'Material #30'
-    2100024: 'Material #31'
-    2100026: 'Material #38'
-    2100028: 'Material #54'
-    2100030: Paredes Hall izquierda_WallWithoutMat
-    2100032: 'Material #59'
-    2100034: 'Material #58'
-    2100036: 'Material #50'
-    2100038: 'Material #65'
-    2100040: 'Material #60'
-    2100042: 'Material #34'
-    2100044: 'Material #32'
-    2100046: 'Material #33'
-    2100048: 'Material #35'
-    2100050: 'Material #55'
-    2100052: LibreriaMat
-    2100054: 'Material #56'
-    2100056: 'Material #41'
-    2100058: 'Material #44'
-    2100060: 'Material #47'
-    2100062: 'Material #43'
-    2100064: 'Material #45'
-    2100066: 'Material #46'
+    2100000: ColumnaMat
+    2100002: CortinasMat
+    2100004: obj_texture003
+    2100006: Paredes Hall izquierda_WallWithoutMat
+    2100008: LibreriaMat
+    2100010: GreyMat
     2300000: ' Marco'
     2300002: ' Puerta Derecha'
     2300004: ' Puerta Izquierda'
