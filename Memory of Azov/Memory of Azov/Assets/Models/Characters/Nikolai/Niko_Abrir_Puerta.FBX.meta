@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b85feb6f057023c4daa86fec9b9deb7d
-timeCreated: 1528323186
+guid: f82149cf676131d40a64728fabb7157d
+timeCreated: 1528408884
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -178,7 +178,7 @@ ModelImporter:
     2100008: NokiaDefinitivo (1)_15___Default
     2100010: NokiaDefinitivo (1)_14___Default
     4300000: Object008
-    7400000: LateralWalk
+    7400000: OpenDoor
     9500000: //RootNode
     13700000: Object008
   externalObjects: {}
@@ -209,17 +209,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: LateralWalk
+      name: OpenDoor
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 45
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

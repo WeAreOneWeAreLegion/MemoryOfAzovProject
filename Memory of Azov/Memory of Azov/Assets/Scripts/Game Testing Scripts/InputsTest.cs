@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class InputsTest : MonoBehaviour {
 
-    public float speed = 10;
+    public Animator myAnimator;
 
 	// Update is called once per frame
 	void Update ()
     {
-        float xArrow = Input.GetAxisRaw("ArrowsVertical");
+        float xInput = Input.GetAxisRaw("Horizontal");
+        float zInput = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(xArrow);
-	}
+        myAnimator.SetFloat("xValue", xInput);
+        myAnimator.SetFloat("zValue", zInput);
+    }
 }

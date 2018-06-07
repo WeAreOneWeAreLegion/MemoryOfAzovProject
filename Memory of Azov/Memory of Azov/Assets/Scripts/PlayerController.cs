@@ -1154,15 +1154,20 @@ public class PlayerController : MonoBehaviour {
 
         //Persistance
         GameManager.Instance.IncreaseHealthLost(damage);
-        StopMovementByHit();
 
         GameManager.Instance.ModifyHp(currentHp);
 
         myAnimator.speed = 1;
         if (currentHp > 0)
+        {
             myAnimator.SetTrigger("Damaged");
+            StopMovementByHit();
+        }
         else
+        {
             myAnimator.SetTrigger("Dead");
+            StopByMegaStop();
+        }
 
         SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_Damaged);
     }
