@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: 1fe83851908cfca4f8261e431d141158
+timeCreated: 1528334564
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: ' Marco'
+    100002: ' Puerta Derecha'
+    100004: ' Puerta Izquierda'
+    100006: Columna 1
+    100008: Columna 2
+    100010: Columna 3
+    100012: Columna 4
+    100014: Cortina Lateral 1
+    100016: Cortina Lateral 2
+    100018: Cortina Lateral 3
+    100020: Cortina Lateral 4
+    100022: Cortina Lateral 5
+    100024: Cortina Lateral 6
+    100026: Cortina Superior 1
+    100028: Cortina Superior 2
+    100030: Cortina Superior 3
+    100032: Cuarto Oscuro
+    100034: Descansillo Hall
+    100036: Estanteria
+    100038: Estanteria giratoria
+    100040: Estudio
+    100042: Hall
+    100044: Marco
+    100046: Marco 1
+    100048: Marco 2
+    100050: Muro delantero
+    100052: Muro trasero
+    100054: //RootNode
+    100056: Pared Derecha Cuarto Oscuro
+    100058: Pared Derecha Estudio
+    100060: Pared Derecha Pasillo
+    100062: Pared Este Hall
+    100064: Pared Este Sala de Estar
+    100066: Pared Izquierda Cuarto Oscuro
+    100068: Pared Izquierda Estudio
+    100070: Pared Izquierda Pasillo
+    100072: Pared Norte Cuarto Oscuro
+    100074: Pared Norte Estudio
+    100076: Pared Norte Hall
+    100078: Pared Norte Pasillo
+    100080: Pared NorteSala de Estar
+    100082: Pared Oeste Hall
+    100084: Pared Oeste Sala de Estar
+    100086: Pared Puerta derecha hall
+    100088: Pared Sur Cuarto Oscuro
+    100090: Pared Sur derecha Pasillo
+    100092: Pared Sur Estudio
+    100094: Pared Sur Hall
+    100096: Pared Sur Pasillo
+    100098: Pared Sur Sala de Estar
+    100100: Pasillo
+    100102: Puerta Derecha
+    100104: Puerta Derecha 1
+    100106: Puerta Derecha 2
+    100108: Puerta Doble Estudio
+    100110: Puerta Doble Pasillo
+    100112: Puerta Doble Pasillo Derecha
+    100114: Puerta Doble Sala de Estar
+    100116: Puerta Izquierda
+    100118: Puerta Izquierda 1
+    100120: Puerta Izquierda 2
+    100122: Sala de Estar
+    100124: Suelo Cuarto Oscuro
+    100126: Suelo Estudio
+    100128: Suelo Hall
+    100130: Suelo Pasillo
+    100132: Suelo Sala de Estar
+    100134: Ventanal 1
+    100136: Ventanal 2
+    100138: Ventanal 3
+    100140: Ventanales Cortinas y Columnas
+    400000: ' Marco'
+    400002: ' Puerta Derecha'
+    400004: ' Puerta Izquierda'
+    400006: Columna 1
+    400008: Columna 2
+    400010: Columna 3
+    400012: Columna 4
+    400014: Cortina Lateral 1
+    400016: Cortina Lateral 2
+    400018: Cortina Lateral 3
+    400020: Cortina Lateral 4
+    400022: Cortina Lateral 5
+    400024: Cortina Lateral 6
+    400026: Cortina Superior 1
+    400028: Cortina Superior 2
+    400030: Cortina Superior 3
+    400032: Cuarto Oscuro
+    400034: Descansillo Hall
+    400036: Estanteria
+    400038: Estanteria giratoria
+    400040: Estudio
+    400042: Hall
+    400044: Marco
+    400046: Marco 1
+    400048: Marco 2
+    400050: Muro delantero
+    400052: Muro trasero
+    400054: //RootNode
+    400056: Pared Derecha Cuarto Oscuro
+    400058: Pared Derecha Estudio
+    400060: Pared Derecha Pasillo
+    400062: Pared Este Hall
+    400064: Pared Este Sala de Estar
+    400066: Pared Izquierda Cuarto Oscuro
+    400068: Pared Izquierda Estudio
+    400070: Pared Izquierda Pasillo
+    400072: Pared Norte Cuarto Oscuro
+    400074: Pared Norte Estudio
+    400076: Pared Norte Hall
+    400078: Pared Norte Pasillo
+    400080: Pared NorteSala de Estar
+    400082: Pared Oeste Hall
+    400084: Pared Oeste Sala de Estar
+    400086: Pared Puerta derecha hall
+    400088: Pared Sur Cuarto Oscuro
+    400090: Pared Sur derecha Pasillo
+    400092: Pared Sur Estudio
+    400094: Pared Sur Hall
+    400096: Pared Sur Pasillo
+    400098: Pared Sur Sala de Estar
+    400100: Pasillo
+    400102: Puerta Derecha
+    400104: Puerta Derecha 1
+    400106: Puerta Derecha 2
+    400108: Puerta Doble Estudio
+    400110: Puerta Doble Pasillo
+    400112: Puerta Doble Pasillo Derecha
+    400114: Puerta Doble Sala de Estar
+    400116: Puerta Izquierda
+    400118: Puerta Izquierda 1
+    400120: Puerta Izquierda 2
+    400122: Sala de Estar
+    400124: Suelo Cuarto Oscuro
+    400126: Suelo Estudio
+    400128: Suelo Hall
+    400130: Suelo Pasillo
+    400132: Suelo Sala de Estar
+    400134: Ventanal 1
+    400136: Ventanal 2
+    400138: Ventanal 3
+    400140: Ventanales Cortinas y Columnas
+    2100000: ColumnaMat
+    2100002: CortinasMat
+    2100004: obj_texture003
+    2100006: Paredes Hall izquierda_WallWithoutMat
+    2100008: LibreriaMat
+    2100010: GreyMat
+    2300000: ' Marco'
+    2300002: ' Puerta Derecha'
+    2300004: ' Puerta Izquierda'
+    2300006: Columna 1
+    2300008: Columna 2
+    2300010: Columna 3
+    2300012: Columna 4
+    2300014: Cortina Lateral 1
+    2300016: Cortina Lateral 2
+    2300018: Cortina Lateral 3
+    2300020: Cortina Lateral 4
+    2300022: Cortina Lateral 5
+    2300024: Cortina Lateral 6
+    2300026: Cortina Superior 1
+    2300028: Cortina Superior 2
+    2300030: Cortina Superior 3
+    2300032: Descansillo Hall
+    2300034: Estanteria
+    2300036: Marco
+    2300038: Marco 1
+    2300040: Marco 2
+    2300042: Muro delantero
+    2300044: Muro trasero
+    2300046: Pared Derecha Cuarto Oscuro
+    2300048: Pared Derecha Estudio
+    2300050: Pared Derecha Pasillo
+    2300052: Pared Este Hall
+    2300054: Pared Este Sala de Estar
+    2300056: Pared Izquierda Cuarto Oscuro
+    2300058: Pared Izquierda Estudio
+    2300060: Pared Izquierda Pasillo
+    2300062: Pared Norte Cuarto Oscuro
+    2300064: Pared Norte Estudio
+    2300066: Pared Norte Hall
+    2300068: Pared Norte Pasillo
+    2300070: Pared NorteSala de Estar
+    2300072: Pared Oeste Hall
+    2300074: Pared Oeste Sala de Estar
+    2300076: Pared Puerta derecha hall
+    2300078: Pared Sur Cuarto Oscuro
+    2300080: Pared Sur derecha Pasillo
+    2300082: Pared Sur Estudio
+    2300084: Pared Sur Hall
+    2300086: Pared Sur Pasillo
+    2300088: Pared Sur Sala de Estar
+    2300090: Puerta Derecha
+    2300092: Puerta Derecha 1
+    2300094: Puerta Derecha 2
+    2300096: Puerta Izquierda
+    2300098: Puerta Izquierda 1
+    2300100: Puerta Izquierda 2
+    2300102: Suelo Cuarto Oscuro
+    2300104: Suelo Estudio
+    2300106: Suelo Hall
+    2300108: Suelo Pasillo
+    2300110: Suelo Sala de Estar
+    2300112: Ventanal 1
+    2300114: Ventanal 2
+    2300116: Ventanal 3
+    3300000: ' Marco'
+    3300002: ' Puerta Derecha'
+    3300004: ' Puerta Izquierda'
+    3300006: Columna 1
+    3300008: Columna 2
+    3300010: Columna 3
+    3300012: Columna 4
+    3300014: Cortina Lateral 1
+    3300016: Cortina Lateral 2
+    3300018: Cortina Lateral 3
+    3300020: Cortina Lateral 4
+    3300022: Cortina Lateral 5
+    3300024: Cortina Lateral 6
+    3300026: Cortina Superior 1
+    3300028: Cortina Superior 2
+    3300030: Cortina Superior 3
+    3300032: Descansillo Hall
+    3300034: Estanteria
+    3300036: Marco
+    3300038: Marco 1
+    3300040: Marco 2
+    3300042: Muro delantero
+    3300044: Muro trasero
+    3300046: Pared Derecha Cuarto Oscuro
+    3300048: Pared Derecha Estudio
+    3300050: Pared Derecha Pasillo
+    3300052: Pared Este Hall
+    3300054: Pared Este Sala de Estar
+    3300056: Pared Izquierda Cuarto Oscuro
+    3300058: Pared Izquierda Estudio
+    3300060: Pared Izquierda Pasillo
+    3300062: Pared Norte Cuarto Oscuro
+    3300064: Pared Norte Estudio
+    3300066: Pared Norte Hall
+    3300068: Pared Norte Pasillo
+    3300070: Pared NorteSala de Estar
+    3300072: Pared Oeste Hall
+    3300074: Pared Oeste Sala de Estar
+    3300076: Pared Puerta derecha hall
+    3300078: Pared Sur Cuarto Oscuro
+    3300080: Pared Sur derecha Pasillo
+    3300082: Pared Sur Estudio
+    3300084: Pared Sur Hall
+    3300086: Pared Sur Pasillo
+    3300088: Pared Sur Sala de Estar
+    3300090: Puerta Derecha
+    3300092: Puerta Derecha 1
+    3300094: Puerta Derecha 2
+    3300096: Puerta Izquierda
+    3300098: Puerta Izquierda 1
+    3300100: Puerta Izquierda 2
+    3300102: Suelo Cuarto Oscuro
+    3300104: Suelo Estudio
+    3300106: Suelo Hall
+    3300108: Suelo Pasillo
+    3300110: Suelo Sala de Estar
+    3300112: Ventanal 1
+    3300114: Ventanal 2
+    3300116: Ventanal 3
+    4300000: Pared Este Sala de Estar
+    4300002: Pared Oeste Sala de Estar
+    4300004: Pared Sur Sala de Estar
+    4300006: Suelo Sala de Estar
+    4300008: Columna 4
+    4300010: Columna 3
+    4300012: Columna 2
+    4300014: Columna 1
+    4300016: Cortina Superior 3
+    4300018: Cortina Superior 2
+    4300020: Cortina Superior 1
+    4300022: Cortina Lateral 6
+    4300024: Cortina Lateral 4
+    4300026: Cortina Lateral 2
+    4300028: Cortina Lateral 1
+    4300030: Cortina Lateral 3
+    4300032: Cortina Lateral 5
+    4300034: Ventanal 1
+    4300036: Ventanal 2
+    4300038: Ventanal 3
+    4300040: Pared NorteSala de Estar
+    4300042: Pared Sur Pasillo
+    4300044: Pared Sur derecha Pasillo
+    4300046: Pared Puerta derecha hall
+    4300048: Pared Norte Pasillo
+    4300050: Pared Izquierda Pasillo
+    4300052: Pared Derecha Pasillo
+    4300054: Suelo Pasillo
+    4300056: Marco
+    4300058: Puerta Derecha
+    4300060: Puerta Izquierda
+    4300062: Pared Sur Hall
+    4300064: Pared Oeste Hall
+    4300066: Pared Norte Hall
+    4300068: Suelo Hall
+    4300070: Descansillo Hall
+    4300072: Puerta Derecha
+    4300074: Puerta Izquierda
+    4300076: Marco
+    4300078: Marco
+    4300080: Puerta Derecha
+    4300082: Puerta Izquierda
+    4300084: Pared Este Hall
+    4300086: ' Marco'
+    4300088: ' Puerta Izquierda'
+    4300090: ' Puerta Derecha'
+    4300092: Pared Derecha Estudio
+    4300094: Pared Izquierda Estudio
+    4300096: Pared Norte Estudio
+    4300098: Pared Sur Estudio
+    4300100: Suelo Estudio
+    4300102: Estanteria
+    4300104: Muro trasero
+    4300106: Muro delantero
+    4300108: Pared Derecha Cuarto Oscuro
+    4300110: Pared Izquierda Cuarto Oscuro
+    4300112: Pared Norte Cuarto Oscuro
+    4300114: Pared Sur Cuarto Oscuro
+    4300116: Suelo Cuarto Oscuro
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
