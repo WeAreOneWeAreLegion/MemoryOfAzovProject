@@ -190,6 +190,8 @@ public class PlayerController : MonoBehaviour {
 
     private void Start()
     {
+		independentFacing = true;
+
         //Tag 
         if (tag != GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player))
             tag = GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player);
@@ -1097,7 +1099,7 @@ public class PlayerController : MonoBehaviour {
     public void CalmMode()
     {
         megaStop = false;
-        independentFacing = false;
+		independentFacing = true;
         StopMovementByAim();
     }
 

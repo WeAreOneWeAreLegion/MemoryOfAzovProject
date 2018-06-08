@@ -22,6 +22,6 @@ MonoBehaviour:
   oscillationMovement: 1
   initialHp: 100
   timeStuned: 2
-  ghostDamage: 60
+  ghostDamage: 10
   attackRadius: 2
   attackDelay: 1
