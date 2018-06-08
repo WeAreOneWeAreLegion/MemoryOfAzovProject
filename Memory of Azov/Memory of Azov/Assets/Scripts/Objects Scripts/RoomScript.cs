@@ -38,6 +38,8 @@ public class RoomScript : MonoBehaviour
     {
         try
         {
+            ShowBlackWalls();
+
             List<TransparentObject> temporalObjects = new List<TransparentObject>();
 
             foreach (TransparentObject t in GetComponentsInChildren<TransparentObject>())
