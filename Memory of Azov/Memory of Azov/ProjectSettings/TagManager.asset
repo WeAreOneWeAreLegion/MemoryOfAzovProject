@@ -12,6 +12,7 @@ TagManager:
   - HittableObject
   - FakeWall
   - CollectableObject
+  - Music
   layers:
   - Default
   - TransparentFX

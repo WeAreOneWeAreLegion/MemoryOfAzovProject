@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class MenuMusicScript : MonoBehaviour {
 
-    public AudioSource backgroundMusic;
+    //public AudioSource backgroundMusic;
 
     //public Slider volumeSlider;
 
     void Awake()
     {
-        backgroundMusic = gameObject.GetComponent<AudioSource>();
+        //backgroundMusic = gameObject.GetComponent<AudioSource>();
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
         if (objs.Length > 1)
         {
@@ -34,7 +34,7 @@ public class MenuMusicScript : MonoBehaviour {
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3")
+        if (SceneManager.GetActiveScene().name == "Main")
         {
             Destroy(this.gameObject);
             //backgroundMusic.Stop();

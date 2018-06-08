@@ -225,9 +225,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 205764983}
+  - component: {fileID: 205764985}
+  - component: {fileID: 205764984}
+  - component: {fileID: 205764986}
   m_Layer: 0
   m_Name: MenuManager
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,6 +248,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &205764984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205764982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Music/Main Menu
+  PlayEvent: 1
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &205764985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205764982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
+--- !u!114 &205764986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205764982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a9bb9109bd0424a8881dc487350c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 0}
 --- !u!1 &399286460
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +719,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1106706271}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayMenuHUDSelectBackSound
         m_Mode: 1
         m_Arguments:
@@ -980,7 +1029,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1106706271}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayMenuHUDSelectSound
         m_Mode: 1
         m_Arguments:
@@ -1134,7 +1183,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1106706271}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayMenuHUDSelectSound
         m_Mode: 1
         m_Arguments:
@@ -1272,8 +1321,6 @@ GameObject:
   - component: {fileID: 1106706267}
   - component: {fileID: 1106706266}
   - component: {fileID: 1106706270}
-  - component: {fileID: 1106706272}
-  - component: {fileID: 1106706271}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1355,71 +1402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e52ae863fb106498dcee485c085104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1106706271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1106706265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7bdcb0839dae7e46b52ad42444f4177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockSounds: []
-  openDoorSounds: []
-  buttonPushSounds: []
-  enemyCrySound: []
-  ambientRainSound: 
-  ambientThunderSound: 
-  characterDamagedSound: 
-  characterDeathSound: 
-  characterScaredSound: 
-  characterShakingHeadSound: 
-  characterStepsCarpetSound: 
-  characterStepsMarbleSound: 
-  characterLowHealthSound: 
-  ghostAttackSound: 
-  ghostBooSound: 
-  ghostDamagedSound: 
-  ghostDeadSound: 
-  ghostLaughSound: 
-  ghostLaughALotSound: 
-  ghostStunnedSound: 
-  scenarioButtonSound: 
-  scenarioDoorCloseSound: 
-  scenarioDoorKnobSound: 
-  scenarioDoorOpenSound: 
-  scenarioFireplaceSound: 
-  scenarioHealItemDroppedSound: 
-  scenarioHealItemFoundSound: 
-  scenarioItemFoundSound: 
-  scenarioItemLightParticlesSound: 
-  scenarioLockedDoorSound: 
-  scenarioSpecialItemFoundSound: 
-  scenarioUnlockDoorSound: 
-  scenarioLeverSound: 
-  scenarioLibrarySound: 
-  scenarioPictureFallsSound: 
-  flashlightChargingFlashSound: 
-  flashlightNoiseSound: 
-  flashlightOffSound: 
-  flashlightOnSound: 
-  menuHUDMovementSound: "event:/Men\xFA/HUD_Movement Grupo 3"
-  menuHUDSelectSound: "event:/Men\xFA/HUD_Select Grupo 3"
-  menuHUDSelectBackSound: "event:/Men\xFA/HUD_SelectBack Grupo 3"
---- !u!114 &1106706272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1106706265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: 0
 --- !u!1 &1137418983
 GameObject:
   m_ObjectHideFlags: 0
