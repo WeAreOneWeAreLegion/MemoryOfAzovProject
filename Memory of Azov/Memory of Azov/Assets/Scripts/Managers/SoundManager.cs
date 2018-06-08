@@ -11,7 +11,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public enum SoundRequestScenario { S_Button, S_DoorClose, S_DoorKnob, S_DoorOpen, S_Fireplace, S_HealthItemDropped,
         S_HealthItemFound, S_ItemFound, S_ItemParticles, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
     public enum SoundRequestFlashlight { F_ChargingFlash, F_Noise, F_On, F_Off }
-    public enum SoundRequestMenu { M_Movement, M_Sound }
+    public enum SoundRequestMenu { Me_Movement, Me_Select, Me_SelectBack }
     public enum SoundRequestMusic { Mu_House, MU_Combat, MU_GameOver }
 
     #region Public Variables
@@ -35,7 +35,6 @@ public class SoundManager : MonoSingleton<SoundManager> {
     [Header("Ambient Sounds")]
     [FMODUnity.EventRef] //we are looking in FMOD for a sound
     public string ambientRainSound; //to pick our sound from the inspector
-    //FMOD.ATTRIBUTES_3D
     FMOD.Studio.EventInstance soundEventAmbientRainSound;
 
     [FMODUnity.EventRef] //we are looking in FMOD for a sound
@@ -66,6 +65,10 @@ public class SoundManager : MonoSingleton<SoundManager> {
     [FMODUnity.EventRef]
     public string characterStepsMarbleSound;
     FMOD.Studio.EventInstance soundEventCharacterStepsMarbleSound;
+
+    [FMODUnity.EventRef]
+    public string characterLowHealthSound;
+    FMOD.Studio.EventInstance soundEventCharacterLowHealthSound;
 
     [Header("Enemy Sounds")]
     [FMODUnity.EventRef]
@@ -145,6 +148,18 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public string scenarioUnlockDoorSound;
     FMOD.Studio.EventInstance soundEventScenarioUnlockDoorSound;
 
+    [FMODUnity.EventRef]
+    public string scenarioLeverSound;
+    FMOD.Studio.EventInstance soundEventScenarioLeverSound;
+
+    [FMODUnity.EventRef]
+    public string scenarioLibrarySound;
+    FMOD.Studio.EventInstance soundEventScenarioLibrarySound;
+
+    [FMODUnity.EventRef]
+    public string scenarioPictureFallsSound;
+    FMOD.Studio.EventInstance soundEventScenarioPictureFallsSound;
+
     [Header("Flashlight Sounds")]
     [FMODUnity.EventRef]
     public string flashlightChargingFlashSound;
@@ -170,6 +185,10 @@ public class SoundManager : MonoSingleton<SoundManager> {
     [FMODUnity.EventRef]
     public string menuHUDSelectSound;
     FMOD.Studio.EventInstance soundEventMenuHUDSelectSound;
+
+    [FMODUnity.EventRef]
+    public string menuHUDSelectBackSound;
+    FMOD.Studio.EventInstance soundEventMenuHUDSelectBackSound;
     #endregion
 
     void Start()
@@ -186,6 +205,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventCharacterShakingHeadSound = FMODUnity.RuntimeManager.CreateInstance(characterShakingHeadSound);
         soundEventCharacterStepsCarpetSound = FMODUnity.RuntimeManager.CreateInstance(characterStepsCarpetSound);
         soundEventCharacterStepsMarbleSound = FMODUnity.RuntimeManager.CreateInstance(characterStepsMarbleSound);
+        soundEventCharacterLowHealthSound = FMODUnity.RuntimeManager.CreateInstance(characterLowHealthSound);
 
         //Ghost
         soundEventGhostAttackSound = FMODUnity.RuntimeManager.CreateInstance(ghostAttackSound);
@@ -209,6 +229,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventScenarioLockedDoorSound = FMODUnity.RuntimeManager.CreateInstance(scenarioLockedDoorSound);
         soundEventScenarioSpecialItemFoundSound = FMODUnity.RuntimeManager.CreateInstance(scenarioSpecialItemFoundSound);
         soundEventScenarioUnlockDoorSound = FMODUnity.RuntimeManager.CreateInstance(scenarioUnlockDoorSound);
+        soundEventScenarioLeverSound = FMODUnity.RuntimeManager.CreateInstance(scenarioLeverSound);
+        soundEventScenarioLibrarySound = FMODUnity.RuntimeManager.CreateInstance(scenarioLibrarySound);
+        soundEventScenarioPictureFallsSound = FMODUnity.RuntimeManager.CreateInstance(scenarioPictureFallsSound);
 
         //Flashlight
         soundEventFlashlightChargingFlashSound = FMODUnity.RuntimeManager.CreateInstance(flashlightChargingFlashSound);
@@ -219,6 +242,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
         //Menu
         soundEventMenuHUDMovementSound = FMODUnity.RuntimeManager.CreateInstance(menuHUDMovementSound);
         soundEventMenuHUDSelectSound = FMODUnity.RuntimeManager.CreateInstance(menuHUDSelectSound);
+        soundEventMenuHUDSelectBackSound = FMODUnity.RuntimeManager.CreateInstance(menuHUDSelectBackSound);
     }
 
     void Update()
@@ -265,6 +289,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 PlayCharacterStepsMarbleSound();
                 break;
             case SoundRequestPlayer.P_StepsCarpet:
+                PlayCharacterStepsCarpetSound();
+                break;
+            case SoundRequestPlayer.P_LowHealth:
                 PlayCharacterStepsCarpetSound();
                 break;
         }
@@ -338,6 +365,15 @@ public class SoundManager : MonoSingleton<SoundManager> {
             case SoundRequestScenario.S_UnlockDoor:
                 PlayScenarioUnlockDoorSound();
                 break;
+            case SoundRequestScenario.S_Lever:
+                PlayScenarioUnlockDoorSound();
+                break;
+            case SoundRequestScenario.S_Library:
+                PlayScenarioUnlockDoorSound();
+                break;
+            case SoundRequestScenario.S_PictureFalls:
+                PlayScenarioUnlockDoorSound();
+                break;
         }
     }
 
@@ -364,11 +400,14 @@ public class SoundManager : MonoSingleton<SoundManager> {
     {
         switch (srm)
         {
-            case SoundRequestMenu.M_Movement:
+            case SoundRequestMenu.Me_Movement:
                 PlayMenuHUDMovementSound();
                 break;
-            case SoundRequestMenu.M_Sound:
+            case SoundRequestMenu.Me_Select:
                 PlayMenuHUDSelectSound();
+                break;
+            case SoundRequestMenu.Me_SelectBack:
+                PlayMenuHUDSelectBackSound();
                 break;
         }
     }
@@ -389,6 +428,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventCharacterShakingHeadSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventCharacterStepsCarpetSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventCharacterStepsMarbleSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventCharacterLowHealthSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
     }
 
     void UpdateGhostSounds()
@@ -416,6 +456,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioLockedDoorSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioSpecialItemFoundSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioUnlockDoorSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioLeverSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioLibrarySound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioPictureFallsSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
     }
 
     void UpdateFlashlightSounds()
@@ -430,6 +473,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     {
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventMenuHUDMovementSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventMenuHUDSelectSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventMenuHUDSelectBackSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
     }
     #endregion
 
@@ -486,6 +530,11 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public void PlayCharacterStepsMarbleSound()
     {
         soundEventCharacterStepsMarbleSound.start();
+    }
+
+    public void PlayCharacterLowHealthSound()
+    {
+        soundEventCharacterLowHealthSound.start();
     }
     #endregion
 
@@ -586,6 +635,21 @@ public class SoundManager : MonoSingleton<SoundManager> {
     {
         soundEventScenarioUnlockDoorSound.start();
     }
+
+    public void PlayScenarioLeverSound()
+    {
+        soundEventScenarioLeverSound.start();
+    }
+
+    public void PlayScenarioLibrarySound()
+    {
+        soundEventScenarioLibrarySound.start();
+    }
+
+    public void PlayScenarioPictureFallsSound()
+    {
+        soundEventScenarioPictureFallsSound.start();
+    }
     #endregion
 
     #region Flashlight Methods
@@ -619,6 +683,11 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public void PlayMenuHUDSelectSound()
     {
         soundEventMenuHUDSelectSound.start();
+    }
+
+    public void PlayMenuHUDSelectBackSound()
+    {
+        soundEventMenuHUDSelectBackSound.start();
     }
     #endregion
 
