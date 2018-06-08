@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Enemy_v3_red
   m_EditorClassIdentifier: 
   ghostColor: 2
-  speed: 100
+  speed: 300
   rotationSpeed: 360
   oscilationSpeed: 40
   speedFactorWhenLightened: 2
@@ -22,6 +22,6 @@ MonoBehaviour:
   oscillationMovement: 1
   initialHp: 100
   timeStuned: 2
-  ghostDamage: 20
+  ghostDamage: 30
   attackRadius: 2
   attackDelay: 1

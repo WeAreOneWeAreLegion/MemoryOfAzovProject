@@ -45,6 +45,7 @@ public class DoorBell : MonoBehaviour {
         }
         else
         {
+			Debug.Log ("Door Open");
             myDoor.OpenByBell();
         }
 
