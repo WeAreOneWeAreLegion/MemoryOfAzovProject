@@ -541,7 +541,7 @@ MonoBehaviour:
   attackRadius: 2
   attackDelay: 2
   myMeshRenderers:
-  - {fileID: 0}
+  - {fileID: 137407917959770382}
   visual: {fileID: 4717788681518976}
   itemToDrop: 2
   debugInRuntime: 1
