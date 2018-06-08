@@ -12,7 +12,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
         S_HealthItemFound, S_ItemFound, S_ItemParticles, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
     public enum SoundRequestFlashlight { F_ChargingFlash, F_Noise, F_On, F_Off }
     public enum SoundRequestMenu { Me_Movement, Me_Select, Me_SelectBack }
-    public enum SoundRequestMusic { Mu_House, MU_Combat, MU_GameOver }
+    public enum SoundRequestMusic { Mu_HouseOn, MU_CombatOn, MU_GameOverOn, MU_HouseOff, MU_CombatOff, MU_GameOverOff }
 
     #region Public Variables
     [Header("\t    Own Script Variables")]
@@ -189,6 +189,19 @@ public class SoundManager : MonoSingleton<SoundManager> {
     [FMODUnity.EventRef]
     public string menuHUDSelectBackSound;
     FMOD.Studio.EventInstance soundEventMenuHUDSelectBackSound;
+
+    [Header("Music")]
+    [FMODUnity.EventRef]
+    public string houseMusic;
+    FMOD.Studio.EventInstance soundEventHouseMusic;
+
+    [FMODUnity.EventRef]
+    public string combatMusic;
+    FMOD.Studio.EventInstance soundEventCombatMusic;
+
+    [FMODUnity.EventRef]
+    public string gameOverMusic;
+    FMOD.Studio.EventInstance soundEventGameOverMusic;
     #endregion
 
     void Start()
@@ -243,6 +256,11 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventMenuHUDMovementSound = FMODUnity.RuntimeManager.CreateInstance(menuHUDMovementSound);
         soundEventMenuHUDSelectSound = FMODUnity.RuntimeManager.CreateInstance(menuHUDSelectSound);
         soundEventMenuHUDSelectBackSound = FMODUnity.RuntimeManager.CreateInstance(menuHUDSelectBackSound);
+
+        //Music
+        soundEventHouseMusic = FMODUnity.RuntimeManager.CreateInstance(houseMusic);
+        soundEventCombatMusic = FMODUnity.RuntimeManager.CreateInstance(combatMusic);
+        soundEventGameOverMusic = FMODUnity.RuntimeManager.CreateInstance(gameOverMusic);
     }
 
     void Update()
@@ -396,9 +414,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
         }
     }
 
-    public void MenuSoundEnum(SoundRequestMenu srm, Transform target)
+    public void MenuSoundEnum(SoundRequestMenu srme)
     {
-        switch (srm)
+        switch (srme)
         {
             case SoundRequestMenu.Me_Movement:
                 PlayMenuHUDMovementSound();
@@ -408,6 +426,31 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 break;
             case SoundRequestMenu.Me_SelectBack:
                 PlayMenuHUDSelectBackSound();
+                break;
+        }
+    }
+
+    public void MusicSoundEnum(SoundRequestMusic srmu)
+    {
+        switch (srmu)
+        {
+            case SoundRequestMusic.Mu_HouseOn:
+                PlayHouseMusic();
+                break;
+            case SoundRequestMusic.MU_CombatOn:
+                PlayCombatMusic();
+                break;
+            case SoundRequestMusic.MU_GameOverOn:
+                PlayGameOverMusic();
+                break;
+            case SoundRequestMusic.MU_HouseOff:
+                StopHouseMusic();
+                break;
+            case SoundRequestMusic.MU_CombatOff:
+                StopCombatMusic();
+                break;
+            case SoundRequestMusic.MU_GameOverOff:
+                StopGameOverMusic();
                 break;
         }
     }
@@ -691,6 +734,23 @@ public class SoundManager : MonoSingleton<SoundManager> {
     }
     #endregion
 
+    #region Music Methods
+    public void PlayHouseMusic()
+    {
+        soundEventHouseMusic.start();
+    }
+
+    public void PlayCombatMusic()
+    {
+        soundEventCombatMusic.start();
+    }
+
+    public void PlayGameOverMusic()
+    {
+        soundEventGameOverMusic.start();
+    }
+    #endregion
+
     /*public void PlayThisSound(string selectedSound)
     {
         FMODUnity.RuntimeManager.PlayOneShot(selectedSound, GetComponent<Transform>().position);
@@ -704,6 +764,26 @@ public class SoundManager : MonoSingleton<SoundManager> {
         //FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Character/Character_Damaged", this.gameObject);
         //this needs the location of a gameObject. It checks every frame the location of the GO
     }*/
+    #endregion
+
+    #region Stop Music Methods
+    public void StopHouseMusic()
+    {
+        //soundEventHouseMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEventHouseMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void StopCombatMusic()
+    {
+        //soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void StopGameOverMusic()
+    {
+        //soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
     #endregion
 
     #region Former Sound Getters Methods
