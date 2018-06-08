@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -941,7 +941,6 @@ GameObject:
   - component: {fileID: 997915139}
   - component: {fileID: 997915138}
   - component: {fileID: 997915137}
-  - component: {fileID: 997915136}
   - component: {fileID: 997915135}
   m_Layer: 5
   m_Name: Start Game Button
@@ -985,87 +984,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2.15, y: -1.87}
   m_UseGraphicAlpha: 0
---- !u!82 &997915136
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 82756309666317256, guid: 6e452a5a00e47024aa17c9c5910ef87e,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 997915133}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &997915137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,7 +1035,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 997915136}
+      - m_Target: {fileID: 0}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -1491,6 +1409,8 @@ GameObject:
   - component: {fileID: 1106706267}
   - component: {fileID: 1106706266}
   - component: {fileID: 1106706270}
+  - component: {fileID: 1106706272}
+  - component: {fileID: 1106706271}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1572,6 +1492,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e52ae863fb106498dcee485c085104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1106706271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106706265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bdcb0839dae7e46b52ad42444f4177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockSounds: []
+  openDoorSounds: []
+  buttonPushSounds: []
+  enemyCrySound: []
+  ambientRainSound: 
+  ambientThunderSound: 
+  characterDamagedSound: 
+  characterDeathSound: 
+  characterScaredSound: 
+  characterShakingHeadSound: 
+  characterStepsCarpetSound: 
+  characterStepsMarbleSound: 
+  ghostAttackSound: 
+  ghostBooSound: 
+  ghostDamagedSound: 
+  ghostDeadSound: 
+  ghostLaughSound: 
+  ghostLaughALotSound: 
+  ghostStunnedSound: 
+  scenarioButtonSound: 
+  scenarioDoorCloseSound: 
+  scenarioDoorKnobSound: 
+  scenarioDoorOpenSound: 
+  scenarioFireplaceSound: 
+  scenarioHealItemDroppedSound: 
+  scenarioHealItemFoundSound: 
+  scenarioItemFoundSound: 
+  scenarioItemLightParticlesSound: 
+  scenarioLockedDoorSound: 
+  scenarioSpecialItemFoundSound: 
+  scenarioUnlockDoorSound: 
+  flashlightChargingFlashSound: 
+  flashlightNoiseSound: 
+  flashlightOffSound: 
+  flashlightOnSound: 
+  menuHUDMovementSound: "event:/Men\xFA/HUD_Movement"
+  menuHUDSelectSound: "event:/Men\xFA/HUD_Select"
+--- !u!114 &1106706272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106706265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &1137418983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,7 +1998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1812337601
 Transform:
   m_ObjectHideFlags: 0
