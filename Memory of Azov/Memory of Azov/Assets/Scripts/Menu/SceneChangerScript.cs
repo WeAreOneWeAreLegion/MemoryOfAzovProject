@@ -6,15 +6,15 @@ using UnityEngine;
 public class SceneChangerScript : MonoBehaviour {
 
 
-    public void GoToStartGameScene()
+    public void GoToPlayScene()
     {
         StartCoroutine(DelaySceneLoad(1));
     }
 
-    public void GoToHowToPlayScene()
+    /*public void GoToHowToPlayScene()
     {
         StartCoroutine(DelaySceneLoad(3));
-    }
+    }*/
 
     public void GoToCreditsScene()
     {
