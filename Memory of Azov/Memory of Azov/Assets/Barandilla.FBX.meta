@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 2ba80edaea8924741b09f57313b3dc10
-timeCreated: 1527991404
+guid: 2aef1ca138eac9d479e96218fa8214fc
+timeCreated: 1528425716
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: 'Material #14'
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SpiralStair001
+    4300000: Object001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.85
+    globalScale: 0.16
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
