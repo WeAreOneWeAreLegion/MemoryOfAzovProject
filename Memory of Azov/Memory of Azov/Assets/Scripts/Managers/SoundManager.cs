@@ -6,12 +6,13 @@ public class SoundManager : MonoSingleton<SoundManager> {
 
     public enum SoundRequest { P_Knock, P_OpenDoor, P_ButtonPush, E_Cry }
     public enum SoundRequestAmbient { A_Rain, A_Thunder }
-    public enum SoundRequestPlayer { P_Damaged, P_Death, P_Scared, P_ShakingHead, P_StepsMarble, P_StepsCarpet }
+    public enum SoundRequestPlayer { P_Damaged, P_Death, P_Scared, P_ShakingHead, P_StepsMarble, P_StepsCarpet, P_LowHealth }
     public enum SoundRequestGhost { G_Attack, G_Boo, G_Damaged, G_Dead, G_Laugh, G_LaughALot, G_Stunned }
     public enum SoundRequestScenario { S_Button, S_DoorClose, S_DoorKnob, S_DoorOpen, S_Fireplace, S_HealthItemDropped,
-        S_HealthItemFound, S_ItemFound, S_ItemParticles, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor }
+        S_HealthItemFound, S_ItemFound, S_ItemParticles, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
     public enum SoundRequestFlashlight { F_ChargingFlash, F_Noise, F_On, F_Off }
     public enum SoundRequestMenu { M_Movement, M_Sound }
+    public enum SoundRequestMusic { Mu_House, MU_Combat, MU_GameOver }
 
     #region Public Variables
     [Header("\t    Own Script Variables")]
@@ -34,6 +35,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     [Header("Ambient Sounds")]
     [FMODUnity.EventRef] //we are looking in FMOD for a sound
     public string ambientRainSound; //to pick our sound from the inspector
+    //FMOD.ATTRIBUTES_3D
     FMOD.Studio.EventInstance soundEventAmbientRainSound;
 
     [FMODUnity.EventRef] //we are looking in FMOD for a sound

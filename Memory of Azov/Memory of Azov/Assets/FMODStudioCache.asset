@@ -11,49 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 114768576869146440}
-  - {fileID: 114109551616690954}
-  EditorEvents:
-  - {fileID: 114290207146973932}
-  - {fileID: 114240203130556362}
-  - {fileID: 114885841723862268}
-  - {fileID: 114741127160940114}
-  - {fileID: 114415832363979812}
-  - {fileID: 114840536266422384}
-  - {fileID: 114577496384891140}
-  - {fileID: 114650757973140186}
-  - {fileID: 114298905899258978}
-  - {fileID: 114218168663527396}
-  - {fileID: 114017531214940410}
-  - {fileID: 114660609400472074}
-  - {fileID: 114488015384572840}
-  - {fileID: 114647548996281520}
-  - {fileID: 114729177011366260}
-  - {fileID: 114726436986063006}
-  - {fileID: 114306088034922366}
-  - {fileID: 114045008378971232}
-  - {fileID: 114718561524425022}
-  - {fileID: 114955857249283088}
-  - {fileID: 114813192561231486}
-  - {fileID: 114356901043582114}
-  - {fileID: 114658879894837946}
-  - {fileID: 114550167678741264}
-  - {fileID: 114387963108876936}
-  - {fileID: 114966514897588872}
-  - {fileID: 114008709661364868}
-  - {fileID: 114845179332031198}
-  - {fileID: 114126875812937584}
-  - {fileID: 114176767249921814}
-  - {fileID: 114770147757202398}
-  - {fileID: 114160669586042028}
-  - {fileID: 114074880183899450}
-  - {fileID: 114956541607456806}
-  - {fileID: 114763464152945164}
-  - {fileID: 114616596390310784}
-  MasterBankRef: {fileID: 114109551616690954}
-  StringsBankRef: {fileID: 114768576869146440}
-  stringsBankWriteTime: 636640114901730539
+  EditorBanks: []
+  EditorEvents: []
+  MasterBankRef: {fileID: 0}
+  StringsBankRef: {fileID: 0}
+  stringsBankWriteTime: 0
   cacheVersion: 2
 --- !u!114 &114007228641078174
 MonoBehaviour:
@@ -91,7 +53,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_ItemFound
   guid: c66a5c23ba23984d85821a1257052c34
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -133,7 +95,7 @@ MonoBehaviour:
   Path: event:/Character/Character_Damaged
   guid: 3af01db3e8493f469ac21b5a35123fc0
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -177,7 +139,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_ItemLightParticles
   guid: 975f69c0fe13724198118a97c39b8210
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -237,7 +199,7 @@ MonoBehaviour:
   Path: event:/Ghost/Ghost_Laugh
   guid: e02a08763dff59418dad9bec09d49cf0
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -283,6 +245,26 @@ MonoBehaviour:
   - Name: 
     Value: 1697696
   Exists: 1
+--- !u!114 &114111152807114676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "D:\\Escritorio\\Escritorio actual\\Unity 3D tercer a\xF1o\\Tercer Trimestre\\Proyecto\\Carpeta
+    de GitHub definitiva\\MemoryOfAzovProject\\Memory of Azov\\Memory of Azov\\Assets\\Our
+    FMOD Project\\Desktop\\Master Bank.bank"
+  lastModified: 636635915091399741
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1697696
+  Exists: 1
 --- !u!114 &114126875812937584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +279,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_DoorLightParticles
   guid: ce2f17a6bb84fa44954b1ae76286c653
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -338,7 +320,7 @@ MonoBehaviour:
   Path: "event:/Men\xFA/HUD_Movement"
   guid: dfbb97ad261034458ca33bf118e1e86d
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -360,7 +342,7 @@ MonoBehaviour:
   Path: event:/Ghost/Ghost_Attack
   guid: dbdebc3627b492488cbdc09cc693b2b8
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -404,7 +386,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_HealthItemFound
   guid: 370ed08c67e9e74da78cdd8e79f37861
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -426,7 +408,7 @@ MonoBehaviour:
   Path: event:/Linterna/Flashlight_Off
   guid: 04a772db0a41664b8666367e2c95a91f
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -468,7 +450,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_UnlockDoor
   guid: 00155a7117a9ae4f87ec9f6bcceaa6bf
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -490,7 +472,7 @@ MonoBehaviour:
   Path: event:/Ghost/Ghost_Stunned
   guid: 36618706a08a2c408088394cc3685f13
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -553,7 +535,7 @@ MonoBehaviour:
   Path: event:/Linterna/Flashlight_ChargingFlash
   guid: 8787c58af080bc4bbaebca443538eb11
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -597,7 +579,7 @@ MonoBehaviour:
   Path: event:/Character/Character_StepsMarble
   guid: b3ecfcc57cf62b4e9bd559125d2c1bae
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -641,7 +623,7 @@ MonoBehaviour:
   Path: event:/Ghost/Ghost_Boo
   guid: be0e34c3d999f24ba03889ee56d320c3
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -663,7 +645,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_Fireplace_On
   guid: 1861f212e772e74789d4e6d2d5e9352f
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -812,7 +794,7 @@ MonoBehaviour:
   Path: event:/Character/Character_StepsCarpet
   guid: 461203a22d1fd04b81b423c060a1e865
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -900,7 +882,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_HealthItemDropped
   guid: bba531a8c36fae48abaca7f22cdb6baa
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -982,7 +964,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_SpecialItemFound
   guid: 228d06bec94c124eaca101e1cf063e33
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1112,7 +1094,7 @@ MonoBehaviour:
   Path: event:/Ambiente/FX_Rain
   guid: ff47445ba2a6b949918e450f25125138
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1178,7 +1160,7 @@ MonoBehaviour:
   Path: event:/Character/Character_Death
   guid: 4b4ae86e476bb546ae9d73e9a263faa9
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1200,7 +1182,7 @@ MonoBehaviour:
   Path: event:/Character/Character_Scared
   guid: 2ef4d3e1c1a6a143a5760eb69839751f
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1222,7 +1204,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_LoockedDoor
   guid: bb48f69ac671984eac3e4d929823a20e
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1244,7 +1226,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_DoorRevealed
   guid: 4351016209afe546be2fcb94656796d3
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1332,7 +1314,7 @@ MonoBehaviour:
   Path: event:/Ambiente/FX_Thunder
   guid: 9b660a225ded32408bdc246b1d316e16
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1354,7 +1336,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_Fireplace
   guid: 649cf312dbe72247b9c8c954830f8631
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1395,7 +1377,7 @@ MonoBehaviour:
   Path: event:/Linterna/Flashlight_Noise
   guid: 533c5bd9d6d6164f8fa7eec97f08f27b
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1439,7 +1421,7 @@ MonoBehaviour:
   Path: event:/Linterna/Flashlight_On
   guid: 12a4fb1c2ba6624f8e7c1944c3334216
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1527,7 +1509,7 @@ MonoBehaviour:
   Path: "event:/Men\xFA/HUD_Select"
   guid: ec6101837c99fe4db7af8a26f769c396
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1569,7 +1551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Our FMOD Project\Desktop\Master Bank.strings.bank
-  lastModified: 636640114901730539
+  lastModified: 636635915091459740
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -1589,7 +1571,7 @@ MonoBehaviour:
   Path: event:/Ghost/Ghost_Damaged
   guid: dd51742c9c79c844afc3d16dfef79950
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1655,7 +1637,7 @@ MonoBehaviour:
   Path: event:/Ghost/Ghost_LaughtALot
   guid: b28be2e9b0c8954fb3ee044db8dff7b3
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1721,7 +1703,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_DoorOpen
   guid: 1cb23cb0d0bb4443a142be7883f88692
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1743,7 +1725,7 @@ MonoBehaviour:
   Path: event:/Character/Character_ShakingHead
   guid: cbbbd4b93c0f164db53395fce1bd358d
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1824,7 +1806,7 @@ MonoBehaviour:
   Path: event:/Ghost/Ghost_Death
   guid: 0799c028c62f8042a79dd2db56c2f4f9
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1912,7 +1894,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_DoorClose
   guid: 9cc2d8f2922beb4087253cd1271ede81
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1953,7 +1935,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_DoorKnob
   guid: e8a732420f04ee4bbc6a711545ef7ae1
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1994,7 +1976,7 @@ MonoBehaviour:
   Path: event:/Escenario/FX_Button
   guid: c23ae1b748a1c845a3d10bf3c5d54b41
   Banks:
-  - {fileID: 114109551616690954}
+  - {fileID: 114111152807114676}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
