@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 00aefdcd93ab8ce4aac7fa8206a43c71
-timeCreated: 1528415457
+guid: 48ae340357ac88b468a71c820dd0ca37
+timeCreated: 1528412798
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -147,8 +147,8 @@ ModelImporter:
     400136: Ventanal 2
     400138: Ventanal 3
     400140: Ventanales Cortinas y Columnas
-    2100000: 'Material #71'
-    2100002: 'Material #70'
+    2100000: 'Material #29'
+    2100002: 'Material #28'
     2100004: 'Material #52'
     2100006: 'Material #51'
     2100008: ColumnaMat
