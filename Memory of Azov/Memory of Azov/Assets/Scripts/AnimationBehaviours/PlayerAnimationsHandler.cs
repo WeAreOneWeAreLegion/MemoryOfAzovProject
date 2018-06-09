@@ -31,6 +31,16 @@ public class PlayerAnimationsHandler : MonoBehaviour {
         myController.MoveAgainAfterMegaStop();
     }
 
+    public void OpenDoor()
+    {
+        myController.OpenCurrentDoor();
+    }
+
+    public void CrossDoor()
+    {
+        myController.CrossDoorActive();
+    }
+
     public void GameOver()
     {
         GameManager.Instance.CallPlayerDeath();

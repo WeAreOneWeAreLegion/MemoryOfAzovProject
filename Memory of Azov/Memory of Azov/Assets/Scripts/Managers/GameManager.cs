@@ -545,6 +545,8 @@ public class GameManager : MonoSingleton<GameManager> {
                 if (!e.activeInHierarchy)
                 {
                     e.SetActive(true);
+                    var ps = e.GetComponentInChildren<ParticleSystem>().main;
+                    ps.prewarm = true;
                     return;
                 }
             }
@@ -691,7 +693,7 @@ public class GameManager : MonoSingleton<GameManager> {
         GetLastSelectedButton();
         //BoldenAndUnboldenButton();
 
-        if (InputsManager.Instance.GetBackButtonInputDown() && !confirmationPanelOpen) //Input.GetKeyDown("joystick button 1")
+        if ((InputsManager.Instance.GetBackButtonInputDown() || InputsManager.Instance.GetStartButtonDown()) && !confirmationPanelOpen) //Input.GetKeyDown("joystick button 1")
             Resume();
 
         if (confirmationPanelOpen)

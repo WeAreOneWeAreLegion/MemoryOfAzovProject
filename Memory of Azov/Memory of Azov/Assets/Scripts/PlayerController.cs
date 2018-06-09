@@ -1021,11 +1021,9 @@ public class PlayerController : MonoBehaviour {
 
             transform.position = Vector3.Lerp(transform.position, pointToStartCrossingDoor, startCrossingTimer);
 
-            if (startCrossingTimer >= 1)
+            if (startCrossingTimer >= 1 && !myAnimator.GetCurrentAnimatorStateInfo(0).IsName("OpenDoor"))
             {
-                isCrossingDoor = true;
                 myAnimator.SetTrigger("OpenDoor");
-                currentDoorCrossing.OpenDoorAnimation();
             }
         }
         else if (isCrossingDoor)
@@ -1048,6 +1046,15 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public void CrossDoorActive()
+    {
+        isCrossingDoor = true;
+    }
+
+    public void OpenCurrentDoor() {
+        currentDoorCrossing.OpenDoorAnimation();
+    }
+
     private void DoorCrossed()
     {
         isCrossingDoor = false;
@@ -1055,11 +1062,13 @@ public class PlayerController : MonoBehaviour {
         currentDoorCrossing.CloseDoorAnimation();
         Camera.main.GetComponent<CameraBehaviour>().EndCrossDoorMovement();
         ChangePlayerState(State.Playing);
+        myAnimator.SetLayerWeight(2, 0);
     }
 
     public void StartCrossingDoor()
     {
         isCrossingDoor = true;
+        myAnimator.SetLayerWeight(2, 1);
     }
 
     public void SetPointToMoveCrossDoor(Vector3 startSideDoor, Vector3 otherSideDoor)
