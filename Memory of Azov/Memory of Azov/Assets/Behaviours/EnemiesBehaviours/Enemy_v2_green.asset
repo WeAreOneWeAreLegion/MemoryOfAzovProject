@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Name: Enemy_v2_green
   m_EditorClassIdentifier: 
   ghostColor: 1
-  speed: 275
-  rotationSpeed: 360
+  speed: 240
+  rotationSpeed: 330
   oscilationSpeed: 40
-  speedFactorWhenLightened: 2
+  speedFactorWhenLightened: 1.5
   oscilationsPerSecond: 1
   oscilationAmplitude: 2
   immediateFacing: 0
   oscillationMovement: 1
   initialHp: 100
-  timeStuned: 2
-  ghostDamage: 20
+  timeStuned: 1.5
+  ghostDamage: 25
   attackRadius: 2
-  attackDelay: 1
+  attackDelay: 0.5

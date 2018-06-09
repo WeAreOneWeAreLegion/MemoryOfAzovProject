@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Name: Enemy_v1_white_slow
   m_EditorClassIdentifier: 
   ghostColor: 0
-  speed: 200
+  speed: 175
   rotationSpeed: 270
   oscilationSpeed: 40
   speedFactorWhenLightened: 1
-  oscilationsPerSecond: 1
+  oscilationsPerSecond: 0.5
   oscilationAmplitude: 2
   immediateFacing: 0
   oscillationMovement: 1
-  initialHp: 100
+  initialHp: 120
   timeStuned: 2
-  ghostDamage: 20
+  ghostDamage: 25
   attackRadius: 2
   attackDelay: 1

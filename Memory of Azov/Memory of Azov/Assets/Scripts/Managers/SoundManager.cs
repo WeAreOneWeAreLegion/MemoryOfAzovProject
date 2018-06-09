@@ -261,6 +261,8 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventHouseMusic = FMODUnity.RuntimeManager.CreateInstance(houseMusic);
         soundEventCombatMusic = FMODUnity.RuntimeManager.CreateInstance(combatMusic);
         soundEventGameOverMusic = FMODUnity.RuntimeManager.CreateInstance(gameOverMusic);
+
+        PlayHouseMusic();
     }
 
     void Update()

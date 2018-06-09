@@ -131,7 +131,6 @@ public class GameManager : MonoSingleton<GameManager> {
     public GameObject victoryPanel;
     public GameObject victoryOKButton;
     public Text ghostHuntedText;
-    public Text eggsFoundText;
     public Text healthLostText;
     public Text timePlayedText;
 
@@ -690,7 +689,7 @@ public class GameManager : MonoSingleton<GameManager> {
     private void PauseActions()
     {
         GetLastSelectedButton();
-        BoldenAndUnboldenButton();
+        //BoldenAndUnboldenButton();
 
         if (InputsManager.Instance.GetBackButtonInputDown() && !confirmationPanelOpen) //Input.GetKeyDown("joystick button 1")
             Resume();
@@ -855,7 +854,7 @@ public class GameManager : MonoSingleton<GameManager> {
         myEventSystem.SetSelectedGameObject(null);
         yield return null;
         myEventSystem.SetSelectedGameObject(myButton);//myEventSystem.firstSelectedGameObject);
-        GetLastSelectedButton(); //so the first button it is always boldened
+        GetLastSelectedButton(); //so the first button it is always highlighted
         yield return null;
     }
 
@@ -873,23 +872,25 @@ public class GameManager : MonoSingleton<GameManager> {
             boldenedTextButton.fontStyle = FontStyle.Bold;
         }
     }
+
     private void GetLastSelectedButton()
     {
-        if (myEventSystem.currentSelectedGameObject != null)
+        /*if (myEventSystem.currentSelectedGameObject != null)
         {
             boldenedTextButton = myEventSystem.currentSelectedGameObject.GetComponentInChildren<Text>();
             boldenedTextButton.fontStyle = FontStyle.Bold;
-        }
+        }*/
 
         if (myEventSystem.currentSelectedGameObject != currentSelectedButton)
         {
             lastSelectedButton = currentSelectedButton;
 
             currentSelectedButton = myEventSystem.currentSelectedGameObject;
+            SoundManager.Instance.MenuSoundEnum(SoundManager.SoundRequestMenu.Me_Movement);
         }
     }
 
-    void OnMouseOver()
+    /*void OnMouseOver()
     {
         unboldenedTextButton = lastSelectedButton.GetComponentInChildren<Text>();
         unboldenedTextButton.fontStyle = FontStyle.Normal;
@@ -905,7 +906,7 @@ public class GameManager : MonoSingleton<GameManager> {
     {
         boldenedTextButton = currentSelectedButton.GetComponentInChildren<Text>();
         boldenedTextButton.fontStyle = FontStyle.Bold;
-    }
+    }*/
     #endregion
 
     #region Game State Methods
@@ -924,15 +925,16 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void CallPlayerVictory()
     {//Victory
-
+        int hours = ((int)Time.timeSinceLevelLoad - (int)gameTimeStart) / 3600;
+        int minutes = Mathf.Abs(((int)Time.timeSinceLevelLoad - (int)gameTimeStart) / 60);
+        int seconds = ((int)Time.timeSinceLevelLoad - (int)gameTimeStart) % 60;
         ShowHealthPanel();
 
         victoryPanel.SetActive(true);
         StartCoroutine(HighlightButton(victoryOKButton));
-        ghostHuntedText.text = "Quantity of ghost hunted: " + currentNumOfGhosts;
-        eggsFoundText.text = "Quantity of diamond eggs found: " + currentNumOfGems;
-        healthLostText.text = "Quantity of health lost: " + currentHealthLost;
-        timePlayedText.text = "Time played: " + (Time.timeSinceLevelLoad - gameTimeStart).ToString("F2");
+        ghostHuntedText.text = currentNumOfGhosts.ToString();
+        healthLostText.text = currentHealthLost.ToString();
+        timePlayedText.text = hours.ToString("00: ") + minutes.ToString("00") + ":" + seconds.ToString("00");
         /*Debug.Log("A winner is you");
         Debug.Log("Quantity of ghost hunted: "+currentNumOfGhosts);
         Debug.Log("Quantity of diamond eggs found: "+currentNumOfGems);
