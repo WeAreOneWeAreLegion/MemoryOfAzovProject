@@ -30,6 +30,8 @@ public class ConectionScript : LightenableObject {
     [Range(1,15)] public float checkerDistance = 6f;
     [Tooltip("Collider principal de la puerta")]
     public BoxCollider myCollider;
+    [Tooltip("Punto al animator")]
+    public Animator myAnimator;
     [Tooltip("Punto derecho de la puerta")]
     public Transform rightPoint;
     [Tooltip("Punto izquierdo de la puerta")]
@@ -337,15 +339,17 @@ public class ConectionScript : LightenableObject {
 
             ActiveBothRooms();
 
-            HideDoors();
+            OpenDoors();
+        }
+    }
 
-            //Perform the opening
-            if (isSideDoor)
-            {
-                CameraBehaviour cb = CameraBehaviour.Instance;
-                cb.ChangeCameraBehaviourState(CameraBehaviour.CameraState.CrossDoor);
-                cb.MoveAtPoint(transform.position, GameManager.Instance.GetPlayer().position.x > transform.position.x);
-            }
+    public void CameraBehaviourWhenCrossing()
+    {
+        if (isSideDoor)
+        {
+            CameraBehaviour cb = CameraBehaviour.Instance;
+            cb.ChangeCameraBehaviourState(CameraBehaviour.CameraState.CrossDoor);
+            cb.MoveAtPoint(transform.position, GameManager.Instance.GetPlayer().position.x > transform.position.x);
         }
     }
 
@@ -356,7 +360,7 @@ public class ConectionScript : LightenableObject {
 
     public void CloseDoorAnimation()
     {
-        ShowDoors();
+        ClsoeDoors();
 
         if (isLightSwitcher && !lightsSwitched)
         {
@@ -390,17 +394,20 @@ public class ConectionScript : LightenableObject {
         GameManager.Instance.ShowAndHideDoors();
     }
 
-    private void ShowDoors()
+    private void ClsoeDoors()
     {
-        leftDoor.SetActive(true);
-        rightDoor.SetActive(true);
+        myAnimator.SetBool("RightOpen", false);
+        myAnimator.SetBool("LeftOpen", false);
         myCollider.enabled = true;
     }
 
-    private void HideDoors()
+    private void OpenDoors()
     {
-        leftDoor.SetActive(false);
-        rightDoor.SetActive(false);
+        if (IsRightClosestPoint(GameManager.Instance.GetPlayer().position))
+            myAnimator.SetBool("RightOpen", true);
+        else
+            myAnimator.SetBool("LeftOpen", true);
+
         myCollider.enabled = false;
     }
     #endregion

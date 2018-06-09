@@ -175,6 +175,7 @@ public class PlayerController : MonoBehaviour {
 
     //CrossDoor variables
     private bool isCrossingDoor;
+    private bool isCameraMovingWhenCrossing;
     private float startCrossingTimer;
     private Vector3 pointToStartCrossingDoor;
     private Vector3 pointToGoCrossDoor;
@@ -362,7 +363,6 @@ public class PlayerController : MonoBehaviour {
         {
             transform.forward = Vector3.Slerp(transform.forward, faceDirection, autoFacingSpeed * Time.deltaTime);
         }
-
 
     }
 
@@ -1024,6 +1024,7 @@ public class PlayerController : MonoBehaviour {
             if (startCrossingTimer >= 1)
             {
                 isCrossingDoor = true;
+                myAnimator.SetTrigger("OpenDoor");
                 currentDoorCrossing.OpenDoorAnimation();
             }
         }
@@ -1034,7 +1035,13 @@ public class PlayerController : MonoBehaviour {
 
             myCharController.Move(directionToGoCrossDoor * speed * Time.deltaTime);
 
-            if (Vector3.Distance(pointToGoCrossDoor, transform.position) < 0.5f)
+            if (Vector3.Distance(pointToGoCrossDoor, transform.position) < 2f && !isCameraMovingWhenCrossing)
+            {
+                currentDoorCrossing.CameraBehaviourWhenCrossing();
+                isCameraMovingWhenCrossing = true;
+            }
+
+            if (Vector3.Distance(pointToGoCrossDoor, transform.position) < 0.2f)
             {
                 DoorCrossed();
             }
@@ -1044,6 +1051,7 @@ public class PlayerController : MonoBehaviour {
     private void DoorCrossed()
     {
         isCrossingDoor = false;
+        isCameraMovingWhenCrossing = false;
         currentDoorCrossing.CloseDoorAnimation();
         Camera.main.GetComponent<CameraBehaviour>().EndCrossDoorMovement();
         ChangePlayerState(State.Playing);
