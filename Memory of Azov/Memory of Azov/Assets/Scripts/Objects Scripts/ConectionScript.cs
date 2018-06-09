@@ -267,7 +267,7 @@ public class ConectionScript : LightenableObject {
     #region Block Door Methods
     public void BlockDoor()
     {
-        blockMaskList.ForEach(x => x.SetActive(true));
+        //blockMaskList.ForEach(x => x.SetActive(true));
         isDoorOpen = false;
     }
 
@@ -277,7 +277,7 @@ public class ConectionScript : LightenableObject {
         {
             isDoorOpen = true;
         }
-        blockMaskList.ForEach(x => x.SetActive(false));
+        //blockMaskList.ForEach(x => x.SetActive(false));
     }
 
     public bool IsDoorFromRoom(GameObject room)

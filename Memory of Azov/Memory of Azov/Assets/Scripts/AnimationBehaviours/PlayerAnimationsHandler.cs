@@ -11,6 +11,16 @@ public class PlayerAnimationsHandler : MonoBehaviour {
         myController.DoAction();
     }
 
+    public void ShowEgg()
+    {
+        myController.ShowEgg();
+    }
+
+    public void HideEgg()
+    {
+        myController.HideEgg();
+    }
+
     public void GameOver()
     {
         GameManager.Instance.CallPlayerDeath();

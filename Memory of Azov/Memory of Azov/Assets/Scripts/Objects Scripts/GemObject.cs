@@ -23,6 +23,8 @@ public class GemObject : MonoBehaviour
 
     private void Start()
     {
+        GetComponentInChildren<MeshRenderer>().material.mainTexture = EggsManager.Instance.GetRandomTexture();
+
         if(myRGB == null)
             myRGB = GetComponent<Rigidbody>();
 

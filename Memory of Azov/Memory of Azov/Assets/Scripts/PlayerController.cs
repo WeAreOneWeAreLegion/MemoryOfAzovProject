@@ -1110,6 +1110,7 @@ public class PlayerController : MonoBehaviour {
 
     public void ShowEgg()
     {
+        handsEgg.GetComponent<MeshRenderer>().material.mainTexture = EggsManager.Instance.GetCurrentTexture();
         handsEgg.SetActive(true);
     }
 

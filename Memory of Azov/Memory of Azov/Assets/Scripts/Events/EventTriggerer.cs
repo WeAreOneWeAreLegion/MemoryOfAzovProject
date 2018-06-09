@@ -12,6 +12,7 @@ public class EventTriggerer : MonoBehaviour {
     public EventType myType;
     public EventOrder myOrder;
     public List<EventTriggerer> myCoEvents;
+    public bool combatModeAffected;
     #endregion
 
     #region Private Variable
@@ -43,6 +44,9 @@ public class EventTriggerer : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        if (combatModeAffected && GameManager.Instance.GetIsInCombateMode())
+            return;
+
         if (other.tag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player))
         {
             if (myType == EventType.Individual)
@@ -60,6 +64,9 @@ public class EventTriggerer : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
+        if (combatModeAffected && GameManager.Instance.GetIsInCombateMode())
+            return;
+
         if (other.tag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player))
             if (myType == EventType.Multiple)
                 if (allowTrigger)
