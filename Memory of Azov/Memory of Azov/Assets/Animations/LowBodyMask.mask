@@ -58,7 +58,7 @@ AvatarMask:
       1
     m_Weight: 1
   - m_Path: CATRigHub001/CATRigSpine1
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: CATRigHub001/CATRigSpine1/CATRigSpine2
     m_Weight: 0
   - m_Path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002

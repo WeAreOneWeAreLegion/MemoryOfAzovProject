@@ -95,10 +95,7 @@ public class WallPaint : LightenableObject
                     GameObject go = ObjectsManager.Instance.GetItem(transform, itemToDrop);
 
                     if (go != null)
-                    {
                         go.transform.position = transform.position - transform.forward;
-                        go.transform.forward = -transform.forward;
-                    }
 
                 }
 

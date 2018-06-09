@@ -170,7 +170,7 @@ public class FakeWallScript : MonoBehaviour {
     {
         if (isDoorOpen)
         {
-            GameManager.Instance.ShowAllDoors(roomRightTop, roomLeftBottom);
+            GameManager.Instance.ShowAllDoorsFromRooms(roomRightTop, roomLeftBottom);
 
             lightsSwitched = false;
 

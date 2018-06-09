@@ -37,7 +37,7 @@ public class TransparentObject : MonoBehaviour {
     #region Private Variables
     private bool isMaterialHidden = false;
     private float transparencyValue;
-
+    private bool inspected;
 
     private List<Material> myMats = new List<Material>();
     #endregion
@@ -144,9 +144,26 @@ public class TransparentObject : MonoBehaviour {
     #endregion
 
     #region Action Methods
+    public void VisualShake()
+    {
+        if (inspected)
+            return;
+
+        foreach (Animation a in myAnimations)
+        {
+            a.clip = a.GetClip("Shake");
+            a.Play();
+        }
+    }
+
+    public bool GetIsInspected()
+    {
+        return inspected;
+    }
+
     public void ShakeObjectAnimation(bool isFirstCall = true)
     {
-        if (isWall || isDoor || isStatic)
+        if (isWall || isDoor || isStatic || inspected)
         {
             return;
         }
@@ -192,6 +209,8 @@ public class TransparentObject : MonoBehaviour {
             a.clip = a.GetClip("Shake");
             a.Play();
         }
+
+        inspected = true;
     }
 
     public void OpenObject()

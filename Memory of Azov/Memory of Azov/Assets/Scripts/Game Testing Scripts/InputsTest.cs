@@ -14,5 +14,22 @@ public class InputsTest : MonoBehaviour {
 
         myAnimator.SetFloat("xValue", xInput);
         myAnimator.SetFloat("zValue", zInput);
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            myAnimator.SetTrigger("OpenDoor");
+            ActiveSecondaryLayer();
+        }
     }
+
+    private void ActiveSecondaryLayer()
+    {
+        myAnimator.SetLayerWeight(1,1);
+    }
+
+    public void DeactiveSecondaryLayer()
+    {
+        myAnimator.SetLayerWeight(1, 0);
+    }
+
 }

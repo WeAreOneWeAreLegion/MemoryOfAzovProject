@@ -12,6 +12,7 @@ public class RoomScript : MonoBehaviour
     public List<EnemySO> enemiesData = new List<EnemySO>();
 
     public Transform cameraCinematic;
+    public float timeForShake = 10;
 
     [Header("\t    Own Script Variables")]
     [Tooltip("Lista de muros oscuros")]
@@ -22,6 +23,8 @@ public class RoomScript : MonoBehaviour
     #region Private Variables
     private int ghostIndex = 0;
     private int heartsIndex = 0;
+    private float internalTimer;
+    private bool allInspected;
 
     private List<TransparentObject> objectsWithEnemies = new List<TransparentObject>();
     private List<TransparentObject> objectsWithGems = new List<TransparentObject>();
@@ -31,6 +34,23 @@ public class RoomScript : MonoBehaviour
     private void Awake()
     {
         SetStartingRoom();
+    }
+
+    private void OnEnable()
+    {
+        internalTimer = Time.time;
+    }
+
+    private void Update()
+    {
+        if (gameObject.activeInHierarchy && !allInspected)
+        {
+            if (Time.time >= internalTimer + timeForShake)
+            {
+                ShakeAnItem();
+                DetectAllItemsInspected();
+            }
+        }
     }
 
     #region Set-Up Methods
@@ -113,6 +133,31 @@ public class RoomScript : MonoBehaviour
     #endregion
 
     #region Enemy Spawner Method
+    public void ShakeAnItem()
+    {
+        int rng = Random.Range(0, allObjects.Count);
+
+        while (allObjects[rng].GetIsInspected())
+            rng = Random.Range(0, allObjects.Count);
+
+        allObjects[rng].VisualShake();
+    }
+
+    public void DetectAllItemsInspected()
+    {
+        allInspected = true;
+
+        foreach (TransparentObject to in allObjects)
+        {
+            if (!to.GetIsInspected())
+            {
+                allInspected = false;
+                return;
+            }
+        }
+
+    }
+
     public void ShowAllEnemiesFromRoom()
     {
         CameraBehaviour.Instance.TargetCinematic(cameraCinematic);

@@ -36,7 +36,7 @@ public class GameManager : MonoSingleton<GameManager> {
 
     [Header("Rooms Variables")]
     [Tooltip("Referencia a todas las habitacions")]
-    public List<GameObject> roomsList = new List<GameObject>();
+    public List<RoomScript> roomsList = new List<RoomScript>();
     [Tooltip("Referencia a todas las puertas")]
     public List<ConectionScript> doorsList = new List<ConectionScript>();
     [Tooltip("Referencia a todas las puertas")]
@@ -278,7 +278,13 @@ public class GameManager : MonoSingleton<GameManager> {
         }
     }
 
-    public void ShowAllDoors(GameObject room1, GameObject room2)
+    public void ShowAllDoors()
+    {
+        foreach (ConectionScript d in doorsList)
+            d.ShowVisualDoor();
+    }
+
+    public void ShowAllDoorsFromRooms(GameObject room1, GameObject room2)
     {
         foreach (ConectionScript d in doorsList)
             if (d.IsDoorFromRoom(room1) || d.IsDoorFromRoom(room2))
@@ -302,6 +308,31 @@ public class GameManager : MonoSingleton<GameManager> {
             if (d.IsDoorFromRoom(hit.transform.parent.gameObject))
             {
                 d.BlockDoor();
+            }
+        }
+    }
+    #endregion
+
+    #region Rooms Methods
+    public void HideBlackWalls()
+    {
+        roomsList.ForEach(x => x.HideBlackWalls());
+    }
+
+    public void ShowBlackWalls()
+    {
+        Ray ray;
+        RaycastHit hit;
+
+        ray = new Ray(GetPlayer().position, Vector3.down);
+        Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("FloorLayer"));
+
+        foreach (RoomScript r in roomsList)
+        {
+            if (r.gameObject == hit.transform.parent.gameObject)
+            {
+                r.ShowBlackWalls();
+                return;
             }
         }
     }
@@ -460,6 +491,8 @@ public class GameManager : MonoSingleton<GameManager> {
     private void ActiveGemsZone()
     {
         player.StopByMegaStop();
+        HideBlackWalls();
+        ShowAllDoors();
 
         CameraBehaviour.Instance.gameObject.SetActive(false);
         gemsCamera.SetActive(true);
@@ -474,6 +507,8 @@ public class GameManager : MonoSingleton<GameManager> {
     private void DeactiveGemsZone()
     {
         player.MoveAgainAfterMegaStop();
+        ShowBlackWalls();
+        ShowAndHideDoors();
 
         showGemsPanel = false;
 

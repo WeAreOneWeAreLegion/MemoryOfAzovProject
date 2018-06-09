@@ -44,7 +44,7 @@ public class ObjectsManager : MonoSingleton<ObjectsManager> {
     {
         for (int i = 0; i < initialAmountOfGems; i++)
         {
-            GameObject go = Instantiate(gemPrefab, Vector3.one * 9999, Quaternion.identity) as GameObject;
+            GameObject go = Instantiate(gemPrefab, Vector3.one * 9999, Quaternion.Euler(-90, 0, 0)) as GameObject;
             go.transform.SetParent(this.transform);
             go.SetActive(false);
             gemsPoolList.Add(go);
@@ -93,7 +93,7 @@ public class ObjectsManager : MonoSingleton<ObjectsManager> {
         if (gemsPoolList.Count == 0)
         {
             //Create
-            g = Instantiate(gemPrefab, Vector3.one * 9999, Quaternion.identity) as GameObject;
+            g = Instantiate(gemPrefab, Vector3.one * 9999, Quaternion.Euler(-90,0,0)) as GameObject;
         }
         else
         {

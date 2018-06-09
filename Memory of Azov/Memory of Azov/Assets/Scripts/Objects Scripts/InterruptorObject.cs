@@ -11,17 +11,25 @@ public class InterruptorObject : LightenableObject
     public ConectionScript myDoor;
     [Tooltip("Color del timbre para que se accione")]
     public PlayerController.LightColor colorToOpenBell;
+    [Tooltip("Emissive color")] 
+    public Color emissiveColor;
+
+    [Header("Own Script Variables")]
+    public MeshRenderer myRenderer;
     #endregion
 
     #region Private Variables
     private bool insideRadius;
 
+    private Material myMat;
     private Transform target;
     #endregion
 
     private void Start()
     {
         target = GameManager.Instance.GetPlayer();
+        myMat = myRenderer.material;
+        myMat.SetColor("_EmissionColor", Color.black);
     }
 
     private void Update()
@@ -51,6 +59,7 @@ public class InterruptorObject : LightenableObject
             {
                 myDoor.OpenByBell();
                 enabled = false;
+                myMat.SetColor("_EmissionColor", emissiveColor);
                 tag = GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Wall);
             }
         }

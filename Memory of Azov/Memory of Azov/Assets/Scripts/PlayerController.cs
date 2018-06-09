@@ -1047,6 +1047,9 @@ public class PlayerController : MonoBehaviour {
     #region Fake Wall Methods
     public void CheckForWallTurned()
     {
+        if (myAnimator.GetFloat("Speed") != 0)
+            myAnimator.SetFloat("Speed", 0);
+
         if (currentFakeWall.IsFullTurned())
         {
             ChangePlayerState(State.Playing);
