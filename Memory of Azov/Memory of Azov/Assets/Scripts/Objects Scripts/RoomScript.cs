@@ -47,7 +47,6 @@ public class RoomScript : MonoBehaviour
         {
             if (Time.time >= internalTimer + timeForShake)
             {
-                Debug.Log("Shake it off");
                 ShakeAnItem();
                 DetectAllItemsInspected();
                 internalTimer = Time.time;
@@ -143,7 +142,6 @@ public class RoomScript : MonoBehaviour
             rng = Random.Range(0, allObjects.Count);
 
         allObjects[rng].VisualShake();
-        Debug.Log("Already shaked object "+ allObjects[rng].name);
     }
 
     public void DetectAllItemsInspected()

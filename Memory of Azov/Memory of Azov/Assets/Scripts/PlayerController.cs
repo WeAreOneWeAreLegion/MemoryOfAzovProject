@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour {
     [Header("Skeleton Mesh Component")]
     public Transform lightBone;
     public Transform lanternHandBone;
+    public GameObject handsEgg;
     public Transform eyeLeft;
     public Transform eyeRight;
     #endregion
@@ -191,6 +192,7 @@ public class PlayerController : MonoBehaviour {
     private void Start()
     {
 		independentFacing = true;
+        HideEgg();
 
         //Tag 
         if (tag != GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player))
@@ -1104,6 +1106,16 @@ public class PlayerController : MonoBehaviour {
         megaStop = false;
 		independentFacing = true;
         StopMovementByAim();
+    }
+
+    public void ShowEgg()
+    {
+        handsEgg.SetActive(true);
+    }
+
+    public void HideEgg()
+    {
+        handsEgg.SetActive(false);
     }
 
     public void DoAction()
