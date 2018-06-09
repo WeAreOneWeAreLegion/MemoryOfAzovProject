@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061622642, g: 0.10951624, b: 0.14596528, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.061429575, g: 0.1094956, b: 0.1453344, a: 0.3}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -19164,18 +19164,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1875722068500504, guid: 37c48f9ad847d4a46ade640ebfd0f366,
     type: 2}
   m_PrefabInternal: {fileID: 686522567}
---- !u!114 &274010657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 274010655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: 0
 --- !u!20 &274010659 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20924366869190902, guid: 37c48f9ad847d4a46ade640ebfd0f366,
@@ -44811,7 +44799,7 @@ MonoBehaviour:
     changeColorButton: 101
     chargeTrigger: Fire1
     pauseButton: 27
-  isControllerPlaying: 1
+  isControllerPlaying: 0
   invertVerticalRotation: 1
   joystickRotationFactor: 3
   leftPlayer1Vibrator: 0
@@ -71331,6 +71319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 737769697}
+  - {fileID: 1674639683}
   m_Father: {fileID: 147172592}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75431,6 +75420,7 @@ GameObject:
   - component: {fileID: 1304689142}
   - component: {fileID: 1304689143}
   - component: {fileID: 1304689144}
+  - component: {fileID: 1304689145}
   m_Layer: 0
   m_Name: SoundsManager
   m_TagString: Untagged
@@ -75478,6 +75468,7 @@ MonoBehaviour:
   characterShakingHeadSound: event:/Character/Character_ShakingHead
   characterStepsCarpetSound: event:/Character/Character_StepsCarpet
   characterStepsMarbleSound: event:/Character/Character_StepsMarble
+  characterLowHealthSound: event:/Character/Character_LowHealth
   ghostAttackSound: event:/Ghost/Ghost_Attack
   ghostBooSound: event:/Ghost/Ghost_Boo
   ghostDamagedSound: event:/Ghost/Ghost_Damaged
@@ -75497,12 +75488,19 @@ MonoBehaviour:
   scenarioLockedDoorSound: event:/Escenario/FX_LoockedDoor
   scenarioSpecialItemFoundSound: event:/Escenario/FX_SpecialItemFound
   scenarioUnlockDoorSound: event:/Escenario/FX_UnlockDoor
+  scenarioLeverSound: event:/Escenario/FX_Lever
+  scenarioLibrarySound: event:/Escenario/FX_Library
+  scenarioPictureFallsSound: event:/Escenario/FX_PictureFalls
   flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
   flashlightNoiseSound: event:/Linterna/Flashlight_Noise
   flashlightOffSound: event:/Linterna/Flashlight_Off
   flashlightOnSound: event:/Linterna/Flashlight_On
-  menuHUDMovementSound: "event:/Men\xFA/HUD_Movement"
-  menuHUDSelectSound: "event:/Men\xFA/HUD_Select"
+  menuHUDMovementSound: "event:/Men\xFA/HUD_Movement Grupo 3"
+  menuHUDSelectSound: "event:/Men\xFA/HUD_Select Grupo 3"
+  menuHUDSelectBackSound: "event:/Men\xFA/HUD_SelectBack Grupo 3"
+  houseMusic: event:/Music/House Music
+  combatMusic: event:/Music/Combat Music
+  gameOverMusic: event:/Music/Game Over
 --- !u!114 &1304689144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75515,6 +75513,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: 0
+--- !u!114 &1304689145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1304689141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Music/House Music
+  PlayEvent: 1
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1304983537
 GameObject:
   m_ObjectHideFlags: 0
@@ -84922,6 +84942,57 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4982885, y: 0.0927407, z: 0.884228}
   m_Center: {x: 0.000000045340727, y: 0.000000277162, z: 0.35310462}
+--- !u!1 &1674639682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1674639683}
+  - component: {fileID: 1674639684}
+  m_Layer: 0
+  m_Name: RainSoundEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1674639683
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674639682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.96, y: -11.72, z: -6.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1280015174}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1674639684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674639682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Ambiente/FX_Rain
+  PlayEvent: 11
+  StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1675056088
 GameObject:
   m_ObjectHideFlags: 0

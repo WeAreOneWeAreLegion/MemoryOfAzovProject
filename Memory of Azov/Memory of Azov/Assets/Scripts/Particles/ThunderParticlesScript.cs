@@ -54,6 +54,7 @@ public class ThunderParticlesScript : MonoBehaviour {
         thunderRenderLighting = (GameObject)Instantiate(thunderRenderPrefab, this.gameObject.transform.position, thunderRenderPrefab.transform.rotation);
         
         thunderLightLighting = (GameObject)Instantiate(thunderLightPrefab, this.gameObject.transform.position, thunderLightPrefab.transform.rotation);
+        SoundManager.Instance.AmbientSoundEnum(SoundManager.SoundRequestAmbient.A_Thunder, this.gameObject.transform);
     }
 
     void DestroyThunder()

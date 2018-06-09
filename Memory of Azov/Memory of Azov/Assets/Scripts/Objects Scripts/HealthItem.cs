@@ -17,7 +17,8 @@ public class HealthItem : MonoBehaviour
         {
             other.GetComponent<PlayerController>().IncreaseHealth(healthGiven);
             ObjectsManager.Instance.ReturnRequest(gameObject, ObjectsManager.ItemRequest.Health);
-        }    
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_HealthItemFound, this.gameObject.transform);
+        }
     }
     #endregion
 }
