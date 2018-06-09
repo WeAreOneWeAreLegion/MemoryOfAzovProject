@@ -293,7 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a9bb9109bd0424a8881dc487350c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 0}
 --- !u!1 &399286460
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,8 +718,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: PlayMenuHUDSelectBackSound
+      - m_Target: {fileID: 1106706271}
+        m_MethodName: PlayMenuHUDSelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1029,7 +1028,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1106706271}
         m_MethodName: PlayMenuHUDSelectSound
         m_Mode: 1
         m_Arguments:
@@ -1183,7 +1182,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1106706271}
         m_MethodName: PlayMenuHUDSelectSound
         m_Mode: 1
         m_Arguments:
@@ -1321,6 +1320,7 @@ GameObject:
   - component: {fileID: 1106706267}
   - component: {fileID: 1106706266}
   - component: {fileID: 1106706270}
+  - component: {fileID: 1106706271}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1402,6 +1402,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e52ae863fb106498dcee485c085104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1106706271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106706265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bdcb0839dae7e46b52ad42444f4177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockSounds: []
+  openDoorSounds: []
+  buttonPushSounds: []
+  enemyCrySound: []
+  ambientRainSound: event:/Ambiente/FX_Rain
+  ambientThunderSound: event:/Ambiente/FX_Thunder
+  characterDamagedSound: event:/Character/Character_Damaged
+  characterDeathSound: event:/Character/Character_Death
+  characterScaredSound: event:/Character/Character_Scared
+  characterShakingHeadSound: event:/Character/Character_ShakingHead
+  characterStepsCarpetSound: event:/Character/Character_StepsCarpet
+  characterStepsMarbleSound: event:/Character/Character_StepsMarble
+  characterLowHealthSound: event:/Character/Character_LowHealth
+  ghostAttackSound: event:/Ghost/Ghost_Attack
+  ghostBooSound: event:/Ghost/Ghost_Boo
+  ghostDamagedSound: event:/Ghost/Ghost_Damaged
+  ghostDeadSound: event:/Ghost/Ghost_Death
+  ghostLaughSound: event:/Ghost/Ghost_Laugh
+  ghostLaughALotSound: event:/Ghost/Ghost_LaughtALot
+  ghostStunnedSound: event:/Ghost/Ghost_Stunned
+  scenarioButtonSound: event:/Escenario/FX_Button
+  scenarioDoorCloseSound: event:/Escenario/FX_DoorClose
+  scenarioDoorKnobSound: event:/Escenario/FX_DoorKnob
+  scenarioDoorOpenSound: event:/Escenario/FX_DoorOpen
+  scenarioFireplaceSound: event:/Escenario/FX_Fireplace
+  scenarioHealItemDroppedSound: event:/Escenario/FX_HealthItemDropped
+  scenarioHealItemFoundSound: event:/Escenario/FX_HealthItemFound
+  scenarioItemFoundSound: event:/Escenario/FX_ItemFound
+  scenarioItemLightParticlesSound: event:/Escenario/FX_ItemLightParticles
+  scenarioLockedDoorSound: event:/Escenario/FX_LoockedDoor
+  scenarioSpecialItemFoundSound: event:/Escenario/FX_SpecialItemFound
+  scenarioUnlockDoorSound: event:/Escenario/FX_UnlockDoor
+  scenarioLeverSound: event:/Escenario/FX_Lever
+  scenarioLibrarySound: event:/Escenario/FX_Library
+  scenarioPictureFallsSound: event:/Escenario/FX_PictureFalls
+  flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
+  flashlightNoiseSound: event:/Linterna/Flashlight_Noise
+  flashlightOffSound: event:/Linterna/Flashlight_Off
+  flashlightOnSound: event:/Linterna/Flashlight_On
+  menuHUDMovementSound: "event:/Men\xFA/HUD_Movement Grupo 1"
+  menuHUDSelectSound: "event:/Men\xFA/HUD_Select Grupo 3"
+  menuHUDSelectBackSound: "event:/Men\xFA/HUD_SelectBack Grupo 3"
+  houseMusic: event:/Music/Main Menu
+  combatMusic: event:/Music/Combat Music
+  gameOverMusic: event:/Music/Game Over
 --- !u!1 &1137418983
 GameObject:
   m_ObjectHideFlags: 0
