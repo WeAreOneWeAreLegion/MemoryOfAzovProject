@@ -506,6 +506,8 @@ public class GameManager : MonoSingleton<GameManager> {
     {
         player.StopShowingObject();
 
+        CameraBehaviour.Instance.ChangeCameraBehaviourState(CameraBehaviour.CameraState.Following);
+
         ShowBlackWalls();
         ShowAndHideDoors();
 

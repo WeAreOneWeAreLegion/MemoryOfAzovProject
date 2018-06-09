@@ -3,7 +3,7 @@ using UnityEditor;
 
 public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
 
-    public enum CameraState { Following, CrossDoor, FakeWall, Cinematic }
+    public enum CameraState { Following, CrossDoor, FakeWall, ShowingItem, Cinematic}
     public enum CameraLookState { Normal, LookUp, LookDown }
 
     [System.Serializable]
@@ -39,10 +39,15 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     [Tooltip("Cuantos segundos tardara la camara en moverse de la entrada de la puerta a la salida de la puerta")]
     [Range(0, 40)] public float crossDoorCameraSpeed = 0.2f;
 
-    [Header("CrossDoor Variables")]
+    [Header("Cinematic Variables")]
     [Tooltip("Cuantos segundos tardara la camara en moverse de donde esta a la posicion cinematica")]
     [Range(0, 2)] public float cinematicCameraSpeed = 0.2f;
     [Range(0, 2)] public float cinematicShowingTime = 0.4f;
+
+    [Header("Show Item Variables")]
+    public Transform showingItemTransform;
+    [Range(0, 4)] public float speedToShowItem = 1f;
+    public AnimationCurve rotationShowItemCurve;
 
     [Header("\t    Own Script Variables")]
     [Tooltip("Target a seguir")]
@@ -62,12 +67,14 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     private float backwardFirstDistance;
     private float cinematicTimer;
     private float cinematicFinishedTimer;
+    private float showItemTimer;
     //private float cameraRotationLerpTimer;
     private bool wallsFound;
     private bool backwardDistanceSet;
     private bool dontFollow;
     private bool goingCinematic;
     private bool isCinematicFinished;
+    private bool isShowingItem;
 
     private Vector3 moveAtPoint;
 
@@ -93,6 +100,15 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
 
     private void Update ()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ChangeCameraBehaviourState(CameraState.ShowingItem);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            ChangeCameraBehaviourState(CameraState.Following);
+        }
+
         if (Time.timeScale == 0)
             return;
         if (currentState == CameraState.Following)
@@ -103,6 +119,8 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
             CinematicMovement();
         else if (currentState == CameraState.FakeWall)
             FakeWallMovement();
+        else if (currentState == CameraState.ShowingItem)
+            ShowItem();
     }
 
     #region Following Methods
@@ -262,10 +280,53 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     }
     #endregion
 
+    #region Show Item Methods
+    private void ShowItem()
+    {
+        if (isShowingItem)
+        {
+            showItemTimer += Time.deltaTime / speedToShowItem;
+
+            if (showItemTimer > 1)
+                showItemTimer = 1;
+        }
+        else
+        {
+            showItemTimer -= Time.deltaTime / speedToShowItem;
+
+            if (showItemTimer < 0)
+            {
+                showItemTimer = 0;
+                ChangeCameraBehaviourState(CameraState.Following);
+            }
+        }
+
+        transform.position = Vector3.Lerp(currentSurrogate.position, showingItemTransform.position, showItemTimer);
+        transform.rotation = Quaternion.Lerp(currentSurrogate.rotation, showingItemTransform.rotation, rotationShowItemCurve.Evaluate(showItemTimer));
+    }
+
+    public void StopShowingItem()
+    {
+        isShowingItem = false;
+    }
+    #endregion
+
     #region Public Methods
     public void ChangeCameraBehaviourState(CameraState newState)
     {
+        if (currentState == CameraState.ShowingItem)
+        {
+            transform.position = currentSurrogate.position;
+            transform.rotation = currentSurrogate.rotation;
+        }
+
         currentState = newState;
+
+        if (newState == CameraState.ShowingItem)
+        {
+            showItemTimer = 0;
+            isShowingItem = true;
+        }
 
         if (newState == CameraState.FakeWall)
             dontFollow = !dontFollow;

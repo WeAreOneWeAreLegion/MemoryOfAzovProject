@@ -41,6 +41,11 @@ public class PlayerAnimationsHandler : MonoBehaviour {
         myController.CrossDoorActive();
     }
 
+    public void ShowItem()
+    {
+        CameraBehaviour.Instance.ChangeCameraBehaviourState(CameraBehaviour.CameraState.ShowingItem);
+    }
+
     public void GameOver()
     {
         GameManager.Instance.CallPlayerDeath();

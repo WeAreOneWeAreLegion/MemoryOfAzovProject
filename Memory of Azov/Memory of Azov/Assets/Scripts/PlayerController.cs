@@ -102,6 +102,9 @@ public class PlayerController : MonoBehaviour {
     [Tooltip("Luz gradiante de la linterna cargada")]
     public Gradient lightsChargedGradientColor;
 
+    [Header("Camera Point Component")]
+    public RePositionPoint rePoint;
+
     [Header("Animator Component")]
     public Animator myAnimator;
     public float minWalkSpeed = 0.2f;
@@ -936,13 +939,15 @@ public class PlayerController : MonoBehaviour {
 
     private void Examine()
     {
-        if (to != null)
-        {
-            to.ShakeObjectAnimation();
+        if (to == null)
+            return;
+        
+        to.ShakeObjectAnimation();
 
-            if (to.HasGemInside())
-                myAnimator.SetBool("ShowItem", true);
-        }
+        if (to.HasGemInside())
+            myAnimator.SetBool("ShowItem", true);
+
+        rePoint.RePlace();
 
         myAnimator.speed = 1;
         myAnimator.SetTrigger("Examine");
