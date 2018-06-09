@@ -406,13 +406,16 @@ public class PlayerController : MonoBehaviour {
 
     private void RotateByMove()
     {
+        if (faceDirection != Vector3.back && megaStop && (myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Examinar") || myAnimator.GetCurrentAnimatorStateInfo(0).IsName("ShowItem")))
+            faceDirection = Vector3.back;
+
         if ((((!independentFacing && currentControl == TypeOfControl.TwoControls) || currentControl == TypeOfControl.OneControl) && canMove && (xMove != 0 || zMove != 0)) || autoFace)
         {
             float extraSpeed = autoFace ? 3.5f : 3f;
 
             if (Vector3.Angle(faceDirection, transform.forward) > angleToStartMoving)
             {
-                transform.Rotate(Vector3.up, (-Mathf.Sign(Vector3.SignedAngle(faceDirection, transform.forward, transform.up))) * rotationSpeed * extraSpeed * Time.deltaTime);
+                transform.Rotate(Vector3.up, (-Mathf.Sign(Vector3.SignedAngle(faceDirection, transform.forward, transform.up))) * rotationSpeed * extraSpeed * Time.fixedDeltaTime);
             }
             else if (faceDirection != transform.forward || autoFace)
             {
@@ -928,8 +931,17 @@ public class PlayerController : MonoBehaviour {
 
     private void Examine()
     {
+        if (to != null)
+        {
+            to.ShakeObjectAnimation();
+
+            if (to.HasGemInside())
+                myAnimator.SetBool("ShowItem", true);
+        }
+
         myAnimator.speed = 1;
         myAnimator.SetTrigger("Examine");
+
         StopByAnimation();
     }
 
@@ -1103,7 +1115,7 @@ public class PlayerController : MonoBehaviour {
 
     public void CalmMode()
     {
-        megaStop = false;
+        MoveAgainAfterMegaStop();
 		independentFacing = true;
         StopMovementByAim();
     }
@@ -1123,8 +1135,19 @@ public class PlayerController : MonoBehaviour {
     {
         if (to != null)
         {
-            to.ShakeObjectAnimation();
+            to.ActiveInternalAction();
             StopPlusSoundRequired(SoundManager.SoundRequest.P_Knock);
+
+            if (myAnimator.GetBool("ShowItem"))
+            {
+                lightEnabled = true;
+                SwitchLight();
+
+                StopByMegaStop();
+
+                faceDirection = Vector3.back;
+                autoFace = true;
+            }
 
             to = null;
         }
@@ -1134,6 +1157,17 @@ public class PlayerController : MonoBehaviour {
             StopPlusSoundRequired(SoundManager.SoundRequest.P_ButtonPush);
             co = null;
         }
+    }
+
+    public void StopShowingObject()
+    {
+        myAnimator.SetBool("ShowItem", false);
+    }
+
+    public void ReactiveLight()
+    {
+        lightEnabled = false;
+        SwitchLight();
     }
 
     public void MoveByAnimation()

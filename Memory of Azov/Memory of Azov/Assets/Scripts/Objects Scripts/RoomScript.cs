@@ -10,9 +10,11 @@ public class RoomScript : MonoBehaviour
     public int numOfGhostGivingHearts;
     public int numOfDesiredGems;
     public List<EnemySO> enemiesData = new List<EnemySO>();
-
     public Transform cameraCinematic;
+
+    [Header("Shake helps")]
     public float timeForShake = 10;
+    public float timeShaking = 1;
 
     [Header("\t    Own Script Variables")]
     [Tooltip("Lista de muros oscuros")]
@@ -25,6 +27,8 @@ public class RoomScript : MonoBehaviour
     private int heartsIndex = 0;
     private float internalTimer;
     private bool allInspected;
+    private bool shakingItem;
+    private int shakingIndex;
 
     private List<TransparentObject> objectsWithEnemies = new List<TransparentObject>();
     private List<TransparentObject> objectsWithGems = new List<TransparentObject>();
@@ -47,9 +51,22 @@ public class RoomScript : MonoBehaviour
         {
             if (Time.time >= internalTimer + timeForShake)
             {
-                ShakeAnItem();
                 DetectAllItemsInspected();
+
+                if(!allInspected)
+                    ShakeAnItem();
+
                 internalTimer = Time.time;
+            }
+
+            if (shakingItem)
+            {
+                if (Time.time >= internalTimer + timeShaking)
+                {
+                    allObjects[shakingIndex].StopShakingAnimation();
+
+                    shakingItem = false;
+                }
             }
         }
     }
@@ -138,10 +155,13 @@ public class RoomScript : MonoBehaviour
     {
         int rng = Random.Range(0, allObjects.Count);
 
-        while (allObjects[rng].GetIsInspected())
+        while (!allObjects[rng].GetHasSomethingInside())
             rng = Random.Range(0, allObjects.Count);
 
         allObjects[rng].VisualShake();
+
+        shakingIndex = rng;
+        shakingItem = true;
     }
 
     public void DetectAllItemsInspected()
@@ -150,7 +170,7 @@ public class RoomScript : MonoBehaviour
 
         foreach (TransparentObject to in allObjects)
         {
-            if (!to.GetIsInspected())
+            if (to.GetHasSomethingInside())
             {
                 allInspected = false;
                 return;

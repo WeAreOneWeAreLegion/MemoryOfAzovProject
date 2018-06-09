@@ -37,7 +37,8 @@ public class TransparentObject : MonoBehaviour {
     #region Private Variables
     private bool isMaterialHidden = false;
     private float transparencyValue;
-    private bool inspected;
+    private bool isShaking;
+    private bool firstCall;
 
     private List<Material> myMats = new List<Material>();
     #endregion
@@ -146,9 +147,6 @@ public class TransparentObject : MonoBehaviour {
     #region Action Methods
     public void VisualShake()
     {
-        if (inspected)
-            return;
-
         foreach (Animation a in myAnimations)
         {
             a.clip = a.GetClip("Shake");
@@ -156,22 +154,37 @@ public class TransparentObject : MonoBehaviour {
         }
     }
 
-    public bool GetIsInspected()
+    public bool GetHasSomethingInside()
     {
-        return inspected;
+        return spawnGhost || spawnGem;
+    }
+
+    public bool HasGemInside()
+    {
+        return spawnGem;
     }
 
     public void ShakeObjectAnimation(bool isFirstCall = true)
     {
-        if (isWall || isDoor || isStatic || inspected)
+        if (isWall || isDoor || isStatic || isShaking)
         {
             return;
         }
 
-        if (myAnimations[0].isPlaying)
+        foreach (Animation a in myAnimations)
         {
-            return;
+            a.clip = a.GetClip("Shake");
+            a.Play();
         }
+
+        firstCall = isFirstCall;
+        isShaking = true;
+    }
+
+    public void ActiveInternalAction()
+    {
+        if (!isShaking)
+            return;
 
         if (spawnGhost)
         {
@@ -188,7 +201,7 @@ public class TransparentObject : MonoBehaviour {
 
             spawnGhost = false;
 
-            if (isFirstCall && spawnAllGhosts)
+            if (firstCall && spawnAllGhosts)
             {
                 hit.transform.parent.GetComponent<RoomScript>().ShowAllEnemiesFromRoom();
             }
@@ -204,13 +217,17 @@ public class TransparentObject : MonoBehaviour {
             spawnGem = false;
         }
 
+        isShaking = false;
+
+        StopShakingAnimation();
+    }
+
+    public void StopShakingAnimation()
+    {
         foreach (Animation a in myAnimations)
         {
-            a.clip = a.GetClip("Shake");
-            a.Play();
+            a.Stop();
         }
-
-        inspected = true;
     }
 
     public void OpenObject()

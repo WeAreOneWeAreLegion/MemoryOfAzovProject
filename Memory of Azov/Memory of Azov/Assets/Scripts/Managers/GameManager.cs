@@ -490,7 +490,6 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void ActiveGemsZone()
     {
-        player.StopByMegaStop();
         HideBlackWalls();
         ShowAllDoors();
 
@@ -506,7 +505,8 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void DeactiveGemsZone()
     {
-        player.MoveAgainAfterMegaStop();
+        player.StopShowingObject();
+
         ShowBlackWalls();
         ShowAndHideDoors();
 
