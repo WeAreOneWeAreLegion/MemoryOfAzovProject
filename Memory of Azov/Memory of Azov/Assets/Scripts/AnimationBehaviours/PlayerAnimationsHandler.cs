@@ -26,6 +26,11 @@ public class PlayerAnimationsHandler : MonoBehaviour {
         myController.ReactiveLight();
     }
 
+    public void MoveAgainMegaStop()
+    {
+        myController.MoveAgainAfterMegaStop();
+    }
+
     public void GameOver()
     {
         GameManager.Instance.CallPlayerDeath();

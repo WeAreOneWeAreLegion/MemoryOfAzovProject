@@ -375,12 +375,17 @@ public class PlayerController : MonoBehaviour {
 
         if (joystickCompleteControl)
         {
+            float newXValue;
+
             if (yRotation > 0)
-                xLanternRotationValue = Mathf.Lerp(0, bottomLanternAngle, yRotation / InputsManager.Instance.joystickRotationFactor);
+                newXValue = Mathf.Lerp(0, bottomLanternAngle, yRotation / InputsManager.Instance.joystickRotationFactor);
             else if (yRotation < 0)
-                xLanternRotationValue = Mathf.Lerp(0, -topLanternAngle, -yRotation / InputsManager.Instance.joystickRotationFactor);
+                newXValue = Mathf.Lerp(0, -topLanternAngle, -yRotation / InputsManager.Instance.joystickRotationFactor);
             else
-                xLanternRotationValue = 0;
+                newXValue = 0;
+
+            xLanternRotationValue = Mathf.Lerp(xLanternRotationValue, newXValue, 0.3f);
+
         }
         else
         {
