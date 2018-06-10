@@ -6241,7 +6241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentControl: 1
   joystickCompleteControl: 1
-  speed: 18
+  speed: 4
   rotationSpeed: 300
   autoFacingSpeed: 3.5
   lanternRotationSpeed: 65
@@ -6262,6 +6262,7 @@ MonoBehaviour:
   neutralColor: {r: 1, g: 0.9254902, b: 0.7294118, a: 1}
   secondColor: {r: 0, g: 1, b: 0, a: 1}
   thirdColor: {r: 1, g: 0, b: 0, a: 1}
+  myVolumetricLight: {fileID: 0}
   lightDecreaseFactor: 3.2
   lightIncreaseFactor: 4
   actionDistance: 1.5
@@ -24193,7 +24194,7 @@ BoxCollider:
   m_GameObject: {fileID: 392175151}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.6, y: 1.57, z: 2.2547565}
   m_Center: {x: -0.000000016064233, y: 0, z: 0.06737828}
@@ -111962,7 +111963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2039270003
 Transform:
   m_ObjectHideFlags: 0
