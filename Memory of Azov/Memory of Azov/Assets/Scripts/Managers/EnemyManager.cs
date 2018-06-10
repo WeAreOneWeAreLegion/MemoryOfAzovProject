@@ -65,7 +65,7 @@ public class EnemyManager : MonoSingleton<EnemyManager> {
             GameManager.Instance.BlockPlayerDoors();
         }
 
-        g.GetComponent<Enemy>().SetUpEnemyVariables(enemyData, dropItem);
+        g.GetComponent<Enemy_N>().SetUpEnemyVariables(enemyData, dropItem);
         enemyGivenCounter++;
 
         return g;

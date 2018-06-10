@@ -4,7 +4,7 @@ using UnityEditor;
 
 public class Enemy : LightenableObject {
 
-    public enum AnimationState { Move, Stun, Attack, Scape }
+    public enum AnimationState { Move, Stun, Attack, Scape, Appear, CallGhosts, Die }
     public enum TargetType { Player, Surrogate }
 
     #region Public Variables
@@ -103,7 +103,6 @@ public class Enemy : LightenableObject {
         initialSpeed = speed;
         currentHp = initialHp;
         oscilatorLifeTime = -0.75f;
-        ghostSize = GetComponent<SphereCollider>().radius;
         target = GameManager.Instance.GetPlayer();
 
         Invencible();
@@ -115,6 +114,7 @@ public class Enemy : LightenableObject {
             return;
 
         currentState.Execute();
+        Debug.Log(currentState.ToString());
 
         CheckPlayerDistance();
 
@@ -212,7 +212,7 @@ public class Enemy : LightenableObject {
         if (debugInRuntime)
             Debug.DrawLine(myPosition, myPosition + (direction * 3), Color.blue, -1, false);
 
-        myRGB.velocity = direction * Time.deltaTime;
+        myRGB.velocity = direction * Time.fixedDeltaTime;
         Debug.DrawLine(myPosition, myPosition + (transform.forward * myRGB.velocity.magnitude), Color.red, -1, false);
     }
 
@@ -235,7 +235,7 @@ public class Enemy : LightenableObject {
             if (Vector3.SignedAngle(transform.forward, targetDirection, Vector3.up) > 0.2f)
             {
                 //Left
-                transform.rotation *= Quaternion.Euler(0, rotationSpeed * Time.deltaTime, 0);
+                transform.rotation *= Quaternion.Euler(0, rotationSpeed * Time.fixedDeltaTime, 0);
                 if (Vector3.SignedAngle(transform.forward, targetDirection, Vector3.up) < 0)
                 {
                     transform.LookAt(myPosition + targetDirection);
@@ -244,7 +244,7 @@ public class Enemy : LightenableObject {
             else if (Vector3.SignedAngle(transform.forward, targetDirection, Vector3.up) < -0.2f)
             {
                 //Right
-                transform.rotation *= Quaternion.Euler(0, -rotationSpeed * Time.deltaTime, 0);
+                transform.rotation *= Quaternion.Euler(0, -rotationSpeed * Time.fixedDeltaTime, 0);
                 if (Vector3.SignedAngle(transform.forward, targetDirection, Vector3.up) > 0)
                 {
                     transform.LookAt(myPosition + targetDirection);
@@ -267,7 +267,7 @@ public class Enemy : LightenableObject {
 
         direction *= (speed / 2);
 
-        myRGB.velocity = direction * Time.deltaTime;
+        myRGB.velocity = direction * Time.fixedDeltaTime;
     }
 
     public void DoDamage()
@@ -322,6 +322,15 @@ public class Enemy : LightenableObject {
                 break;
             case AnimationState.Scape:
                 myAnimator.SetBool("IsScaping", true);
+                break;
+            case AnimationState.Appear:
+                myAnimator.SetTrigger("Appear");
+                break;
+            case AnimationState.CallGhosts:
+                myAnimator.SetTrigger("Call");
+                break;
+            case AnimationState.Die:
+                myAnimator.SetTrigger("Die");
                 break;
         }
     }
@@ -396,7 +405,7 @@ public class Enemy : LightenableObject {
     #region Health Methods
     public virtual void RecieveDamage()
     {
-        currentHp -= lanternDamage * Time.deltaTime;
+        currentHp -= lanternDamage * Time.fixedDeltaTime;
 
         myMat.SetFloat("_DisAmount", 1 - (currentHp / initialHp));
 

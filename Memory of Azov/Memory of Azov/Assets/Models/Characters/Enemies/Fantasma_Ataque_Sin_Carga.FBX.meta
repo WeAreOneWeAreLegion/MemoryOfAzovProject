@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 805626d89ca3ec04d97582a392f4249f
-timeCreated: 1528133958
+guid: c040d5a7bf70b91479dac229fda8949d
+timeCreated: 1528650109
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: body
     100002: CATRigPelvis
-    100004: CATRigTail1
-    100006: CATRigTail1 1
-    100008: CATRigTail2
-    100010: CATRigTail2 1
-    100012: CATRigTail3
+    100004: CATRigTail
+    100006: CATRigTail1
+    100008: CATRigTongue
+    100010: CATRigTongue2
+    100012: CATRigTongue3
     100014: Character001
     100016: //RootNode
     400000: body
     400002: CATRigPelvis
-    400004: CATRigTail1
-    400006: CATRigTail1 1
-    400008: CATRigTail2
-    400010: CATRigTail2 1
-    400012: CATRigTail3
+    400004: CATRigTail
+    400006: CATRigTail1
+    400008: CATRigTongue
+    400010: CATRigTongue2
+    400012: CATRigTongue3
     400014: Character001
     400016: //RootNode
     2100000: Bomb Boo_body
     4300000: body
-    7400000: Aparecer
+    7400000: Attack
     9500000: //RootNode
     13700000: body
   externalObjects: {}
@@ -56,10 +56,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Aparecer
+      name: Attack
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 90
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

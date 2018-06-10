@@ -285,8 +285,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659449456337954}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.62, y: 1.76, z: -10.15}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -2.01, y: 1.76, z: -11.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4353106320522314}
@@ -294,7 +294,7 @@ Transform:
   - {fileID: 4854929716857976}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4640580223624948
 Transform:
   m_ObjectHideFlags: 1
@@ -536,7 +536,7 @@ MonoBehaviour:
   oscillationMovement: 1
   initialHp: 100
   timeStuned: 2
-  ghostSize: 0
+  ghostSize: 1
   ghostDamage: 20
   attackRadius: 2
   attackDelay: 2
@@ -568,7 +568,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137407917959770382
 SkinnedMeshRenderer:

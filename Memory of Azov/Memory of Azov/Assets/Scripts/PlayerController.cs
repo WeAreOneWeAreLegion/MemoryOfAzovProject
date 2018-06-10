@@ -20,9 +20,9 @@ public class PlayerController : MonoBehaviour {
 
     [Header("Speed Variables")]
     [Tooltip("Velocidad a la que se mueve el personaje")]
-    [Range(0,20)] public float speed = 10;
+    [Range(0,50)] public float speed = 10;
     [Tooltip("Velocidad a la que rota el personaje")]
-    [Range(50,150)] public float rotationSpeed = 100;
+    [Range(50,360)] public float rotationSpeed = 100;
     [Tooltip("Velocidad de rotacion automatica cuando te mueves")]
     [Range(0,15)] public float autoFacingSpeed = 7f;
     [Tooltip("Velocidad de rotacion de la linterna (Hacia arriba i hacia abajo)")]
@@ -241,7 +241,6 @@ public class PlayerController : MonoBehaviour {
             RotateByMove();
 
             CheckLight();
-            LightDamaging();
 
             Timers();
             MoveChecker();
@@ -255,6 +254,13 @@ public class PlayerController : MonoBehaviour {
         {
 
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (currentState == State.Playing)
+            LightDamaging();
+
     }
 
     private void LateUpdate() //Animations can be cracked in late update
@@ -366,7 +372,7 @@ public class PlayerController : MonoBehaviour {
             if (((Vector3.Angle(faceDirection, transform.forward) <= angleToStartMoving && !isMoving && !autoFace) || isMoving) && direction != Vector3.zero)
             {
 
-                myCharController.Move(((transform.forward * direction.magnitude * speed) + Physics.gravity) * Time.deltaTime);
+                myCharController.Move(((transform.forward * direction.magnitude * speed) + Physics.gravity) * Time.fixedDeltaTime);
                 isMoving = true;
             }
 
@@ -375,11 +381,11 @@ public class PlayerController : MonoBehaviour {
         {
             myAnimator.SetFloat("XInput", xMove);
             myAnimator.SetFloat("ZInput", zMove);
-            myCharController.Move(((direction * speed) + Physics.gravity) * Time.deltaTime);
+            myCharController.Move(((direction * speed) + Physics.gravity) * Time.fixedDeltaTime);
         }
         else if (!canMove)
         {
-            transform.forward = Vector3.Slerp(transform.forward, faceDirection, autoFacingSpeed * Time.deltaTime);
+            transform.forward = Vector3.Slerp(transform.forward, faceDirection, autoFacingSpeed * Time.fixedDeltaTime);
         }
 
     }
@@ -388,7 +394,7 @@ public class PlayerController : MonoBehaviour {
     {
 
         if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
-            transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.fixedDeltaTime);
 
 
         if (joystickCompleteControl)
@@ -513,7 +519,7 @@ public class PlayerController : MonoBehaviour {
             areLightsIncreased = false;
         }
 
-        lanternLight.intensity = Mathf.Lerp(lanternLight.intensity, lerpValueLightIntensity, Time.deltaTime * lightLerpSpeed);
+        lanternLight.intensity = Mathf.Lerp(lanternLight.intensity, lerpValueLightIntensity, Time.fixedDeltaTime * lightLerpSpeed);
     }
 
     private void LightDamaging()
@@ -1048,7 +1054,7 @@ public class PlayerController : MonoBehaviour {
             myAnimator.SetFloat("Speed", 1);
             myAnimator.speed = 1;
 
-            startCrossingTimer += Time.deltaTime / crossDoorTime;
+            startCrossingTimer += Time.fixedDeltaTime / crossDoorTime;
 
             transform.position = Vector3.Lerp(transform.position, pointToStartCrossingDoor, startCrossingTimer);
 
@@ -1062,7 +1068,7 @@ public class PlayerController : MonoBehaviour {
             myAnimator.SetFloat("Speed", 1);
             myAnimator.speed = maxWalkSpeed;
 
-            myCharController.Move(directionToGoCrossDoor * speed * Time.deltaTime);
+            myCharController.Move(directionToGoCrossDoor * speed * Time.fixedDeltaTime);
 
             if (Vector3.Distance(pointToGoCrossDoor, transform.position) < 2f && !isCameraMovingWhenCrossing)
             {
@@ -1159,6 +1165,8 @@ public class PlayerController : MonoBehaviour {
             myAnimator.SetTrigger("Afraid");
             StopByMegaStop();
         }
+
+        myAnimator.SetBool("Combat", true);
     }
 
     public void MoveAgainAfterMegaStop()
@@ -1168,6 +1176,8 @@ public class PlayerController : MonoBehaviour {
 
     public void CalmMode()
     {
+        myAnimator.SetBool("Combat", false);
+
         MoveAgainAfterMegaStop();
 		independentFacing = true;
         StopMovementByAim();

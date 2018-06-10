@@ -10,11 +10,12 @@ public class EnemyHUD : MonoBehaviour { //Erased soon
     public Vector3 panelOffset;
 
     [Header("\t    Own Script Variables")]
-    public Text hpText;
-    public Text hpShadow;
+    public Image healthBar;
 
     private Transform target;
     private RectTransform myRectTransform;
+
+    private Enemy myEnemy;
 
     private float incrementFactorX;
     private float incrementFactorY;
@@ -37,7 +38,8 @@ public class EnemyHUD : MonoBehaviour { //Erased soon
         incrementFactorX = GameManager.Instance.GetCanvasResolution().x / Screen.width;
         incrementFactorY = GameManager.Instance.GetCanvasResolution().y / Screen.height;
 
-        target = t;
+        myEnemy = t.GetComponent<Enemy>();
+        target = myEnemy.visual;
         myRectTransform = GetComponent<RectTransform>();
 
         //myRectTransform.localScale = new Vector3(incrementFactorX, incrementFactorY, incrementFactorX);
@@ -47,13 +49,14 @@ public class EnemyHUD : MonoBehaviour { //Erased soon
 
     public void ModifyHp(int hp)
     {
-        hpText.text = hp.ToString();
-        hpShadow.text = hp.ToString();
+        int fullHp = myEnemy.initialHp;
+
+        healthBar.transform.localScale = Vector3.one - Vector3.right * (float)((fullHp - hp)/fullHp);
     }
 
     public Transform GetTarget()
     {
-        return target;
+        return myEnemy.transform;
     }
 
 }

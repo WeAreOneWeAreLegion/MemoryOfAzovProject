@@ -7,13 +7,14 @@ public class AwakeState_N : IEnemyState
     private Enemy enemy;
 
     private float timer;
-    private float timeWaiting = 2.5f;
+    private float timeWaiting = 4f;
 
     public void Enter(Enemy e)
     {   
         enemy = e;
 
         enemy.PlayAwakenSound();
+        enemy.ChangeAnimation(Enemy.AnimationState.Appear);
         enemy.Invencible();
 
         enemy.StopMovement();
