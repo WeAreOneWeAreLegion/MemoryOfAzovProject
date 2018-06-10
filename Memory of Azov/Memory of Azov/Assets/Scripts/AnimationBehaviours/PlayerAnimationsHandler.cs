@@ -13,12 +13,12 @@ public class PlayerAnimationsHandler : MonoBehaviour {
 
     public void ShowEgg()
     {
-        myController.ShowEgg();
+        myController.ShowItem();
     }
 
     public void HideEgg()
     {
-        myController.HideEgg();
+        myController.HideItems();
     }
 
     public void ReactiveLight()

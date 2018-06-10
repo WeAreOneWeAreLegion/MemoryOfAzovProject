@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56cf8e823f19a34da3beb303b532441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialForce: 3.5
+  initialForce: 1
   timeForAutoDestroy: 1.5
   myRGB: {fileID: 54917263706560296}
 --- !u!135 &135260272355707088

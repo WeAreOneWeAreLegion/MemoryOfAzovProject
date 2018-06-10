@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public enum State { Playing, CrossDoor, FakeWall, Cinematic }
     public enum LightColor { Neutral, Secondary, Third }
     public enum TypeOfControl { OneControl, TwoControls }
+    public enum ObjectPickedUp { Egg, GreenLight, RedLight }
 
     #region Public Variables
     [Header("\tGame Designers Variables")]
@@ -114,6 +115,8 @@ public class PlayerController : MonoBehaviour {
     public Transform lightBone;
     public Transform lanternHandBone;
     public GameObject handsEgg;
+    public GameObject greenLight;
+    public GameObject redLight;
     public Transform eyeLeft;
     public Transform eyeRight;
     #endregion
@@ -141,6 +144,7 @@ public class PlayerController : MonoBehaviour {
     private CollectableObject co;
 
     private State currentState = State.Playing;
+    private ObjectPickedUp currentObjectPickedUp = ObjectPickedUp.Egg;
     private CharacterController myCharController;
     private AudioSource myAudioSource;
 
@@ -196,7 +200,7 @@ public class PlayerController : MonoBehaviour {
     private void Start()
     {
 		independentFacing = true;
-        HideEgg();
+        HideItems();
 
         //Tag 
         if (tag != GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player))
@@ -819,16 +823,16 @@ public class PlayerController : MonoBehaviour {
 
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.CollectableObject))
             {
-                Examine();
                 co = hit.transform.GetComponent<CollectableObject>();
+                Examine();
                 //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Button);
             }
 
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Bell) && 
                 hit.transform.GetComponent<DoorBell>().enabled)
             {
-                Examine();
                 hit.transform.GetComponent<DoorBell>().OpenDoor();
+                Examine();
                 StopPlusSoundRequired(SoundManager.SoundRequest.P_ButtonPush);
                 //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Button);
                 return;
@@ -939,18 +943,30 @@ public class PlayerController : MonoBehaviour {
 
     private void Examine()
     {
-        if (to == null)
-            return;
-        
-        to.ShakeObjectAnimation();
+        if (to != null)
+        {
+            to.ShakeObjectAnimation();
 
-        if (to.HasGemInside())
-            myAnimator.SetBool("ShowItem", true);
+            if (to.HasGemInside())
+                myAnimator.SetBool("ShowItem", true);
+        }
 
         rePoint.RePlace();
 
         myAnimator.speed = 1;
         myAnimator.SetTrigger("Examine");
+
+        StopByAnimation();
+    }
+
+    public void PickUpObject(ObjectPickedUp opu)
+    {
+        currentObjectPickedUp = opu;
+
+        rePoint.RePlace();
+
+        myAnimator.speed = 1;
+        myAnimator.SetBool("ShowItem", true);
 
         StopByAnimation();
     }
@@ -1147,15 +1163,43 @@ public class PlayerController : MonoBehaviour {
         StopMovementByAim();
     }
 
+    public void ShowItem()
+    {
+        switch (currentObjectPickedUp)
+        {
+            case ObjectPickedUp.Egg:
+                ShowEgg();
+                break;
+            case ObjectPickedUp.GreenLight:
+                ShowGreenLight();
+                break;
+            case ObjectPickedUp.RedLight:
+                ShowRedLight();
+                break;
+        }
+    }
+
     public void ShowEgg()
     {
         handsEgg.GetComponent<MeshRenderer>().material.mainTexture = EggsManager.Instance.GetCurrentTexture();
         handsEgg.SetActive(true);
     }
 
-    public void HideEgg()
+    public void ShowGreenLight()
+    {
+        greenLight.SetActive(true);
+    }
+
+    public void ShowRedLight()
+    {
+        redLight.SetActive(true);
+    }
+
+    public void HideItems()
     {
         handsEgg.SetActive(false);
+        greenLight.SetActive(false);
+        redLight.SetActive(false);
     }
 
     public void DoAction()

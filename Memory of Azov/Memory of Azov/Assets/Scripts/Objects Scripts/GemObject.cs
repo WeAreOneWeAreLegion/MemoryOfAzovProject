@@ -19,13 +19,19 @@ public class GemObject : MonoBehaviour
     #region Private Variables
     private bool autoDestroy;
     private float timeToDesapear;
+    private bool pickedUp;
+
+    private MeshRenderer myMesh;
     #endregion
 
     private void Start()
     {
-        GetComponentInChildren<MeshRenderer>().material.mainTexture = EggsManager.Instance.GetRandomTexture();
+        if (myMesh == null)
+            myMesh = GetComponentInChildren<MeshRenderer>();
 
-        if(myRGB == null)
+        myMesh.material.mainTexture = EggsManager.Instance.GetRandomTexture();
+
+        if (myRGB == null)
             myRGB = GetComponent<Rigidbody>();
 
         if (myRGB.useGravity)
@@ -58,14 +64,40 @@ public class GemObject : MonoBehaviour
     #region Public Methods
     public void ResetGem()
     {
+        if (myRGB == null)
+            myRGB = GetComponent<Rigidbody>();
+
+        if (myMesh == null)
+            myMesh = GetComponentInChildren<MeshRenderer>();
+
         myRGB.isKinematic = false;
+
+        myRGB.velocity = Vector3.zero;
+        myRGB.useGravity = true;
+
+        GetComponent<Collider>().enabled = true;
         GetComponent<Collider>().isTrigger = false;
+
+        myMesh.enabled = true;
+
+        autoDestroy = false;
+    }
+
+    public void DiscoveredByWallPaint()
+    {
+        myRGB.AddForce(transform.up * initialForce, ForceMode.Impulse);
     }
 
     public void DiscoveredByFeature()
     {
         if (myRGB == null)
             myRGB = GetComponent<Rigidbody>();
+
+        if (myMesh == null)
+            myMesh = GetComponentInChildren<MeshRenderer>();
+
+        myMesh.enabled = false;
+        pickedUp = false;
 
         myRGB.velocity = Vector3.zero;
         myRGB.useGravity = false;
@@ -74,15 +106,27 @@ public class GemObject : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         autoDestroy = true;
+        timeToDesapear = 0;
+    }
+
+    private IEnumerator PickUpCoroutine()
+    {
+        GameManager.Instance.player.PickUpObject(PlayerController.ObjectPickedUp.Egg);
+        yield return new WaitForSeconds(timeForAutoDestroy);
+        DestroyGem();
+        yield return null;
     }
     #endregion
 
     #region Unity Collision/Trigger Methods
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player))
+        Debug.Log(collision.gameObject.name);
+
+        if (collision.transform.tag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player) && !pickedUp)
         {
-            DestroyGem();
+            pickedUp = true;
+            StartCoroutine(PickUpCoroutine());
         }
         else
         {
@@ -93,9 +137,10 @@ public class GemObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player))
+        if (other.tag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player) && !pickedUp)
         {
-            DestroyGem();
+            pickedUp = true;
+            StartCoroutine(PickUpCoroutine());
         }
     }
     #endregion
