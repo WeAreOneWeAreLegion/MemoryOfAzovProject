@@ -309,8 +309,7 @@ public class PlayerController : MonoBehaviour {
     {
         direction = Vector3.zero;
 
-        direction.x = xMove;
-        direction.z = zMove;
+        direction = transform.right * xMove + transform.forward * zMove;
 
         myAnimator.SetFloat("Speed", direction.magnitude);
 
