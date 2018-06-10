@@ -72,6 +72,7 @@ public class Enemy : LightenableObject {
     protected bool receivingDamage;
     protected bool isStunned;
     protected bool isInvincible;
+    protected bool isDying;
     protected int lanternDamage = 0;
 
     protected Transform target;
@@ -114,13 +115,9 @@ public class Enemy : LightenableObject {
             return;
 
         currentState.Execute();
-        Debug.Log(currentState.ToString());
+        //Debug.Log(currentState.ToString());
 
         CheckPlayerDistance();
-
-        if (receivingDamage)
-            RecieveDamage();
-
     }
 
     #region Set-Up Method
@@ -307,12 +304,12 @@ public class Enemy : LightenableObject {
     public void ChangeAnimation(AnimationState animState)
     {
         myAnimator.ResetTrigger("Attack");
+        myAnimator.SetBool("IsScaping", false);
 
         switch (animState)
         {
             case AnimationState.Move:
                 myAnimator.SetBool("IsStunned", false);
-                myAnimator.SetBool("IsScaping", false);
                 break;
             case AnimationState.Stun:
                 myAnimator.SetBool("IsStunned", true);
@@ -352,7 +349,7 @@ public class Enemy : LightenableObject {
 
     public void InsideLanternRange(int damageToRecieve, bool stun)
     {
-        if (isInvincible || !GameManager.Instance.player.IsCurrentLightOfColor(currentGhostColor))
+        if (isInvincible || !GameManager.Instance.player.IsCurrentLightOfColor(currentGhostColor) || isDying)
         {
             receivingDamage = false;
             return;
@@ -362,9 +359,6 @@ public class Enemy : LightenableObject {
             ChangeState(new StunState_N());
 
         receivingDamage = true;
-
-        if (!myAnimator.GetCurrentAnimatorStateInfo(0).IsName("EnemyIdle"))
-            myAnimator.SetTrigger("Alert");
 
         lanternDamage = damageToRecieve;
 
@@ -405,6 +399,9 @@ public class Enemy : LightenableObject {
     #region Health Methods
     public virtual void RecieveDamage()
     {
+        if (isDying)
+            return;
+
         currentHp -= lanternDamage * Time.fixedDeltaTime;
 
         myMat.SetFloat("_DisAmount", 1 - (currentHp / initialHp));
@@ -413,20 +410,27 @@ public class Enemy : LightenableObject {
 
         if (currentHp <= 0)
         {
-            GameObject go = ObjectsManager.Instance.GetItem(this.transform, itemToDrop);
-
-            if (go != null)
-                go.transform.position = transform.position;
-
+            Debug.Log("Dying");
+            isDying = true;
             myRGB.velocity = Vector3.zero;
 
-            isInvincible = true;
-
-            GameManager.Instance.DestroyEnemyHUD(transform);
-            GameManager.Instance.IncreseNumOfGhostsCaptured();
-            EnemyManager.Instance.ReturnEnemy(gameObject);
+            ChangeState(new DieState_N());
         }
 
+    }
+
+    public void Die()
+    {
+        GameObject go = ObjectsManager.Instance.GetItem(this.transform, itemToDrop);
+
+        if (go != null)
+            go.transform.position = transform.position;
+
+        isInvincible = true;
+
+        GameManager.Instance.DestroyEnemyHUD(transform);
+        GameManager.Instance.IncreseNumOfGhostsCaptured();
+        EnemyManager.Instance.ReturnEnemy(gameObject);
     }
     #endregion
 

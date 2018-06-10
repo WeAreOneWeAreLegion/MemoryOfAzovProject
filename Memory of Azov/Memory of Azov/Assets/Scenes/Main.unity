@@ -8056,7 +8056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &112330052
 Transform:
   m_ObjectHideFlags: 0
@@ -69227,7 +69227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasMoreTriggersThisEvent: 1
-  enemyData: {fileID: 11400000, guid: 531454fded7b20345a20f4ee1cbd1808, type: 2}
+  enemyData: {fileID: 11400000, guid: 5f081938d53c1a8408a8fbcecb058b38, type: 2}
   givenHealth: 1
   spawnPosition: {fileID: 1569541693}
   theOtherEvents:
@@ -92402,7 +92402,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
+  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
   m_LocalPosition: {x: 0.1, y: -0.02, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -107230,7 +107230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasMoreTriggersThisEvent: 1
-  enemyData: {fileID: 11400000, guid: 531454fded7b20345a20f4ee1cbd1808, type: 2}
+  enemyData: {fileID: 11400000, guid: 5f081938d53c1a8408a8fbcecb058b38, type: 2}
   givenHealth: 1
   spawnPosition: {fileID: 1569541693}
   theOtherEvents:

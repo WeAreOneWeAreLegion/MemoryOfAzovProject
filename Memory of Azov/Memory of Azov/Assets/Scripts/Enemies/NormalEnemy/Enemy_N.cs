@@ -16,6 +16,9 @@ public class Enemy_N : Enemy
     {
         base.Update();
 
+        if (IsReceivingDamage())
+            RecieveDamage();
+
         if (!GameManager.Instance.player.IsPlayerAlive())
         {
             ChangeState(new IdleState_N());
@@ -34,7 +37,7 @@ public class Enemy_N : Enemy
 
     public override void RecieveDamage()
     {
-        if (currentState.GetType() != typeof(ScapeState_N) && currentState.GetType() != typeof(StunState_N))
+        if (currentState.GetType() != typeof(ScapeState_N) && currentState.GetType() != typeof(StunState_N) && currentState.GetType() != typeof(DieState_N))
             ChangeState(new ScapeState_N());
 
         base.RecieveDamage();
