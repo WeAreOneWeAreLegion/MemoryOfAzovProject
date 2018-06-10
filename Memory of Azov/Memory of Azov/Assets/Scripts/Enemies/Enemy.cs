@@ -410,7 +410,6 @@ public class Enemy : LightenableObject {
 
         if (currentHp <= 0)
         {
-            Debug.Log("Dying");
             isDying = true;
             myRGB.velocity = Vector3.zero;
 

@@ -619,8 +619,6 @@ public class PlayerController : MonoBehaviour {
 
             if (aimTimer >= timeBetweenAim)
             {
-                Debug.Log("move again by aim");
-
                 canMove = true;
                 stopByAiming = false;
 
@@ -640,8 +638,6 @@ public class PlayerController : MonoBehaviour {
 
             if (hitTimer >= timeInvulnerable)
             {
-                Debug.Log("move again by hit");
-
                 canMove = true;
 
                 stopByHit = false;
