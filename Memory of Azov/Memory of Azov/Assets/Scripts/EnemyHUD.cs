@@ -51,7 +51,7 @@ public class EnemyHUD : MonoBehaviour { //Erased soon
     {
         int fullHp = myEnemy.initialHp;
 
-        healthBar.transform.localScale = Vector3.one - Vector3.right * (float)((fullHp - hp)/fullHp);
+        healthBar.transform.localScale = new Vector3(((float)hp/(float)fullHp),1,1);
     }
 
     public Transform GetTarget()

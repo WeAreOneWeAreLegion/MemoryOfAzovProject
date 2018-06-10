@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour {
     public Color secondColor = Color.green;
     [Tooltip("Color 3")]
     public Color thirdColor = Color.red;
+    public VolumetricLight myVolumetricLight; 
 
     [Header("Increase/Decrease Variables")]
     [Tooltip("Cuanto se reducira la luz cuando el personaje este enfocando hacia la camara")]
@@ -172,6 +173,7 @@ public class PlayerController : MonoBehaviour {
     private bool isLightHighIntensity = false;
     private bool isMaxIntensity = false;
 
+    private float initialScatteringCoff;
     private float initialLanternLightRange;
     private float initialLanternDamageLength;
     private float lightLerpSpeed;
@@ -207,6 +209,7 @@ public class PlayerController : MonoBehaviour {
             tag = GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player);
 
         //Components
+        myVolumetricLight = lanternLight.GetComponent<VolumetricLight>();
         myCharController = GetComponent<CharacterController>();
         myAudioSource = GetComponent<AudioSource>();
 
@@ -219,6 +222,7 @@ public class PlayerController : MonoBehaviour {
         lanternLight.transform.localRotation = Quaternion.Euler(180,90,-90);
 
         //Lights
+        initialScatteringCoff = myVolumetricLight.ScatteringCoef;
         initialLightIntensity = lerpValueLightIntensity = lanternLight.intensity;
         initialLanternLightRange = lanternLight.range;
         initialLanternDamageLength = lanternDamageLength;
@@ -460,14 +464,16 @@ public class PlayerController : MonoBehaviour {
     {
         if (isLightCharging)
         {
-            lanternLight.range = Mathf.Lerp(initialLanternLightRange, lanternChargingLength, lightReducedChargingTimer);
+            //lanternLight.range = Mathf.Lerp(initialLanternLightRange, lanternChargingLength, lightReducedChargingTimer);
+            myVolumetricLight.ScatteringCoef = 0;
             lanternDamageLength = Mathf.Lerp(initialLanternDamageLength, lanternChargingLength, lightReducedChargingTimer);
         }
         else
         {
-            if (lanternLight.range != initialLanternLightRange)
-            {
-                lanternLight.range = initialLanternLightRange;
+            if (lanternDamageLength != initialLanternDamageLength)
+            { 
+                //lanternLight.range = initialLanternLightRange;
+                myVolumetricLight.ScatteringCoef = initialScatteringCoff;
                 lanternDamageLength = initialLanternDamageLength;
             }
         }
