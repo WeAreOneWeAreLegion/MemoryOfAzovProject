@@ -58649,57 +58649,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 853240623}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &854972703
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 854972704}
-  - component: {fileID: 854972705}
-  m_Layer: 0
-  m_Name: SoundEmitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &854972704
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 854972703}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.9, y: 1.56, z: 0.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1281611537}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &854972705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 854972703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/Ambiente/FX_Rain
-  PlayEvent: 11
-  StopEvent: 12
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!4 &856424105 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe,
@@ -84534,7 +84483,6 @@ Transform:
   - {fileID: 988023464}
   - {fileID: 307835922}
   - {fileID: 1254125482}
-  - {fileID: 854972704}
   - {fileID: 1361742086}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -85298,6 +85246,7 @@ MonoBehaviour:
   scenarioLibrarySound: event:/Escenario/FX_Library
   scenarioPictureFallsSound: event:/Escenario/FX_PictureFalls
   flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
+  flashlightChargedFlashSound: event:/Linterna/Flashlight_ChargingFlash
   flashlightNoiseSound: event:/Linterna/Flashlight_Noise
   flashlightOffSound: event:/Linterna/Flashlight_Off
   flashlightOnSound: event:/Linterna/Flashlight_On
@@ -87266,7 +87215,7 @@ Transform:
   - {fileID: 1578385158}
   - {fileID: 2140168114}
   m_Father: {fileID: 1281611537}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1363118714
 GameObject:
@@ -96109,6 +96058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1674639683}
   - component: {fileID: 1674639684}
+  - component: {fileID: 1674639685}
   m_Layer: 0
   m_Name: RainSoundEmitter
   m_TagString: Untagged
@@ -96141,9 +96091,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: event:/Ambiente/FX_Rain
-  PlayEvent: 11
-  StopEvent: 12
-  CollisionTag: 
+  PlayEvent: 3
+  StopEvent: 4
+  CollisionTag: Player
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -96151,6 +96101,18 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!65 &1674639685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674639682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.168785, y: 9, z: 31.250626}
+  m_Center: {x: 3.8162231, y: 0, z: 1.0029225}
 --- !u!1 &1675216141
 GameObject:
   m_ObjectHideFlags: 0
@@ -108982,8 +108944,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1935436117}
   - component: {fileID: 1935436118}
+  - component: {fileID: 1935436119}
   m_Layer: 0
-  m_Name: SoundEmitter
+  m_Name: FireplaceSoundEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109014,9 +108977,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: event:/Escenario/FX_Fireplace
-  PlayEvent: 11
-  StopEvent: 12
-  CollisionTag: 
+  PlayEvent: 3
+  StopEvent: 4
+  CollisionTag: Player
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -109024,6 +108987,18 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!65 &1935436119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935436116}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.228724, y: 5.5203743, z: 20.042727}
+  m_Center: {x: 5.786254, y: 1.7398129, z: -1.8713756}
 --- !u!4 &1937587835 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4247699212506780, guid: 482d5f9ca8039c24abcdaa08b961c2d2,

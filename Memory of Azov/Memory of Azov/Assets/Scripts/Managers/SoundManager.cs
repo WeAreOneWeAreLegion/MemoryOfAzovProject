@@ -10,7 +10,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public enum SoundRequestGhost { G_Attack, G_Boo, G_Damaged, G_Dead, G_Laugh, G_LaughALot, G_Stunned }
     public enum SoundRequestScenario { S_Button, S_DoorClose, S_DoorKnob, S_DoorOpen, S_Fireplace, S_HealthItemDropped,
         S_HealthItemFound, S_ItemFound, S_ItemParticles, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
-    public enum SoundRequestFlashlight { F_ChargingFlash, F_Noise, F_On, F_Off }
+    public enum SoundRequestFlashlight { F_ChargingFlash, F_ChargedFlash, F_Noise, F_On, F_Off }
     public enum SoundRequestMenu { Me_Movement, Me_Select, Me_SelectBack }
     public enum SoundRequestMusic { Mu_HouseOn, MU_CombatOn, MU_GameOverOn, MU_HouseOff, MU_CombatOff, MU_GameOverOff }
 
@@ -166,6 +166,10 @@ public class SoundManager : MonoSingleton<SoundManager> {
     FMOD.Studio.EventInstance soundEventFlashlightChargingFlashSound;
 
     [FMODUnity.EventRef]
+    public string flashlightChargedFlashSound;
+    FMOD.Studio.EventInstance soundEventFlashlightChargedFlashSound;
+
+    [FMODUnity.EventRef]
     public string flashlightNoiseSound;
     FMOD.Studio.EventInstance soundEventFlashlightNoiseSound;
 
@@ -248,6 +252,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
 
         //Flashlight
         soundEventFlashlightChargingFlashSound = FMODUnity.RuntimeManager.CreateInstance(flashlightChargingFlashSound);
+        soundEventFlashlightChargedFlashSound = FMODUnity.RuntimeManager.CreateInstance(flashlightChargedFlashSound);
         soundEventFlashlightNoiseSound = FMODUnity.RuntimeManager.CreateInstance(flashlightNoiseSound);
         soundEventFlashlightOffSound = FMODUnity.RuntimeManager.CreateInstance(flashlightOffSound);
         soundEventFlashlightOnSound = FMODUnity.RuntimeManager.CreateInstance(flashlightOnSound);
@@ -312,7 +317,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 PlayCharacterStepsCarpetSound();
                 break;
             case SoundRequestPlayer.P_LowHealth:
-                PlayCharacterStepsCarpetSound();
+                PlayCharacterLowHealthSound();
                 break;
         }
     }
@@ -386,13 +391,13 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 PlayScenarioUnlockDoorSound();
                 break;
             case SoundRequestScenario.S_Lever:
-                PlayScenarioUnlockDoorSound();
+                PlayScenarioLeverSound();
                 break;
             case SoundRequestScenario.S_Library:
-                PlayScenarioUnlockDoorSound();
+                PlayScenarioLibrarySound();
                 break;
             case SoundRequestScenario.S_PictureFalls:
-                PlayScenarioUnlockDoorSound();
+                PlayScenarioPictureFallsSound();
                 break;
         }
     }
@@ -403,6 +408,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
         {
             case SoundRequestFlashlight.F_ChargingFlash:
                 PlayFlashlightChargingFlashSound();
+                break;
+            case SoundRequestFlashlight.F_ChargedFlash:
+                PlayFlashlightChargedFlashSound();
                 break;
             case SoundRequestFlashlight.F_Noise:
                 PlayFlashlightNoiseSound();
@@ -509,6 +517,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     void UpdateFlashlightSounds()
     {
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightChargingFlashSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightChargedFlashSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightNoiseSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightOffSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightOnSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
@@ -701,6 +710,11 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public void PlayFlashlightChargingFlashSound()
     {
         soundEventFlashlightChargingFlashSound.start();
+    }
+
+    public void PlayFlashlightChargedFlashSound()
+    {
+        soundEventFlashlightChargedFlashSound.start();
     }
 
     public void PlayFlashlightNoiseSound()
