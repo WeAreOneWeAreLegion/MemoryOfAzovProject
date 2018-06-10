@@ -314,15 +314,22 @@ public class PlayerController : MonoBehaviour {
 
         myAnimator.SetFloat("Speed", direction.magnitude);
 
-        if (canMove && direction != Vector3.zero)
-        {
+        if (canMove && direction != Vector3.zero && !independentFacing)
             if (speed > 0.01f)
                 myAnimator.speed = Mathf.Lerp(minWalkSpeed, maxWalkSpeed, direction.magnitude);
             else
                 myAnimator.speed = 1;
-        }
         else
-                myAnimator.speed = 1;
+            myAnimator.speed = 1;
+
+        if (independentFacing && myAnimator.GetLayerWeight(1) != 1)
+        {
+            myAnimator.SetLayerWeight(1,1);
+        }
+        else if (!independentFacing && myAnimator.GetLayerWeight(1) == 1)
+        {
+            myAnimator.SetLayerWeight(1,0);
+        }
 
         if (canMove && ((!independentFacing && currentControl == TypeOfControl.TwoControls) || (currentControl == TypeOfControl.OneControl)))
         {
@@ -364,6 +371,8 @@ public class PlayerController : MonoBehaviour {
         }
         else if (independentFacing && canMove && currentControl == TypeOfControl.TwoControls)
         {
+            myAnimator.SetFloat("XInput", xMove);
+            myAnimator.SetFloat("ZInput", zMove);
             myCharController.Move(((direction * speed) + Physics.gravity) * Time.deltaTime);
         }
         else if (!canMove)
@@ -973,7 +982,6 @@ public class PlayerController : MonoBehaviour {
 
     private void MoveAgain()
     {
-        Debug.Log("Move again");
         canMove = true;
         lightEnabled = false;
         SwitchLight();
