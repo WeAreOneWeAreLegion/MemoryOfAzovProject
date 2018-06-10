@@ -6,6 +6,8 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     public enum CameraState { Following, CrossDoor, FakeWall, ShowingItem, Cinematic}
     public enum CameraLookState { Normal, LookUp, LookDown }
 
+    public GameObject backWall;
+
     [System.Serializable]
     public struct CameraLook
     {

@@ -324,11 +324,11 @@ public class PlayerController : MonoBehaviour {
         else
             myAnimator.speed = 1;
 
-        if (independentFacing && myAnimator.GetLayerWeight(1) != 1)
+        if (independentFacing && myAnimator.GetLayerWeight(1) != 1 && canMove)
         {
             myAnimator.SetLayerWeight(1,1);
         }
-        else if (!independentFacing && myAnimator.GetLayerWeight(1) == 1)
+        else if ((!independentFacing && myAnimator.GetLayerWeight(1) == 1) || !canMove)
         {
             myAnimator.SetLayerWeight(1,0);
         }
@@ -1070,7 +1070,7 @@ public class PlayerController : MonoBehaviour {
                 isCameraMovingWhenCrossing = true;
             }
 
-            if (Vector3.Distance(pointToGoCrossDoor, transform.position) < 0.2f)
+            if (Vector3.Distance(pointToGoCrossDoor, transform.position) < 0.5f)
             {
                 DoorCrossed();
             }

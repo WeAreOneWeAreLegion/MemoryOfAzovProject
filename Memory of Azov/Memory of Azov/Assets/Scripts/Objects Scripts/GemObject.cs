@@ -121,8 +121,6 @@ public class GemObject : MonoBehaviour
     #region Unity Collision/Trigger Methods
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
-
         if (collision.transform.tag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Player) && !pickedUp)
         {
             pickedUp = true;
