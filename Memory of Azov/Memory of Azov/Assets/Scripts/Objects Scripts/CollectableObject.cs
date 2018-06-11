@@ -44,14 +44,16 @@ public class CollectableObject : MonoBehaviour {
         GameManager.Instance.player.PickUpObject(pick);
         yield return new WaitForSeconds(timeToShow);
         if (currentCType == CollectableType.MemoryOfAzov)
-        {
             GameManager.Instance.GetMemoryOfAzov();
-        }
         else
         {
             GameManager.Instance.player.StopShowingObject();
             CameraBehaviour.Instance.StopShowingItem();
         }
+
+        if (currentCType == CollectableType.GreenLight)
+            GameManager.Instance.player.ChangePlayerState(PlayerController.State.Cinematic);
+
         gameObject.SetActive(false);
         yield return null;
     }

@@ -254,9 +254,7 @@ public class PlayerController : MonoBehaviour {
         else if (currentState == State.FakeWall)
             CheckForWallTurned();
         else if (currentState == State.Cinematic)
-        {
-
-        }
+            CinematicGreenLight();
     }
 
     private void FixedUpdate()
@@ -1138,6 +1136,20 @@ public class PlayerController : MonoBehaviour {
             transform.parent = null;
             CameraBehaviour.Instance.EndCrossDoorMovement();
             currentFakeWall.CloseDoorAnimation();
+        }
+    }
+    #endregion
+
+    #region Cinematic Green Light Tutorial Method
+    private void CinematicGreenLight()
+    {
+        //mostrar botton correspondiente
+        GameManager.Instance.ActivePlayerHUD(GameManager.ButtonRequest.Y);
+
+        if (InputsManager.Instance.GetChangeColorButtonInputDown())
+        {
+            ChangeColor();
+            ChangePlayerState(State.Playing);
         }
     }
     #endregion
