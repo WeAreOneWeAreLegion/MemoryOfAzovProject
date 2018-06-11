@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoSingleton<GameManager> {
 
     public enum TypeOfTag { Player, Enemy, Wall, Door, DoorTrigger, Bell, HittableObject, FakeWall, CollectableObject }
-    public enum ButtonRequest { A, B, X, Y, RB, LB, RT, LT }
+    public enum ButtonRequest { A, B, X, Y, RB, LB, RT, LT, Y_Pressed }
 
     #region Public Variables
     [Header("\t--Game Designers Variables--")]

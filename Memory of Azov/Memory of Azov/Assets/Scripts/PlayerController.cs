@@ -88,6 +88,9 @@ public class PlayerController : MonoBehaviour {
     [Tooltip("Tiempo de vibracion cuando me dañan")]
     [Range(0, 1)] public float timeVibrating = 0.35f;
 
+    [Header("Cinematic Variables")]
+    public float timePressingButton = 0.25f;
+
     [Header("\t    Own Script Variables")]
     [Tooltip("Transform elbow")]
     public Transform elbowPoint;
@@ -119,6 +122,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject greenLight;
     public GameObject redLight;
     public GameObject azovEgg;
+    public GameObject pickUpParticles;
     #endregion
 
     #region Private Variables
@@ -137,6 +141,7 @@ public class PlayerController : MonoBehaviour {
     private bool autoFace;
     private bool isVibrating;
     private bool megaStop;
+    private bool tutorialCall;
     private Vector3 direction;
     private Vector3 faceDirection;
 
@@ -1144,12 +1149,40 @@ public class PlayerController : MonoBehaviour {
     private void CinematicGreenLight()
     {
         //mostrar botton correspondiente
-        GameManager.Instance.ActivePlayerHUD(GameManager.ButtonRequest.Y);
+        if (!tutorialCall && CameraBehaviour.Instance.IsFollowing())
+        {
+            StartCoroutine(PressButtonCoroutine());
+            tutorialCall = true;
+        }
 
         if (InputsManager.Instance.GetChangeColorButtonInputDown())
         {
+            StopAllCoroutines();
             ChangeColor();
             ChangePlayerState(State.Playing);
+            tutorialCall = false;
+            GameManager.Instance.DisablePlayerHUD();
+        }
+    }
+
+    private IEnumerator PressButtonCoroutine()
+    {
+        bool pressed = true;
+
+        while (true)
+        {
+            if (pressed)
+            {
+                GameManager.Instance.ActivePlayerHUD(GameManager.ButtonRequest.Y);
+            }
+            else
+            {
+                GameManager.Instance.ActivePlayerHUD(GameManager.ButtonRequest.Y_Pressed);
+            }
+
+            pressed = !pressed;
+
+            yield return new WaitForSeconds(timePressingButton);
         }
     }
     #endregion
@@ -1233,6 +1266,7 @@ public class PlayerController : MonoBehaviour {
         handsEgg.GetComponent<MeshRenderer>().material.mainTexture = EggsManager.Instance.GetCurrentTexture();
         handsEgg.SetActive(true);
         SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemFound, this.gameObject.transform);
+        pickUpParticles.SetActive(true);
     }
 
     public void ShowGreenLight()
@@ -1256,6 +1290,7 @@ public class PlayerController : MonoBehaviour {
         greenLight.SetActive(false);
         redLight.SetActive(false);
         azovEgg.SetActive(false);
+        pickUpParticles.SetActive(false);
     }
 
     public void DoAction()
