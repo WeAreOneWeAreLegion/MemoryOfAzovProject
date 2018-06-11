@@ -80800,7 +80800,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 737769697}
-  - {fileID: 1674639683}
   m_Father: {fileID: 147172592}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84319,6 +84318,7 @@ Transform:
   - {fileID: 307835922}
   - {fileID: 1254125482}
   - {fileID: 1361742086}
+  - {fileID: 1674639683}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -85050,7 +85050,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ebe8091e2e28a044aa52f0487d1506a, type: 3}
   enemyCrySound:
   - {fileID: 8300000, guid: dc4f7a519be027f4f9e41716b94de717, type: 3}
-  ambientRainSound: event:/Ambiente/FX_Rain
+  ambientRainSound: event:/Ambiente/FX_Rain 3D
   ambientThunderSound: event:/Ambiente/FX_Thunder
   characterDamagedSound: event:/Character/Character_Damaged
   characterDeathSound: event:/Character/Character_Death
@@ -92091,7 +92091,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
+  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
   m_LocalPosition: {x: 0.1, y: -0.02, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -95747,6 +95747,7 @@ GameObject:
   - component: {fileID: 1674639683}
   - component: {fileID: 1674639684}
   - component: {fileID: 1674639685}
+  - component: {fileID: 1674639686}
   m_Layer: 0
   m_Name: RainSoundEmitter
   m_TagString: Untagged
@@ -95760,12 +95761,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674639682}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.96, y: -11.72, z: -6.82}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.08268, y: 0.90418243, z: -0.8153815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1280015174}
-  m_RootOrder: 1
+  m_Father: {fileID: 1281611537}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1674639684
 MonoBehaviour:
@@ -95773,12 +95774,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674639682}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/Ambiente/FX_Rain
+  Event: event:/Ambiente/FX_Rain (2)
   PlayEvent: 3
   StopEvent: 4
   CollisionTag: Player
@@ -95801,6 +95802,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 18.168785, y: 9, z: 31.250626}
   m_Center: {x: 3.8162231, y: 0, z: 1.0029225}
+--- !u!114 &1674639686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674639682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b91b075c6f5a44e9824103e565b51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1675216141
 GameObject:
   m_ObjectHideFlags: 0
@@ -108549,8 +108561,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1935436117}
-  - component: {fileID: 1935436118}
   - component: {fileID: 1935436119}
+  - component: {fileID: 1935436118}
+  - component: {fileID: 1935436120}
   m_Layer: 0
   m_Name: FireplaceSoundEmitter
   m_TagString: Untagged
@@ -108577,7 +108590,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935436116}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -108603,8 +108616,19 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 14.228724, y: 5.5203743, z: 20.042727}
-  m_Center: {x: 5.786254, y: 1.7398129, z: -1.8713756}
+  m_Size: {x: 11.977302, y: 5.5203743, z: 20.042727}
+  m_Center: {x: 4.6605425, y: 1.7398129, z: -1.871376}
+--- !u!114 &1935436120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935436116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c244bf5aa472b54db1f870bba5885c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1937587835 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4247699212506780, guid: 482d5f9ca8039c24abcdaa08b961c2d2,
