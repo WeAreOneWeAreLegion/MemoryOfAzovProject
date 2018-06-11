@@ -186,9 +186,10 @@ public class RoomScript : MonoBehaviour
 
         foreach (TransparentObject t in objectsWithEnemies)
         {
-            if (t.spawnGhost)
+            if (t.spawnGhost && !t.isShaking)
             {
                 t.ShakeObjectAnimation(false);
+                t.ActiveInternalAction();
             }
         }
     }

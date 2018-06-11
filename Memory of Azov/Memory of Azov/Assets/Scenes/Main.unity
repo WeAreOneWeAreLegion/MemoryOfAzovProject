@@ -956,6 +956,7 @@ MonoBehaviour:
   - {fileID: 588578981}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1001 &26084268
 Prefab:
   m_ObjectHideFlags: 0
@@ -5340,6 +5341,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &51577143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,6 +5841,7 @@ MonoBehaviour:
   - {fileID: 65773420}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &66422987
 GameObject:
   m_ObjectHideFlags: 0
@@ -7521,6 +7524,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!33 &103178286
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7675,6 +7679,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &106895199
 GameObject:
   m_ObjectHideFlags: 0
@@ -7910,6 +7915,7 @@ MonoBehaviour:
   - {fileID: 108426507}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &110480942
 GameObject:
   m_ObjectHideFlags: 0
@@ -8976,6 +8982,7 @@ MonoBehaviour:
   - {fileID: 568749159}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &134255469
 GameObject:
   m_ObjectHideFlags: 0
@@ -9299,6 +9306,7 @@ MonoBehaviour:
   - {fileID: 138377870}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &140917104
 GameObject:
   m_ObjectHideFlags: 0
@@ -14275,6 +14283,7 @@ MonoBehaviour:
   - {fileID: 286567070}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &211306988
 GameObject:
   m_ObjectHideFlags: 0
@@ -15144,6 +15153,7 @@ MonoBehaviour:
   - {fileID: 108426507}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1001 &236562459
 Prefab:
   m_ObjectHideFlags: 0
@@ -19474,6 +19484,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1001 &272625910
 Prefab:
   m_ObjectHideFlags: 0
@@ -19637,6 +19648,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &274010655 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1875722068500504, guid: 37c48f9ad847d4a46ade640ebfd0f366,
@@ -19658,7 +19670,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 274010655}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
@@ -20297,6 +20309,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &290706510
 GameObject:
   m_ObjectHideFlags: 0
@@ -20921,6 +20934,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!33 &307220846
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21221,7 +21235,7 @@ Transform:
   - {fileID: 806617032}
   - {fileID: 1463345461}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &312819749
 GameObject:
@@ -21280,6 +21294,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &312985337
 GameObject:
   m_ObjectHideFlags: 0
@@ -21355,6 +21370,7 @@ MonoBehaviour:
   - {fileID: 312985339}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &313418293
 GameObject:
   m_ObjectHideFlags: 0
@@ -22874,6 +22890,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 1.5215139
       objectReference: {fileID: 0}
+    - target: {fileID: 114615820381728306, guid: 0ab8744f9ac63ed4b80a2c854e9177e4,
+        type: 2}
+      propertyPath: spawnAllGhosts
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ab8744f9ac63ed4b80a2c854e9177e4, type: 2}
   m_IsPrefabParent: 0
@@ -23064,7 +23085,7 @@ Transform:
   - {fileID: 1920626961}
   - {fileID: 1091301106}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &366469129
 MonoBehaviour:
@@ -23324,6 +23345,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &373954735
 GameObject:
   m_ObjectHideFlags: 0
@@ -30745,7 +30767,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442263859
 GameObject:
@@ -31881,6 +31903,7 @@ MonoBehaviour:
   - {fileID: 568749159}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &471605473
 GameObject:
   m_ObjectHideFlags: 0
@@ -32673,7 +32696,7 @@ Transform:
   - {fileID: 945152051}
   - {fileID: 1935436117}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &514338876
 GameObject:
@@ -33380,6 +33403,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!33 &521652244
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -34501,6 +34525,7 @@ MonoBehaviour:
   - {fileID: 1885125425}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1001 &547078558
 Prefab:
   m_ObjectHideFlags: 0
@@ -34745,6 +34770,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1001 &552053714
 Prefab:
   m_ObjectHideFlags: 0
@@ -35234,6 +35260,7 @@ MonoBehaviour:
   - {fileID: 568749159}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &569678171
 GameObject:
   m_ObjectHideFlags: 0
@@ -35415,6 +35442,7 @@ MonoBehaviour:
   - {fileID: 86868153}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &573541532
 GameObject:
   m_ObjectHideFlags: 0
@@ -35772,6 +35800,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &588578979
 GameObject:
   m_ObjectHideFlags: 0
@@ -35846,6 +35875,7 @@ MonoBehaviour:
   - {fileID: 588578981}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &590021841
 GameObject:
   m_ObjectHideFlags: 0
@@ -36440,6 +36470,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &607871412
 GameObject:
   m_ObjectHideFlags: 0
@@ -44448,6 +44479,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &637656573
 GameObject:
   m_ObjectHideFlags: 0
@@ -45529,6 +45561,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 1.5215139
       objectReference: {fileID: 0}
+    - target: {fileID: 114615820381728306, guid: 0ab8744f9ac63ed4b80a2c854e9177e4,
+        type: 2}
+      propertyPath: spawnAllGhosts
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ab8744f9ac63ed4b80a2c854e9177e4, type: 2}
   m_IsPrefabParent: 0
@@ -45863,6 +45900,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &676741408
 GameObject:
   m_ObjectHideFlags: 0
@@ -46636,6 +46674,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &694101852
 GameObject:
   m_ObjectHideFlags: 0
@@ -47518,6 +47557,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &718831203
 GameObject:
   m_ObjectHideFlags: 0
@@ -52265,6 +52305,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &781005693
 GameObject:
   m_ObjectHideFlags: 0
@@ -56140,6 +56181,7 @@ MonoBehaviour:
   - {fileID: 791073690}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &791164741
 GameObject:
   m_ObjectHideFlags: 0
@@ -56891,6 +56933,7 @@ MonoBehaviour:
   - {fileID: 588578981}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &815078923
 GameObject:
   m_ObjectHideFlags: 0
@@ -59912,6 +59955,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &899764789
 GameObject:
   m_ObjectHideFlags: 0
@@ -61482,6 +61526,7 @@ MonoBehaviour:
   - {fileID: 791073690}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &937739267
 GameObject:
   m_ObjectHideFlags: 0
@@ -62424,7 +62469,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &954504602
 Prefab:
@@ -62849,6 +62894,7 @@ MonoBehaviour:
   - {fileID: 1166340913}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &962234785
 GameObject:
   m_ObjectHideFlags: 0
@@ -62888,6 +62934,7 @@ MonoBehaviour:
     type: 2}
   enemyStunParticles: {fileID: 1240161330534600, guid: 25ad1a1ea5b10c942afaf92b3824ad2e,
     type: 2}
+  itemDust: {fileID: 1794775109800590, guid: 8530d7ba43d375a498cae33e30f29889, type: 2}
 --- !u!4 &962234787
 Transform:
   m_ObjectHideFlags: 0
@@ -62899,7 +62946,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &962234788
 MonoBehaviour:
@@ -63049,6 +63096,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &967679936
 GameObject:
   m_ObjectHideFlags: 0
@@ -63124,6 +63172,7 @@ MonoBehaviour:
   - {fileID: 967679938}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &968836307
 GameObject:
   m_ObjectHideFlags: 0
@@ -63541,6 +63590,7 @@ MonoBehaviour:
   - {fileID: 978742775}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &978960321
 GameObject:
   m_ObjectHideFlags: 0
@@ -63628,81 +63678,13 @@ RectTransform:
   m_Children:
   - {fileID: 2134280917}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &980975727
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.018095016
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.0943003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -5.408001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114753765264457168, guid: d4265cdec736cc149830717b75a5ccfe,
-        type: 2}
-      propertyPath: timeToShow
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527955341472132, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_Name
-      value: MemoryOfAzov (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114753765264457168, guid: d4265cdec736cc149830717b75a5ccfe,
-        type: 2}
-      propertyPath: currentCType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203147318068076, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d4265cdec736cc149830717b75a5ccfe, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &984936443
 GameObject:
   m_ObjectHideFlags: 0
@@ -64207,6 +64189,7 @@ MonoBehaviour:
   - {fileID: 988061796}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &990131747
 GameObject:
   m_ObjectHideFlags: 0
@@ -64754,6 +64737,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1005643741
 GameObject:
   m_ObjectHideFlags: 0
@@ -69840,6 +69824,7 @@ MonoBehaviour:
   - {fileID: 429491407}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1049494890
 GameObject:
   m_ObjectHideFlags: 0
@@ -69898,6 +69883,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1049608310
 GameObject:
   m_ObjectHideFlags: 0
@@ -69973,6 +69959,7 @@ MonoBehaviour:
   - {fileID: 1049608312}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &1050378510
 GameObject:
   m_ObjectHideFlags: 0
@@ -70304,7 +70291,7 @@ RectTransform:
   - {fileID: 1901431045}
   - {fileID: 173800943}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -74238,6 +74225,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1077091546
 GameObject:
   m_ObjectHideFlags: 0
@@ -74797,6 +74785,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1083882575
 GameObject:
   m_ObjectHideFlags: 0
@@ -75883,6 +75872,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1116973799
 GameObject:
   m_ObjectHideFlags: 0
@@ -75941,6 +75931,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1123633218
 GameObject:
   m_ObjectHideFlags: 0
@@ -76883,6 +76874,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1001 &1138888360
 Prefab:
   m_ObjectHideFlags: 0
@@ -77024,6 +77016,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!4 &1141864648 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4169691308891158, guid: 241beb6f54a3b704b84c13d6873eea6e,
@@ -78100,6 +78093,7 @@ MonoBehaviour:
   - {fileID: 568749159}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &1164702821
 GameObject:
   m_ObjectHideFlags: 0
@@ -78402,6 +78396,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1176433915
 GameObject:
   m_ObjectHideFlags: 0
@@ -78661,7 +78656,7 @@ Transform:
   - {fileID: 1975180998}
   - {fileID: 416286494}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1188158646
 GameObject:
@@ -79920,6 +79915,7 @@ MonoBehaviour:
   - {fileID: 16052610}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1257955317
 GameObject:
   m_ObjectHideFlags: 0
@@ -80902,7 +80898,7 @@ Transform:
   - {fileID: 775714666}
   - {fileID: 1304689142}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1272868177
 GameObject:
@@ -80991,7 +80987,7 @@ RectTransform:
   m_Children:
   - {fileID: 1450863320}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -84754,7 +84750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb91433989ce3d4e9af05a14a99d964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfDesiredGhosts: 0
+  numOfDesiredGhosts: 4
   numOfGhostGivingHearts: 2
   numOfDesiredGems: 1
   enemiesData:
@@ -84788,7 +84784,7 @@ Transform:
   - {fileID: 1361742086}
   - {fileID: 1674639683}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1283152251
 GameObject:
@@ -85033,7 +85029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a366ee19be7a304db8d1d85f5152e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDoorType: 0
+  currentDoorType: 2
   isLightSwitcher: 0
   lightenedTimeToShow: 3
   isRightOpener: 0
@@ -85164,6 +85160,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 1.5215139
+      objectReference: {fileID: 0}
+    - target: {fileID: 114615820381728306, guid: 0ab8744f9ac63ed4b80a2c854e9177e4,
+        type: 2}
+      propertyPath: spawnAllGhosts
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ab8744f9ac63ed4b80a2c854e9177e4, type: 2}
@@ -86630,6 +86631,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1326541176
 GameObject:
   m_ObjectHideFlags: 0
@@ -86915,6 +86917,7 @@ MonoBehaviour:
   - {fileID: 1343222057}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &1343429326
 GameObject:
   m_ObjectHideFlags: 0
@@ -87507,6 +87510,7 @@ MonoBehaviour:
   - {fileID: 108426507}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &1358128207
 GameObject:
   m_ObjectHideFlags: 0
@@ -87766,6 +87770,7 @@ MonoBehaviour:
   - {fileID: 1365368573}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &1366181164
 GameObject:
   m_ObjectHideFlags: 0
@@ -87997,6 +88002,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1369344320
 GameObject:
   m_ObjectHideFlags: 0
@@ -89660,6 +89666,7 @@ MonoBehaviour:
   - {fileID: 1422491578}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!4 &1423212370 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4840009805398276, guid: 955ae106253622d47aa977d1cd98c645,
@@ -91235,6 +91242,7 @@ MonoBehaviour:
   - {fileID: 1484235813}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &1486341317
 GameObject:
   m_ObjectHideFlags: 0
@@ -91948,7 +91956,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1510219134
 Prefab:
@@ -92618,6 +92626,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!33 &1527459498
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -92948,6 +92957,7 @@ MonoBehaviour:
   - {fileID: 1540547191}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &1543927225
 GameObject:
   m_ObjectHideFlags: 0
@@ -92974,7 +92984,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
+  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
   m_LocalPosition: {x: 0.1, y: -0.02, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -93204,6 +93214,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1553337565
 GameObject:
   m_ObjectHideFlags: 0
@@ -94838,6 +94849,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1619227481
 GameObject:
   m_ObjectHideFlags: 0
@@ -95834,6 +95846,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1654973609
 GameObject:
   m_ObjectHideFlags: 0
@@ -97043,6 +97056,7 @@ MonoBehaviour:
   - {fileID: 1540547191}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!4 &1687116370 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4169691308891158, guid: 241beb6f54a3b704b84c13d6873eea6e,
@@ -97558,6 +97572,7 @@ MonoBehaviour:
   - {fileID: 1540547191}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!23 &1705922431
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -99181,6 +99196,7 @@ MonoBehaviour:
   - {fileID: 791073690}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!1 &1766665634
 GameObject:
   m_ObjectHideFlags: 0
@@ -99403,7 +99419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a366ee19be7a304db8d1d85f5152e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDoorType: 0
+  currentDoorType: 2
   isLightSwitcher: 0
   lightenedTimeToShow: 3
   isRightOpener: 0
@@ -99778,7 +99794,7 @@ Transform:
   - {fileID: 1011324834}
   - {fileID: 1136490382}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784668512
 GameObject:
@@ -100331,7 +100347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1793844230
 MonoBehaviour:
@@ -101611,6 +101627,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!4 &1837040679 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4169691308891158, guid: 241beb6f54a3b704b84c13d6873eea6e,
@@ -101900,6 +101917,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1857573947
 GameObject:
   m_ObjectHideFlags: 0
@@ -107994,6 +108012,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1895009503
 GameObject:
   m_ObjectHideFlags: 0
@@ -109004,6 +109023,7 @@ MonoBehaviour:
   - {fileID: 453725937}
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1926971905
 GameObject:
   m_ObjectHideFlags: 0
@@ -109387,6 +109407,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &1935054613
 GameObject:
   m_ObjectHideFlags: 0
@@ -110157,6 +110178,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 1.5230179
+      objectReference: {fileID: 0}
+    - target: {fileID: 114615820381728306, guid: 0ab8744f9ac63ed4b80a2c854e9177e4,
+        type: 2}
+      propertyPath: spawnAllGhosts
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ab8744f9ac63ed4b80a2c854e9177e4, type: 2}
@@ -112694,6 +112720,7 @@ MonoBehaviour:
   myAnimations: []
   shakeAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
   openAnimation: {fileID: 7400000, guid: 78e62f8af6d5d7a40b905a030aae0eb9, type: 2}
+  isShaking: 0
 --- !u!1 &2039270002
 GameObject:
   m_ObjectHideFlags: 0
@@ -112709,7 +112736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2039270003
 Transform:
   m_ObjectHideFlags: 0
@@ -113160,6 +113187,7 @@ MonoBehaviour:
   - {fileID: 1540547191}
   shakeAnimation: {fileID: 0}
   openAnimation: {fileID: 0}
+  isShaking: 0
 --- !u!23 &2051969267
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -113864,7 +113892,7 @@ Transform:
   - {fileID: 1507854323}
   - {fileID: 524246910}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &2075688218 stripped
 Transform:
@@ -115005,7 +115033,7 @@ Transform:
   - {fileID: 1027742852}
   - {fileID: 112330052}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124492589
 GameObject:

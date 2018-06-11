@@ -51,7 +51,10 @@ public class EnemyHUD : MonoBehaviour { //Erased soon
     {
         int fullHp = myEnemy.initialHp;
 
-        healthBar.transform.localScale = new Vector3(((float)hp/(float)fullHp),1,1);
+        float hpPercent = ((float)hp / (float)fullHp);
+
+        healthBar.transform.localScale = new Vector3(hpPercent, 1,1);
+        healthBar.color = Color.Lerp(Color.red, Color.green, hpPercent);
     }
 
     public Transform GetTarget()

@@ -21,6 +21,7 @@ public class ObjectsManager : MonoSingleton<ObjectsManager> {
     public GameObject healthPrefab;
 	public GameObject enemyDeathParticles;
 	public GameObject enemyStunParticles;
+    public GameObject itemDust;
     #endregion
 
     #region Private Variables

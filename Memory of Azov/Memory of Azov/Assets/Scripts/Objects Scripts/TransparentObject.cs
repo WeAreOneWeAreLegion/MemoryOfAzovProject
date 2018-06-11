@@ -37,7 +37,8 @@ public class TransparentObject : MonoBehaviour {
     #region Private Variables
     private bool isMaterialHidden = false;
     private float transparencyValue;
-    private bool isShaking;
+    [HideInInspector]
+    public bool isShaking;
     private bool firstCall;
     private bool firstShake;
 
@@ -188,8 +189,8 @@ public class TransparentObject : MonoBehaviour {
         if (!isShaking)
             return;
 
-        //if (!firstShake)
-            //use if dust particles
+        if (!firstShake)
+            Instantiate(ObjectsManager.Instance.itemDust, transform.position, Quaternion.identity);
 
         if (spawnGhost)
         {
@@ -208,6 +209,7 @@ public class TransparentObject : MonoBehaviour {
 
             if (firstCall && spawnAllGhosts)
             {
+                Debug.Log("Spawn all");
                 hit.transform.parent.GetComponent<RoomScript>().ShowAllEnemiesFromRoom();
             }
         }
