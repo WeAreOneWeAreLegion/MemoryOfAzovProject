@@ -171,6 +171,7 @@ public class Enemy : LightenableObject {
 
         Invencible();
 
+		isDying = false;
         GameManager.Instance.CreateEnemyHUD(transform, (int)currentHp);
     }
     #endregion
