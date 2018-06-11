@@ -10,7 +10,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public enum SoundRequestGhost { G_Attack, G_Boo, G_Damaged, G_Dead, G_Laugh, G_LaughALot, G_Stunned }
     public enum SoundRequestScenario { S_Button, S_LightbulbSpawns, S_LightbulbFalls, S_DoorOpen, S_Fireplace, S_FurnitureShaking, S_HealthItemDropped,
         S_HealthItemFound, S_ItemFound, S_ItemParticles, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
-    public enum SoundRequestFlashlight { F_ChargingFlash, F_ChargedFlash, F_Noise, F_On, F_Off }
+    public enum SoundRequestFlashlight { F_ChargingFlash, F_ChargedFlash, F_ChargedFlashOff, F_Noise, F_On, F_Off }
     public enum SoundRequestMenu { Me_Movement, Me_Select, Me_SelectBack }
     public enum SoundRequestMusic { Mu_HouseOn, MU_CombatOn, MU_GameOverOn, MU_HouseOff, MU_CombatOff, MU_GameOverOff }
 
@@ -420,6 +420,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
             case SoundRequestFlashlight.F_ChargedFlash:
                 PlayFlashlightChargedFlashSound();
                 break;
+            case SoundRequestFlashlight.F_ChargedFlashOff:
+                StopFlashlightChargedFlashSound();
+                break;
             case SoundRequestFlashlight.F_Noise:
                 PlayFlashlightNoiseSound();
                 break;
@@ -796,6 +799,12 @@ public class SoundManager : MonoSingleton<SoundManager> {
     #endregion
 
     #region Stop Music Methods
+    public void StopFlashlightChargedFlashSound()
+    {
+        //soundEventHouseMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEventFlashlightChargedFlashSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
     public void StopHouseMusic()
     {
         //soundEventHouseMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);

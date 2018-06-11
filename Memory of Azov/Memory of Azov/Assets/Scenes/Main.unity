@@ -77688,7 +77688,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1164423721
 Transform:
@@ -78173,6 +78173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightToSpawn: {fileID: 529199968}
   forceAdd: {x: 0, y: 0, z: 0}
+  isGreenLight: 0
 --- !u!4 &1181327725
 Transform:
   m_ObjectHideFlags: 0

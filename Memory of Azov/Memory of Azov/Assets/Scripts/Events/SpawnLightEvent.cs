@@ -7,6 +7,7 @@ public class SpawnLightEvent : EventClass {
     #region Public Variables
     public GameObject lightToSpawn;
     public Vector3 forceAdd;
+    public bool isGreenLight = false;
     #endregion
 
     public void Awake()
@@ -17,6 +18,20 @@ public class SpawnLightEvent : EventClass {
     public override void EventAction()
     {
         lightToSpawn.SetActive(true);
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_LightbulbSpawns, this.gameObject.transform);
+    }
+
+    public void LightbullsFalls()
+    {
+        if (isGreenLight)
+        {
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_LightbulbFalls, this.gameObject.transform);
+        }
+        else
+        {
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_LightbulbFalls, this.gameObject.transform);
+        }
+        
     }
 
 }

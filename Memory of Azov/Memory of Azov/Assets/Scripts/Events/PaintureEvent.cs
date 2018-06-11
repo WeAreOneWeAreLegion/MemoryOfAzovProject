@@ -9,7 +9,7 @@ public class PaintureEvent : EventClass {
     public override void EventAction()
     {
         myAnimation.Play();
-        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_LightbulbSpawns, this.gameObject.transform);
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_PictureFalls, this.gameObject.transform);
     }
 
 }

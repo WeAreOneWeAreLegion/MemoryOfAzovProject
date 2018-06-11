@@ -666,7 +666,7 @@ public class PlayerController : MonoBehaviour {
 
                 lightChargingTimer = 1;
 
-                SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargedFlash);
+                //SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargedFlash);
             }
         }
 
