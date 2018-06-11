@@ -37,7 +37,8 @@ public class Enemy_N : Enemy
 
     public override void RecieveDamage()
     {
-        if (currentState.GetType() != typeof(ScapeState_N) && currentState.GetType() != typeof(StunState_N) && currentState.GetType() != typeof(DieState_N))
+        if (currentState.GetType() != typeof(ScapeState_N) && currentState.GetType() != typeof(StunState_N) && 
+			currentState.GetType() != typeof(DieState_N) && currentState.GetType() != typeof(AwakeState_N))
             ChangeState(new ScapeState_N());
 
         base.RecieveDamage();

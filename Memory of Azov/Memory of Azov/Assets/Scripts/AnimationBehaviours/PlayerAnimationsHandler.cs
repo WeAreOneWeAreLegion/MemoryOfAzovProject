@@ -28,7 +28,9 @@ public class PlayerAnimationsHandler : MonoBehaviour {
 
     public void MoveAgainMegaStop()
     {
-        myController.MoveAgainAfterMegaStop();
+		if (CameraBehaviour.Instance.IsFollowing()) {
+			myController.MoveAgainAfterMegaStop();
+		}
     }
 
     public void OpenDoor()

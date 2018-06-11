@@ -69,11 +69,11 @@ public class TransparentObject : MonoBehaviour {
         {
             return;
         }
-        if (isMaterialHidden)
+		if (isMaterialHidden)
         {
             if (isWall || isDoor)
             {
-                if (Mathf.Abs((Camera.main.transform.position - transform.position).z) > Mathf.Abs((Camera.main.transform.position - player.position).z))
+				if (Mathf.Abs((Camera.main.transform.position - transform.position).z) > Mathf.Abs((Camera.main.transform.position - player.position).z) || GameManager.Instance.gemsCamera.activeInHierarchy)
                 {
                     ShowMaterial();
                 }
@@ -87,13 +87,13 @@ public class TransparentObject : MonoBehaviour {
             //    }
             //}
         }
-        else
+		else if (!GameManager.Instance.gemsCamera.activeInHierarchy && !isMaterialHidden)
         {
             try
             {
                 if (isWall || isDoor)
                 {
-                    if (Mathf.Abs((Camera.main.transform.position - transform.position).z) < Mathf.Abs((Camera.main.transform.position - player.position).z))
+					if (Mathf.Abs((Camera.main.transform.position - transform.position).z) < Mathf.Abs((Camera.main.transform.position - player.position).z))
                     {
                         HideMaterial();
                     }

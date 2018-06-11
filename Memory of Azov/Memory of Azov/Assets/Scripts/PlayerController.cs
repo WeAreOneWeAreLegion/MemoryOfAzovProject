@@ -269,7 +269,8 @@ public class PlayerController : MonoBehaviour {
 
     private void LateUpdate() //Animations can be cracked in late update
     {
-        RotateByJoystick();
+		if (currentState == State.Playing)
+        	RotateByJoystick();
     }
 
     //Private Methods
@@ -397,8 +398,8 @@ public class PlayerController : MonoBehaviour {
     private void RotateByJoystick()
     {
 
-        if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
-            transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.fixedDeltaTime);
+		if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
+			transform.Rotate (Vector3.up, xRotation * rotationSpeed * Time.fixedDeltaTime);
 
 
         if (joystickCompleteControl)
@@ -788,6 +789,8 @@ public class PlayerController : MonoBehaviour {
                 {
                     currentDoorCrossing = hit.transform.GetComponent<ConectionScript>();
 
+					GameManager.Instance.DisablePlayerHUD();
+
                     ChangePlayerState(State.CrossDoor);
                     SetPointToMoveCrossDoor(currentDoorCrossing.GetDoorOpeningPos(transform.position), currentDoorCrossing.GetDoorClosingPos(transform.position));
                     transform.forward = (pointToGoCrossDoor - pointToStartCrossingDoor).normalized;
@@ -809,6 +812,8 @@ public class PlayerController : MonoBehaviour {
                 {
                     currentFakeWall = hit.transform.parent.GetComponent<FakeWallScript>();
                     transform.parent = hit.transform;
+
+					GameManager.Instance.DisablePlayerHUD();
 
                     pointToStartCrossingDoor = currentFakeWall.GetFakeWallPoint(transform.position);
                     ChangePlayerState(State.FakeWall);
@@ -983,6 +988,7 @@ public class PlayerController : MonoBehaviour {
     public void PickUpObject(ObjectPickedUp opu)
     {
         currentObjectPickedUp = opu;
+		Debug.Log ("Item just picked up");
 
         rePoint.RePlace();
 
@@ -1162,8 +1168,10 @@ public class PlayerController : MonoBehaviour {
     {
         independentFacing = true;
 
-        if (!permaStop)
-            StopMovementByAim();
+		if (!permaStop) {
+			StopMovementByAim ();
+			MoveAgainAfterMegaStop ();
+		}
         else
         {
             myAnimator.SetTrigger("Afraid");
@@ -1177,6 +1185,8 @@ public class PlayerController : MonoBehaviour {
     public void MoveAgainAfterMegaStop()
     {
         megaStop = false;
+		stopByAnimation = false;
+		stopByAiming = false;
     }
 
     public void CalmMode()

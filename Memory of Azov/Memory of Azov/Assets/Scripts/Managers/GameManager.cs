@@ -280,6 +280,7 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void ShowAllDoors()
     {
+		Debug.Log ("Show all doors");
         foreach (ConectionScript d in doorsList)
             d.ShowVisualDoor();
     }

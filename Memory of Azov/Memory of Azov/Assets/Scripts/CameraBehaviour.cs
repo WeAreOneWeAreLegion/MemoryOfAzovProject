@@ -364,6 +364,10 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     {
         wallsFound = false;
     }
+
+	public bool IsFollowing(){
+		return currentState == CameraState.Following;
+	}
     #endregion
 
     #region Unity Inspector/Gizmos Methods

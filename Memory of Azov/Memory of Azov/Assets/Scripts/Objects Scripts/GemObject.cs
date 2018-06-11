@@ -105,12 +105,15 @@ public class GemObject : MonoBehaviour
 
         GetComponent<Collider>().enabled = false;
 
+		StartCoroutine(PickUpCoroutine());
+
         autoDestroy = true;
         timeToDesapear = 0;
     }
 
     private IEnumerator PickUpCoroutine()
     {
+		myMesh.enabled = false;
         GameManager.Instance.player.PickUpObject(PlayerController.ObjectPickedUp.Egg);
         yield return new WaitForSeconds(timeForAutoDestroy);
         DestroyGem();
