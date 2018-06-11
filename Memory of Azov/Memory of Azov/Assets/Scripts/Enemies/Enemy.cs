@@ -212,7 +212,7 @@ public class Enemy : LightenableObject {
         if (debugInRuntime)
             Debug.DrawLine(myPosition, myPosition + (direction * 3), Color.blue, -1, false);
 
-        myRGB.velocity = direction * Time.fixedDeltaTime;
+        myRGB.velocity = direction * Time.deltaTime;
         Debug.DrawLine(myPosition, myPosition + (transform.forward * myRGB.velocity.magnitude), Color.red, -1, false);
     }
 
@@ -235,7 +235,7 @@ public class Enemy : LightenableObject {
             if (Vector3.SignedAngle(transform.forward, targetDirection, Vector3.up) > 0.2f)
             {
                 //Left
-                transform.rotation *= Quaternion.Euler(0, rotationSpeed * Time.fixedDeltaTime, 0);
+                transform.rotation *= Quaternion.Euler(0, rotationSpeed * Time.deltaTime, 0);
                 if (Vector3.SignedAngle(transform.forward, targetDirection, Vector3.up) < 0)
                 {
                     transform.LookAt(myPosition + targetDirection);
@@ -244,7 +244,7 @@ public class Enemy : LightenableObject {
             else if (Vector3.SignedAngle(transform.forward, targetDirection, Vector3.up) < -0.2f)
             {
                 //Right
-                transform.rotation *= Quaternion.Euler(0, -rotationSpeed * Time.fixedDeltaTime, 0);
+                transform.rotation *= Quaternion.Euler(0, -rotationSpeed * Time.deltaTime, 0);
                 if (Vector3.SignedAngle(transform.forward, targetDirection, Vector3.up) > 0)
                 {
                     transform.LookAt(myPosition + targetDirection);
@@ -255,7 +255,7 @@ public class Enemy : LightenableObject {
 
     public virtual void CalculateEscapePoint()
     {
-        scapePoint = GameManager.Instance.player.GetOutsideLightPoint(transform.position, 10);
+        scapePoint = GameManager.Instance.player.GetOutsideLightPoint(transform.position, ghostSize * 2f);
         Debug.DrawLine(transform.position, scapePoint, Color.red, -1, false);
 
         surrogateTarget.position = scapePoint;
@@ -267,7 +267,7 @@ public class Enemy : LightenableObject {
 
         direction *= (speed / 2);
 
-        myRGB.velocity = direction * Time.fixedDeltaTime;
+        myRGB.velocity = direction * Time.deltaTime;
     }
 
     public void DoDamage()
@@ -405,7 +405,7 @@ public class Enemy : LightenableObject {
         if (isDying)
             return;
 
-        currentHp -= lanternDamage * Time.fixedDeltaTime;
+        currentHp -= lanternDamage * Time.deltaTime;
 
         myMat.SetFloat("_DisAmount", 1 - (currentHp / initialHp));
 

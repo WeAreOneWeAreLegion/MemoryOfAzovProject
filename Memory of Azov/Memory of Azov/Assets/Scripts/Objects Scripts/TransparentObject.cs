@@ -39,6 +39,7 @@ public class TransparentObject : MonoBehaviour {
     private float transparencyValue;
     private bool isShaking;
     private bool firstCall;
+    private bool firstShake;
 
     private List<Material> myMats = new List<Material>();
     #endregion
@@ -186,6 +187,9 @@ public class TransparentObject : MonoBehaviour {
     {
         if (!isShaking)
             return;
+
+        //if (!firstShake)
+            //use if dust particles
 
         if (spawnGhost)
         {

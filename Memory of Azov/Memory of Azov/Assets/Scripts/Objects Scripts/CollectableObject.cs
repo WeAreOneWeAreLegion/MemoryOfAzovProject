@@ -8,7 +8,7 @@ public class CollectableObject : MonoBehaviour {
 
     public CollectableType currentCType;
 
-    private float timeToShow = 2.25f;
+    public float timeToShow = 2.25f;
 
 	public void CollectObject()
     {
@@ -28,7 +28,7 @@ public class CollectableObject : MonoBehaviour {
                 GameManager.Instance.player.GetRedLight();
                 break;
             case CollectableType.MemoryOfAzov:
-                GameManager.Instance.GetMemoryOfAzov();
+                StartCoroutine(PickUpCoroutine(PlayerController.ObjectPickedUp.Azov));
                 break;
         }
         GetComponentInChildren<MeshRenderer>().enabled = false;
@@ -43,8 +43,15 @@ public class CollectableObject : MonoBehaviour {
     {
         GameManager.Instance.player.PickUpObject(pick);
         yield return new WaitForSeconds(timeToShow);
-        GameManager.Instance.player.StopShowingObject();
-        CameraBehaviour.Instance.StopShowingItem();
+        if (currentCType == CollectableType.MemoryOfAzov)
+        {
+            GameManager.Instance.GetMemoryOfAzov();
+        }
+        else
+        {
+            GameManager.Instance.player.StopShowingObject();
+            CameraBehaviour.Instance.StopShowingItem();
+        }
         gameObject.SetActive(false);
         yield return null;
     }

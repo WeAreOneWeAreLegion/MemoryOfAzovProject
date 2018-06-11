@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     public enum State { Playing, CrossDoor, FakeWall, Cinematic }
     public enum LightColor { Neutral, Secondary, Third }
     public enum TypeOfControl { OneControl, TwoControls }
-    public enum ObjectPickedUp { Egg, GreenLight, RedLight }
+    public enum ObjectPickedUp { Egg, GreenLight, RedLight, Azov }
 
     #region Public Variables
     [Header("\tGame Designers Variables")]
@@ -118,8 +118,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject handsEgg;
     public GameObject greenLight;
     public GameObject redLight;
-    public Transform eyeLeft;
-    public Transform eyeRight;
+    public GameObject azovEgg;
     #endregion
 
     #region Private Variables
@@ -377,7 +376,7 @@ public class PlayerController : MonoBehaviour {
             if (((Vector3.Angle(faceDirection, transform.forward) <= angleToStartMoving && !isMoving && !autoFace) || isMoving) && direction != Vector3.zero)
             {
 
-                myCharController.Move(((transform.forward * direction.magnitude * speed) + Physics.gravity) * Time.fixedDeltaTime);
+                myCharController.Move(((transform.forward * direction.magnitude * speed) + Physics.gravity) * Time.deltaTime);
                 isMoving = true;
             }
 
@@ -386,11 +385,11 @@ public class PlayerController : MonoBehaviour {
         {
             myAnimator.SetFloat("XInput", xMove);
             myAnimator.SetFloat("ZInput", zMove);
-            myCharController.Move(((direction * speed) + Physics.gravity) * Time.fixedDeltaTime);
+            myCharController.Move(((direction * speed) + Physics.gravity) * Time.deltaTime);
         }
         else if (!canMove)
         {
-            transform.forward = Vector3.Slerp(transform.forward, faceDirection, autoFacingSpeed * Time.fixedDeltaTime);
+            transform.forward = Vector3.Slerp(transform.forward, faceDirection, autoFacingSpeed * Time.deltaTime);
         }
 
     }
@@ -399,7 +398,7 @@ public class PlayerController : MonoBehaviour {
     {
 
 		if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
-			transform.Rotate (Vector3.up, xRotation * rotationSpeed * Time.fixedDeltaTime);
+			transform.Rotate (Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
 
 
         if (joystickCompleteControl)
@@ -449,7 +448,7 @@ public class PlayerController : MonoBehaviour {
 
             if (Vector3.Angle(faceDirection, transform.forward) > angleToStartMoving)
             {
-                transform.Rotate(Vector3.up, (-Mathf.Sign(Vector3.SignedAngle(faceDirection, transform.forward, transform.up))) * rotationSpeed * extraSpeed * Time.fixedDeltaTime);
+                transform.Rotate(Vector3.up, (-Mathf.Sign(Vector3.SignedAngle(faceDirection, transform.forward, transform.up))) * rotationSpeed * extraSpeed * Time.deltaTime);
             }
             else if (faceDirection != transform.forward || autoFace)
             {
@@ -526,7 +525,7 @@ public class PlayerController : MonoBehaviour {
             areLightsIncreased = false;
         }
 
-        lanternLight.intensity = Mathf.Lerp(lanternLight.intensity, lerpValueLightIntensity, Time.fixedDeltaTime * lightLerpSpeed);
+        lanternLight.intensity = Mathf.Lerp(lanternLight.intensity, lerpValueLightIntensity, Time.deltaTime * lightLerpSpeed);
     }
 
     private void LightDamaging()
@@ -1064,7 +1063,7 @@ public class PlayerController : MonoBehaviour {
             myAnimator.SetFloat("Speed", 1);
             myAnimator.speed = 1;
 
-            startCrossingTimer += Time.fixedDeltaTime / crossDoorTime;
+            startCrossingTimer += Time.deltaTime / crossDoorTime;
 
             transform.position = Vector3.Lerp(transform.position, pointToStartCrossingDoor, startCrossingTimer);
 
@@ -1078,7 +1077,7 @@ public class PlayerController : MonoBehaviour {
             myAnimator.SetFloat("Speed", 1);
             myAnimator.speed = maxWalkSpeed;
 
-            myCharController.Move(directionToGoCrossDoor * speed * Time.fixedDeltaTime);
+            myCharController.Move(directionToGoCrossDoor * speed * Time.deltaTime);
 
             if (Vector3.Distance(pointToGoCrossDoor, transform.position) < 2f && !isCameraMovingWhenCrossing)
             {
@@ -1211,6 +1210,9 @@ public class PlayerController : MonoBehaviour {
             case ObjectPickedUp.RedLight:
                 ShowRedLight();
                 break;
+            case ObjectPickedUp.Azov:
+                ShowAzov();
+                break;
         }
     }
 
@@ -1231,11 +1233,17 @@ public class PlayerController : MonoBehaviour {
         redLight.SetActive(true);
     }
 
+    public void ShowAzov()
+    {
+        azovEgg.SetActive(true);
+    }
+
     public void HideItems()
     {
         handsEgg.SetActive(false);
         greenLight.SetActive(false);
         redLight.SetActive(false);
+        azovEgg.SetActive(false);
     }
 
     public void DoAction()
