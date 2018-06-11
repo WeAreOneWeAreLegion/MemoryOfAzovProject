@@ -21,4 +21,9 @@ public class HealthItem : MonoBehaviour
         }
     }
     #endregion
+
+    private void OnEnable()
+    {
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_HealthItemDropped, this.gameObject.transform);
+    }
 }

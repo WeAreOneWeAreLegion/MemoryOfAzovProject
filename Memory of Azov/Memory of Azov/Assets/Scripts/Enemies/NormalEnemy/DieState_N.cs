@@ -15,8 +15,9 @@ public class DieState_N : IEnemyState
 
         timer = Time.time;
         e.StopMovement();
-
+        
         e.ChangeAnimation(Enemy.AnimationState.Die);
+        SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Dead);
     }
 
     public void Execute()

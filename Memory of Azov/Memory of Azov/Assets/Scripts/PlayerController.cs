@@ -665,6 +665,8 @@ public class PlayerController : MonoBehaviour {
                 col.color = lightsChargedGradientColor;
 
                 lightChargingTimer = 1;
+
+                SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargedFlash);
             }
         }
 
@@ -798,7 +800,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else
                 {
-                    //Puerta cerrada por lo que sea, negar con la cabeza
+                    SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_ShakingHead);
                 }
             }
             else if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.FakeWall))
@@ -816,7 +818,7 @@ public class PlayerController : MonoBehaviour {
 
                     myAudioSource.clip = SoundRequest(SoundManager.SoundRequest.P_OpenDoor); //Deberia ser sonido libreria
                     myAudioSource.Play();
-                    //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Bookshelf);
+                    SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Library, this.gameObject.transform);
                     return;
                 }
             }
@@ -879,7 +881,7 @@ public class PlayerController : MonoBehaviour {
         chargindParticles.gameObject.SetActive(true);
         var col = chargindParticles.colorOverLifetime;
         col.color = lightsChargingGradientColor;
-        SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargingFlash, this.gameObject.transform);
+        SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargingFlash);
     }
 
     private void ReleaseLight()
@@ -1166,6 +1168,7 @@ public class PlayerController : MonoBehaviour {
         {
             myAnimator.SetTrigger("Afraid");
             StopByMegaStop();
+            SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_Scared);
         }
 
         myAnimator.SetBool("Combat", true);
@@ -1205,6 +1208,7 @@ public class PlayerController : MonoBehaviour {
     {
         handsEgg.GetComponent<MeshRenderer>().material.mainTexture = EggsManager.Instance.GetCurrentTexture();
         handsEgg.SetActive(true);
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemFound, this.gameObject.transform);
     }
 
     public void ShowGreenLight()
@@ -1241,7 +1245,10 @@ public class PlayerController : MonoBehaviour {
                 faceDirection = Vector3.back;
                 autoFace = true;
             }
-
+            else
+            {
+                SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_ShakingHead);
+            }
             to = null;
         }
         if (co != null)
@@ -1312,6 +1319,7 @@ public class PlayerController : MonoBehaviour {
         {
             myAnimator.SetTrigger("Dead");
             StopByMegaStop();
+            SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_Death);
         }
 
         SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_Damaged);

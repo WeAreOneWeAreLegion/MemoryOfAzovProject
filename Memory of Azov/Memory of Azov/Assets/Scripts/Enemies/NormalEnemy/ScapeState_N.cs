@@ -16,6 +16,7 @@ public class ScapeState_N : IEnemyState
         enemy.ChangeAnimation(Enemy.AnimationState.Scape);
 
         refreshTimer = refreshTime;
+        SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Damaged);
     }
 
     public void Execute()
@@ -33,6 +34,7 @@ public class ScapeState_N : IEnemyState
 
         enemy.EscapeMove();
         enemy.RotateToTarget();
+        SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Damaged);
     }
 
     public void Exit()

@@ -69,7 +69,7 @@ public class WallPaint : LightenableObject
                 particles.SetActive(true);
 
             timer += Time.deltaTime;
-
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
             //Vibrate
             InputsManager.Instance.VibrationByValue(timer / (timeToSpawnObject * 2));
 

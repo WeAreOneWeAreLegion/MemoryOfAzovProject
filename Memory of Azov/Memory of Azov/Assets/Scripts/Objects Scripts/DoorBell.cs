@@ -42,11 +42,13 @@ public class DoorBell : MonoBehaviour {
                 go.transform.position = ghostSpawns[i].position;
                 go.transform.forward = GameManager.Instance.GetPlayer().position - transform.position;
             }
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Lever, this.gameObject.transform);
         }
         else
         {
 			Debug.Log ("Door Open");
             myDoor.OpenByBell();
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_UnlockDoor, this.gameObject.transform);
         }
 
         enabled = false;

@@ -15,10 +15,11 @@ public class StunState_N : IEnemyState
         stunTimer = 0;
 
         enemy.StopMovement();
-
+        
         enemy.ChangeAnimation(Enemy.AnimationState.Stun);
 
         Debug.Log("Enter stun");
+        SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Stunned);
     }
 
     public void Execute()

@@ -61,6 +61,7 @@ public class InterruptorObject : LightenableObject
                 enabled = false;
                 myMat.SetColor("_EmissionColor", emissiveColor);
                 tag = GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.Wall);
+                SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Button, this.gameObject.transform);
             }
         }
     }
