@@ -178,7 +178,8 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void Start()
     {
-        pausePanel.SetActive(false);
+        if (pausePanel)
+            pausePanel.SetActive(false);
 
         //Set-up HUD
         if (!showFPS)
