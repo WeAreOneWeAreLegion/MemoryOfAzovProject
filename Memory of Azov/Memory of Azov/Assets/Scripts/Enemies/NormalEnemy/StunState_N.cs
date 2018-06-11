@@ -18,7 +18,7 @@ public class StunState_N : IEnemyState
         
         enemy.ChangeAnimation(Enemy.AnimationState.Stun);
 
-        Debug.Log("Enter stun");
+		enemy.SpawnStunParticles ();
         SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Stunned);
     }
 

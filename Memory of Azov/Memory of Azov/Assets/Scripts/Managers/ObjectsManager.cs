@@ -19,6 +19,8 @@ public class ObjectsManager : MonoSingleton<ObjectsManager> {
     public GameObject gemPrefab;
     [Tooltip("Prefab del objeto de vida")]
     public GameObject healthPrefab;
+	public GameObject enemyDeathParticles;
+	public GameObject enemyStunParticles;
     #endregion
 
     #region Private Variables

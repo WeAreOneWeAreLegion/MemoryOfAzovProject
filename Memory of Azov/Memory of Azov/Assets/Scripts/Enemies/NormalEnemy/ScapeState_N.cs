@@ -14,6 +14,7 @@ public class ScapeState_N : IEnemyState
 
         enemy.SetTarget(enemy.surrogateTarget);
         enemy.ChangeAnimation(Enemy.AnimationState.Scape);
+		enemy.SpawnDamageParticles ();
 
         refreshTimer = refreshTime;
         SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Damaged);
@@ -39,6 +40,6 @@ public class ScapeState_N : IEnemyState
 
     public void Exit()
     {
-
+		enemy.DestroyDamageParticles ();
     }
 }

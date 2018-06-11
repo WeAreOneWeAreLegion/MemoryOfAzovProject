@@ -52,6 +52,7 @@ public class Enemy : LightenableObject {
     [Tooltip("Meshes donde se aplicaran shaders i efectos")]
     public List<SkinnedMeshRenderer> myMeshRenderers;
     public Transform visual;
+	public GameObject myDamageParticles;
 
     [Header("Drop Variables")]
     [Tooltip("Objeto que deja caer el personaje al morir")]
@@ -75,6 +76,7 @@ public class Enemy : LightenableObject {
     protected bool isDying;
     protected int lanternDamage = 0;
 
+	protected GameObject damageParticles;
     protected Transform target;
     protected Vector3 scapePoint;
     protected Vector3 direction;
@@ -363,7 +365,7 @@ public class Enemy : LightenableObject {
 
         lanternDamage = damageToRecieve;
 
-        myMat.SetColor("_RimColor", Color.magenta);
+        //myMat.SetColor("_RimColor", Color.magenta);
         myMeshRenderers.ForEach(x => x.material = myMat);
         speed = initialSpeed * speedFactorWhenLightened;
     }
@@ -435,6 +437,40 @@ public class Enemy : LightenableObject {
     #endregion
 
     #region Getter Methods
+	public void SpawnDeathParticles(){
+		Instantiate (ObjectsManager.Instance.enemyDeathParticles, visual.position, Quaternion.identity);
+	}
+
+	public void SpawnStunParticles(){
+		GameObject go = Instantiate (ObjectsManager.Instance.enemyStunParticles, visual.position, Quaternion.Euler(180,180,0)) as GameObject;
+
+		Color ghostColor = Color.white;
+
+		switch (currentGhostColor)
+		{
+		case PlayerController.LightColor.Neutral:
+			ghostColor = GameManager.Instance.player.neutralColor;
+			break;
+		case PlayerController.LightColor.Secondary:
+			ghostColor = GameManager.Instance.player.secondColor;
+			break;
+		case PlayerController.LightColor.Third:
+			ghostColor = GameManager.Instance.player.thirdColor;
+			break;
+		}
+
+		var particles = go.GetComponent<ParticleSystem> ().main;
+		particles.startColor = ghostColor;
+	}
+
+	public void SpawnDamageParticles(){
+		myDamageParticles.SetActive (true);
+	}
+
+	public void DestroyDamageParticles(){
+		myDamageParticles.SetActive (false);
+	}
+
     public bool IsCurrentState(IEnemyState state)
     {
         return currentState == state;

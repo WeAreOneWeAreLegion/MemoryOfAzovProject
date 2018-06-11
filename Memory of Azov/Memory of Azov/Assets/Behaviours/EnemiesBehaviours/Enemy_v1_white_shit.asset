@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Enemy_v1_white_shit
   m_EditorClassIdentifier: 
   ghostColor: 0
-  speed: 225
+  speed: 2
   rotationSpeed: 330
   oscilationSpeed: 40
   speedFactorWhenLightened: 1.5
@@ -20,7 +20,7 @@ MonoBehaviour:
   oscilationAmplitude: 2
   immediateFacing: 0
   oscillationMovement: 1
-  initialHp: 1
+  initialHp: 5000
   timeStuned: 1.5
   ghostDamage: 20
   attackRadius: 2

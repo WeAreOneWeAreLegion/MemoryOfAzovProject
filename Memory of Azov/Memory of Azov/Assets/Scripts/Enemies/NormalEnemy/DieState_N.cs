@@ -24,6 +24,7 @@ public class DieState_N : IEnemyState
     {
         if (Time.time >= timer + timeToDesapear)
         {
+			enemy.SpawnDeathParticles ();
             enemy.Die();
             timer = Time.time;
         }

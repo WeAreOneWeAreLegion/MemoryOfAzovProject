@@ -20,7 +20,7 @@ MonoBehaviour:
   oscilationAmplitude: 2
   immediateFacing: 0
   oscillationMovement: 1
-  initialHp: 1
+  initialHp: 120
   timeStuned: 2
   ghostDamage: 25
   attackRadius: 2
