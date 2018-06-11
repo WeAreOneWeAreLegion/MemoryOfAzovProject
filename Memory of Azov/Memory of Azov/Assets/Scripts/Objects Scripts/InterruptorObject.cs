@@ -13,6 +13,7 @@ public class InterruptorObject : LightenableObject
     public PlayerController.LightColor colorToOpenBell;
     [Tooltip("Emissive color")] 
     public Color emissiveColor;
+    public GameObject myRB;
 
     [Header("Own Script Variables")]
     public MeshRenderer myRenderer;
@@ -57,6 +58,7 @@ public class InterruptorObject : LightenableObject
         {
             if (GameManager.Instance.player.IsCurrentLightOfColor(colorToOpenBell))
             {
+                myRB.SetActive(false);
                 myDoor.OpenByBell();
                 enabled = false;
                 myMat.SetColor("_EmissionColor", emissiveColor);

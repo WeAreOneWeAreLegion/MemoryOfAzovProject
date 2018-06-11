@@ -269,7 +269,7 @@ public class PlayerController : MonoBehaviour {
 
     private void LateUpdate() //Animations can be cracked in late update
     {
-		if (currentState == State.Playing)
+		if (currentState == State.Playing && Time.timeScale != 0)
         	RotateByJoystick();
     }
 
@@ -573,11 +573,11 @@ public class PlayerController : MonoBehaviour {
         {
             Enemy gc = g.GetComponent<Enemy>();
 
-            Vector3 ghostPositionWithRadius = GetGhostPositionWithRadius(gc.GetVisualPosition(), gc.ghostSize / 2);
+            Vector3 ghostPositionWithRadius = GetGhostPositionWithRadius(gc.GetVisualPosition(), gc.ghostSize/2);
 
             Debug.DrawLine(lanternLight.transform.position, ghostPositionWithRadius, Color.black, -1, false);
 
-            if (Mathf.Abs(Vector3.Angle((ghostPositionWithRadius - lanternLight.transform.position).normalized, lanternLight.transform.forward)) < lanternDamageLength && (!gc.IsInSight() || gc.IsStunned() != isMaxIntensity))
+            if (Mathf.Abs(Vector3.Angle((ghostPositionWithRadius - lanternLight.transform.position).normalized, lanternLight.transform.forward)) < lanternDamageRadius && (!gc.IsInSight() || gc.IsStunned() != isMaxIntensity))
             {
                 gc.InsideLanternRange(lanternDamage, isMaxIntensity);
             }

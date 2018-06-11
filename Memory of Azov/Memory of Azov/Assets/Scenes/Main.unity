@@ -6263,14 +6263,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentControl: 1
   joystickCompleteControl: 1
-  speed: 4
+  speed: 12
   rotationSpeed: 80
   autoFacingSpeed: 3.5
   lanternRotationSpeed: 65
   angleToStartMoving: 10
   crossDoorTime: 0.5
   lanternDamage: 100
-  lanternDamageRadius: 26.2
+  lanternDamageRadius: 26
   lanternDamageLength: 6.76
   lanternChargingLength: 1
   topLanternAngle: 45
@@ -19606,7 +19606,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 274010655}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
@@ -55663,7 +55663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1928167020}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &784663585
 GameObject:
@@ -68650,6 +68650,7 @@ MonoBehaviour:
   myDoor: {fileID: 1771543594}
   colorToOpenBell: 2
   emissiveColor: {r: 1, g: 0, b: 0, a: 1}
+  myRB: {fileID: 142446882}
   myRenderer: {fileID: 1949045409}
 --- !u!1 &1026697774
 GameObject:
@@ -68989,6 +68990,101 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1034070624}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1034445262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1994753830527036, guid: 1c9a4091c1f7fee40b33973f925d8b57,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1034445263}
+  - component: {fileID: 1034445265}
+  - component: {fileID: 1034445264}
+  m_Layer: 0
+  m_Name: LanternLight - Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1034445263
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4233590454817854, guid: 1c9a4091c1f7fee40b33973f925d8b57,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1034445262}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99998844, y: 0.99998873, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1928167020}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1034445264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114730938797464422, guid: 1c9a4091c1f7fee40b33973f925d8b57,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1034445262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1ad7aa2be8c594cb3a2d7b5b0a1e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 12
+  ScatteringCoef: 0.815
+  ExtinctionCoef: 0.0031
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.1
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.15
+  NoiseIntensity: 3.44
+  NoiseIntensityOffset: 0.2
+  NoiseVelocity: {x: 1, y: 0.3}
+  MaxRayLength: 400
+--- !u!108 &1034445265
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 108212325916311634, guid: 1c9a4091c1f7fee40b33973f925d8b57,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1034445262}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 1, g: 0.9249493, b: 0.72794116, a: 1}
+  m_Intensity: 2.52
+  m_Range: 6.670893
+  m_SpotAngle: 82
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: 0
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 2800000, guid: 2c29c08dd1c0b6749b7cd0fcff7a29fd, type: 3}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &1036621337
 GameObject:
   m_ObjectHideFlags: 0
@@ -76479,7 +76575,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4560431465298892, guid: b2b48ff555cd07640aa75a12d6fe3c64, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 198210138925672864, guid: b2b48ff555cd07640aa75a12d6fe3c64,
         type: 2}
@@ -92376,7 +92472,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
+  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
   m_LocalPosition: {x: 0.1, y: -0.02, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -108469,6 +108565,7 @@ Transform:
   m_LocalPosition: {x: -0.0000027469293, y: 0.00000018912681, z: 0.2200002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1034445263}
   - {fileID: 784318105}
   - {fileID: 1611285314}
   m_Father: {fileID: 1556424699}
@@ -112662,6 +112759,7 @@ MonoBehaviour:
   myDoor: {fileID: 1293009421}
   colorToOpenBell: 1
   emissiveColor: {r: 0.24705882, g: 0.9254902, b: 0.36078432, a: 1}
+  myRB: {fileID: 547154334}
   myRenderer: {fileID: 1367988235}
 --- !u!1 &2062564447
 GameObject:

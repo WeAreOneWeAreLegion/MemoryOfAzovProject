@@ -16,7 +16,7 @@ public class Enemy_N : Enemy
     {
         base.Update();
 
-        if (IsReceivingDamage())
+        if (IsReceivingDamage() && currentState.GetType() != typeof(AwakeState_N))
             RecieveDamage();
 
         if (!GameManager.Instance.player.IsPlayerAlive())
