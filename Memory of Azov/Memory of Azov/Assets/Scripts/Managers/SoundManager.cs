@@ -8,7 +8,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public enum SoundRequestAmbient { A_Rain, A_Thunder }
     public enum SoundRequestPlayer { P_Damaged, P_Death, P_Scared, P_ShakingHead, P_StepsMarble, P_StepsCarpet, P_LowHealth }
     public enum SoundRequestGhost { G_Attack, G_Boo, G_Damaged, G_Dead, G_Laugh, G_LaughALot, G_Stunned }
-    public enum SoundRequestScenario { S_Button, S_DoorClose, S_DoorKnob, S_DoorOpen, S_Fireplace, S_FurnitureShaking, S_HealthItemDropped,
+    public enum SoundRequestScenario { S_Button, S_LightbulbSpawns, S_LightbulbFalls, S_DoorOpen, S_Fireplace, S_FurnitureShaking, S_HealthItemDropped,
         S_HealthItemFound, S_ItemFound, S_ItemParticles, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
     public enum SoundRequestFlashlight { F_ChargingFlash, F_ChargedFlash, F_Noise, F_On, F_Off }
     public enum SoundRequestMenu { Me_Movement, Me_Select, Me_SelectBack }
@@ -105,12 +105,12 @@ public class SoundManager : MonoSingleton<SoundManager> {
     FMOD.Studio.EventInstance soundEventScenarioButtonSound;
 
     [FMODUnity.EventRef]
-    public string scenarioDoorCloseSound;
-    FMOD.Studio.EventInstance soundEventScenarioDoorCloseSound;
+    public string scenarioLightbulbSpawnsSound;
+    FMOD.Studio.EventInstance soundEventScenarioLightbulbSpawnsSound;
 
     [FMODUnity.EventRef]
-    public string scenarioDoorKnobSound;
-    FMOD.Studio.EventInstance soundEventScenarioDoorKnobSound;
+    public string scenarioLightbulbFallsSound;
+    FMOD.Studio.EventInstance soundEventScenarioLightbulbFallsSound;
 
     [FMODUnity.EventRef]
     public string scenarioDoorOpenSound;
@@ -239,8 +239,8 @@ public class SoundManager : MonoSingleton<SoundManager> {
 
         //Scenario
         soundEventScenarioButtonSound = FMODUnity.RuntimeManager.CreateInstance(scenarioButtonSound);
-        soundEventScenarioDoorCloseSound = FMODUnity.RuntimeManager.CreateInstance(scenarioDoorCloseSound);
-        soundEventScenarioDoorKnobSound = FMODUnity.RuntimeManager.CreateInstance(scenarioDoorKnobSound);
+        soundEventScenarioLightbulbSpawnsSound = FMODUnity.RuntimeManager.CreateInstance(scenarioLightbulbSpawnsSound);
+        soundEventScenarioLightbulbFallsSound = FMODUnity.RuntimeManager.CreateInstance(scenarioLightbulbFallsSound);
         soundEventScenarioDoorOpenSound = FMODUnity.RuntimeManager.CreateInstance(scenarioDoorOpenSound);
         soundEventScenarioFireplaceSound = FMODUnity.RuntimeManager.CreateInstance(scenarioFireplaceSound);
         soundEventScenarioFurnitureShakingSound = FMODUnity.RuntimeManager.CreateInstance(scenarioFurnitureShakingSound);
@@ -362,11 +362,11 @@ public class SoundManager : MonoSingleton<SoundManager> {
             case SoundRequestScenario.S_Button:
                 PlayScenarioButtonSound();
                 break;
-            case SoundRequestScenario.S_DoorClose:
-                PlayScenarioDoorCloseSound();
+            case SoundRequestScenario.S_LightbulbFalls:
+                PlayScenarioLightbulbSpawnsSound();
                 break;
-            case SoundRequestScenario.S_DoorKnob:
-                PlayScenarioDoorKnobSound();
+            case SoundRequestScenario.S_LightbulbSpawns:
+                PlayScenarioLightbulbFallsSound();
                 break;
             case SoundRequestScenario.S_DoorOpen:
                 PlayScenarioDoorOpenSound();
@@ -375,7 +375,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 PlayScenarioFireplaceSound();
                 break;
             case SoundRequestScenario.S_FurnitureShaking:
-                PlayScenarioFireplaceSound();
+                PlayScenarioFurnitureShakingSound();
                 break;
             case SoundRequestScenario.S_HealthItemDropped:
                 PlayScenarioHealItemDroppedSound();
@@ -506,8 +506,8 @@ public class SoundManager : MonoSingleton<SoundManager> {
     void UpdateScenarioSounds()
     {
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioButtonSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioDoorCloseSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioDoorKnobSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioLightbulbSpawnsSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioLightbulbFallsSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioDoorOpenSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioFireplaceSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventScenarioHealItemDroppedSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
@@ -643,14 +643,14 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventScenarioButtonSound.start();
     }
 
-    public void PlayScenarioDoorCloseSound()
+    public void PlayScenarioLightbulbSpawnsSound()
     {
-        soundEventScenarioDoorCloseSound.start();
+        soundEventScenarioLightbulbSpawnsSound.start();
     }
 
-    public void PlayScenarioDoorKnobSound()
+    public void PlayScenarioLightbulbFallsSound()
     {
-        soundEventScenarioDoorKnobSound.start();
+        soundEventScenarioLightbulbFallsSound.start();
     }
 
     public void PlayScenarioDoorOpenSound()

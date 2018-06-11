@@ -179,6 +179,7 @@ public class TransparentObject : MonoBehaviour {
 
         firstCall = isFirstCall;
         isShaking = true;
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_FurnitureShaking, this.gameObject.transform);
     }
 
     public void ActiveInternalAction()
