@@ -10,9 +10,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public enum SoundRequestGhost { G_Attack, G_Boo, G_Damaged, G_Dead, G_Laugh, G_LaughALot, G_Stunned }
     public enum SoundRequestScenario { S_Button, S_LightbulbSpawns, S_LightbulbFalls, S_DoorOpen, S_Fireplace, S_FireplaceOff, S_FurnitureShaking, S_HealthItemDropped,
         S_HealthItemFound, S_ItemFound, S_ItemParticles, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
-    public enum SoundRequestFlashlight { F_ChargingFlash, F_ChargedFlash, F_ChargedFlashOff, F_Noise, F_On, F_Off }
+    public enum SoundRequestFlashlight { F_ChargingFlash, F_ChargedFlash, F_ChargedFlashOff, F_Flash, F_On, F_Off }
     public enum SoundRequestMenu { Me_Movement, Me_Select, Me_SelectBack }
-    public enum SoundRequestMusic { Mu_HouseOn, MU_CombatOn, MU_GameOverOn, MU_HouseOff, MU_CombatOff, MU_GameOverOff }
+    public enum SoundRequestMusic { Mu_HouseOn, MU_CombatOn, MU_GameOverOn, MU_VictoryOn, MU_HouseOff, MU_CombatOff, MU_GameOverOff, MU_VictoryOff }
 
     #region Public Variables
     [Header("\t    Own Script Variables")]
@@ -174,8 +174,8 @@ public class SoundManager : MonoSingleton<SoundManager> {
     FMOD.Studio.EventInstance soundEventFlashlightChargedFlashSound;
 
     [FMODUnity.EventRef]
-    public string flashlightNoiseSound;
-    FMOD.Studio.EventInstance soundEventFlashlightNoiseSound;
+    public string flashlightFlashSound;
+    FMOD.Studio.EventInstance soundEventFlashlightFlashSound;
 
     [FMODUnity.EventRef]
     public string flashlightOffSound;
@@ -210,6 +210,10 @@ public class SoundManager : MonoSingleton<SoundManager> {
     [FMODUnity.EventRef]
     public string gameOverMusic;
     FMOD.Studio.EventInstance soundEventGameOverMusic;
+
+    [FMODUnity.EventRef]
+    public string victoryMusic;
+    FMOD.Studio.EventInstance soundEventVictoryMusic;
     #endregion
 
     void Start()
@@ -258,7 +262,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
         //Flashlight
         soundEventFlashlightChargingFlashSound = FMODUnity.RuntimeManager.CreateInstance(flashlightChargingFlashSound);
         soundEventFlashlightChargedFlashSound = FMODUnity.RuntimeManager.CreateInstance(flashlightChargedFlashSound);
-        soundEventFlashlightNoiseSound = FMODUnity.RuntimeManager.CreateInstance(flashlightNoiseSound);
+        soundEventFlashlightFlashSound = FMODUnity.RuntimeManager.CreateInstance(flashlightFlashSound);
         soundEventFlashlightOffSound = FMODUnity.RuntimeManager.CreateInstance(flashlightOffSound);
         soundEventFlashlightOnSound = FMODUnity.RuntimeManager.CreateInstance(flashlightOnSound);
 
@@ -271,6 +275,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventHouseMusic = FMODUnity.RuntimeManager.CreateInstance(houseMusic);
         soundEventCombatMusic = FMODUnity.RuntimeManager.CreateInstance(combatMusic);
         soundEventGameOverMusic = FMODUnity.RuntimeManager.CreateInstance(gameOverMusic);
+        soundEventVictoryMusic = FMODUnity.RuntimeManager.CreateInstance(victoryMusic);
 
         PlayHouseMusic();
     }
@@ -429,8 +434,8 @@ public class SoundManager : MonoSingleton<SoundManager> {
             case SoundRequestFlashlight.F_ChargedFlashOff:
                 StopFlashlightChargedFlashSound();
                 break;
-            case SoundRequestFlashlight.F_Noise:
-                PlayFlashlightNoiseSound();
+            case SoundRequestFlashlight.F_Flash:
+                PlayFlashlightFlashSound();
                 break;
             case SoundRequestFlashlight.F_Off:
                 PlayFlashlightOffSound();
@@ -470,6 +475,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
             case SoundRequestMusic.MU_GameOverOn:
                 PlayGameOverMusic();
                 break;
+            case SoundRequestMusic.MU_VictoryOn:
+                PlayVictoryMusic();
+                break;
             case SoundRequestMusic.MU_HouseOff:
                 StopHouseMusic();
                 break;
@@ -478,6 +486,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 break;
             case SoundRequestMusic.MU_GameOverOff:
                 StopGameOverMusic();
+                break;
+            case SoundRequestMusic.MU_VictoryOff:
+                StopVictoryMusic();
                 break;
         }
     }
@@ -535,7 +546,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     {
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightChargingFlashSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightChargedFlashSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightNoiseSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightFlashSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightOffSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEventFlashlightOnSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
     }
@@ -739,9 +750,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventFlashlightChargedFlashSound.start();
     }
 
-    public void PlayFlashlightNoiseSound()
+    public void PlayFlashlightFlashSound()
     {
-        soundEventFlashlightNoiseSound.start();
+        soundEventFlashlightFlashSound.start();
     }
 
     public void PlayFlashlightOffSound()
@@ -786,6 +797,11 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public void PlayGameOverMusic()
     {
         soundEventGameOverMusic.start();
+    }
+
+    public void PlayVictoryMusic()
+    {
+        soundEventVictoryMusic.start();
     }
     #endregion
 
@@ -839,6 +855,130 @@ public class SoundManager : MonoSingleton<SoundManager> {
     {
         //soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void StopVictoryMusic()
+    {
+        //soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEventVictoryMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+    #endregion
+
+    #region Pause Sound Methods
+    public void PauseAllSoundsButMusic()
+    {
+        //Ambient
+        soundEventAmbientRainSound.setPaused(true);
+        soundEventAmbientThunderSound.setPaused(true);
+
+        //Character
+        soundEventCharacterDamagedSound.setPaused(true);
+        soundEventCharacterDeathSound.setPaused(true);
+        soundEventCharacterScaredSound.setPaused(true);
+        soundEventCharacterShakingHeadSound.setPaused(true);
+        soundEventCharacterStepsCarpetSound.setPaused(true);
+        soundEventCharacterStepsMarbleSound.setPaused(true);
+        soundEventCharacterLowHealthSound.setPaused(true);
+
+        //Ghosts
+        soundEventGhostAttackSound.setPaused(true);
+        soundEventGhostBooSound.setPaused(true);
+        soundEventGhostDamagedSound.setPaused(true);
+        soundEventGhostDeadSound.setPaused(true);
+        soundEventGhostLaughSound.setPaused(true);
+        soundEventGhostLaughALotSound.setPaused(true);
+        soundEventGhostStunnedSound.setPaused(true);
+
+        //Scenario
+        soundEventScenarioButtonSound.setPaused(true);
+        soundEventScenarioLightbulbSpawnsSound.setPaused(true);
+        soundEventScenarioLightbulbFallsSound.setPaused(true);
+        soundEventScenarioDoorOpenSound.setPaused(true);
+        soundEventScenarioFireplaceSound.setPaused(true);
+        soundEventScenarioFurnitureShakingSound.setPaused(true);
+        soundEventScenarioHealItemDroppedSound.setPaused(true);
+        soundEventScenarioHealItemFoundSound.setPaused(true);
+        soundEventScenarioItemFoundSound.setPaused(true);
+        soundEventScenarioItemLightParticlesSound.setPaused(true);
+        soundEventScenarioLockedDoorSound.setPaused(true);
+        soundEventScenarioSpecialItemFoundSound.setPaused(true);
+        soundEventScenarioUnlockDoorSound.setPaused(true);
+        soundEventScenarioLeverSound.setPaused(true);
+        soundEventScenarioLibrarySound.setPaused(true);
+        soundEventScenarioPictureFallsSound.setPaused(true);
+
+        //Flashlight
+        soundEventFlashlightChargingFlashSound.setPaused(true);
+        soundEventFlashlightChargedFlashSound.setPaused(true);
+        soundEventFlashlightFlashSound.setPaused(true);
+        soundEventFlashlightOffSound.setPaused(true);
+        soundEventFlashlightOnSound.setPaused(true);
+    }
+
+    public void ResumeAllSoundsButMusic()
+    {
+        //Ambient
+        soundEventAmbientRainSound.setPaused(false);
+        soundEventAmbientThunderSound.setPaused(false);
+
+        //Character
+        soundEventCharacterDamagedSound.setPaused(false);
+        soundEventCharacterDeathSound.setPaused(false);
+        soundEventCharacterScaredSound.setPaused(false);
+        soundEventCharacterShakingHeadSound.setPaused(false);
+        soundEventCharacterStepsCarpetSound.setPaused(false);
+        soundEventCharacterStepsMarbleSound.setPaused(false);
+        soundEventCharacterLowHealthSound.setPaused(false);
+
+        //Ghosts
+        soundEventGhostAttackSound.setPaused(false);
+        soundEventGhostBooSound.setPaused(false);
+        soundEventGhostDamagedSound.setPaused(false);
+        soundEventGhostDeadSound.setPaused(false);
+        soundEventGhostLaughSound.setPaused(false);
+        soundEventGhostLaughALotSound.setPaused(false);
+        soundEventGhostStunnedSound.setPaused(false);
+
+        //Scenario
+        soundEventScenarioButtonSound.setPaused(false);
+        soundEventScenarioLightbulbSpawnsSound.setPaused(false);
+        soundEventScenarioLightbulbFallsSound.setPaused(false);
+        soundEventScenarioDoorOpenSound.setPaused(false);
+        soundEventScenarioFireplaceSound.setPaused(false);
+        soundEventScenarioFurnitureShakingSound.setPaused(false);
+        soundEventScenarioHealItemDroppedSound.setPaused(false);
+        soundEventScenarioHealItemFoundSound.setPaused(false);
+        soundEventScenarioItemFoundSound.setPaused(false);
+        soundEventScenarioItemLightParticlesSound.setPaused(false);
+        soundEventScenarioLockedDoorSound.setPaused(false);
+        soundEventScenarioSpecialItemFoundSound.setPaused(false);
+        soundEventScenarioUnlockDoorSound.setPaused(false);
+        soundEventScenarioLeverSound.setPaused(false);
+        soundEventScenarioLibrarySound.setPaused(false);
+        soundEventScenarioPictureFallsSound.setPaused(false);
+
+        //Flashlight
+        soundEventFlashlightChargingFlashSound.setPaused(false);
+        soundEventFlashlightChargedFlashSound.setPaused(false);
+        soundEventFlashlightFlashSound.setPaused(false);
+        soundEventFlashlightOffSound.setPaused(false);
+        soundEventFlashlightOnSound.setPaused(false);
+    }
+
+    public void PauseAllSoundsAndMusic()
+    {
+        FMODUnity.RuntimeManager.PauseAllEvents(true);
+    }
+
+    /*public void PauseAllSoundsAndMusic2()
+    {
+        FMODUnity.RuntimeManager.PauseAllEvents(true);
+        soundEventHouseMusic.setPaused(false);
+    }*/
+
+    public void ResumeAllSoundsAndMusic()
+    {
+        FMODUnity.RuntimeManager.PauseAllEvents(false);
     }
     #endregion
 

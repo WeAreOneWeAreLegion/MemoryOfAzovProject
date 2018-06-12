@@ -694,6 +694,7 @@ public class GameManager : MonoSingleton<GameManager> {
     #region Pause Methods
     private void PauseActions()
     {
+        SoundManager.Instance.PauseAllSoundsButMusic();
         GetLastSelectedButton();
         //BoldenAndUnboldenButton();
 
@@ -745,6 +746,7 @@ public class GameManager : MonoSingleton<GameManager> {
         pausePanel.SetActive(false);
         pauseMenuGO.SetActive(false);
         Time.timeScale = 1;
+        SoundManager.Instance.ResumeAllSoundsButMusic();
     }
 
     #region Restart Button
@@ -892,7 +894,6 @@ public class GameManager : MonoSingleton<GameManager> {
             lastSelectedButton = currentSelectedButton;
 
             currentSelectedButton = myEventSystem.currentSelectedGameObject;
-            SoundManager.Instance.MenuSoundEnum(SoundManager.SoundRequestMenu.Me_Movement);
         }
     }
 
