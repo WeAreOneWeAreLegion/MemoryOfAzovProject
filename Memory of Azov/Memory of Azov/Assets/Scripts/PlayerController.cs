@@ -1296,11 +1296,13 @@ public class PlayerController : MonoBehaviour {
     public void ShowGreenLight()
     {
         greenLight.SetActive(true);
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_SpecialItemFound, this.gameObject.transform);
     }
 
     public void ShowRedLight()
     {
         redLight.SetActive(true);
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_SpecialItemFound, this.gameObject.transform);
     }
 
     public void ShowAzov()
