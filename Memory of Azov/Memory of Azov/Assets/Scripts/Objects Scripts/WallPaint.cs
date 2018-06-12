@@ -65,11 +65,12 @@ public class WallPaint : LightenableObject
     {
         if (insideRadius)
         {
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
             if (!particles.activeInHierarchy)
                 particles.SetActive(true);
 
             timer += Time.deltaTime;
-            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
+            
             //Vibrate
             InputsManager.Instance.VibrationByValue(timer / (timeToSpawnObject * 2));
 
@@ -116,7 +117,7 @@ public class WallPaint : LightenableObject
                 timer = 0;
 
                 //Sonido
-                SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
+                SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticlesOff, this.gameObject.transform);
             }
         }
     }

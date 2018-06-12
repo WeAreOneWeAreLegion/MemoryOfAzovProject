@@ -136,7 +136,7 @@ MonoBehaviour:
   - {fileID: 114965505212304680}
   MasterBankRef: {fileID: 114822544594544796}
   StringsBankRef: {fileID: 114568785310728572}
-  stringsBankWriteTime: 636644399406523224
+  stringsBankWriteTime: 636644420453240065
   cacheVersion: 2
 --- !u!114 &114000270854373410
 MonoBehaviour:
@@ -11526,7 +11526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Our FMOD Project\Desktop\Master Bank.strings.bank
-  lastModified: 636644399406523224
+  lastModified: 636644420453240065
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -17073,7 +17073,7 @@ MonoBehaviour:
   Path: "D:\\Escritorio\\Escritorio actual\\Unity 3D tercer a\xF1o\\Tercer Trimestre\\Proyecto\\Carpeta
     de GitHub definitiva\\MemoryOfAzovProject\\Memory of Azov\\Memory of Azov\\Assets\\Our
     FMOD Project\\Desktop\\Master Bank.bank"
-  lastModified: 636644399406433280
+  lastModified: 636644420453190052
   LoadResult: 0
   FileSizes:
   - Name: 
