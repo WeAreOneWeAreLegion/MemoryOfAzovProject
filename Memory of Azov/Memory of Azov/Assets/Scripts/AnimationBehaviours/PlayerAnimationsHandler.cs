@@ -9,6 +9,7 @@ public class PlayerAnimationsHandler : MonoBehaviour {
     public void Step()
     {
         //Sound
+        SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_StepsMarble);
     }
 
     public void Action()
