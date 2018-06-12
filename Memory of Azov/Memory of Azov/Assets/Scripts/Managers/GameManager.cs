@@ -919,6 +919,7 @@ public class GameManager : MonoSingleton<GameManager> {
     #region Game State Methods
     public void CallPlayerDeath()
     {//Game Over
+        SoundManager.Instance.MusicSoundEnum(SoundManager.SoundRequestMusic.MU_GameOverOn);
         InputsManager.Instance.DeactiveVibration();
         gameOverPanel.SetActive(true);
         StartCoroutine(HighlightButton(gameOverRestartButton));
@@ -932,6 +933,7 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void CallPlayerVictory()
     {//Victory
+        SoundManager.Instance.MusicSoundEnum(SoundManager.SoundRequestMusic.MU_VictoryOn);
         int hours = ((int)Time.timeSinceLevelLoad - (int)gameTimeStart) / 3600;
         int minutes = Mathf.Abs(((int)Time.timeSinceLevelLoad - (int)gameTimeStart) / 60);
         int seconds = ((int)Time.timeSinceLevelLoad - (int)gameTimeStart) % 60;
