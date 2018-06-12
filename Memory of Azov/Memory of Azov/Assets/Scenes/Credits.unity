@@ -1159,10 +1159,11 @@ MonoBehaviour:
   ghostLaughALotSound: event:/Ghost/Ghost_LaughtALot
   ghostStunnedSound: event:/Ghost/Ghost_Stunned
   scenarioButtonSound: event:/Escenario/FX_Button
-  scenarioDoorCloseSound: event:/Escenario/FX_DoorClose
-  scenarioDoorKnobSound: event:/Escenario/FX_DoorKnob
+  scenarioLightbulbSpawnsSound: 
+  scenarioLightbulbFallsSound: 
   scenarioDoorOpenSound: event:/Escenario/FX_DoorOpen
   scenarioFireplaceSound: event:/Escenario/FX_Fireplace
+  scenarioFurnitureShakingSound: 
   scenarioHealItemDroppedSound: event:/Escenario/FX_HealthItemDropped
   scenarioHealItemFoundSound: event:/Escenario/FX_HealthItemFound
   scenarioItemFoundSound: event:/Escenario/FX_ItemFound
@@ -1174,6 +1175,7 @@ MonoBehaviour:
   scenarioLibrarySound: event:/Escenario/FX_Library
   scenarioPictureFallsSound: event:/Escenario/FX_PictureFalls
   flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
+  flashlightChargedFlashSound: 
   flashlightNoiseSound: event:/Linterna/Flashlight_Noise
   flashlightOffSound: event:/Linterna/Flashlight_Off
   flashlightOnSound: event:/Linterna/Flashlight_On
@@ -1438,7 +1440,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 760617340}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1331577628
