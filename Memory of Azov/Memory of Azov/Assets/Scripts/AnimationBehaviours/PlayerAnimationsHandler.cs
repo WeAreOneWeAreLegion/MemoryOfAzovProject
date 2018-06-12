@@ -6,6 +6,11 @@ public class PlayerAnimationsHandler : MonoBehaviour {
 
     public PlayerController myController;
 
+    public void Step()
+    {
+        //Sound
+    }
+
     public void Action()
     {
         myController.DoAction();

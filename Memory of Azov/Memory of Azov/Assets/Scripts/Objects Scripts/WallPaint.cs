@@ -114,6 +114,8 @@ public class WallPaint : LightenableObject
 
                 InputsManager.Instance.DeactiveVibration();
                 timer = 0;
+
+                //Sonido
             }
         }
     }

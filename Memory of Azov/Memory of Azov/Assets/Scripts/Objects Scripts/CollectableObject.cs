@@ -42,7 +42,14 @@ public class CollectableObject : MonoBehaviour {
 
     public void OnCollisionEnter(Collision collision)
     {
-        GetComponent<Rigidbody>().isKinematic = true;
+        if (!GetComponent<Rigidbody>().isKinematic)
+        {
+            GetComponent<Rigidbody>().isKinematic = true;
+            if (currentCType == CollectableType.GreenLight)
+            {
+                //Sonido
+            }
+        }
     }
 
     private IEnumerator PickUpCoroutine(PlayerController.ObjectPickedUp pick)
