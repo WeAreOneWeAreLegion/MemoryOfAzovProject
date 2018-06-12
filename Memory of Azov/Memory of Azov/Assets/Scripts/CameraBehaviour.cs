@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 
 public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
 
@@ -176,8 +175,6 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
             }
             catch
             {
-                Debug.LogWarning("Error no back wall");
-                EditorApplication.isPaused = true;
             }
             //Debug.Log("Back wall name: "+hit.transform.name + " de: " + hit.transform.parent.parent.name);
 

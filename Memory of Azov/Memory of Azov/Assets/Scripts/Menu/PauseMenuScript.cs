@@ -187,7 +187,7 @@ public class PauseMenuScript : MonoBehaviour {
     {
         Debug.Log("Quitting the game...");
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; //si le damos al botón de Quit en Unity, parará de jugar
+        //UnityEditor.EditorApplication.isPlaying = false; //si le damos al botón de Quit en Unity, parará de jugar
 #else
         Application.Quit(); //si le damos Quit fuera de Unity, cerrará el programa
 #endif
