@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a7b61d038369b478331e42f0cba276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelOffset: {x: -30, y: 2, z: 0}
+  panelOffset: {x: -30, y: 12, z: 0}
   healthBar: {fileID: 114194053342054604}
 --- !u!222 &222153599796824254
 CanvasRenderer:
