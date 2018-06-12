@@ -822,7 +822,6 @@ public class PlayerController : MonoBehaviour {
 
                     myAudioSource.clip = SoundRequest(SoundManager.SoundRequest.P_OpenDoor);
                     myAudioSource.Play();
-                    SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_DoorOpen, this.gameObject.transform);
 
                     return;
                 }

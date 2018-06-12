@@ -408,6 +408,7 @@ public class ConectionScript : LightenableObject {
         else
             myAnimator.SetBool("LeftOpen", true);
 
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_DoorOpen, this.gameObject.transform);
         myCollider.enabled = false;
     }
     #endregion

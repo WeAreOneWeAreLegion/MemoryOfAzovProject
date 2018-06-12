@@ -35,7 +35,7 @@ public class ScapeState_N : IEnemyState
 
         enemy.EscapeMove();
         enemy.RotateToTarget();
-        SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Damaged);
+        //SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Damaged);
     }
 
     public void Exit()

@@ -58883,10 +58883,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a366ee19be7a304db8d1d85f5152e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDoorType: 0
+  currentDoorType: 3
   isLightSwitcher: 0
   lightenedTimeToShow: 3
-  isRightOpener: 0
+  isRightOpener: 1
   activeRedLight: 1
   isThroneDoor: 0
   isFinalDoor: 0
@@ -87282,7 +87282,7 @@ MonoBehaviour:
   gemsRoom: {fileID: 2121852185}
   finalDoorParticles: {fileID: 620007469}
   lightChandelier: {fileID: 134463252}
-  desiredMaxIntensityChandelier: 2
+  desiredMaxIntensityChandelier: 1
   gemsPanel: {fileID: 1132856621}
   diamondEggMask:
   - {fileID: 1521535862}
@@ -103030,7 +103030,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
+  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
   m_LocalPosition: {x: 0.1, y: -0.02, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -122483,7 +122483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2039270003
 Transform:
   m_ObjectHideFlags: 0
