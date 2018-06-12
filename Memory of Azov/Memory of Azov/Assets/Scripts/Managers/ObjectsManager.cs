@@ -29,6 +29,11 @@ public class ObjectsManager : MonoSingleton<ObjectsManager> {
     private List<GameObject> healthPoolList = new List<GameObject>();
     #endregion
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         CreateStarterItems();

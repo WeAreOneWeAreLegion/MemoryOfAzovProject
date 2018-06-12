@@ -21,7 +21,9 @@ public class CrankManager : MonoBehaviour {
         int randomBell = Random.Range(0, crankPuzzles.Count);
 
         crankPuzzles[randomBell].isFakeBell = false;
-        visualsImagesPuzzles[randomBell].color = Color.green;
+
+        Transform crank = visualsImagesPuzzles[randomBell].transform;
+        crank.Rotate(crank.forward * 180);
     }
 
 }

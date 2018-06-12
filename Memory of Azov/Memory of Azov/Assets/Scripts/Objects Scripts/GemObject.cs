@@ -79,6 +79,7 @@ public class GemObject : MonoBehaviour
         GetComponent<Collider>().isTrigger = false;
 
         myMesh.enabled = true;
+        pickedUp = false;
 
         autoDestroy = false;
     }

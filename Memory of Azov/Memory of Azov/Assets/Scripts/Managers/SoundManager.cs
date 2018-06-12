@@ -217,6 +217,11 @@ public class SoundManager : MonoSingleton<SoundManager> {
     FMOD.Studio.EventInstance soundEventVictoryMusic;
     #endregion
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         //soundEvent = FMODUnity.RuntimeManager.CreateInstance(selectSound); //to tie the sounds together

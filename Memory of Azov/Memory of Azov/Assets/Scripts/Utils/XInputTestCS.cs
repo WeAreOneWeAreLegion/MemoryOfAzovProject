@@ -12,6 +12,11 @@ public class XInputTestCS : MonoSingleton<XInputTestCS>
     private float pack;
 
     // Use this for initialization
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         // No need to initialize anything for the plugin

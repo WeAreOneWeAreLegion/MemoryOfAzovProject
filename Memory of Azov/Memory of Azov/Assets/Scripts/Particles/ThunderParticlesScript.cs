@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class ThunderParticlesScript : MonoBehaviour {
 
-    public GameObject thunderRenderPrefab;
     public GameObject thunderLightPrefab;
-
-    private GameObject thunderRenderLighting;
-    private GameObject thunderLightLighting;
 
     [Header("Random range variables")]
     [Tooltip("Esta variable es el número inclusive, la segunda variable es el número exclusive")]
@@ -20,46 +16,43 @@ public class ThunderParticlesScript : MonoBehaviour {
     private float spawnTime = 10; // one instance every interval seconds
     private float elapsedTime = 0f; // time elapsed since last generation
 
-    private bool randomTimerSet = false;
+    private void OnEnable()
+    {
+        spawnTime = Random.Range(firstNumber, secondNumber);
+    }
 
     void Update()
     {
-        if (!randomTimerSet)
-        {
-            spawnTime = Random.Range(firstNumber, secondNumber);//(5, 11);
-            randomTimerSet = true;
-        }
-
         if (elapsedTime >= spawnTime)
         {
             SpawnThunder();
+            spawnTime = Random.Range(firstNumber, secondNumber);
             elapsedTime = 0;
-            randomTimerSet = false;
         }
         else
         {
             elapsedTime += Time.deltaTime;
-            if (elapsedTime >= 2 && elapsedTime <= 3f)
-            {
-                if (thunderLightPrefab)
-                {
+            if (elapsedTime >= 2.5f)
+                if (thunderLightPrefab.activeInHierarchy)
                     DestroyThunder();
-                }
-            }
         }
     }
 
     void SpawnThunder()
     {
-        //thunderRenderLighting = (GameObject)Instantiate(thunderRenderPrefab, this.gameObject.transform.position, thunderRenderPrefab.transform.rotation);
-		SoundManager.Instance.AmbientSoundEnum(SoundManager.SoundRequestAmbient.A_Thunder, this.gameObject.transform);
-		thunderLightLighting = (GameObject)Instantiate(thunderLightPrefab, thunderLightPrefab.transform.position, thunderLightPrefab.transform.rotation);
-        
+        StartCoroutine(SpawnLightSound());
+        thunderLightPrefab.SetActive(true);
+    }
+
+    private IEnumerator SpawnLightSound()
+    {
+        yield return new WaitForSeconds(2.2f);
+        SoundManager.Instance.AmbientSoundEnum(SoundManager.SoundRequestAmbient.A_Thunder, this.gameObject.transform);
+        yield return null;
     }
 
     void DestroyThunder()
     {
-        //Destroy(thunderRenderLighting, thunderRenderPrefab.GetComponent<ParticleSystem>().startLifetime);
-        Destroy(thunderLightLighting, thunderLightPrefab.GetComponent<ParticleSystem>().startLifetime);
+        thunderLightPrefab.SetActive(false);
     }
 }

@@ -89,6 +89,11 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     private Transform cinematicTarget;
     #endregion
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         if (target == null)
@@ -140,6 +145,9 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
 
         if (dontFollow)
         {
+            currentSurrogate.position = transform.position;
+            currentSurrogate.rotation = transform.rotation;
+
             return;
         }
 

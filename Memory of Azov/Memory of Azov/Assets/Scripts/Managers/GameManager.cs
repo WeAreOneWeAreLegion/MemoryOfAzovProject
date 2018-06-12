@@ -64,6 +64,9 @@ public class GameManager : MonoSingleton<GameManager> {
     [Header("Gems Panel")]
     public GameObject gemsCamera;
     public GameObject gemsRoom;
+    public GameObject finalDoorParticles;
+    public Light lightChandelier;
+    public float desiredMaxIntensityChandelier;
     [Tooltip("Referencia to gems panel")]
     public RectTransform gemsPanel;
     [Tooltip("Referencia a los huevos del hud")]
@@ -133,6 +136,17 @@ public class GameManager : MonoSingleton<GameManager> {
     public Text ghostHuntedText;
     public Text healthLostText;
     public Text timePlayedText;
+    public GameObject goldMedal;
+    public GameObject silverMedal;
+    public GameObject bronzeMedal;
+
+    [Header("Final Score Evaluation Variables")]
+    public int lowestScoreHp;
+    public int highestScoreHp;
+    public int minGhosts;
+    public int maxGhosts;
+    public float minTimePlayed;
+    public float maxTimePlayed;
 
     [Header("Tags List")]
     [Tooltip("0.Player, 1.Enemy, 2.Wall, 3.Door 4.DoorTrigger 5.Bell 6.HittableObjets 7.FakeWall")]
@@ -172,6 +186,8 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void Awake()
     {
+        instance = this;
+
         Time.timeScale = 1;
         gameTimeStart = Time.timeSinceLevelLoad;
     }
@@ -572,10 +588,28 @@ public class GameManager : MonoSingleton<GameManager> {
 
     IEnumerator AddNewGemGathered(bool isAddingAzov)
     {
-        yield return new WaitForSecondsRealtime(timeBeforeAddingGem);
+        yield return new WaitForSeconds(timeBeforeAddingGem);
         VisualGemAdd(isAddingAzov);
-        yield return new WaitForSecondsRealtime(timeShowingGemsPanel);
-        showGemsPanel = true;
+        yield return new WaitForSeconds(1f);
+        lightChandelier.intensity += desiredMaxIntensityChandelier / 8;
+        yield return new WaitForSeconds(timeShowingGemsPanel - 0.8f);
+        if (HasFinalKey())
+        {
+            //Rotate to x point
+            gemsCamera.GetComponent<CameraChandelierBehaviour>().activate = true;
+            //Wait for X seconds
+            yield return new WaitForSeconds(2.2f);
+            //Active door particles
+            finalDoorParticles.SetActive(true);
+            //Wait more seconds
+            yield return new WaitForSeconds(6f);
+            finalDoorParticles.SetActive(false);
+            showGemsPanel = true;
+        }
+        else
+        {
+            showGemsPanel = true;
+        }
         yield return null;
     }
 
@@ -939,6 +973,8 @@ public class GameManager : MonoSingleton<GameManager> {
         int seconds = ((int)Time.timeSinceLevelLoad - (int)gameTimeStart) % 60;
         ShowHealthPanel();
 
+        EvaluateMedal(minutes);
+
         victoryPanel.SetActive(true);
         StartCoroutine(HighlightButton(victoryOKButton));
         ghostHuntedText.text = currentNumOfGhosts.ToString();
@@ -950,6 +986,35 @@ public class GameManager : MonoSingleton<GameManager> {
         Debug.Log("Quantity of health lost: "+currentHealthLost);
         Debug.Log("Time played: "+(Time.timeSinceLevelLoad - gameTimeStart).ToString());*/
         Time.timeScale = 0;
+    }
+
+    private void EvaluateMedal(int minuts)
+    {
+        int score = 0;
+        //Validar fantasmas matados, tiempo jugado y vida perdida
+
+        if (currentNumOfGhosts >= maxGhosts)
+            score += 2;
+        else if (currentNumOfGhosts > minGhosts)
+            score++;
+
+        if (currentHealthLost <= highestScoreHp)
+            score += 2;
+        else if (currentHealthLost < lowestScoreHp)
+            score++;
+
+        if (minuts <= minTimePlayed)
+            score += 2;
+        else if (minuts < maxTimePlayed)
+            score++;
+
+        if (score >= 5)
+            goldMedal.SetActive(true);
+        else if (score >= 3)
+            silverMedal.SetActive(true);
+        else
+            bronzeMedal.SetActive(true);
+
     }
     #endregion
 }

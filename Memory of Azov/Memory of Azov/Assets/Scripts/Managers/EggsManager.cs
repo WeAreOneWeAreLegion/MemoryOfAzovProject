@@ -9,7 +9,12 @@ public class EggsManager : MonoSingleton<EggsManager> {
     private bool[] checker;
     private int currentIndex = 0;
 
-	void Start ()
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    void Start ()
     {
         checker = new bool[textures.Length];
     }

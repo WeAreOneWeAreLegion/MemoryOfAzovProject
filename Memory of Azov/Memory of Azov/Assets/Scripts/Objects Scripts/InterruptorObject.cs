@@ -56,6 +56,8 @@ public class InterruptorObject : LightenableObject
     {
         if (insideRadius)
         {
+            Debug.Log("In radius");
+
             if (GameManager.Instance.player.IsCurrentLightOfColor(colorToOpenBell))
             {
                 myRB.SetActive(false);

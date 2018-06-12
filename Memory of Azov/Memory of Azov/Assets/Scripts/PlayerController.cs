@@ -111,6 +111,8 @@ public class PlayerController : MonoBehaviour {
     public RePositionPoint rePoint;
 
     [Header("Animator Component")]
+    public Texture scaredTexture;
+    public Texture happyTexture;
     public Animator myAnimator;
     public float minWalkSpeed = 0.2f;
     public float maxWalkSpeed = 1.6f;
@@ -118,6 +120,7 @@ public class PlayerController : MonoBehaviour {
     [Header("Skeleton Mesh Component")]
     public Transform lightBone;
     public Transform lanternHandBone;
+    public SkinnedMeshRenderer skin;
     public GameObject handsEgg;
     public GameObject greenLight;
     public GameObject redLight;
@@ -585,7 +588,8 @@ public class PlayerController : MonoBehaviour {
         {
             LightenableObject co = l.GetComponent<LightenableObject>();
 
-            co.OutsideLanternRange();
+            if (Mathf.Abs(Vector3.Angle((co.transform.position - lanternLight.transform.position).normalized, lanternLight.transform.forward)) > lanternDamageRadius && co.IsInSight())
+                co.OutsideLanternRange();
         }
 
         ghostsInRadius.ForEach(x => { if (!x.activeInHierarchy) ghostsInRadius.Remove(x); });
@@ -1263,6 +1267,8 @@ public class PlayerController : MonoBehaviour {
 
     public void ShowItem()
     {
+        skin.materials[1].mainTexture = happyTexture;
+
         switch (currentObjectPickedUp)
         {
             case ObjectPickedUp.Egg:
@@ -1305,6 +1311,8 @@ public class PlayerController : MonoBehaviour {
 
     public void HideItems()
     {
+        skin.materials[1].mainTexture = scaredTexture;
+
         handsEgg.SetActive(false);
         greenLight.SetActive(false);
         redLight.SetActive(false);

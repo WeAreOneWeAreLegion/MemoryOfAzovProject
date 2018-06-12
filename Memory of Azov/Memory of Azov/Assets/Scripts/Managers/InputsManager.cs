@@ -73,6 +73,11 @@ public class InputsManager : MonoSingleton<InputsManager> {
     public float vibrateReductionValue = 3;
     #endregion
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     #region Input Methods
     public void InvertY()
     {

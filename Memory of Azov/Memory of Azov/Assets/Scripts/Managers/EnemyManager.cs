@@ -22,6 +22,11 @@ public class EnemyManager : MonoSingleton<EnemyManager> {
     private List<GameObject> enemyPoolList = new List<GameObject>();
     #endregion
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         CreateStarterGhosts();

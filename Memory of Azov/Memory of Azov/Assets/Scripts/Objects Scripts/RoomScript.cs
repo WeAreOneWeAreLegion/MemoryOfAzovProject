@@ -11,6 +11,7 @@ public class RoomScript : MonoBehaviour
     public int numOfDesiredGems;
     public List<EnemySO> enemiesData = new List<EnemySO>();
     public Transform cameraCinematic;
+    public bool specialItem;
 
     [Header("Shake helps")]
     public float timeForShake = 10;
@@ -94,54 +95,73 @@ public class RoomScript : MonoBehaviour
 
             objectsWithEnemies = new List<TransparentObject>();
 
-            int randomNum;
-
-            for (int i = 0; i < numOfDesiredGhosts; i++)
+            if (specialItem)
             {
-                randomNum = Random.Range(0, temporalObjects.Count);
-
-                temporalObjects[randomNum].spawnGhost = true;
-                temporalObjects[randomNum].spawnAllGhosts = true;
-
-                if (ghostIndex < enemiesData.Count)
+                foreach (TransparentObject t in temporalObjects)
                 {
-                    if (heartsIndex < numOfGhostGivingHearts)
+                    if (t.transform.name == "Planta (2)")
                     {
-                        temporalObjects[randomNum].givenHealth = true;
-                        heartsIndex++;
+                        t.spawnGem = true;
+                        objectsWithGems.Add(t);
+
+                        GameManager.Instance.IncreaseMaxGems(t.transform.gameObject);
+
+                        Debug.Log("Desired");
+                    }
+                }
+            }
+            else
+            {
+                int randomNum;
+
+                for (int i = 0; i < numOfDesiredGhosts; i++)
+                {
+                    randomNum = Random.Range(0, temporalObjects.Count);
+
+                    temporalObjects[randomNum].spawnGhost = true;
+                    temporalObjects[randomNum].spawnAllGhosts = true;
+
+                    if (ghostIndex < enemiesData.Count)
+                    {
+                        if (heartsIndex < numOfGhostGivingHearts)
+                        {
+                            temporalObjects[randomNum].givenHealth = true;
+                            heartsIndex++;
+                        }
+
+                        temporalObjects[randomNum].enemyData = enemiesData[ghostIndex];
+                        ghostIndex++;
+                    }
+                    else
+                    {
+                        int randomData = Random.Range(0, enemiesData.Count);
+
+                        if (heartsIndex < numOfGhostGivingHearts)
+                        {
+                            temporalObjects[randomNum].givenHealth = true;
+                            heartsIndex++;
+                        }
+
+                        temporalObjects[randomNum].enemyData = enemiesData[randomData];
                     }
 
-                    temporalObjects[randomNum].enemyData = enemiesData[ghostIndex];
-                    ghostIndex++;
+                    objectsWithEnemies.Add(temporalObjects[randomNum]);
+                    temporalObjects.RemoveAt(randomNum);
                 }
-                else
+
+                for (int i = 0; i < numOfDesiredGems; i++)
                 {
-                    int randomData = Random.Range(0, enemiesData.Count);
+                    randomNum = Random.Range(0, temporalObjects.Count);
 
-                    if (heartsIndex < numOfGhostGivingHearts)
-                    {
-                        temporalObjects[randomNum].givenHealth = true;
-                        heartsIndex++;
-                    }
+                    temporalObjects[randomNum].spawnGem = true;
+                    objectsWithGems.Add(temporalObjects[randomNum]);
 
-                    temporalObjects[randomNum].enemyData = enemiesData[randomData];
+                    GameManager.Instance.IncreaseMaxGems(temporalObjects[randomNum].transform.gameObject);
+
+                    temporalObjects.RemoveAt(randomNum);
                 }
-
-                objectsWithEnemies.Add(temporalObjects[randomNum]);
-                temporalObjects.RemoveAt(randomNum);
             }
-
-            for (int i = 0; i < numOfDesiredGems; i++)
-            {
-                randomNum = Random.Range(0, temporalObjects.Count);
-
-                temporalObjects[randomNum].spawnGem = true;
-                objectsWithGems.Add(temporalObjects[randomNum]);
-
-                GameManager.Instance.IncreaseMaxGems(temporalObjects[randomNum].transform.gameObject);
-
-                temporalObjects.RemoveAt(randomNum);
-            }
+            
         }
         catch
         {
