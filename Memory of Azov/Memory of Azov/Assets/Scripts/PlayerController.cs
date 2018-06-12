@@ -361,7 +361,7 @@ public class PlayerController : MonoBehaviour {
 
         if (independentFacing && myAnimator.GetLayerWeight(1) != 1 && canMove)
         {
-            myAnimator.SetLayerWeight(1,0);
+            myAnimator.SetLayerWeight(1,1);
         }
         else if ((!independentFacing && myAnimator.GetLayerWeight(1) == 1) || !canMove)
         {
