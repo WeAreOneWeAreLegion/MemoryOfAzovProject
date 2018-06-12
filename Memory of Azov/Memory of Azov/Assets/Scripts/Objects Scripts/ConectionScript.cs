@@ -318,7 +318,7 @@ public class ConectionScript : LightenableObject {
     {
         if (isFinalDoor)
             //Juego acabado
-            GameManager.Instance.CallPlayerVictory();
+            GameManager.Instance.FinalCall();
         else
         {
             if (currentDoorType == DoorType.OpenByOneSide)

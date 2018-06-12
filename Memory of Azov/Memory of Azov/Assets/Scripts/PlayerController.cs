@@ -1385,12 +1385,14 @@ public class PlayerController : MonoBehaviour {
     public void RecieveDamage(int damage)
     {
         if (stopByHit)
+        {
+            Debug.Log("already hit");
             return;
+        }
 
         isVibrating = true;
         InputsManager.Instance.ActiveVibration();
         
-
         currentHp -= damage;
 
         if (currentHp < 0) currentHp = 0;

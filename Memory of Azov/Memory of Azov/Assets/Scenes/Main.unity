@@ -31864,6 +31864,53 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1001 &512491369
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4434736767744394, guid: 8860b3d9a3af5c6489457a2ee0ede11c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434736767744394, guid: 8860b3d9a3af5c6489457a2ee0ede11c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434736767744394, guid: 8860b3d9a3af5c6489457a2ee0ede11c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434736767744394, guid: 8860b3d9a3af5c6489457a2ee0ede11c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434736767744394, guid: 8860b3d9a3af5c6489457a2ee0ede11c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434736767744394, guid: 8860b3d9a3af5c6489457a2ee0ede11c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434736767744394, guid: 8860b3d9a3af5c6489457a2ee0ede11c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434736767744394, guid: 8860b3d9a3af5c6489457a2ee0ede11c, type: 2}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 108014832058187208, guid: 8860b3d9a3af5c6489457a2ee0ede11c,
+        type: 2}
+      propertyPath: m_Range
+      value: 2.36
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8860b3d9a3af5c6489457a2ee0ede11c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &513385616
 GameObject:
   m_ObjectHideFlags: 0
@@ -73263,7 +73310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1054202679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87322,6 +87369,7 @@ MonoBehaviour:
   hpText: {fileID: 838903577}
   hpTextShadow: {fileID: 838903577}
   fpsText: {fileID: 1820057237}
+  finalCall: 0
   gemsCamera: {fileID: 701584809}
   gemsRoom: {fileID: 2121852185}
   finalDoorParticles: {fileID: 620007469}
@@ -103096,7 +103144,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
+  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
   m_LocalPosition: {x: 0.1, y: -0.02, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

@@ -62,6 +62,7 @@ public class GameManager : MonoSingleton<GameManager> {
     public Text fpsText;
 
     [Header("Gems Panel")]
+    public bool finalCall;
     public GameObject gemsCamera;
     public GameObject gemsRoom;
     public GameObject finalDoorParticles;
@@ -469,7 +470,12 @@ public class GameManager : MonoSingleton<GameManager> {
             if (gemsPanelTimer >= 1)
             {
                 //Call 
-                if (addingGems)
+                if (finalCall)
+                {
+                    CallPlayerVictory();
+                    finalCall = false;
+                }
+                else if (addingGems)
                 {
                     ActiveGemsZone();
                     StartCoroutine(AddNewGemGathered(addingAzov));
@@ -613,6 +619,12 @@ public class GameManager : MonoSingleton<GameManager> {
             showGemsPanel = true;
         }
         yield return null;
+    }
+
+    public void FinalCall()
+    {
+        showGemsPanel = true;
+        finalCall = true;
     }
 
     public void ShowHealthPanel()
