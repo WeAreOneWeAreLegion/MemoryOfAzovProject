@@ -10,7 +10,13 @@ public class CollectableObject : MonoBehaviour {
 
     public float timeToShow = 2.25f;
 
-	public void CollectObject()
+    public void Start()
+    {
+        if (currentCType == CollectableType.MemoryOfAzov)
+            GameManager.Instance.IncreaseMaxGems(gameObject);
+    }
+
+    public void CollectObject()
     {
         Debug.Log("Collected");
 

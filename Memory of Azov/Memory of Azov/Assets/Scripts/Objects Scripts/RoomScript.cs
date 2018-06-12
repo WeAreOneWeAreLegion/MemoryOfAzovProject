@@ -105,8 +105,6 @@ public class RoomScript : MonoBehaviour
                         objectsWithGems.Add(t);
 
                         GameManager.Instance.IncreaseMaxGems(t.transform.gameObject);
-
-                        Debug.Log("Desired");
                     }
                 }
             }

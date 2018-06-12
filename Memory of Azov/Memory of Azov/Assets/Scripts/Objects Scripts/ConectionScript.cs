@@ -394,6 +394,11 @@ public class ConectionScript : LightenableObject {
         GameManager.Instance.ShowAndHideDoors();
     }
 
+    public void OpenFinalDoor()
+    {
+        myAnimator.SetBool("OpenDoor", true);
+    }
+
     private void ClsoeDoors()
     {
         myAnimator.SetBool("RightOpen", false);

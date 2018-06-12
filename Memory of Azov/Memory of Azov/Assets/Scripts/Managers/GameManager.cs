@@ -67,6 +67,7 @@ public class GameManager : MonoSingleton<GameManager> {
     public GameObject finalDoorParticles;
     public Light lightChandelier;
     public float desiredMaxIntensityChandelier;
+    public ConectionScript finalDoor;
     [Tooltip("Referencia to gems panel")]
     public RectTransform gemsPanel;
     [Tooltip("Referencia a los huevos del hud")]
@@ -296,7 +297,6 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void ShowAllDoors()
     {
-		Debug.Log ("Show all doors");
         foreach (ConectionScript d in doorsList)
             d.ShowVisualDoor();
     }
@@ -567,7 +567,7 @@ public class GameManager : MonoSingleton<GameManager> {
                     e.SetActive(true);
                     var ps = e.GetComponentInChildren<ParticleSystem>().main;
                     ps.prewarm = true;
-                    return;
+                    break;
                 }
             }
         }
@@ -603,6 +603,8 @@ public class GameManager : MonoSingleton<GameManager> {
             finalDoorParticles.SetActive(true);
             //Wait more seconds
             yield return new WaitForSeconds(6f);
+            finalDoor.OpenFinalDoor();
+            yield return new WaitForSeconds(0.5f);
             finalDoorParticles.SetActive(false);
             showGemsPanel = true;
         }
@@ -634,7 +636,7 @@ public class GameManager : MonoSingleton<GameManager> {
 
     public void IncreaseNumOfGems()
     {
-        if (currentNumOfGems < maxNumOfGems)
+        if (currentNumOfGems <= maxNumOfGems)
            AddGem(false);
     }
 
