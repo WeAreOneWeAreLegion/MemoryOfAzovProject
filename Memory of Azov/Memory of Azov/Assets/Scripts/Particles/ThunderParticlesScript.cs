@@ -41,7 +41,7 @@ public class ThunderParticlesScript : MonoBehaviour {
             elapsedTime += Time.deltaTime;
             if (elapsedTime >= 2 && elapsedTime <= 3f)
             {
-                if (thunderRenderPrefab && thunderLightPrefab)
+                if (thunderLightPrefab)
                 {
                     DestroyThunder();
                 }
@@ -51,15 +51,15 @@ public class ThunderParticlesScript : MonoBehaviour {
 
     void SpawnThunder()
     {
-        thunderRenderLighting = (GameObject)Instantiate(thunderRenderPrefab, this.gameObject.transform.position, thunderRenderPrefab.transform.rotation);
+        //thunderRenderLighting = (GameObject)Instantiate(thunderRenderPrefab, this.gameObject.transform.position, thunderRenderPrefab.transform.rotation);
+		SoundManager.Instance.AmbientSoundEnum(SoundManager.SoundRequestAmbient.A_Thunder, this.gameObject.transform);
+		thunderLightLighting = (GameObject)Instantiate(thunderLightPrefab, thunderLightPrefab.transform.position, thunderLightPrefab.transform.rotation);
         
-        thunderLightLighting = (GameObject)Instantiate(thunderLightPrefab, this.gameObject.transform.position, thunderLightPrefab.transform.rotation);
-        SoundManager.Instance.AmbientSoundEnum(SoundManager.SoundRequestAmbient.A_Thunder, this.gameObject.transform);
     }
 
     void DestroyThunder()
     {
-        Destroy(thunderRenderLighting, thunderRenderPrefab.GetComponent<ParticleSystem>().startLifetime);
+        //Destroy(thunderRenderLighting, thunderRenderPrefab.GetComponent<ParticleSystem>().startLifetime);
         Destroy(thunderLightLighting, thunderLightPrefab.GetComponent<ParticleSystem>().startLifetime);
     }
 }
