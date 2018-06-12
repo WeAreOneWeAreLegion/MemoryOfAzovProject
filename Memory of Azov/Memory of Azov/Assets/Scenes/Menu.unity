@@ -4338,6 +4338,7 @@ GameObject:
   - component: {fileID: 205764985}
   - component: {fileID: 205764984}
   - component: {fileID: 205764986}
+  - component: {fileID: 205764988}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Music
@@ -4403,6 +4404,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a9bb9109bd0424a8881dc487350c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &205764988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205764982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Ambiente/FX_Rain (2)
+  PlayEvent: 1
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &232701516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6889,7 +6912,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1106706271}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayMenuHUDSelectSound
         m_Mode: 1
         m_Arguments:
@@ -11669,7 +11692,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1106706271}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayMenuHUDSelectSound
         m_Mode: 1
         m_Arguments:
@@ -11896,7 +11919,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1106706271}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayMenuHUDSelectSound
         m_Mode: 1
         m_Arguments:
@@ -12386,7 +12409,7 @@ MonoBehaviour:
   scenarioPictureFallsSound: event:/Escenario/FX_PictureFalls
   flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
   flashlightChargedFlashSound: event:/Linterna/Flashlight_Charged
-  flashlightNoiseSound: event:/Linterna/Flashlight_Flash
+  flashlightFlashSound: event:/Linterna/Flashlight_Flash
   flashlightOffSound: event:/Linterna/Flashlight_Off
   flashlightOnSound: event:/Linterna/Flashlight_On
   menuHUDMovementSound: "event:/Men\xFA/HUD_Movement Grupo 1"
@@ -12395,6 +12418,7 @@ MonoBehaviour:
   houseMusic: event:/Music/Main Menu
   combatMusic: event:/Music/Combat Music
   gameOverMusic: event:/Music/Game Over
+  victoryMusic: event:/Wind & Other Sounds/Success
 --- !u!1 &1120387881
 GameObject:
   m_ObjectHideFlags: 0
@@ -13313,82 +13337,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1354642813}
   m_Mesh: {fileID: 4300024, guid: 00aefdcd93ab8ce4aac7fa8206a43c71, type: 3}
---- !u!1 &1405391380
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1405391381}
-  - component: {fileID: 1405391384}
-  - component: {fileID: 1405391383}
-  - component: {fileID: 1405391382}
-  m_Layer: 0
-  m_Name: RainSoundEmitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1405391381
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1405391380}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.08268, y: 0.90418243, z: -0.8153815}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2061781737}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1405391382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1405391380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b91b075c6f5a44e9824103e565b51c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &1405391383
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1405391380}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 18.168785, y: 9, z: 31.250626}
-  m_Center: {x: 3.8162231, y: 0, z: 1.0029225}
---- !u!114 &1405391384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1405391380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/Ambiente/FX_Rain (2)
-  PlayEvent: 1
-  StopEvent: 2
-  CollisionTag: Player
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1411186964
 GameObject:
   m_ObjectHideFlags: 0
@@ -15732,7 +15680,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2061781737}
-  - component: {fileID: 2061781736}
   m_Layer: 0
   m_Name: LivingRoom
   m_TagString: Untagged
@@ -15740,29 +15687,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2061781736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114171842874508554, guid: e51e805b521f707479888abe3ae85f45,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2061781735}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb91433989ce3d4e9af05a14a99d964, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numOfDesiredGhosts: 0
-  numOfGhostGivingHearts: 2
-  numOfDesiredGems: 5
-  enemiesData:
-  - {fileID: 11400000, guid: 244176d160b253e468458d607673679b, type: 2}
-  cameraCinematic: {fileID: 0}
-  timeForShake: 15
-  timeShaking: 1
-  blackWalls:
-  - {fileID: 14047249}
-  - {fileID: 1874671170}
 --- !u!4 &2061781737
 Transform:
   m_ObjectHideFlags: 0
@@ -15784,7 +15708,6 @@ Transform:
   - {fileID: 682679383}
   - {fileID: 437520854}
   - {fileID: 1819605921}
-  - {fileID: 1405391381}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}

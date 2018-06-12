@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SoundManager : MonoSingleton<SoundManager> {
@@ -277,6 +278,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventGameOverMusic = FMODUnity.RuntimeManager.CreateInstance(gameOverMusic);
         soundEventVictoryMusic = FMODUnity.RuntimeManager.CreateInstance(victoryMusic);
 
+        if (SceneManager.GetActiveScene().name == "Main")
         PlayHouseMusic();
     }
 

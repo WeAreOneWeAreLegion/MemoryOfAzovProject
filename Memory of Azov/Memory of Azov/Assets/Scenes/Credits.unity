@@ -1159,11 +1159,11 @@ MonoBehaviour:
   ghostLaughALotSound: event:/Ghost/Ghost_LaughtALot
   ghostStunnedSound: event:/Ghost/Ghost_Stunned
   scenarioButtonSound: event:/Escenario/FX_Button
-  scenarioLightbulbSpawnsSound: 
-  scenarioLightbulbFallsSound: 
+  scenarioLightbulbSpawnsSound: event:/Escenario/FX_LightbulbSpawns
+  scenarioLightbulbFallsSound: event:/Escenario/FX_LightbulbFalls
   scenarioDoorOpenSound: event:/Escenario/FX_DoorOpen
   scenarioFireplaceSound: event:/Escenario/FX_Fireplace
-  scenarioFurnitureShakingSound: 
+  scenarioFurnitureShakingSound: event:/Escenario/FX_FurnitureShaking
   scenarioHealItemDroppedSound: event:/Escenario/FX_HealthItemDropped
   scenarioHealItemFoundSound: event:/Escenario/FX_HealthItemFound
   scenarioItemFoundSound: event:/Escenario/FX_ItemFound
@@ -1175,8 +1175,8 @@ MonoBehaviour:
   scenarioLibrarySound: event:/Escenario/FX_Library
   scenarioPictureFallsSound: event:/Escenario/FX_PictureFalls
   flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
-  flashlightChargedFlashSound: 
-  flashlightNoiseSound: event:/Linterna/Flashlight_Noise
+  flashlightChargedFlashSound: event:/Linterna/Flashlight_Charged
+  flashlightFlashSound: event:/Linterna/Flashlight_Flash
   flashlightOffSound: event:/Linterna/Flashlight_Off
   flashlightOnSound: event:/Linterna/Flashlight_On
   menuHUDMovementSound: "event:/Men\xFA/HUD_Movement Grupo 1"
@@ -1185,6 +1185,7 @@ MonoBehaviour:
   houseMusic: event:/Music/Main Menu
   combatMusic: event:/Music/Combat Music
   gameOverMusic: event:/Music/Game Over
+  victoryMusic: event:/Wind & Other Sounds/Success
 --- !u!1 &1137418983
 GameObject:
   m_ObjectHideFlags: 0

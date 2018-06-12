@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayRainSoundScript : MonoBehaviour {
@@ -11,7 +12,7 @@ public class PlayRainSoundScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     private void OnTriggerEnter(Collider other)
