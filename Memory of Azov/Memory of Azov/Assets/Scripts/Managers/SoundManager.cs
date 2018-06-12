@@ -10,7 +10,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public enum SoundRequestPlayer { P_Damaged, P_Death, P_Scared, P_ShakingHead, P_StepsMarble, P_StepsCarpet, P_LowHealth }
     public enum SoundRequestGhost { G_Attack, G_Boo, G_Damaged, G_Dead, G_Laugh, G_LaughALot, G_Stunned }
     public enum SoundRequestScenario { S_Button, S_LightbulbSpawns, S_LightbulbFalls, S_DoorOpen, S_Fireplace, S_FireplaceOff, S_FurnitureShaking, S_HealthItemDropped,
-        S_HealthItemFound, S_ItemFound, S_ItemParticles, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
+        S_HealthItemFound, S_ItemFound, S_ItemParticles, S_ItemParticlesOff, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
     public enum SoundRequestFlashlight { F_ChargingFlash, F_ChargedFlash, F_ChargedFlashOff, F_Flash, F_On, F_Off }
     public enum SoundRequestMenu { Me_Movement, Me_Select, Me_SelectBack }
     public enum SoundRequestMusic { Mu_HouseOn, MU_CombatOn, MU_GameOverOn, MU_VictoryOn, MU_HouseOff, MU_CombatOff, MU_GameOverOff, MU_VictoryOff }
@@ -406,6 +406,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 break;
             case SoundRequestScenario.S_ItemParticles:
                 PlayScenarioItemLightParticlesSound();
+                break;
+            case SoundRequestScenario.S_ItemParticlesOff:
+                StopScenarioItemLightParticlesSound();
                 break;
             case SoundRequestScenario.S_LockedDoor:
                 PlayScenarioLockedDoorSound();
@@ -828,8 +831,10 @@ public class SoundManager : MonoSingleton<SoundManager> {
     #endregion
 
     #region Stop Music Methods
+
     public void StopAmbientRainSound()
     {
+        
         //soundEventHouseMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         soundEventAmbientRainSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
@@ -838,6 +843,12 @@ public class SoundManager : MonoSingleton<SoundManager> {
     {
         //soundEventHouseMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         soundEventScenarioFireplaceSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void StopScenarioItemLightParticlesSound()
+    {
+        //soundEventHouseMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEventScenarioItemLightParticlesSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void StopFlashlightChargedFlashSound()

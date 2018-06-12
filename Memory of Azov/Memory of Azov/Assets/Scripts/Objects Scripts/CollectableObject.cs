@@ -48,6 +48,7 @@ public class CollectableObject : MonoBehaviour {
             if (currentCType == CollectableType.GreenLight)
             {
                 //Sonido
+                SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_LightbulbFalls, this.gameObject.transform);
             }
         }
     }

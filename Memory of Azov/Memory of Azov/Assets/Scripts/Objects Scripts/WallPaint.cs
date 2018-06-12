@@ -116,6 +116,7 @@ public class WallPaint : LightenableObject
                 timer = 0;
 
                 //Sonido
+                SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
             }
         }
     }
