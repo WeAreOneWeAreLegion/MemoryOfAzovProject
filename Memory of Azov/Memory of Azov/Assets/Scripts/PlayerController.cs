@@ -396,8 +396,8 @@ public class PlayerController : MonoBehaviour {
         }
         else if (independentFacing && canMove && currentControl == TypeOfControl.TwoControls)
         {
-            myAnimator.SetFloat("XInput", xMove);
-            myAnimator.SetFloat("ZInput", zMove);
+            myAnimator.SetFloat("XInput", direction.x);
+            myAnimator.SetFloat("ZInput", direction.z);
             myCharController.Move(((direction * speed) + Physics.gravity) * Time.deltaTime);
         }
         else if (!canMove)
