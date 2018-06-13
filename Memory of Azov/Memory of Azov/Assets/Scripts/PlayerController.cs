@@ -1247,6 +1247,7 @@ public class PlayerController : MonoBehaviour {
 
         if (currentState == State.Dying)
         {
+            myAnimator.SetLayerWeight(1, 0);
             myGhostsDeath.transform.position = transform.position;
             myGhostsDeath.SetActive(true);
             myDeathGround.transform.position = transform.position;
