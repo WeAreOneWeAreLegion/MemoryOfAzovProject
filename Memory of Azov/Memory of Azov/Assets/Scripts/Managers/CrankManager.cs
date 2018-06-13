@@ -16,7 +16,7 @@ public class CrankManager : MonoBehaviour {
     private void ChooseRandomCrank()
     {
         crankPuzzles.ForEach(x => x.isFakeBell = true);
-        visualsImagesPuzzles.ForEach(x => x.color = Color.white);
+		visualsImagesPuzzles.ForEach(x => x.color = x.color);
 
         int randomBell = Random.Range(0, crankPuzzles.Count);
 
