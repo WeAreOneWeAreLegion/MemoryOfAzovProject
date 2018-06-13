@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061420284, g: 0.10949621, b: 0.14532256, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.061622642, g: 0.10951624, b: 0.14596528, a: 0.3}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6324,7 +6324,7 @@ MonoBehaviour:
   lanternRotationSpeed: 65
   angleToStartMoving: 10
   crossDoorTime: 0.5
-  lanternDamage: 100
+  lanternDamage: 70
   lanternDamageRadius: 30
   lanternDamageLength: 6.76
   lanternChargingLength: 1
@@ -28572,13 +28572,14 @@ GameObject:
   - component: {fileID: 321880600}
   - component: {fileID: 321880599}
   - component: {fileID: 321880598}
+  - component: {fileID: 321880601}
   m_Layer: 5
   m_Name: CopperMedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &321880597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28647,6 +28648,23 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 321880596}
+--- !u!95 &321880601
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 321880596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 656c505e3b7f23649b1be519c3096dd8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &323740990
 GameObject:
   m_ObjectHideFlags: 0
@@ -118550,6 +118568,7 @@ GameObject:
   - component: {fileID: 1792672309}
   - component: {fileID: 1792672308}
   - component: {fileID: 1792672307}
+  - component: {fileID: 1792672310}
   m_Layer: 5
   m_Name: GoldMedal
   m_TagString: Untagged
@@ -118625,6 +118644,23 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792672305}
+--- !u!95 &1792672310
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792672305}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 656c505e3b7f23649b1be519c3096dd8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1793219760
 GameObject:
   m_ObjectHideFlags: 0
@@ -131513,6 +131549,7 @@ GameObject:
   - component: {fileID: 1946295531}
   - component: {fileID: 1946295530}
   - component: {fileID: 1946295532}
+  - component: {fileID: 1946295533}
   m_Layer: 5
   m_Name: SilverMedal
   m_TagString: Untagged
@@ -131588,6 +131625,23 @@ MonoBehaviour:
   m_EffectColor: {r: 0.64705884, g: 0.599481, b: 0.599481, a: 0.5}
   m_EffectDistance: {x: 2.5, y: -2.5}
   m_UseGraphicAlpha: 1
+--- !u!95 &1946295533
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946295528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 656c505e3b7f23649b1be519c3096dd8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1949045407
 GameObject:
   m_ObjectHideFlags: 0
