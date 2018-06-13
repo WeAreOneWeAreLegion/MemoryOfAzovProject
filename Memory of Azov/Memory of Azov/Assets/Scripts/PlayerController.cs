@@ -240,25 +240,6 @@ public class PlayerController : MonoBehaviour {
 
     private void Update () //Animations are set on update
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Fireplace, this.gameObject.transform);
-            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Library, this.gameObject.transform);
-            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_PictureFalls, this.gameObject.transform);
-            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_LockedDoor, this.gameObject.transform);
-            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemFound, this.gameObject.transform);
-            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
-            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_SpecialItemFound, this.gameObject.transform);
-        }
-        else if (Input.GetKeyDown(KeyCode.K))
-        {
-            SoundManager.Instance.PauseAllSoundsButMusic();
-        }
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            SoundManager.Instance.ResumeAllSoundsAndMusic();
-        }
-
         if (Time.timeScale == 0)
             return;
 

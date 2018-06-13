@@ -6324,7 +6324,7 @@ MonoBehaviour:
   lanternRotationSpeed: 65
   angleToStartMoving: 10
   crossDoorTime: 0.5
-  lanternDamage: 100
+  lanternDamage: 80
   lanternDamageRadius: 30
   lanternDamageLength: 6.76
   lanternChargingLength: 1
@@ -92035,6 +92035,7 @@ MonoBehaviour:
   scenarioItemFoundSound: event:/Escenario/FX_ItemFound
   scenarioItemLightParticlesSound: event:/Escenario/FX_ItemLightParticles
   scenarioLockedDoorSound: event:/Escenario/FX_LoockedDoor
+  scenarioMemoryOfAzovSound: event:/Escenario/FX_MemoryOfAzov
   scenarioSpecialItemFoundSound: event:/Escenario/FX_SpecialItemFound
   scenarioUnlockDoorSound: event:/Escenario/FX_UnlockDoor
   scenarioLeverSound: event:/Escenario/FX_Lever
@@ -92043,13 +92044,11 @@ MonoBehaviour:
   flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
   flashlightChargedFlashSound: event:/Linterna/Flashlight_Charged
   flashlightFlashSound: event:/Linterna/Flashlight_Flash
-  flashlightOffSound: event:/Escenario/FX_MemoryOfAzov
-  flashlightOnSound: event:/Linterna/Flashlight_On
   menuHUDMovementSound: "event:/Men\xFA/HUD_Movement Grupo 3"
   menuHUDSelectSound: "event:/Men\xFA/HUD_Select Grupo 1"
   menuHUDSelectBackSound: "event:/Men\xFA/HUD_SelectBack Grupo 2"
   houseMusic: event:/Music/Tension Music
-  combatMusic: event:/Music/Combat Music
+  lastDoorMusic: event:/Music/LastDoorsMusic
   gameOverMusic: event:/Music/Game Over
   victoryMusic: event:/Wind & Other Sounds/Success
 --- !u!114 &1304689144
