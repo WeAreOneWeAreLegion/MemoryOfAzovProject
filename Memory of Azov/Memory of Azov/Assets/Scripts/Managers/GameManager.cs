@@ -621,6 +621,7 @@ public class GameManager : MonoSingleton<GameManager> {
         if (HasFinalKey())
         {
             //Sonido aqui si quieres que se ponga el sonido de la musica al empezar a hacer el paneo hacia abajo
+            SoundManager.Instance.MusicSoundEnum(SoundManager.SoundRequestMusic.MU_LastDoor);
             gemsCamera.GetComponent<CameraChandelierBehaviour>().activate = true;
             yield return new WaitForSeconds(2.2f);
             //Sonido aqui si quieres que vayan con las particulas

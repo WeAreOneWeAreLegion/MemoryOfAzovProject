@@ -477,7 +477,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 PlayHouseMusic();
                 break;
             case SoundRequestMusic.MU_LastDoor:
-                PlayGameOverMusic();
+                PlayLastDoorMusic();
                 break;
             case SoundRequestMusic.MU_VictoryOn:
                 PlayVictoryMusic();
