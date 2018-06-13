@@ -92044,7 +92044,7 @@ MonoBehaviour:
   scenarioPictureFallsSound: event:/Escenario/FX_PictureFalls (2)
   flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
   flashlightChargedFlashSound: event:/Linterna/Flashlight_Charged
-  flashlightFlashSound: event:/Linterna/Flashlight_Flash
+  flashlightFlashSound: event:/Linterna/Flashlight_Flash (2)
   menuHUDMovementSound: "event:/Men\xFA/HUD_Movement Grupo 3"
   menuHUDSelectSound: "event:/Men\xFA/HUD_Select Grupo 1"
   menuHUDSelectBackSound: "event:/Men\xFA/HUD_SelectBack Grupo 2"
@@ -102916,7 +102916,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
+  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
   m_LocalPosition: {x: 0.1, y: -0.02, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
