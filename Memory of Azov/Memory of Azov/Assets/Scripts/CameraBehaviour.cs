@@ -5,8 +5,6 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     public enum CameraState { Following, CrossDoor, FakeWall, ShowingItem, Cinematic}
     public enum CameraLookState { Normal, LookUp, LookDown }
 
-    public GameObject backWall;
-
     [System.Serializable]
     public struct CameraLook
     {
@@ -50,6 +48,9 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     [Range(0, 4)] public float speedToShowItem = 1f;
     public AnimationCurve rotationShowItemCurve;
 
+    public LayerMask fullCulling;
+    public LayerMask deathCulling;
+
     [Header("\t    Own Script Variables")]
     [Tooltip("Target a seguir")]
     public Transform target;
@@ -91,6 +92,7 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     private void Awake()
     {
         instance = this;
+        GetComponent<Camera>().cullingMask = fullCulling;
     }
 
     private void Start()
@@ -368,6 +370,11 @@ public class CameraBehaviour : MonoSingleton<CameraBehaviour> {
     public void ResetWallDetection()
     {
         wallsFound = false;
+    }
+
+    public void DeathCamMode()
+    {
+        GetComponent<Camera>().cullingMask = deathCulling;
     }
 
 	public bool IsFollowing(){

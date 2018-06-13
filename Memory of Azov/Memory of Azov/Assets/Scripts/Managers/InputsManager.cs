@@ -78,6 +78,12 @@ public class InputsManager : MonoSingleton<InputsManager> {
         instance = this;
     }
 
+    private void Start()
+    {
+        if (!isControllerPlaying)
+            GameManager.Instance.player.joystickCompleteControl = false;
+    }
+
     #region Input Methods
     public void InvertY()
     {

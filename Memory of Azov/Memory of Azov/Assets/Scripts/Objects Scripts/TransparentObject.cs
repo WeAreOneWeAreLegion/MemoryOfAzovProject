@@ -208,10 +208,7 @@ public class TransparentObject : MonoBehaviour {
             spawnGhost = false;
 
             if (firstCall && spawnAllGhosts)
-            {
-                Debug.Log("Spawn all");
                 hit.transform.parent.GetComponent<RoomScript>().ShowAllEnemiesFromRoom();
-            }
         }
 
         if (spawnGem)

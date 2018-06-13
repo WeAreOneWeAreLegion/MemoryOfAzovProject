@@ -170,6 +170,7 @@ public class GameManager : MonoSingleton<GameManager> {
     private bool hasKey;
     private bool hasFinalKey;
     private bool roomActivedByGem;
+    private bool finalPanelActive;
 
     //Persistance variables
     private int maxNumOfGems = 0;
@@ -196,6 +197,9 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void Start()
     {
+        isGamePaused = false;
+        finalPanelActive = false;
+
         if (pausePanel)
             pausePanel.SetActive(false);
 
@@ -240,7 +244,7 @@ public class GameManager : MonoSingleton<GameManager> {
 
         if (isGamePaused)
             PauseActions();
-        else if (InputsManager.Instance.GetStartButtonDown())
+        else if (InputsManager.Instance.GetStartButtonDown() && !finalPanelActive)
             PauseGame();
 
     }
@@ -976,6 +980,8 @@ public class GameManager : MonoSingleton<GameManager> {
     #region Game State Methods
     public void CallPlayerDeath()
     {//Game Over
+        finalPanelActive = true;
+        isGamePaused = true;
         SoundManager.Instance.MusicSoundEnum(SoundManager.SoundRequestMusic.MU_LastDoor);
         InputsManager.Instance.DeactiveVibration();
         gameOverPanel.SetActive(true);
@@ -985,7 +991,6 @@ public class GameManager : MonoSingleton<GameManager> {
         Debug.Log("Quantity of diamond eggs found: " + currentNumOfGems);
         Debug.Log("Quantity of health lost: " + currentHealthLost);
         Debug.Log("Time played: " + (Time.timeSinceLevelLoad - gameTimeStart).ToString());*/
-        Time.timeScale = 0;
     }
 
     public void CallPlayerVictory()

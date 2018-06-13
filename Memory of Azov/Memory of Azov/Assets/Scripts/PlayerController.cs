@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public enum State { Playing, CrossDoor, FakeWall, Cinematic }
+    public enum State { Playing, CrossDoor, FakeWall, Cinematic, Dying }
     public enum LightColor { Neutral, Secondary, Third }
     public enum TypeOfControl { OneControl, TwoControls }
     public enum ObjectPickedUp { Egg, GreenLight, RedLight, Azov }
@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour {
     [Range(0,60)] public float topLanternAngle = 45;
     [Tooltip("Este valor se aplica de forma negativa. *Literna apuntando abajo*")]
     [Range(0, 30)] public float bottomLanternAngle = 5;
+    [Tooltip("Este valor se aplica de forma positiva i negativa. *Literna apuntando a los lados*")]
+    [Range(0, 60)] public float sidesLanternAngle = 30;
     [Tooltip("El radio que tiene el personaje para aumentar o reducir la luz de las linternas automaticamente, solo se aplica cuando miras a camara")]
     [Range(0,30)] public float angleOfLightDecrease;
     [Tooltip("La velocidad a la que la luz pasa de su valor al valor minimo o maximo hacia la camara")]
@@ -115,6 +117,9 @@ public class PlayerController : MonoBehaviour {
     public Animator myAnimator;
     public float minWalkSpeed = 0.2f;
     public float maxWalkSpeed = 1.6f;
+    public Light myDeathLight;
+    public GameObject myDeathGround;
+    public GameObject myGhostsDeath;
 
     [Header("Skeleton Mesh Component")]
     public Transform lightBone;
@@ -131,6 +136,7 @@ public class PlayerController : MonoBehaviour {
     private int currentHp;
     private float xLanternRotationValue;
     private float yLanternRotationValue;
+    private float deathTime;
     private bool independentFacing;
     private bool areLightsDecreased;
     private bool areLightsIncreased;
@@ -262,6 +268,8 @@ public class PlayerController : MonoBehaviour {
             CheckForWallTurned();
         else if (currentState == State.Cinematic)
             CinematicGreenLight();
+        else if (currentState == State.Dying)
+            DeathMethod();
     }
 
     private void FixedUpdate()
@@ -306,7 +314,7 @@ public class PlayerController : MonoBehaviour {
         if (InputsManager.Instance.GetIntensityButtonDown() && delayBetweenChargedShotTimer >= 1 && !isLightCharging)
             ChargeLight();
 
-        if (InputsManager.Instance.GetIntensityButtonUp() && isLightCharging)
+        if (InputsManager.Instance.GetIntensityButtonUp() && isLightCharging && lightChargingTimer > 0.2f)
             ReleaseLight();
 
         if (InputsManager.Instance.GetChangeColorButtonInputDown())
@@ -402,12 +410,32 @@ public class PlayerController : MonoBehaviour {
     private void RotateByJoystick()
     {
 
-		if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
-			transform.Rotate (Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
-
-
         if (joystickCompleteControl)
         {
+            if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
+            {
+                Debug.Log(Mathf.Abs(xRotation / InputsManager.Instance.joystickRotationFactor));
+                if (Mathf.Abs(xRotation / InputsManager.Instance.joystickRotationFactor) > 0.99f)
+                {
+                    transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    float newYValue;
+
+                    if (xRotation > 0)
+                        newYValue = Mathf.Lerp(0, sidesLanternAngle, xRotation / InputsManager.Instance.joystickRotationFactor);
+                    else if (xRotation < 0)
+                        newYValue = Mathf.Lerp(0, -sidesLanternAngle, -xRotation / InputsManager.Instance.joystickRotationFactor);
+                    else
+                        newYValue = 0;
+
+                    yLanternRotationValue = Mathf.Lerp(yLanternRotationValue, newYValue, 0.3f);
+
+                    lanternHandBone.transform.Rotate(transform.up, yLanternRotationValue, Space.World);
+                }
+            }
+
             float newXValue;
 
             if (yRotation > 0)
@@ -418,10 +446,12 @@ public class PlayerController : MonoBehaviour {
                 newXValue = 0;
 
             xLanternRotationValue = Mathf.Lerp(xLanternRotationValue, newXValue, 0.3f);
-
         }
         else
         {
+            if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
+                transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
+
             xLanternRotationValue = Mathf.Clamp(xLanternRotationValue + yRotation * lanternRotationSpeed * Time.deltaTime, -topLanternAngle, bottomLanternAngle);
         }
 
@@ -478,7 +508,6 @@ public class PlayerController : MonoBehaviour {
             if (lanternDamageLength != initialLanternDamageLength)
             { 
                 //lanternLight.range = initialLanternLightRange;
-                myVolumetricLight.ScatteringCoef = initialScatteringCoff;
                 lanternDamageLength = initialLanternDamageLength;
             }
         }
@@ -853,6 +882,7 @@ public class PlayerController : MonoBehaviour {
 
             if (hitTag == GameManager.Instance.GetTagOfDesiredType(GameManager.TypeOfTag.CollectableObject))
             {
+                Debug.Log("Examinar por collectable");
                 co = hit.transform.GetComponent<CollectableObject>();
                 Examine();
                 //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_Button);
@@ -898,6 +928,7 @@ public class PlayerController : MonoBehaviour {
         if (!GameManager.Instance.GetIsInCombateMode())
             CalmMode();
 
+        myVolumetricLight.ScatteringCoef = initialScatteringCoff;
         aimTimer = timeBetweenAim / 2;
 
         myAnimator.SetBool("Charging", false);
@@ -1189,10 +1220,38 @@ public class PlayerController : MonoBehaviour {
     }
     #endregion
 
+    #region Die Methods
+    private void DeathMethod()
+    {
+        if (deathTime >= timeVibrating)
+        {
+            InputsManager.Instance.DeactiveVibration();
+            deathTime = -9999;
+        }
+        else
+        {
+            deathTime += Time.deltaTime;
+        }
+
+        if (faceDirection != Vector3.back)
+            faceDirection = Vector3.back;
+
+        transform.forward = Vector3.Slerp(transform.forward, faceDirection, autoFacingSpeed * Time.deltaTime);
+    }
+    #endregion
+
     #region Public Methods
     public void ChangePlayerState(State newState)
     {
         currentState = newState;
+
+        if (currentState == State.Dying)
+        {
+            myGhostsDeath.SetActive(true);
+            myDeathGround.SetActive(true);
+            myDeathLight.enabled = true;
+            GameManager.Instance.SwitchMainLight();
+        }
     }
 
     public int GetCurrentHp()
@@ -1394,6 +1453,9 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
+            //Activar luz oscura
+            ChangePlayerState(State.Dying);
+            CameraBehaviour.Instance.DeathCamMode();
             myAnimator.SetTrigger("Dead");
             StopByMegaStop();
             SoundManager.Instance.PlayerSoundEnum(SoundManager.SoundRequestPlayer.P_Death);

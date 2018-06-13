@@ -120,7 +120,9 @@ public class WallPaint : LightenableObject
 
     public override void InsideLanternRange()
     {
-        //SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
+        if (!insideRadius)
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
+
         insideRadius = true;
     }
 
