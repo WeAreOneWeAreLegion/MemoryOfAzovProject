@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Enemy_v1_white
   m_EditorClassIdentifier: 
   ghostColor: 0
-  speed: 100
+  speed: 150
   rotationSpeed: 330
   oscilationSpeed: 40
   speedFactorWhenLightened: 1
