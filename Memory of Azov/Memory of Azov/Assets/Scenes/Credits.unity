@@ -1127,6 +1127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e52ae863fb106498dcee485c085104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToInitialize: 0.2
 --- !u!114 &1106706271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1169,6 +1170,7 @@ MonoBehaviour:
   scenarioItemFoundSound: event:/Escenario/FX_ItemFound
   scenarioItemLightParticlesSound: event:/Escenario/FX_ItemLightParticles
   scenarioLockedDoorSound: event:/Escenario/FX_LoockedDoor
+  scenarioMemoryOfAzovSound: event:/Escenario/FX_MemoryOfAzov
   scenarioSpecialItemFoundSound: event:/Escenario/FX_SpecialItemFound
   scenarioUnlockDoorSound: event:/Escenario/FX_UnlockDoor
   scenarioLeverSound: event:/Escenario/FX_Lever
@@ -1177,13 +1179,11 @@ MonoBehaviour:
   flashlightChargingFlashSound: event:/Linterna/Flashlight_ChargingFlash
   flashlightChargedFlashSound: event:/Linterna/Flashlight_Charged
   flashlightFlashSound: event:/Linterna/Flashlight_Flash
-  flashlightOffSound: event:/Linterna/Flashlight_Off
-  flashlightOnSound: event:/Linterna/Flashlight_On
   menuHUDMovementSound: "event:/Men\xFA/HUD_Movement Grupo 1"
   menuHUDSelectSound: "event:/Men\xFA/HUD_Select Grupo 3"
   menuHUDSelectBackSound: "event:/Men\xFA/HUD_SelectBack Grupo 3"
   houseMusic: event:/Music/Main Menu
-  combatMusic: event:/Music/Combat Music
+  lastDoorMusic: event:/Music/LastDoorsMusic
   gameOverMusic: event:/Music/Game Over
   victoryMusic: event:/Wind & Other Sounds/Success
 --- !u!1 &1137418983
