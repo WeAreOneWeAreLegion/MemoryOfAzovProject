@@ -298,7 +298,7 @@ public class Enemy : LightenableObject {
     {
         //myAudioSource.clip = SoundManager.Instance.GetSoundByRequest(SoundManager.SoundRequest.E_Cry);
         //myAudioSource.Play();
-        SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Boo);
+        SoundManager.Instance.GhostSoundEnum(SoundManager.SoundRequestGhost.G_Laugh);
     }
     #endregion
 

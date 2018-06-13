@@ -13,7 +13,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
         S_HealthItemFound, S_ItemFound, S_ItemParticles, S_ItemParticlesOff, S_LockedDoor, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
     public enum SoundRequestFlashlight { F_ChargingFlash, F_ChargedFlash, F_ChargedFlashOff, F_Flash, F_On, F_Off }
     public enum SoundRequestMenu { Me_Movement, Me_Select, Me_SelectBack }
-    public enum SoundRequestMusic { Mu_HouseOn, MU_CombatOn, MU_GameOverOn, MU_VictoryOn, MU_HouseOff, MU_CombatOff, MU_GameOverOff, MU_VictoryOff }
+    public enum SoundRequestMusic { Mu_HouseOn, MU_CombatOn, MU_LastDoor, MU_VictoryOn, MU_HouseOff, MU_GameOverOff, MU_VictoryOff }
 
     #region Public Variables
     [Header("\t    Own Script Variables")]
@@ -205,8 +205,8 @@ public class SoundManager : MonoSingleton<SoundManager> {
     FMOD.Studio.EventInstance soundEventHouseMusic;
 
     [FMODUnity.EventRef]
-    public string combatMusic;
-    FMOD.Studio.EventInstance soundEventCombatMusic;
+    public string lastDoorMusic;
+    FMOD.Studio.EventInstance soundEventLastDoorMusic;
 
     [FMODUnity.EventRef]
     public string gameOverMusic;
@@ -279,7 +279,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
 
         //Music
         soundEventHouseMusic = FMODUnity.RuntimeManager.CreateInstance(houseMusic);
-        soundEventCombatMusic = FMODUnity.RuntimeManager.CreateInstance(combatMusic);
+        soundEventLastDoorMusic = FMODUnity.RuntimeManager.CreateInstance(lastDoorMusic);
         soundEventGameOverMusic = FMODUnity.RuntimeManager.CreateInstance(gameOverMusic);
         soundEventVictoryMusic = FMODUnity.RuntimeManager.CreateInstance(victoryMusic);
 
@@ -378,10 +378,10 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 PlayScenarioButtonSound();
                 break;
             case SoundRequestScenario.S_LightbulbFalls:
-                PlayScenarioLightbulbSpawnsSound();
+                PlayScenarioLightbulbFallsSound();
                 break;
             case SoundRequestScenario.S_LightbulbSpawns:
-                PlayScenarioLightbulbFallsSound();
+                PlayScenarioLightbulbSpawnsSound();
                 break;
             case SoundRequestScenario.S_DoorOpen:
                 PlayScenarioDoorOpenSound();
@@ -447,12 +447,6 @@ public class SoundManager : MonoSingleton<SoundManager> {
             case SoundRequestFlashlight.F_Flash:
                 PlayFlashlightFlashSound();
                 break;
-            case SoundRequestFlashlight.F_Off:
-                PlayFlashlightOffSound();
-                break;
-            case SoundRequestFlashlight.F_On:
-                PlayFlashlightOnSound();
-                break;
         }
     }
 
@@ -460,9 +454,6 @@ public class SoundManager : MonoSingleton<SoundManager> {
     {
         switch (srme)
         {
-            case SoundRequestMenu.Me_Movement:
-                PlayMenuHUDMovementSound();
-                break;
             case SoundRequestMenu.Me_Select:
                 PlayMenuHUDSelectSound();
                 break;
@@ -479,10 +470,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
             case SoundRequestMusic.Mu_HouseOn:
                 PlayHouseMusic();
                 break;
-            case SoundRequestMusic.MU_CombatOn:
-                PlayCombatMusic();
-                break;
-            case SoundRequestMusic.MU_GameOverOn:
+            case SoundRequestMusic.MU_LastDoor:
                 PlayGameOverMusic();
                 break;
             case SoundRequestMusic.MU_VictoryOn:
@@ -490,9 +478,6 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 break;
             case SoundRequestMusic.MU_HouseOff:
                 StopHouseMusic();
-                break;
-            case SoundRequestMusic.MU_CombatOff:
-                StopCombatMusic();
                 break;
             case SoundRequestMusic.MU_GameOverOff:
                 StopGameOverMusic();
@@ -799,9 +784,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventHouseMusic.start();
     }
 
-    public void PlayCombatMusic()
+    public void PlayLastDoorMusic()
     {
-        soundEventCombatMusic.start();
+        soundEventLastDoorMusic.start();
     }
 
     public void PlayGameOverMusic()
@@ -863,16 +848,16 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventHouseMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
-    public void StopCombatMusic()
+    public void StopLastDoorMusic()
     {
         //soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        soundEventLastDoorMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void StopGameOverMusic()
     {
         //soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        soundEventCombatMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        soundEventLastDoorMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void StopVictoryMusic()

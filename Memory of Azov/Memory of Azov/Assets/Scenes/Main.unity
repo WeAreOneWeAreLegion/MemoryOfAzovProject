@@ -29921,7 +29921,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 274188009}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &436826130
@@ -87275,7 +87275,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1901431044}
   gameOverRestartButton: {fileID: 349705099}
   victoryPanel: {fileID: 173800942}
-  victoryOKButton: {fileID: 0}
+  victoryOKButton: {fileID: 1497571808}
   ghostHuntedText: {fileID: 1363118717}
   healthLostText: {fileID: 46964047}
   timePlayedText: {fileID: 321731007}
@@ -102916,7 +102916,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
+  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
   m_LocalPosition: {x: 0.1, y: -0.02, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

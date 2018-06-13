@@ -976,7 +976,7 @@ public class GameManager : MonoSingleton<GameManager> {
     #region Game State Methods
     public void CallPlayerDeath()
     {//Game Over
-        SoundManager.Instance.MusicSoundEnum(SoundManager.SoundRequestMusic.MU_GameOverOn);
+        SoundManager.Instance.MusicSoundEnum(SoundManager.SoundRequestMusic.MU_LastDoor);
         InputsManager.Instance.DeactiveVibration();
         gameOverPanel.SetActive(true);
         StartCoroutine(HighlightButton(gameOverRestartButton));
