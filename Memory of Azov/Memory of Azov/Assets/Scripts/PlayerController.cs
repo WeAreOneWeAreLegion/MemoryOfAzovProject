@@ -1308,7 +1308,7 @@ public class PlayerController : MonoBehaviour {
     {
         //Sonido azov
         azovEgg.SetActive(true);
-        //SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_Off);
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_MemoryOfAzov, this.gameObject.transform);
     }
 
     public void HideItems()

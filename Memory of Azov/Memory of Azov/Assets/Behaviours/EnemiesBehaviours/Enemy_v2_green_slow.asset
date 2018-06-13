@@ -15,7 +15,7 @@ MonoBehaviour:
   speed: 200
   rotationSpeed: 330
   oscilationSpeed: 40
-  speedFactorWhenLightened: 1.5
+  speedFactorWhenLightened: 1
   oscilationsPerSecond: 1
   oscilationAmplitude: 2
   immediateFacing: 0

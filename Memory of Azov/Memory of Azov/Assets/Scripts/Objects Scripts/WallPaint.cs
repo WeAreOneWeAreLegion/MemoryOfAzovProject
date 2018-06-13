@@ -53,11 +53,13 @@ public class WallPaint : LightenableObject
         if (Vector3.Distance(target.position, transform.position) < target.GetComponent<PlayerController>().lanternDamageLength)
         {
             target.GetComponent<PlayerController>().OnLightenObjectEnter(this.gameObject);
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
         }
         else
         {
             target.GetComponent<PlayerController>().OnLightenObjectExit(this.gameObject);
             OutsideLanternRange();
+            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticlesOff, this.gameObject.transform);
         }
     }
 
@@ -65,7 +67,7 @@ public class WallPaint : LightenableObject
     {
         if (insideRadius)
         {
-            SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
+            
             if (!particles.activeInHierarchy)
                 particles.SetActive(true);
 
