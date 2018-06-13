@@ -1455,6 +1455,7 @@ public class PlayerController : MonoBehaviour {
         {
             //Activar luz oscura
             ChangePlayerState(State.Dying);
+            GameManager.Instance.DestroyAllEnemyHUD();
             CameraBehaviour.Instance.DeathCamMode();
             myAnimator.SetTrigger("Dead");
             StopByMegaStop();

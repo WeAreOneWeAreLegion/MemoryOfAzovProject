@@ -426,6 +426,11 @@ public class GameManager : MonoSingleton<GameManager> {
         });
     }
 
+    public void DestroyAllEnemyHUD()
+    {
+        enemyHUDList.ForEach(x => x.gameObject.SetActive(false));
+    }
+
     public void DisablePlayerHUD()
     {
         playerHUD.HideImage();
