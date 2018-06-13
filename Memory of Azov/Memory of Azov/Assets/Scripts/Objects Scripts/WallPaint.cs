@@ -100,6 +100,8 @@ public class WallPaint : LightenableObject
                 }
 
                 InputsManager.Instance.DeactiveVibration();
+                target.GetComponent<PlayerController>().OnLightenObjectExit(this.gameObject);
+                SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticlesOff, this.gameObject.transform);
                 gameObject.SetActive(false);
             }
         }
@@ -118,7 +120,7 @@ public class WallPaint : LightenableObject
 
     public override void InsideLanternRange()
     {
-        if (!insideRadius)
+        if (timer == 0)
             SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_ItemParticles, this.gameObject.transform);
 
         insideRadius = true;
