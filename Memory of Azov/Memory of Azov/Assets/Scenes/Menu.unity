@@ -279,7 +279,8 @@ Prefab:
       propertyPath: m_Name
       value: Escultura (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114718739043080662, guid: ac90e81fc15fe8942b8ada05eb2395a3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ac90e81fc15fe8942b8ada05eb2395a3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &41770673
@@ -400,7 +401,8 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 36.351
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114864931500686690, guid: e4f829ea2d320a048b8662fd0fbefe3f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e4f829ea2d320a048b8662fd0fbefe3f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &57666113
@@ -12224,7 +12226,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114718739043080662, guid: ac90e81fc15fe8942b8ada05eb2395a3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ac90e81fc15fe8942b8ada05eb2395a3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1034710460
@@ -13814,7 +13817,8 @@ Prefab:
       propertyPath: m_Name
       value: Silla (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114852908232387998, guid: ba0ec075f68dec742b1d1e7159977084, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ba0ec075f68dec742b1d1e7159977084, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1449595881
@@ -13856,7 +13860,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114416201164585890, guid: 375f4732c5bc0494eb655c894bfff7a2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 375f4732c5bc0494eb655c894bfff7a2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1453341080
@@ -16152,7 +16157,8 @@ Prefab:
       propertyPath: m_Name
       value: Silla (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114852908232387998, guid: ba0ec075f68dec742b1d1e7159977084, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ba0ec075f68dec742b1d1e7159977084, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2046289802
@@ -16268,7 +16274,8 @@ Prefab:
       propertyPath: m_Name
       value: Escultura (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114718739043080662, guid: ac90e81fc15fe8942b8ada05eb2395a3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ac90e81fc15fe8942b8ada05eb2395a3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2102795481
