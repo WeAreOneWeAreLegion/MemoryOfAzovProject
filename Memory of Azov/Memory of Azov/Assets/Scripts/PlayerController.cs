@@ -414,26 +414,25 @@ public class PlayerController : MonoBehaviour {
         {
             if (((xMove == 0 && zMove == 0) || independentFacing) && currentControl == TypeOfControl.TwoControls)
             {
-                Debug.Log(Mathf.Abs(xRotation / InputsManager.Instance.joystickRotationFactor));
-                if (Mathf.Abs(xRotation / InputsManager.Instance.joystickRotationFactor) > 0.99f)
-                {
+                //if (Mathf.Abs(xRotation / InputsManager.Instance.joystickRotationFactor) > 0.99f)
+                //{
                     transform.Rotate(Vector3.up, xRotation * rotationSpeed * Time.deltaTime);
-                }
-                else
-                {
-                    float newYValue;
+                //}
+                //else
+                //{
+                //    float newYValue;
 
-                    if (xRotation > 0)
-                        newYValue = Mathf.Lerp(0, sidesLanternAngle, xRotation / InputsManager.Instance.joystickRotationFactor);
-                    else if (xRotation < 0)
-                        newYValue = Mathf.Lerp(0, -sidesLanternAngle, -xRotation / InputsManager.Instance.joystickRotationFactor);
-                    else
-                        newYValue = 0;
+                //    if (xRotation > 0)
+                //        newYValue = Mathf.Lerp(0, sidesLanternAngle, xRotation / InputsManager.Instance.joystickRotationFactor);
+                //    else if (xRotation < 0)
+                //        newYValue = Mathf.Lerp(0, -sidesLanternAngle, -xRotation / InputsManager.Instance.joystickRotationFactor);
+                //    else
+                //        newYValue = 0;
 
-                    yLanternRotationValue = Mathf.Lerp(yLanternRotationValue, newYValue, 0.3f);
+                //    yLanternRotationValue = Mathf.Lerp(yLanternRotationValue, newYValue, 0.3f);
 
-                    lanternHandBone.transform.Rotate(transform.up, yLanternRotationValue, Space.World);
-                }
+                //    lanternHandBone.transform.Rotate(transform.up, yLanternRotationValue, Space.World);
+                //}
             }
 
             float newXValue;
