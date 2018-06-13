@@ -1247,7 +1247,9 @@ public class PlayerController : MonoBehaviour {
 
         if (currentState == State.Dying)
         {
+            myGhostsDeath.transform.position = transform.position;
             myGhostsDeath.SetActive(true);
+            myDeathGround.transform.position = transform.position;
             myDeathGround.SetActive(true);
             myDeathLight.enabled = true;
             GameManager.Instance.SwitchMainLight();
