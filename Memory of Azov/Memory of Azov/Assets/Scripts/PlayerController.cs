@@ -701,7 +701,7 @@ public class PlayerController : MonoBehaviour {
 
                 lightChargingTimer = 1;
 
-                //SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargedFlash);
+                SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargedFlash);
             }
         }
 
@@ -941,6 +941,7 @@ public class PlayerController : MonoBehaviour {
 
         chargindParticles.gameObject.SetActive(false);
         SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_Flash);
+        SoundManager.Instance.FlashlightSoundEnum(SoundManager.SoundRequestFlashlight.F_ChargedFlashOff);
     }
 
     private void SwitchLight()

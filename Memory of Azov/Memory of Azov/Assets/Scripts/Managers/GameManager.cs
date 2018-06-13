@@ -568,6 +568,9 @@ public class GameManager : MonoSingleton<GameManager> {
 
     private void VisualGemAdd(bool isAddingAzov)
     {
+        //Sonido vela
+        SoundManager.Instance.ScenarioSoundEnum(SoundManager.SoundRequestScenario.S_FlameOn, GetPlayer());
+
         if (isAddingAzov)
         {
             currentNumOfGems++;
@@ -592,7 +595,10 @@ public class GameManager : MonoSingleton<GameManager> {
         }
 
         if (currentNumOfGems >= maxNumOfGems)
+        {
+            //Sonido aqui si quieres que suene la musica nada mas hacer aparecer la 8 vela
             GetFinalKey();
+        }
 
     }
 
@@ -614,16 +620,16 @@ public class GameManager : MonoSingleton<GameManager> {
         yield return new WaitForSeconds(timeShowingGemsPanel - 0.8f);
         if (HasFinalKey())
         {
-            //Rotate to x point
+            //Sonido aqui si quieres que se ponga el sonido de la musica al empezar a hacer el paneo hacia abajo
             gemsCamera.GetComponent<CameraChandelierBehaviour>().activate = true;
-            //Wait for X seconds
             yield return new WaitForSeconds(2.2f);
-            //Active door particles
+            //Sonido aqui si quieres que vayan con las particulas
             finalDoorParticles.SetActive(true);
-            //Wait more seconds
             yield return new WaitForSeconds(6f);
+            //Aqui sonido para abrir puerta final si lo tienes
             finalDoor.OpenFinalDoor();
             yield return new WaitForSeconds(0.5f);
+            //Si los sonidos son en loop o tienen longitud, aqui los apagas
             finalDoorParticles.SetActive(false);
             showGemsPanel = true;
         }
