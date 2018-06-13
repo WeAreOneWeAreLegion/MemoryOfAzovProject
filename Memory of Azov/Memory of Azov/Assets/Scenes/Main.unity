@@ -92029,6 +92029,7 @@ MonoBehaviour:
   scenarioLightbulbFallsSound: event:/Escenario/FX_LightbulbFalls
   scenarioDoorOpenSound: event:/Escenario/FX_DoorOpen
   scenarioFireplaceSound: event:/Escenario/FX_Fireplace
+  scenarioFlameOnSound: event:/Escenario/FX_FlameOn
   scenarioFurnitureShakingSound: event:/Escenario/FX_FurnitureShaking
   scenarioHealItemDroppedSound: event:/Escenario/FX_HealthItemDropped
   scenarioHealItemFoundSound: event:/Escenario/FX_HealthItemFound
@@ -102915,7 +102916,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543927225}
-  m_LocalRotation: {x: -0.5527264, y: 0.5764247, z: 0.32375598, w: 0.5073559}
+  m_LocalRotation: {x: -0.55272645, y: 0.5764248, z: 0.323756, w: 0.507356}
   m_LocalPosition: {x: 0.1, y: -0.02, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

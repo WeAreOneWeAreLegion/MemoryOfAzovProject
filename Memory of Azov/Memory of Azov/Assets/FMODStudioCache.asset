@@ -12,131 +12,133 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114585435430895040}
-  - {fileID: 114392762031180914}
+  - {fileID: 114284135563987376}
+  - {fileID: 114448494228181986}
   EditorEvents:
-  - {fileID: 114627630205007926}
-  - {fileID: 114945904680432230}
-  - {fileID: 114793191879388730}
-  - {fileID: 114522085799789210}
-  - {fileID: 114713966802155682}
-  - {fileID: 114633003971728178}
-  - {fileID: 114329147087405146}
-  - {fileID: 114242101758262164}
-  - {fileID: 114666842074178374}
-  - {fileID: 114264090415516866}
-  - {fileID: 114463607956491806}
-  - {fileID: 114039679992936684}
-  - {fileID: 114339612378384584}
-  - {fileID: 114616891750238108}
-  - {fileID: 114417111644460674}
-  - {fileID: 114904855408019326}
-  - {fileID: 114025723989774020}
-  - {fileID: 114599200509314144}
-  - {fileID: 114362708265523778}
-  - {fileID: 114098541378293210}
-  - {fileID: 114436750087095942}
-  - {fileID: 114278627725665606}
-  - {fileID: 114243664006614722}
-  - {fileID: 114994411714830740}
-  - {fileID: 114134625737723484}
-  - {fileID: 114005638675435366}
-  - {fileID: 114832225285468904}
-  - {fileID: 114837876682624692}
-  - {fileID: 114101379508014894}
-  - {fileID: 114239478489386288}
-  - {fileID: 114291867005737124}
-  - {fileID: 114100721250106362}
-  - {fileID: 114853731822499888}
-  - {fileID: 114520578810278074}
-  - {fileID: 114530197494009700}
-  - {fileID: 114178728969256092}
-  - {fileID: 114712466318934554}
-  - {fileID: 114549111341598106}
-  - {fileID: 114496440805647786}
-  - {fileID: 114987041390324486}
-  - {fileID: 114466320077464068}
-  - {fileID: 114146734716867464}
-  - {fileID: 114383462258554864}
-  - {fileID: 114512512202963238}
-  - {fileID: 114940978228410938}
-  - {fileID: 114661301842758408}
-  - {fileID: 114850291606138122}
-  - {fileID: 114353317714328114}
-  - {fileID: 114195813630789490}
-  - {fileID: 114716629042988256}
-  - {fileID: 114997409154275986}
-  - {fileID: 114050966696058952}
-  - {fileID: 114189087955824794}
-  - {fileID: 114229534856303656}
-  - {fileID: 114094541832682364}
-  - {fileID: 114553406856484422}
-  - {fileID: 114515872552206980}
-  - {fileID: 114217378624426904}
-  - {fileID: 114954247960391624}
-  - {fileID: 114713446708503456}
-  - {fileID: 114272859787802146}
-  - {fileID: 114421615057276852}
-  - {fileID: 114672039584563164}
-  - {fileID: 114805612339432370}
-  - {fileID: 114206766424876568}
-  - {fileID: 114722323884375238}
-  - {fileID: 114506530678242810}
-  - {fileID: 114878982619024282}
-  - {fileID: 114819715164056510}
-  - {fileID: 114427150815797600}
-  - {fileID: 114899792231545418}
-  - {fileID: 114515778514473600}
-  - {fileID: 114212310985988594}
-  - {fileID: 114805170963353722}
-  - {fileID: 114585832603781178}
-  - {fileID: 114092919411714316}
-  - {fileID: 114086600225526584}
-  - {fileID: 114721053791096958}
-  - {fileID: 114266126812969406}
-  - {fileID: 114557822677075042}
-  - {fileID: 114353939544478164}
-  - {fileID: 114227981194263248}
-  - {fileID: 114239899046382090}
-  - {fileID: 114962761983697550}
-  - {fileID: 114953945451806096}
-  - {fileID: 114624576425409930}
-  - {fileID: 114251098203611244}
-  - {fileID: 114076496294693936}
-  - {fileID: 114412294131688612}
-  - {fileID: 114194904061974078}
-  - {fileID: 114635161736904256}
-  - {fileID: 114879255395423866}
-  - {fileID: 114204952186599162}
-  - {fileID: 114699771681259668}
-  - {fileID: 114553032420936872}
-  - {fileID: 114423870970499136}
-  - {fileID: 114005084470033272}
-  - {fileID: 114269739612572622}
-  - {fileID: 114423675254963826}
-  - {fileID: 114685402699972792}
-  - {fileID: 114187682784842836}
-  - {fileID: 114152555579542088}
-  - {fileID: 114880183279404182}
-  - {fileID: 114543759531690812}
-  - {fileID: 114513197339994706}
-  - {fileID: 114834592589213804}
-  - {fileID: 114931722242754426}
-  - {fileID: 114933382538748562}
-  - {fileID: 114486157919298546}
-  - {fileID: 114691108074152874}
-  - {fileID: 114690459472015976}
-  - {fileID: 114605226501688960}
-  - {fileID: 114687758059503852}
-  - {fileID: 114543094530463732}
-  - {fileID: 114781949906719862}
-  - {fileID: 114994410828386482}
-  - {fileID: 114580953198188574}
-  - {fileID: 114651476320861020}
-  - {fileID: 114761528317738586}
-  MasterBankRef: {fileID: 114392762031180914}
-  StringsBankRef: {fileID: 114585435430895040}
-  stringsBankWriteTime: 636644533233100018
+  - {fileID: 114047723881156434}
+  - {fileID: 114688895033027290}
+  - {fileID: 114364790621168258}
+  - {fileID: 114847467593557780}
+  - {fileID: 114567588139878242}
+  - {fileID: 114312760018525750}
+  - {fileID: 114711993280031556}
+  - {fileID: 114506184244833264}
+  - {fileID: 114789733546077798}
+  - {fileID: 114900460616577984}
+  - {fileID: 114103163837981450}
+  - {fileID: 114172056497597116}
+  - {fileID: 114465898791954616}
+  - {fileID: 114938846126477500}
+  - {fileID: 114706404693216070}
+  - {fileID: 114340318560943092}
+  - {fileID: 114798927130817044}
+  - {fileID: 114907230575023502}
+  - {fileID: 114826431011452696}
+  - {fileID: 114857972679789286}
+  - {fileID: 114571979941578584}
+  - {fileID: 114880150561081848}
+  - {fileID: 114194504740321744}
+  - {fileID: 114347326743602538}
+  - {fileID: 114465409369415442}
+  - {fileID: 114889482114777216}
+  - {fileID: 114216644464482798}
+  - {fileID: 114528180164634646}
+  - {fileID: 114237576854329060}
+  - {fileID: 114651980998342974}
+  - {fileID: 114409626692289908}
+  - {fileID: 114906847205785790}
+  - {fileID: 114453909563210534}
+  - {fileID: 114140225074838314}
+  - {fileID: 114576698880889906}
+  - {fileID: 114875936645636478}
+  - {fileID: 114537323187537458}
+  - {fileID: 114639841294292986}
+  - {fileID: 114184209690035796}
+  - {fileID: 114918094521417770}
+  - {fileID: 114205647029277206}
+  - {fileID: 114101771172710126}
+  - {fileID: 114615409789027490}
+  - {fileID: 114954972538162388}
+  - {fileID: 114931593216157222}
+  - {fileID: 114550937551989264}
+  - {fileID: 114297408055892832}
+  - {fileID: 114881629146040018}
+  - {fileID: 114036531490513208}
+  - {fileID: 114658581272480734}
+  - {fileID: 114697086555207132}
+  - {fileID: 114292079382165460}
+  - {fileID: 114327556333920316}
+  - {fileID: 114733647374417804}
+  - {fileID: 114641874970031400}
+  - {fileID: 114394081892180534}
+  - {fileID: 114648416164898672}
+  - {fileID: 114518050562962364}
+  - {fileID: 114253081077515734}
+  - {fileID: 114046237921311258}
+  - {fileID: 114771107379269994}
+  - {fileID: 114776152458599418}
+  - {fileID: 114511562691624682}
+  - {fileID: 114825375445942658}
+  - {fileID: 114637358143577466}
+  - {fileID: 114968888877388390}
+  - {fileID: 114427938780951352}
+  - {fileID: 114882003251448652}
+  - {fileID: 114710415990932028}
+  - {fileID: 114530299263025776}
+  - {fileID: 114893159482730886}
+  - {fileID: 114142161913611118}
+  - {fileID: 114745464132809738}
+  - {fileID: 114686888768354704}
+  - {fileID: 114091544966600946}
+  - {fileID: 114143647780058486}
+  - {fileID: 114661173462045640}
+  - {fileID: 114405457410766938}
+  - {fileID: 114004636260489914}
+  - {fileID: 114541800212372478}
+  - {fileID: 114901076046272830}
+  - {fileID: 114707686696385236}
+  - {fileID: 114163684185793116}
+  - {fileID: 114517755541188304}
+  - {fileID: 114190308105270670}
+  - {fileID: 114881202127986948}
+  - {fileID: 114552235452765624}
+  - {fileID: 114499942003493982}
+  - {fileID: 114001303512801828}
+  - {fileID: 114053220634566220}
+  - {fileID: 114534663064763564}
+  - {fileID: 114658727319626040}
+  - {fileID: 114025838888664200}
+  - {fileID: 114159530671657544}
+  - {fileID: 114557783950540738}
+  - {fileID: 114622837664172348}
+  - {fileID: 114126104391779478}
+  - {fileID: 114289266606722476}
+  - {fileID: 114627347060479170}
+  - {fileID: 114853099446407584}
+  - {fileID: 114750926416494726}
+  - {fileID: 114326779009210188}
+  - {fileID: 114835663277645350}
+  - {fileID: 114912612784138468}
+  - {fileID: 114509415542884042}
+  - {fileID: 114699394072265896}
+  - {fileID: 114403359526204432}
+  - {fileID: 114529737204807746}
+  - {fileID: 114887463490861966}
+  - {fileID: 114885550334044560}
+  - {fileID: 114713342565014682}
+  - {fileID: 114426817197331454}
+  - {fileID: 114734780370992154}
+  - {fileID: 114982102431946664}
+  - {fileID: 114264233440193596}
+  - {fileID: 114180746310757120}
+  - {fileID: 114360666178284768}
+  - {fileID: 114412894042461782}
+  - {fileID: 114625292028713490}
+  - {fileID: 114916456080022974}
+  - {fileID: 114176511286189026}
+  MasterBankRef: {fileID: 114448494228181986}
+  StringsBankRef: {fileID: 114284135563987376}
+  stringsBankWriteTime: 636644568038325520
   cacheVersion: 2
 --- !u!114 &114000270854373410
 MonoBehaviour:
@@ -160,6 +162,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 800
+--- !u!114 &114001303512801828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Lever (2)
+  guid: bc2fbda09fc26846ba98bce10f57bbc3
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 594
 --- !u!114 &114001912035149868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +250,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 293
+--- !u!114 &114004636260489914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_Select Grupo 2"
+  guid: a9f006287c0de64685c6fcde8a4dafd5
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 340
 --- !u!114 &114004770263529570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,6 +973,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &114025838888664200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_SelectBack Grupo 2"
+  guid: c1e2d6dabeacd64c827b67191da329b3
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 393
 --- !u!114 &114026893806620128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,6 +1105,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 910
+--- !u!114 &114036531490513208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_UnlockDoor (4)
+  guid: 6499da890ea5984fa42b17812feea29f
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 520
 --- !u!114 &114037121292335500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,6 +1367,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &114046237921311258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_FurnitureShaking
+  guid: 7d31d52557a84241a0b256c3e42eabdd
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 450
+--- !u!114 &114047723881156434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_UnlockDoor
+  guid: 00155a7117a9ae4f87ec9f6bcceaa6bf
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 372
 --- !u!114 &114048429437717096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,6 +1515,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 800
+--- !u!114 &114053220634566220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_Select Grupo 3"
+  guid: bd3a741b768fa44ea1a7e8b0dc7e25c4
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 284
 --- !u!114 &114055685359900664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,6 +2348,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 296
+--- !u!114 &114091544966600946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_ChargingFlash (con Charged)
+  guid: a5aab44ee8150741af103b971cab39de
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4300
 --- !u!114 &114092189809292522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2497,6 +2675,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 296
+--- !u!114 &114101771172710126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiente/FX_Rain 3D
+  guid: 5095b2798d65de4598b6683f55bab052
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 69800
 --- !u!114 &114101900850676374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2563,6 +2763,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 960
+--- !u!114 &114103163837981450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Main Menu
+  guid: 1917d2bc13d7544490f5c6b5a2e98927
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 30967
 --- !u!114 &114104241555047356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3127,6 +3349,28 @@ MonoBehaviour:
   - Name: 
     Value: 16111200
   Exists: 0
+--- !u!114 &114126104391779478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Character_ShakingHead
+  guid: cbbbd4b93c0f164db53395fce1bd358d
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 959
 --- !u!114 &114126875812937584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3369,6 +3613,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 450
+--- !u!114 &114140225074838314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Character_StepsCarpet
+  guid: 461203a22d1fd04b81b423c060a1e865
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &114142161913611118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_DoorClose
+  guid: 9cc2d8f2922beb4087253cd1271ede81
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 872
 --- !u!114 &114143014438403108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3391,6 +3679,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 140
+--- !u!114 &114143647780058486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_ChargingFlash (con Charged 2)
+  guid: a6c8b453b654424aa030736fdd5aa6d7
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &114145443979217462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3826,6 +4136,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 800
+--- !u!114 &114159530671657544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Button (2)
+  guid: c23ae1b748a1c845a3d10bf3c5d54b41
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
 --- !u!114 &114160669586042028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3848,6 +4180,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 42
+--- !u!114 &114163684185793116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Character_StepsMarble
+  guid: b3ecfcc57cf62b4e9bd559125d2c1bae
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 314
 --- !u!114 &114164302108760194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3977,6 +4331,28 @@ MonoBehaviour:
   - Name: 
     Value: 16111200
   Exists: 0
+--- !u!114 &114172056497597116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game Over
+  guid: 1a1a72ceb0f8314fbdacf68cb6cb0a9e
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7058
 --- !u!114 &114173526323758136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4084,6 +4460,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 137500
+--- !u!114 &114176511286189026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiente/FX_Rain
+  guid: ff47445ba2a6b949918e450f25125138
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11200
 --- !u!114 &114176630123294018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4260,6 +4658,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 340
+--- !u!114 &114180746310757120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_DoorKnob
+  guid: e8a732420f04ee4bbc6a711545ef7ae1
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 293
 --- !u!114 &114181643956444576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4408,6 +4828,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 293
+--- !u!114 &114184209690035796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_ChargingFlash (1)
+  guid: 4a8f6144614655448b46bb9a1ae17d99
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &114187682784842836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4580,6 +5022,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 959
+--- !u!114 &114190308105270670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_LoockedDoor
+  guid: bb48f69ac671984eac3e4d929823a20e
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 574
 --- !u!114 &114190874022010130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4712,6 +5176,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 16
+--- !u!114 &114194504740321744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_HealthItemFound
+  guid: 370ed08c67e9e74da78cdd8e79f37861
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 420
 --- !u!114 &114194904061974078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5018,6 +5504,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 365
+--- !u!114 &114205647029277206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game Over (5)
+  guid: 4e6b5aa4f9d79b4a9b95aca6e44c8baf
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4117
 --- !u!114 &114206766424876568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5214,6 +5722,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 520
+--- !u!114 &114216644464482798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_UnlockDoor (3)
+  guid: 3fcecde47bcdbd4cb9b396e82a30dc28
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 372
 --- !u!114 &114217151223185374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5735,6 +6265,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 25128
+--- !u!114 &114237576854329060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_UnlockDoor (2)
+  guid: 414deb2d5c439f4ab867083c2b25edf1
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 296
 --- !u!114 &114238062372181716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6153,6 +6705,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 594
+--- !u!114 &114253081077515734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Character_LowHealth
+  guid: 7a596b0c1e93c8429e3ad395679d240c
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114256707433434120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6327,6 +6901,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 430
+--- !u!114 &114264233440193596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Success
+  guid: e89a6549b45099468f38c523f281eaf3
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3500
 --- !u!114 &114264899432812124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6897,6 +7493,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 7058
+--- !u!114 &114284135563987376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets\Our FMOD Project\Desktop\Master Bank.strings.bank
+  lastModified: 636644568038325520
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 6126
+  Exists: 1
 --- !u!114 &114285998640337152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6919,6 +7533,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &114289266606722476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_DoorLightParticles
+  guid: ce2f17a6bb84fa44954b1ae76286c653
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
 --- !u!114 &114290207146973932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7029,6 +7665,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 365
+--- !u!114 &114292079382165460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_DoorOpen
+  guid: 6d4780c083c9db40b6bd5a09df877380
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 840
 --- !u!114 &114292108805618808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7183,6 +7841,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 145
+--- !u!114 &114297408055892832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI Clicks/Click 3
+  guid: 5dddbf4f07270047afa2b5d951fe49e8
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 278
 --- !u!114 &114298905899258978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7525,6 +8205,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 372
+--- !u!114 &114312760018525750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Combat Music
+  guid: 106741f1f9bf5641b529a3e851d13593
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 37647
 --- !u!114 &114316479099375260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7613,6 +8315,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 631
+--- !u!114 &114326779009210188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_Movement Grupo 3"
+  guid: d8b9aab88d038b4e808697e18af9c7fc
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 508
+--- !u!114 &114327556333920316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI Clicks/RollOver 2
+  guid: 6d96f2cceb6dd842abc6d9f5913f1d0c
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 57
 --- !u!114 &114329147087405146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7767,6 +8513,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5746
+--- !u!114 &114340318560943092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_SpecialItemFound (3)
+  guid: 228d06bec94c124eaca101e1cf063e33
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1620
 --- !u!114 &114341552144594402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7833,6 +8601,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1107
+--- !u!114 &114347326743602538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI Clicks/Switch 2
+  guid: 39ef39a778e6c946bece4a03b4bf8059
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 367
 --- !u!114 &114347351812478294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8097,6 +8887,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3000
+--- !u!114 &114360666178284768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_Select Grupo 1"
+  guid: ec6101837c99fe4db7af8a26f769c396
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 145
 --- !u!114 &114360682033055462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8185,6 +8997,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 18823
+--- !u!114 &114364790621168258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Button (4)
+  guid: 05323fdcb90e91488c92f63daa938e9b
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 365
 --- !u!114 &114365036827134220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8864,6 +9698,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 55
+--- !u!114 &114394081892180534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game Over (6)
+  guid: 7064a74feb3711498f10bbac02b67d12
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4117
 --- !u!114 &114394302885002430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9062,6 +9918,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 372
+--- !u!114 &114403359526204432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/LastDoorsMusic
+  guid: dee48db58e0f2142b978d022aaaeb73b
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5294
+--- !u!114 &114405457410766938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Lever (4)
+  guid: a862264096b0b14c91961e8a386580cb
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 730
 --- !u!114 &114407715271534368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9150,6 +10050,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 365
+--- !u!114 &114409626692289908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_DoorRevealed
+  guid: 4351016209afe546be2fcb94656796d3
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
 --- !u!114 &114409795836139626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9194,6 +10116,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1024
+--- !u!114 &114412894042461782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Library
+  guid: f6b530064aa53a4aa6985e8b6d4b9257
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1107
 --- !u!114 &114413875859297158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9744,6 +10688,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 140
+--- !u!114 &114426817197331454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game Over (2)
+  guid: e611f1df2354fd4c964d614a101fa4b0
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7058
 --- !u!114 &114427150815797600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9766,6 +10732,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 872
+--- !u!114 &114427938780951352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_PictureFalls (4)
+  guid: 8758687fa6d3174993bd144116cbaa75
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 670
 --- !u!114 &114428585139878316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10338,6 +11326,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2445
+--- !u!114 &114448494228181986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "D:\\Escritorio\\Escritorio actual\\Unity 3D tercer a\xF1o\\Tercer Trimestre\\Proyecto\\Carpeta
+    de GitHub definitiva\\MemoryOfAzovProject\\Memory of Azov\\Memory of Azov\\Assets\\Our
+    FMOD Project\\Desktop\\Master Bank.bank"
+  lastModified: 636644568038225519
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 16551904
+  Exists: 1
 --- !u!114 &114448822010912522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10446,6 +11454,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 400
+--- !u!114 &114453909563210534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_SelectBack Grupo 3"
+  guid: 45a04a292e6d0d46b034eea7a6982db1
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 281
 --- !u!114 &114455980211914858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10770,6 +11800,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 297
+--- !u!114 &114465409369415442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Character_Damaged
+  guid: 3af01db3e8493f469ac21b5a35123fc0
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 365
+--- !u!114 &114465898791954616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Ghostly Sound
+  guid: 1ad5fc6f8e2dc940987cf28575f49920
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5746
 --- !u!114 &114466094138909346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11405,6 +12479,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1100
+--- !u!114 &114499942003493982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_HealthItemDropped
+  guid: bba531a8c36fae48abaca7f22cdb6baa
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 140
 --- !u!114 &114502201239948382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11493,6 +12589,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
+--- !u!114 &114506184244833264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_On
+  guid: 12a4fb1c2ba6624f8e7c1944c3334216
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 34
 --- !u!114 &114506530678242810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11559,6 +12677,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 284
+--- !u!114 &114509415542884042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ghost/Ghost_Damaged
+  guid: dd51742c9c79c844afc3d16dfef79950
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 460
 --- !u!114 &114509484724794574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11625,6 +12765,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 296
+--- !u!114 &114511562691624682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_FlameOn(2)
+  guid: 7fdb909df4ee5b4fb2358994510b230b
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13533
 --- !u!114 &114511804290303466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11842,6 +13004,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 93
+--- !u!114 &114517755541188304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_LoockedDoor (3)
+  guid: b9c698035fcf64469237861eeaedc263
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 825
+--- !u!114 &114518050562962364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_FlameOn
+  guid: 744b731db1865345b91716326135f245
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1854
 --- !u!114 &114518853924964778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12084,6 +13290,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1190
+--- !u!114 &114528180164634646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game Over (3)
+  guid: 404532f428d2b4409e97348139d2ed9d
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4117
 --- !u!114 &114528909523920612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12191,6 +13419,28 @@ MonoBehaviour:
   - Name: 
     Value: 3656256
   Exists: 0
+--- !u!114 &114529737204807746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Gears
+  guid: df971f537708044ba933c811b89cdddf
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 391
 --- !u!114 &114530197494009700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12213,6 +13463,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 55
+--- !u!114 &114530299263025776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_ItemLightParticles
+  guid: 975f69c0fe13724198118a97c39b8210
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &114531399234237082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12257,6 +13529,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 145
+--- !u!114 &114534663064763564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ghost/Ghost_Boo
+  guid: be0e34c3d999f24ba03889ee56d320c3
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1024
 --- !u!114 &114534670456410686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12345,6 +13639,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1190
+--- !u!114 &114537323187537458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_Select Grupo 2 - 1"
+  guid: 490c75b14e44434b9e7110df983d59eb
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 265
 --- !u!114 &114538085045350566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12389,6 +13705,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 314
+--- !u!114 &114541800212372478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_SelectBack Grupo 2 - 1"
+  guid: ae1c51f5396e764c9c6dab9e3d98adf9
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 298
 --- !u!114 &114543094530463732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12673,6 +14011,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 30967
+--- !u!114 &114550937551989264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Library (2)
+  guid: 5d20156e64780d4cb79ac080d90fc6b0
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1120
 --- !u!114 &114551118198395008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12695,6 +14055,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &114552235452765624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Tension Music
+  guid: bb8f2f51eea1234eb53c94811ca36a18
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 306000
 --- !u!114 &114552240446349146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12849,6 +14231,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
+--- !u!114 &114557783950540738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_ChargingFlash
+  guid: c3b8711ca3f8d34da4dcc202731f7f76
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &114557822677075042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13003,6 +14407,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1400
+--- !u!114 &114567588139878242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_SpecialItemFound
+  guid: 0f15be50d6588c4988957b02835bab3d
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1620
 --- !u!114 &114568057657024330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13131,6 +14557,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 42
+--- !u!114 &114571979941578584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_Flash
+  guid: 35e79f15aede8643908d6cffbf518845
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 460
 --- !u!114 &114572345300993862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13301,6 +14749,28 @@ MonoBehaviour:
   - Name: 
     Value: 1697696
   Exists: 0
+--- !u!114 &114576698880889906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI Clicks/Click 2
+  guid: 469549a03ecaf34ca62e73719c67dd90
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 55
 --- !u!114 &114577024764329002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14192,6 +15662,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4300
+--- !u!114 &114615409789027490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_DoorOpen (3)
+  guid: 531027910937b04f85f5e621102f512e
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 840
 --- !u!114 &114616282118455682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14346,6 +15838,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 524
+--- !u!114 &114622837664172348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_ItemFound (2)
+  guid: c66a5c23ba23984d85821a1257052c34
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2445
 --- !u!114 &114622873688970650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14478,6 +15992,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 140
+--- !u!114 &114625292028713490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiente/FX_Rain (2)
+  guid: f8647f356a41954d8a4b2c97c2bcaa1c
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 69800
 --- !u!114 &114625743820801586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14522,6 +16058,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 872
+--- !u!114 &114627347060479170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_LightbulbFalls
+  guid: d1022d62bd81e54e8170a5a97acf0887
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 960
 --- !u!114 &114627427550153112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14783,6 +16341,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1120
+--- !u!114 &114637358143577466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/House Music
+  guid: 8336c313b93f2440890c23a7f4117465
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 37647
 --- !u!114 &114638833109866922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14849,6 +16429,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 15600
+--- !u!114 &114639841294292986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_MemoryOfAzov
+  guid: 49bfe75ebec79347b797b0382a80a065
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3993
 --- !u!114 &114639936049224676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14959,6 +16561,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 340
+--- !u!114 &114641874970031400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Jingle Win
+  guid: 6e2ef8c3f095f341b55a5e3511e091f8
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1235
 --- !u!114 &114643326058387094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15179,6 +16803,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 314
+--- !u!114 &114648416164898672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI Clicks/Click 1
+  guid: 718b6942be86e34a93f287474982408c
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 93
 --- !u!114 &114649460778667404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15267,6 +16913,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &114651980998342974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_PictureFalls
+  guid: 4324106e50a96348b3b512cd53974eeb
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1445
 --- !u!114 &114652821099489452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15528,6 +17196,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 37647
+--- !u!114 &114658581272480734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Fireplace (2)
+  guid: 649cf312dbe72247b9c8c954830f8631
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15600
+--- !u!114 &114658727319626040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_SpecialItemFound (2)
+  guid: c0efca99d59fd04d91d515f47c6607b1
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1700
 --- !u!114 &114658879894837946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15660,6 +17372,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 800
+--- !u!114 &114661173462045640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_Movement Grupo 3 (2)"
+  guid: a6edc8265ec10047a1e53b65463a36c8
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 631
 --- !u!114 &114661301842758408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16342,6 +18076,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 448
+--- !u!114 &114686888768354704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_Charged
+  guid: a405eecd9a6b7f4397646bba3f4a1b11
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1100
 --- !u!114 &114687423244085716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16452,6 +18208,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114688895033027290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_Off
+  guid: 04a772db0a41664b8666367e2c95a91f
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16
 --- !u!114 &114689673212725564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16672,6 +18450,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &114697086555207132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Wind raindropds against windows
+  guid: 66bde8507f3804478a14dea7d52346c6
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 83712
+--- !u!114 &114699394072265896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Ghostly Sound (3)
+  guid: de605b99a7f2b641bf6ce0e428bc2d44
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9000
 --- !u!114 &114699771681259668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16892,6 +18714,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 140
+--- !u!114 &114706404693216070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_DoorOpen (2)
+  guid: 1cb23cb0d0bb4443a142be7883f88692
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 910
+--- !u!114 &114707686696385236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ghost/Ghost_LaughtALot
+  guid: b28be2e9b0c8954fb3ee044db8dff7b3
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1329
 --- !u!114 &114709630717777486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16936,6 +18802,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114710415990932028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Lever (5)
+  guid: 93a8e7377274ee4d9dea5f7eb35d8198
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 770
+--- !u!114 &114711993280031556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Howling Wind
+  guid: 1080e2bd55b98f408970f507d54e50b6
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33567
 --- !u!114 &114712466318934554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17002,6 +18912,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 508
+--- !u!114 &114713342565014682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI Clicks/RollOver 1
+  guid: e46a552c659875448d6b55f4e19d9490
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 227
 --- !u!114 &114713446708503456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17501,6 +19433,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1329
+--- !u!114 &114733647374417804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Button (3)
+  guid: 6db5d244ae0eb5438ea3887a302a65dd
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 550
+--- !u!114 &114734780370992154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI Clicks/Click 3 Back
+  guid: e6b1929ba937944698503aeaf85b8b92
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 278
 --- !u!114 &114735728587078904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17627,6 +19603,28 @@ MonoBehaviour:
   - Name: 
     Value: 5360
   Exists: 1
+--- !u!114 &114745464132809738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Gothic Music
+  guid: 9d4db0c78558f24fabc81bee75644ae4
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 137500
 --- !u!114 &114745534833241782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17759,6 +19757,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 631
+--- !u!114 &114750926416494726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_Flash (3)
+  guid: d3e105483368104ba0ef57d9ba0b7930
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 890
 --- !u!114 &114751397499441106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18129,6 +20149,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 460
+--- !u!114 &114771107379269994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/House Music Short
+  guid: 7e53f9dbf00530408ae16edbbe8a6bab
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 18823
 --- !u!114 &114771748779944752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18173,6 +20215,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1700
+--- !u!114 &114776152458599418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Mysterious Wind
+  guid: 7f20bc3109fde84ca53b80464428fd00
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25128
 --- !u!114 &114776653163383204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18456,6 +20520,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 18823
+--- !u!114 &114789733546077798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_UnlockDoor (5)
+  guid: 134aa172d9a47148b0c55fc4016db88d
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 883
 --- !u!114 &114789805913244988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18720,6 +20806,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 42
+--- !u!114 &114798927130817044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Button
+  guid: 24697e45db11c145902239ca7f9e8543
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
 --- !u!114 &114798997455352952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19356,6 +21464,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 25128
+--- !u!114 &114825375445942658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_UnlockDoor (6)
+  guid: 7feb7118caf5984d89a9dcb2f11078a4
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 888
 --- !u!114 &114826010511106812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19378,6 +21508,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114826431011452696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Character_Scared
+  guid: 2ef4d3e1c1a6a143a5760eb69839751f
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 365
 --- !u!114 &114826595643964804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19616,6 +21768,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 278
+--- !u!114 &114835663277645350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Mysterious Wind (2)
+  guid: db8186090497744aa02769e1c876f8b9
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25128
 --- !u!114 &114836272868517430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19858,6 +22032,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 959
+--- !u!114 &114847467593557780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ghost/Ghost_Death
+  guid: 0799c028c62f8042a79dd2db56c2f4f9
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1190
 --- !u!114 &114849510506731670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19987,6 +22183,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 284
+--- !u!114 &114853099446407584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_ItemFound
+  guid: d3c4860632baf940a19ee417f5d903f8
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &114853534616363576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20075,6 +22293,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 69800
+--- !u!114 &114857972679789286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI Clicks/Switch 1
+  guid: 35d491d069a2af4ca045dbadbe5346ac
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 297
 --- !u!114 &114859554412475534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20288,6 +22528,28 @@ MonoBehaviour:
   - Name: 
     Value: 16367648
   Exists: 0
+--- !u!114 &114875936645636478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_LoockedDoor (2)
+  guid: 4835fa4784c45b448269d4ba82eeaf56
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 448
 --- !u!114 &114876374904228260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20442,6 +22704,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8200
+--- !u!114 &114880150561081848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ghost/Ghost_Stunned
+  guid: 36618706a08a2c408088394cc3685f13
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1100
 --- !u!114 &114880183279404182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20486,6 +22770,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2445
+--- !u!114 &114881202127986948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_PictureFalls (2)
+  guid: bb65be2b52f4a741a601467fdad17934
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1380
+--- !u!114 &114881629146040018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_PictureFalls (3)
+  guid: 5eecd6e56505c84ca9b30c990dd31e1d
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 934
 --- !u!114 &114881724137546730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20508,6 +22836,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 83712
+--- !u!114 &114882003251448652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_ChargingFlash (2)
+  guid: 8787c58af080bc4bbaebca443538eb11
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2400
+--- !u!114 &114885550334044560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ghost/Ghost_Laugh
+  guid: e02a08763dff59418dad9bec09d49cf0
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1015
 --- !u!114 &114885841723862268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20640,6 +23012,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 400
+--- !u!114 &114887463490861966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_Movement Grupo 1"
+  guid: dfbb97ad261034458ca33bf118e1e86d
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 42
 --- !u!114 &114888413792404846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20706,6 +23100,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 365
+--- !u!114 &114889482114777216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Lever
+  guid: 3d8fec35179f6d40866b11a464baba5d
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 874
 --- !u!114 &114891774338747358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20772,6 +23188,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 69800
+--- !u!114 &114893159482730886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiente/FX_Thunder
+  guid: 9b660a225ded32408bdc246b1d316e16
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &114893493419802700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21014,6 +23452,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 137500
+--- !u!114 &114900460616577984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_Flash (2)
+  guid: 1474f90f60a2a34cbc3198a2e06879aa
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 430
+--- !u!114 &114901076046272830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game Over (4)
+  guid: afc69b6796b49142831b7cb470a9f9f4
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4117
 --- !u!114 &114901433229381186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21080,6 +23562,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1620
+--- !u!114 &114906847205785790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_LightbulbSpawns
+  guid: 4383712657e3964aa330b35f3fe45c45
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 391
+--- !u!114 &114907230575023502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI Clicks/Click Start Game
+  guid: 2a985e752feacc4bb30ea892726c5ce8
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1400
 --- !u!114 &114907262858865420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21254,6 +23780,28 @@ MonoBehaviour:
   - Name: 
     Value: 3573344
   Exists: 1
+--- !u!114 &114912612784138468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Ghost/Ghost_Attack
+  guid: dbdebc3627b492488cbdc09cc693b2b8
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 224
 --- !u!114 &114913535564903718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21320,6 +23868,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5294
+--- !u!114 &114916456080022974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Linterna/Flashlight_Charged (1)
+  guid: f9275aba639748459f1203efd33af099
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &114916940310658672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21364,6 +23934,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9975
+--- !u!114 &114918094521417770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Character_Death
+  guid: 4b4ae86e476bb546ae9d73e9a263faa9
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 544
 --- !u!114 &114918757522160124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21644,6 +24236,28 @@ MonoBehaviour:
   - Name: 
     Value: 16094944
   Exists: 1
+--- !u!114 &114931593216157222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_Movement Grupo 2"
+  guid: 5d12d173222c1d498b62b57f2c435f3b
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 524
 --- !u!114 &114931722242754426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21864,6 +24478,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 391
+--- !u!114 &114938846126477500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Fireplace
+  guid: 1c0fc2acafe0fc4a97855089cca2c1e3
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15600
 --- !u!114 &114939206007115006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22260,6 +24896,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 450
+--- !u!114 &114954972538162388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Escenario/FX_Lever (3)
+  guid: 5c4a86feddbcef4892cf10ff021e9c03
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 380
 --- !u!114 &114955175944502798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22584,6 +25242,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 800
+--- !u!114 &114968888877388390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Men\xFA/HUD_Movement Grupo 2 - 1"
+  guid: 8512c3e787759d46909e9f2b0e085e0e
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 429
 --- !u!114 &114969069499947364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22760,6 +25440,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 890
+--- !u!114 &114982102431946664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Wind & Other Sounds/Ghostly Sound (2)
+  guid: e765d4e919432d4fb2b2360b232ee57b
+  Banks:
+  - {fileID: 114448494228181986}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7600
 --- !u!114 &114982393416866790
 MonoBehaviour:
   m_ObjectHideFlags: 0

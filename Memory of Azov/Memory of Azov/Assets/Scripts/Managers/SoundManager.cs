@@ -9,7 +9,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public enum SoundRequestAmbient { A_Rain, A_RainOff, A_Thunder }
     public enum SoundRequestPlayer { P_Damaged, P_Death, P_Scared, P_ShakingHead, P_StepsMarble, P_StepsCarpet, P_LowHealth }
     public enum SoundRequestGhost { G_Attack, G_Boo, G_Damaged, G_Dead, G_Laugh, G_LaughALot, G_Stunned }
-    public enum SoundRequestScenario { S_Button, S_LightbulbSpawns, S_LightbulbFalls, S_DoorOpen, S_Fireplace, S_FireplaceOff, S_FurnitureShaking, S_HealthItemDropped,
+    public enum SoundRequestScenario { S_Button, S_LightbulbSpawns, S_LightbulbFalls, S_DoorOpen, S_Fireplace, S_FireplaceOff, S_FlameOn, S_FurnitureShaking, S_HealthItemDropped,
         S_HealthItemFound, S_ItemFound, S_ItemParticles, S_ItemParticlesOff, S_LockedDoor, S_MemoryOfAzov, S_SpecialItemFound, S_UnlockDoor, S_Lever, S_Library, S_PictureFalls }
     public enum SoundRequestFlashlight { F_ChargingFlash, F_ChargedFlash, F_ChargedFlashOff, F_Flash }
     public enum SoundRequestMenu { Me_Movement, Me_Select, Me_SelectBack }
@@ -120,6 +120,10 @@ public class SoundManager : MonoSingleton<SoundManager> {
     [FMODUnity.EventRef]
     public string scenarioFireplaceSound;
     FMOD.Studio.EventInstance soundEventScenarioFireplaceSound;
+
+    [FMODUnity.EventRef]
+    public string scenarioFlameOnSound;
+    FMOD.Studio.EventInstance soundEventScenarioFlameOnSound;
 
     [FMODUnity.EventRef]
     public string scenarioFurnitureShakingSound;
@@ -249,6 +253,7 @@ public class SoundManager : MonoSingleton<SoundManager> {
         soundEventScenarioLightbulbFallsSound = FMODUnity.RuntimeManager.CreateInstance(scenarioLightbulbFallsSound);
         soundEventScenarioDoorOpenSound = FMODUnity.RuntimeManager.CreateInstance(scenarioDoorOpenSound);
         soundEventScenarioFireplaceSound = FMODUnity.RuntimeManager.CreateInstance(scenarioFireplaceSound);
+        soundEventScenarioFlameOnSound = FMODUnity.RuntimeManager.CreateInstance(scenarioFlameOnSound);
         soundEventScenarioFurnitureShakingSound = FMODUnity.RuntimeManager.CreateInstance(scenarioFurnitureShakingSound);
         soundEventScenarioHealItemDroppedSound = FMODUnity.RuntimeManager.CreateInstance(scenarioHealItemDroppedSound);
         soundEventScenarioHealItemFoundSound = FMODUnity.RuntimeManager.CreateInstance(scenarioHealItemFoundSound);
@@ -386,6 +391,9 @@ public class SoundManager : MonoSingleton<SoundManager> {
                 break;
             case SoundRequestScenario.S_FireplaceOff:
                 StopScenarioFireplaceSound();
+                break;
+            case SoundRequestScenario.S_FlameOn:
+                PlayScenarioFlameOnSound();
                 break;
             case SoundRequestScenario.S_FurnitureShaking:
                 PlayScenarioFurnitureShakingSound();
@@ -661,6 +669,11 @@ public class SoundManager : MonoSingleton<SoundManager> {
     public void PlayScenarioFireplaceSound()
     {
         soundEventScenarioFireplaceSound.start();
+    }
+
+    public void PlayScenarioFlameOnSound()
+    {
+        soundEventScenarioFlameOnSound.start();
     }
 
     public void PlayScenarioFurnitureShakingSound()
